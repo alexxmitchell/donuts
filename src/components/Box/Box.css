@@ -1,0 +1,11 @@
+.scroll {
+  font-size: 46px;
+  text-decoration: none;
+}
+
+.box-container {
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

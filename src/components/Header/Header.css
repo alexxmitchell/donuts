@@ -1,0 +1,63 @@
+.outer-header {
+  background: #ffd0d6;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-container {
+  background: #ffd0d6;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Fjalla One", sans-serif;
+}
+.title {
+  display: none;
+}
+.empty {
+  display: none;
+}
+
+.donut-logo,
+.bag {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.header-container h2 {
+  font-size: 24px;
+}
+
+@media (min-width: 767px) {
+  .outer-header {
+    height: 20vh;
+  }
+  .header-container {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+  }
+  .donut-logo,
+  .bag {
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+  }
+  .header-container .title {
+    display: inline-block;
+    font-size: 46px;
+  }
+  .small-name {
+    display: none;
+  }
+  .empty {
+    width: 100px;
+    visibility: hidden;
+    display: block;
+  }
+}

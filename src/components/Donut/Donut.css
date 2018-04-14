@@ -1,0 +1,21 @@
+.donut-container h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 36px;
+}
+
+.donut-container {
+  margin-top: 100px;
+}
+
+@media (min-width: 767px) {
+  .donut-container h2 {
+    font-size: 56px;
+    margin-bottom: 80px;
+  }
+  .do-container {
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
