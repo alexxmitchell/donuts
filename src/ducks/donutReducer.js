@@ -7,13 +7,21 @@ const initialState = {
   sprinkles: 0,
   chocdrizzle: 0,
   glaze: 0,
-  pbdrizzle: 0
+  pbdrizzle: 0,
+  vanilladrizzle: 0
 };
 
-const ADD_DONUT = "ADD_DONUT";
+const ADD_KIND = "ADD_KIND";
+const ADD_TOPPINGS = "ADD_TOPPINGS";
 
-export function addDonut(
-  kind,
+export function addKind(kind) {
+  return {
+    type: ADD_KIND,
+    payload: kind
+  };
+}
+
+export function addToppings(
   peanuts,
   bacon,
   strawberries,
@@ -21,12 +29,12 @@ export function addDonut(
   sprinkles,
   chocdrizzle,
   glaze,
-  pbdrizzle
+  pbdrizzle,
+  vanilladrizzle
 ) {
   return {
-    type: ADD_DONUT,
+    type: ADD_TOPPINGS,
     payload: {
-      kind,
       peanuts,
       bacon,
       strawberries,
@@ -34,15 +42,27 @@ export function addDonut(
       sprinkles,
       chocdrizzle,
       glaze,
-      pbdrizzle
+      pbdrizzle,
+      vanilladrizzle
     }
   };
 }
 
 function donutReducer(state = initialState, action) {
   switch (action.type) {
-    case ADD_DONUT:
-    // axios.post
+    case ADD_KIND:
+      return {
+        ...state,
+        kind: action.payload
+      };
+    case ADD_TOPPINGS:
+      return {
+        ...state,
+        ...action.payload
+      };
+
+    default:
+      return state;
   }
 }
 export default donutReducer;
