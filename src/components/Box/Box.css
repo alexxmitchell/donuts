@@ -1,11 +1,40 @@
-.scroll {
-  font-size: 46px;
-  text-decoration: none;
+.box-container {
+  padding: 80px 40px 20px 40px;
+  height: 80vh;
 }
 
-.box-container {
-  height: 80vh;
+.boxes {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 50px;
+}
+.boxes div {
+  border: solid #735b69 1px;
+  height: 200px;
+}
+
+@media (min-width: 767px) {
+  .scroll {
+    font-size: 46px;
+    text-decoration: none;
+  }
+
+  .scrolls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .boxes div {
+    border: solid #735b69 1px;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+  }
 }

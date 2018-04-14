@@ -50,7 +50,9 @@ app.get(
     failureFlash: true
   })
 );
+//donut controller
 app.get("/api/donuts", dc.getDonuts);
+app.post("/api/donut/:id", dc.addDonut);
 app.get("/api/bag/:id");
 
 app.listen(port, () => {

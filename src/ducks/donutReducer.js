@@ -13,6 +13,7 @@ const initialState = {
 
 const ADD_KIND = "ADD_KIND";
 const ADD_TOPPINGS = "ADD_TOPPINGS";
+const ADD_DONUT = "ADD_DONUT";
 
 export function addKind(kind) {
   return {
@@ -48,6 +49,10 @@ export function addToppings(
   };
 }
 
+// export function addDonut() {
+//   axios.post(`/api/donut`);
+// }
+
 function donutReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_KIND:
@@ -60,6 +65,8 @@ function donutReducer(state = initialState, action) {
         ...state,
         ...action.payload
       };
+    case ADD_DONUT:
+      return {};
 
     default:
       return state;
