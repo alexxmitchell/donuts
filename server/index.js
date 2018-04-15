@@ -7,6 +7,7 @@ const passport = require("passport");
 const port = process.env.PORT || 3001;
 
 const dc = require("./controller/donutCtrl");
+const bc = require("./controller/boxCtrl");
 const strategy = require(`${__dirname}/controller/authCtrl`);
 
 const app = express();
@@ -52,8 +53,9 @@ app.get(
 );
 //donut controller
 app.get("/api/donuts", dc.getDonuts);
+app.get("/api/box/:id", bc.getBox);
 app.post("/api/donut/:id", dc.addDonut);
-app.get("/api/bag/:id");
+app.delete(`/api/removedonut/:${id}`, bc.removeDonut);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);

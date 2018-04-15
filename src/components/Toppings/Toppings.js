@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import { addToppings } from "../../ducks/donutReducer";
+
 import "./Toppings.css";
 
 class Toppings extends Component {
@@ -9,17 +11,37 @@ class Toppings extends Component {
     super(props);
 
     this.state = {
-      isChecked: false
+      isChecked: false,
+      peanuts: 0,
+      strawberries: 0,
+      gold: 0,
+      sprinkles: 0,
+      chocdrizzle: 0,
+      glaze: 0,
+      pbdrizzle: 0
     };
     this.handleSelect = this.handleSelect.bind(this);
   }
 
-  handleSelect() {
-    this.setState({ isChecked: true });
-  }
+  handleSelect(e) {
+    // [e.target.name]+= 1;
+    this.setState({ isChecked: true, [e.target.name]: e.target.value });
 
+    //sets the value for each item when clicked
+  }
+  //need a way to remove the value from the selected item
   render() {
-    const { isChecked } = this.state;
+    console.log(this.state);
+    const {
+      isChecked,
+      peanuts,
+      strawberries,
+      gold,
+      sprinkles,
+      chocdrizzle,
+      glaze,
+      pbdrizzle
+    } = this.state;
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     if (isChecked) {
       <button>
@@ -36,15 +58,66 @@ class Toppings extends Component {
             }}
             value="peanuts"
           />
-          <button value="strawberries" />
-          <button value="gold" />
-          <button value="sprinkles" />
-          <button value="chocdrizzle" />
-          <button value="glaze" />
-          <button value="pbdrizzle" />
-          <button value="vanilladrizzle" />
+          <button
+            value="strawberries"
+            onClick={() => {
+              this.handleSelect();
+            }}
+          />
+          <button
+            value="gold"
+            onClick={() => {
+              this.handleSelect();
+            }}
+          />
+          <button
+            value="sprinkles"
+            onClick={() => {
+              this.handleSelect();
+            }}
+          />
+          <button
+            value="chocdrizzle"
+            onClick={() => {
+              this.handleSelect();
+            }}
+          />
+          <button
+            value="glaze"
+            onClick={() => {
+              this.handleSelect();
+            }}
+          />
+          <button
+            value="pbdrizzle"
+            onClick={() => {
+              this.handleSelect();
+            }}
+          />
+          <button
+            value="vanilladrizzle"
+            onClick={() => {
+              this.handleSelect();
+            }}
+          />
         </div>
-        <Link to="/bag">></Link>
+        <Link to="/bag">
+          <button
+            onClick={() => {
+              this.props.addToppings(
+                peanuts,
+                strawberries,
+                gold,
+                sprinkles,
+                chocdrizzle,
+                glaze,
+                pbdrizzle
+              );
+            }}
+          >
+            >
+          </button>
+        </Link>
       </div>
     );
   }
@@ -58,8 +131,7 @@ function mapStateToProps(state) {
     sprinkles,
     chocdrizzle,
     glaze,
-    pbdrizzle,
-    vanilladrizzle
+    pbdrizzle
   } = state;
 
   return {
@@ -69,8 +141,7 @@ function mapStateToProps(state) {
     sprinkles,
     chocdrizzle,
     glaze,
-    pbdrizzle,
-    vanilladrizzle
+    pbdrizzle
   };
 }
-export default Toppings;
+export default connect(mapStateToProps, { addToppings })(Toppings);

@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const initialState = {
   kind: "",
   peanuts: 0,
@@ -7,13 +9,13 @@ const initialState = {
   sprinkles: 0,
   chocdrizzle: 0,
   glaze: 0,
-  pbdrizzle: 0,
-  vanilladrizzle: 0
+  pbdrizzle: 0
 };
 
 const ADD_KIND = "ADD_KIND";
 const ADD_TOPPINGS = "ADD_TOPPINGS";
 const ADD_DONUT = "ADD_DONUT";
+const REMOVE_TOPPING = "REMOVE_TOPPING"; //need action
 
 export function addKind(kind) {
   return {
@@ -30,8 +32,7 @@ export function addToppings(
   sprinkles,
   chocdrizzle,
   glaze,
-  pbdrizzle,
-  vanilladrizzle
+  pbdrizzle
 ) {
   return {
     type: ADD_TOPPINGS,
@@ -43,15 +44,37 @@ export function addToppings(
       sprinkles,
       chocdrizzle,
       glaze,
-      pbdrizzle,
-      vanilladrizzle
+      pbdrizzle
     }
   };
 }
 
-// export function addDonut() {
-//   axios.post(`/api/donut`);
-// }
+export function addDonut(
+  kind,
+  peanuts,
+  bacon,
+  strawberries,
+  gold,
+  sprinkles,
+  chocdrizzle,
+  glaze,
+  pbdrizzle
+) {
+  return {
+    type: ADD_DONUT,
+    payload: axios.post(`/api/donut`, {
+      kind,
+      peanuts,
+      bacon,
+      strawberries,
+      gold,
+      sprinkles,
+      chocdrizzle,
+      glaze,
+      pbdrizzle
+    })
+  };
+}
 
 function donutReducer(state = initialState, action) {
   switch (action.type) {
@@ -65,8 +88,11 @@ function donutReducer(state = initialState, action) {
         ...state,
         ...action.payload
       };
-    case ADD_DONUT:
-      return {};
+    case `${ADD_DONUT}_FULFILLED`:
+      return {
+        ...state,
+        ...action.payload
+      };
 
     default:
       return state;

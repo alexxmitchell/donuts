@@ -8,33 +8,67 @@ import "./Donut.css";
 class Donut extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      kind: ""
+    };
+    this.handleKind = this.handleKind.bind(this);
+  }
+  handleKind(e) {
+    this.setState({ kind: e.target.value });
   }
   render() {
     return (
       <div className="donut-container">
         <h2>Select a Donut</h2>
         <div className="do-container">
-          <button value="Cake" className="do" onClick="">
-            Cake
+          <button
+            value="Cake"
+            className="do"
+            onClick={e => {
+              this.handleKind(e);
+            }}
+          >
+            <img src="https://www.entenmanns.com/sites/default/files/styles/medium/public/x159562_1WPlain.png,qitok=xl2ErUaB.pagespeed.ic.OxCtAT2zYm.png" />
+            <p className="donut-type">Cake</p>
           </button>
-          <button value="Old-Fashioned" className="do" onClick="">
+
+          <button
+            value="Old-Fashioned"
+            className="do"
+            onClick={e => {
+              this.handleKind(e);
+            }}
+          >
             Old-Fashioned
           </button>
-          <button value="Chocolate" className="do" onClick="">
+          <button
+            value="Chocolate"
+            className="do"
+            onClick={e => {
+              this.handleKind(e);
+            }}
+          >
             Chocolate
           </button>
-          <button value="Eclair" className="do" onClick="">
+          <button
+            value="Eclair"
+            className="do"
+            onClick={e => {
+              this.handleKind(e);
+            }}
+          >
             Eclair
           </button>
           <Link to="/donut/toppings">
-            <a
+            <button
               onClick={() => {
                 this.props.addKind(this.props.kind);
               }}
               className="right-arrow"
             >
               >
-            </a>
+            </button>
           </Link>
         </div>
       </div>

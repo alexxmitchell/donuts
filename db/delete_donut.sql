@@ -1,0 +1,1 @@
+DELETE FROM box WHERE userid = $1 AND donutid = $2;

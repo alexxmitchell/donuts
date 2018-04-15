@@ -26,4 +26,11 @@ a {
     font-size: 50px;
     text-decoration: none;
   }
+  .do {
+    background: transparent;
+    border: none;
+  }
+  .donut-type {
+    font-size: 20px;
+  }
 }
