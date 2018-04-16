@@ -6,6 +6,7 @@ const Header = () => {
     <div className="outer-header">
       <div className="empty" />
       <div className="header-container">
+        {/* <Link to="/"> */}
         <h2 className="title">Donut</h2>
         <img
           className="donut-logo"
@@ -14,6 +15,7 @@ const Header = () => {
         />
         <h2 className="small-name">DF</h2>
         <h2 className="title">Factory</h2>
+        {/* </Link> */}
       </div>
       <Link to="/login">
         <img

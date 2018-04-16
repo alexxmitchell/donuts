@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import "./Box.css";
+import "./Landing.css";
+import "../../";
 import { Link } from "react-router-dom";
 
-class Box extends Component {
+class Landing extends Component {
   constructor() {
     super();
   }
   render() {
     return (
-      <div className="box-container">
+      <div className="landing-container">
         <h2>Your box is empty</h2>
-        <p>Select from our pre-crafted selection or create your own</p>
+        <p>Create your own or select from our crafted selection</p>
         <div className="scrolls">
           <div className="boxes">
             <Link to="/donut">
@@ -18,7 +19,7 @@ class Box extends Component {
                 <p>custom</p>
               </div>
             </Link>
-            <div>
+            <div className="crafted-img">
               <p>crafted</p>
             </div>
           </div>
@@ -30,4 +31,4 @@ class Box extends Component {
     );
   }
 }
-export default Box;
+export default Landing;

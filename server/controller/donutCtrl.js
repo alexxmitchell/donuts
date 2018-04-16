@@ -29,7 +29,7 @@ module.exports = {
     } = req.body;
 
     dbInstance
-      .addDonut([
+      .add_donut([
         kind,
         peanuts,
         bacon,

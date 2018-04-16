@@ -18,6 +18,7 @@ class Donut extends Component {
     this.setState({ kind: e.target.value });
   }
   render() {
+    console.log(this.state);
     return (
       <div className="donut-container">
         <h2>Select a Donut</h2>
@@ -63,7 +64,7 @@ class Donut extends Component {
           <Link to="/donut/toppings">
             <button
               onClick={() => {
-                this.props.addKind(this.props.kind);
+                this.props.addKind(this.state.kind);
               }}
               className="right-arrow"
             >

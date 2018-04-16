@@ -5,8 +5,8 @@ module.exports = {
 
     dbInstance
       .get_box([id])
-      .then(() => {
-        res.status(200).json();
+      .then(box => {
+        res.status(200).json(box);
       })
       .catch(() => {
         res.status(500).json();
