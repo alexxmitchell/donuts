@@ -12,3 +12,9 @@ module.exports = new Auth0strategy(
     return done(null, profile);
   }
 );
+
+getUser: (req, res) => {
+  if (!req.user) {
+    res.status(401).json({ message: "Please login" });
+  }
+};

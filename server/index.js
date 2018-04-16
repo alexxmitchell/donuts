@@ -53,7 +53,7 @@ app.get(
 );
 //donut controller
 app.get("/api/donuts", dc.getDonuts);
-app.get("/api/box/:id", bc.getBox);
+app.get("/api/box", bc.getBox);
 app.post("/api/donut", dc.addDonut);
 // app.delete(`/api/removedonut`, bc.removeDonut); need to add id parameter
 

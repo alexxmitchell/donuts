@@ -1,7 +1,7 @@
 module.exports = {
   getBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { id } = req.params;
+    const { id } = req.user;
 
     dbInstance
       .get_box([id])
