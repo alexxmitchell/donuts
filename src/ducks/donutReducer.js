@@ -24,6 +24,7 @@ const ADD_TOPPINGS = "ADD_TOPPINGS";
 const ADD_DONUT = "ADD_DONUT";
 const ADD_TO_BOX = "ADD_TO_BOX";
 const REMOVE_TOPPING = "REMOVE_TOPPING"; //need action
+const REMOVE_DONUT = "REMOVE_DONUT";
 const GET_BOX = "GET_BOX";
 const GET_DONUTS = "GET_DONUTS";
 
@@ -103,7 +104,7 @@ export function addDonut(
 export function addToBox() {
   return {
     type: ADD_TO_BOX
-    // payload: box
+    payload: axios.post('/api/box
   };
 }
 
@@ -120,6 +121,13 @@ export function getDonuts() {
     payload: axios.get("/api/donuts").then(response => {
       return response.data;
     })
+  };
+}
+
+export function removeDonut(id) {
+  return {
+    type: REMOVE_DONUT,
+    payload: axios.delete(`/api/removedonut/${id}`)
   };
 }
 
@@ -155,7 +163,11 @@ function donutReducer(state = initialState, action) {
         ...state,
         isLoading: true
       };
-
+    case `${REMOVE_DONUT}_FULFILLED`:
+      return {
+        ...state,
+        donuts: action.payload
+      };
     default:
       return state;
   }

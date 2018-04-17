@@ -74,6 +74,7 @@ app.get(
 app.get("/api/donuts", dc.getDonuts);
 app.get("/api/box", bc.getBox);
 app.post("/api/donut", dc.addDonut);
+app.post("/api/box", bc.addToBox);
 app.delete(`/api/removedonut/:id`, bc.removeDonut); //need to add id parameter
 
 app.listen(port, () => {

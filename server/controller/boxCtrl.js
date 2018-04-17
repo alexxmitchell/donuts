@@ -14,10 +14,24 @@ module.exports = {
   },
   removeDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { userid, donutid } = req.user;
+    const { users_id, id } = req.params;
+    console.log(req.params.id);
+    dbInstance
+      .delete_donut([id])
+      .then(() => {
+        res.status(200).json();
+      })
+      .catch(() => {
+        res.status(500).json();
+      });
+  },
+
+  addToBox: (req, res) => {
+    const dbInstance = req.app.get("db");
+    const { userid, price, donutid } = req.body;
 
     dbInstance
-      .delete_donut([userid, donutid])
+      .add_donut([userid, price, donutid])
       .then(() => {
         res.status(200).json();
       })

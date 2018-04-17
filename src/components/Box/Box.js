@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getBox, getDonuts } from "../../ducks/donutReducer";
+import { getBox, getDonuts, removeDonut } from "../../ducks/donutReducer";
 
 import image from "../../placeholder.png";
 import "./Box.css";
@@ -12,7 +12,6 @@ class Box extends Component {
 
   componentDidMount() {
     this.props.getDonuts();
-    console.log(this.props.donuts);
   }
   render() {
     let dozen = <p>loading...</p>;
@@ -21,7 +20,14 @@ class Box extends Component {
       dozen = donuts.map((e, i) => {
         return (
           <div className="ind-donut">
-            <input type="checkbox" />
+            <button
+              onClick={() => {
+                this.props.removeDonut(e.id);
+              }}
+            >
+              <h2>Remove from box</h2>
+            </button>
+
             <img src={image} alt="placeholder" />
             <div>
               <h2 key={i}>{e.kind} donut</h2>
@@ -35,10 +41,11 @@ class Box extends Component {
     }
     return (
       <div className="order">
-        <button onClick="">
-          <h2>Remove from box</h2>
+        <button
+          onClick={() => (window.location.href = "http://localhost:3001/login")}
+        >
+          Login to view previous order
         </button>
-        <button>Login to view previous order</button>
         <div>{dozen}</div>
       </div>
     );
@@ -48,4 +55,6 @@ class Box extends Component {
 function mapStateToProps(state) {
   return state;
 }
-export default connect(mapStateToProps, { getBox, getDonuts })(Box);
+export default connect(mapStateToProps, { getBox, getDonuts, removeDonut })(
+  Box
+);

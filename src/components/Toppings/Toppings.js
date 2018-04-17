@@ -29,7 +29,7 @@ class Toppings extends Component {
 
   handleSelect(e) {
     this.setState({
-      isChecked: true,
+      isChecked: !this.state.isChecked,
       ["topping" + this.state.numTopping]: e.target.value,
       numTopping: this.state.numTopping + 1
       //numTopping should not exceed 3

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import logo from "../images/cropped-DonutIcon.png";
+import bag from "../images/boxes.png";
 const Header = () => {
   return (
     <div className="outer-header">
@@ -8,21 +10,16 @@ const Header = () => {
       <div className="header-container">
         {/* <Link to="/"> */}
         <h2 className="title">Donut</h2>
-        <img
-          className="donut-logo"
-          src="http://donut5k.com/wp-content/uploads/2017/04/cropped-DonutIcon.png"
-          alt="donut"
-        />
+        <img className="donut-logo" src={logo} alt="donut" />
         <h2 className="small-name">DF</h2>
         <h2 className="title">Factory</h2>
         {/* </Link> */}
       </div>
       <Link to="/login">
-        <img
-          className="bag"
-          src="https://www.shareicon.net/data/256x256/2016/06/22/784938_bag_512x512.png"
-          alt="bag"
-        />
+        <img className="bag" src={bag} alt="bag" />
+        {/* <div>
+              Dropdown for login
+              </div> */}
       </Link>
     </div>
   );

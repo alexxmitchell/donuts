@@ -10,17 +10,20 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing-container">
-        <h2>Your box is empty</h2>
-        <p>Create your own or select from our crafted selection</p>
-        <div className="scrolls">
-          <div className="boxes">
-            <Link to="/donut">
-              <div>
-                <p>custom</p>
+        <div className="large-text">
+          {/* <h2 className="large">Customizable</h2>
+          <h2 className="large">Donuts</h2> */}
+          <p>Create your own or select from our crafted selection</p>
+          <div className="scrolls">
+            <div className="boxes">
+              <Link to="/donut">
+                <div>
+                  <p>custom</p>
+                </div>
+              </Link>
+              <div className="crafted-img">
+                <p>crafted</p>
               </div>
-            </Link>
-            <div className="crafted-img">
-              <p>crafted</p>
             </div>
           </div>
           <Link to="/donut">

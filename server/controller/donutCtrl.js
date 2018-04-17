@@ -47,4 +47,12 @@ module.exports = {
         res.status(500).json();
       });
   }
+
+  // editDonut: (req, res) =>{
+  //   const dbInstance =req.app.get('db');
+  //   console.log(req.params);
+
+  //   const {id}= req.params;
+  //   dbInstance
+  // }
 };

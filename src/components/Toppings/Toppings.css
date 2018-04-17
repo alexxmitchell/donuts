@@ -12,11 +12,10 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 80vw;
-  height: 80vh;
 }
 .topping-container button {
   width: 40vw;
-  height: 40vw;
+  height: 20vh;
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
@@ -41,6 +40,7 @@
     justify-content: center;
   }
   .topping-container button {
+    margin-top: 100px;
     width: 10vw;
     height: 10vw;
   }
