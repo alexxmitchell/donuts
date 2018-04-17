@@ -14,7 +14,7 @@ module.exports = {
   },
   removeDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { userid, donutid } = req.params;
+    const { userid, donutid } = req.user;
 
     dbInstance
       .delete_donut([userid, donutid])

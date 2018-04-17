@@ -11,6 +11,15 @@ a {
   text-decoration: none;
   color: #735b69;
 }
+
+.do {
+  background: transparent;
+  border: none;
+}
+
+.select-do {
+  width: 200px;
+}
 @media (min-width: 767px) {
   .donut-container h2 {
     font-size: 56px;
@@ -26,11 +35,12 @@ a {
     font-size: 50px;
     text-decoration: none;
   }
-  .do {
-    background: transparent;
-    border: none;
-  }
+
   .donut-type {
     font-size: 20px;
+  }
+
+  .select-do {
+    width: 250px;
   }
 }

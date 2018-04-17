@@ -1,2 +1,2 @@
-INSERT INTO donuts (kind, peanuts, bacon, strawberries, gold, sprinkles, chocdrizzle, pbdrizzle, glaze)
-VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9);
+INSERT INTO donuts (kind, topping1, topping2, topping3, price)
+VALUES($1, $2, $3, $4, $5);

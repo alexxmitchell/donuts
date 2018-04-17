@@ -13,16 +13,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    axios
-      .get("/api/donuts")
-      .then(resp => {
-        this.setState({ donuts: resp.data });
-      })
-      .catch(err => console.log(err));
-  }
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <Header />

@@ -36,18 +36,37 @@ app.use(passport.session());
 passport.use(strategy);
 
 passport.serializeUser((user, done) => {
-  return done(null, user);
+  app
+    .get("db")
+    .get_user(id)
+    .then(response => {
+      if (!response[0]) {
+        app
+          .get("db")
+          .add_user([name, id])
+          .then(res => {
+            return done(null, res[0]);
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      } else {
+        return done(null, response[0]);
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
-
 passport.deserializeUser((obj, done) => {
   return done(null, obj);
 });
 
 app.get(
-  "/auth",
+  "/login",
   passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/bag",
-    failureRedirect: "/auth",
+    successRedirect: "http://localhost:3000/#/box",
+    failureRedirect: "/login",
     failureFlash: true
   })
 );
@@ -55,7 +74,7 @@ app.get(
 app.get("/api/donuts", dc.getDonuts);
 app.get("/api/box", bc.getBox);
 app.post("/api/donut", dc.addDonut);
-// app.delete(`/api/removedonut`, bc.removeDonut); need to add id parameter
+app.delete(`/api/removedonut/:id`, bc.removeDonut); //need to add id parameter
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);

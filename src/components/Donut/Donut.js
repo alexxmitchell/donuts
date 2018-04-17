@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import chocolate from "../../chocolate.png";
 
 import { addKind } from "../../ducks/donutReducer";
 import "./Donut.css";
@@ -30,10 +31,33 @@ class Donut extends Component {
               this.handleKind(e);
             }}
           >
-            <img src="https://www.entenmanns.com/sites/default/files/styles/medium/public/x159562_1WPlain.png,qitok=xl2ErUaB.pagespeed.ic.OxCtAT2zYm.png" />
+            <img
+              className="select-do"
+              alt="cake donut"
+              src="https://www.entenmanns.com/sites/default/files/styles/medium/public/x159562_1WPlain.png,qitok=xl2ErUaB.pagespeed.ic.OxCtAT2zYm.png"
+            />
             <p className="donut-type">Cake</p>
           </button>
 
+          <button
+            value="Chocolate"
+            className="do"
+            onClick={e => {
+              this.handleKind(e);
+            }}
+          >
+            <img alt="chocolate donut" className="select-do" src={chocolate} />
+            <p className="donut-type">Chocolate</p>
+          </button>
+          <button
+            value="Cruller"
+            className="do"
+            onClick={e => {
+              this.handleKind(e);
+            }}
+          >
+            Cruller
+          </button>
           <button
             value="Old-Fashioned"
             className="do"
@@ -42,24 +66,6 @@ class Donut extends Component {
             }}
           >
             Old-Fashioned
-          </button>
-          <button
-            value="Chocolate"
-            className="do"
-            onClick={e => {
-              this.handleKind(e);
-            }}
-          >
-            Chocolate
-          </button>
-          <button
-            value="Eclair"
-            className="do"
-            onClick={e => {
-              this.handleKind(e);
-            }}
-          >
-            Eclair
           </button>
           <Link to="/donut/toppings">
             <button
