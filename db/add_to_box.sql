@@ -1,2 +1,2 @@
-INSERT INTO box (userid, donutid)
+INSERT INTO box (userid, donutid, price)
 VALUES ($1, $2);

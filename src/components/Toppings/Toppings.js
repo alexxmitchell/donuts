@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { addToppings, addDonut } from "../../ducks/donutReducer";
+import { addDonut, addToBox } from "../../ducks/donutReducer";
 
 import "./Toppings.css";
 
@@ -12,13 +12,6 @@ class Toppings extends Component {
 
     this.state = {
       isChecked: false,
-      // peanuts: 0,
-      // strawberries: 0,
-      // gold: 0,
-      // sprinkles: 0,
-      // chocdrizzle: 0,
-      // glaze: 0,
-      // pbdrizzle: 0
       topping1: "",
       topping2: "",
       topping3: "",
@@ -38,22 +31,11 @@ class Toppings extends Component {
     //sets the value for each item when clicked
   }
   //need a way to remove the value from the selected item
+
+  removeTopping() {}
   render() {
     console.log(this.state);
-    const {
-      isChecked,
-      // peanuts,
-      // bacon,
-      // strawberries,
-      // gold,
-      // sprinkles,
-      // chocdrizzle,
-      // glaze,
-      // pbdrizzle
-      topping1,
-      topping2,
-      topping3
-    } = this.state;
+    const { isChecked, topping1, topping2, topping3 } = this.state;
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     if (isChecked) {
       <button>
@@ -155,18 +137,12 @@ class Toppings extends Component {
         {/* <Link to="/login"> */}
         <button
           onClick={() => {
-            this.props.addToppings(
-              // peanuts,
-              // bacon,
-              // strawberries,
-              // gold,
-              // sprinkles,
-              // chocdrizzle,
-              // glaze,
-              // pbdrizzle
-              topping1,
-              topping2,
-              topping3
+            this.props.addDonut(
+              this.props.kind,
+              this.state.topping1,
+              this.state.topping2,
+              this.state.topping3,
+              this.props.price
             );
           }}
         >
@@ -174,21 +150,7 @@ class Toppings extends Component {
         </button>
         <button
           onClick={() => {
-            this.props.addDonut(
-              this.props.kind,
-              // peanuts,
-              // bacon,
-              // strawberries,
-              // gold,
-              // sprinkles,
-              // chocdrizzle,
-              // glaze,
-              // pbdrizzle
-              topping1,
-              topping2,
-              topping3,
-              this.props.price
-            );
+            this.props.addToBox(this.props.userid);
           }}
         >
           Add to Box
@@ -200,32 +162,14 @@ class Toppings extends Component {
 }
 
 function mapStateToProps(state) {
-  const {
-    kind,
-    // peanuts,
-    // strawberries,
-    // gold,
-    // sprinkles,
-    // chocdrizzle,
-    // glaze,
-    // pbdrizzle
-    topping1,
-    topping2,
-    topping3
-  } = state;
+  const { kind, topping1, topping2, topping3, price } = state;
 
   return {
     kind,
-    // peanuts,
-    // strawberries,
-    // gold,
-    // sprinkles,
-    // chocdrizzle,
-    // glaze,
-    // pbdrizzle
     topping1,
     topping2,
-    topping3
+    topping3,
+    price
   };
 }
-export default connect(mapStateToProps, { addToppings, addDonut })(Toppings);
+export default connect(mapStateToProps, { addDonut, addToBox })(Toppings);

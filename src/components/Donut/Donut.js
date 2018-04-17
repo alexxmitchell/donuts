@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import chocolate from "../../chocolate.png";
+import chocolate from "../images/chocolate.png";
+import cake from "../images/cake.png";
 
 import { addKind } from "../../ducks/donutReducer";
 import "./Donut.css";
@@ -15,8 +16,8 @@ class Donut extends Component {
     };
     this.handleKind = this.handleKind.bind(this);
   }
-  handleKind(e) {
-    this.setState({ kind: e.target.value });
+  handleKind(type) {
+    this.setState({ kind: type });
   }
   render() {
     console.log(this.state);
@@ -25,44 +26,36 @@ class Donut extends Component {
         <h2>Select a Donut</h2>
         <div className="do-container">
           <button
-            value="Cake"
             className="do"
             onClick={e => {
-              this.handleKind(e);
+              this.handleKind("Cake");
             }}
           >
-            <img
-              className="select-do"
-              alt="cake donut"
-              src="https://www.entenmanns.com/sites/default/files/styles/medium/public/x159562_1WPlain.png,qitok=xl2ErUaB.pagespeed.ic.OxCtAT2zYm.png"
-            />
+            <img className="select-do" alt="cake donut" src={cake} />
             <p className="donut-type">Cake</p>
           </button>
 
           <button
-            value="Chocolate"
             className="do"
             onClick={e => {
-              this.handleKind(e);
+              this.handleKind("Chocalate");
             }}
           >
             <img alt="chocolate donut" className="select-do" src={chocolate} />
             <p className="donut-type">Chocolate</p>
           </button>
           <button
-            value="Cruller"
             className="do"
             onClick={e => {
-              this.handleKind(e);
+              this.handleKind("Cruller");
             }}
           >
             Cruller
           </button>
           <button
-            value="Old-Fashioned"
             className="do"
             onClick={e => {
-              this.handleKind(e);
+              this.handleKind("Old-Fashioned");
             }}
           >
             Old-Fashioned

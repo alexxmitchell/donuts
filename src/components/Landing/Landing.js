@@ -21,9 +21,11 @@ class Landing extends Component {
                   <p>custom</p>
                 </div>
               </Link>
-              <div className="crafted-img">
-                <p>crafted</p>
-              </div>
+              <Link to="/crafted">
+                <div className="crafted-img">
+                  <p>crafted</p>
+                </div>
+              </Link>
             </div>
           </div>
           <Link to="/donut">

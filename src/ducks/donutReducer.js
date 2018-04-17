@@ -35,30 +35,10 @@ export function addKind(kind) {
   };
 }
 
-export function addToppings(
-  // peanuts,
-  // bacon,
-  // strawberries,
-  // gold,
-  // sprinkles,
-  // chocdrizzle,
-  // glaze,
-  // pbdrizzle
-  topping1,
-  topping2,
-  topping3
-) {
+export function addToppings(topping1, topping2, topping3) {
   return {
     type: ADD_TOPPINGS,
     payload: {
-      // peanuts,
-      // bacon,
-      // strawberries,
-      // gold,
-      // sprinkles,
-      // chocdrizzle,
-      // glaze,
-      // pbdrizzle
       topping1,
       topping2,
       topping3
@@ -85,14 +65,6 @@ export function addDonut(
     type: ADD_DONUT,
     payload: axios.post(`/api/donut`, {
       kind,
-      // peanuts,
-      // bacon,
-      // strawberries,
-      // gold,
-      // sprinkles,
-      // chocdrizzle,
-      // glaze,
-      // pbdrizzle
       topping1,
       topping2,
       topping3,
@@ -101,10 +73,10 @@ export function addDonut(
   };
 }
 
-export function addToBox() {
+export function addToBox(id) {
   return {
-    type: ADD_TO_BOX
-    payload: axios.post('/api/box
+    type: ADD_TO_BOX,
+    payload: axios.post("/api/addbox")
   };
 }
 
@@ -114,7 +86,7 @@ export function getBox(id) {
     payload: axios.get(`/api/box`)
   };
 }
-
+//should get donuts by userid
 export function getDonuts() {
   return {
     type: GET_DONUTS,

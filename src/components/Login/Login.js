@@ -7,17 +7,26 @@ class Login extends Component {
     super();
 
     this.state = {
-      loggedIn: true
+      loggedIn: false
     };
   }
   render() {
     return (
       <div>
         {" "}
-        {this.state.loggedIn ? (
+        {this.state.loggedIn || this.props.box ? (
           <Box />
         ) : (
-          <h2>Login to view your previous orders</h2>
+          <div>
+            <h2>Login to view your previous orders</h2>
+            <button
+              onClick={() =>
+                (window.location.href = "http://localhost:3001/login")
+              }
+            >
+              Login
+            </button>
+          </div>
         )}
         <div className="login-page" />
       </div>
