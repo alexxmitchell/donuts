@@ -49,6 +49,9 @@
     width: 100px;
     margin: 5px;
   }
+  .donut-logo {
+    margin-top: 20px;
+  }
   .header-container .title {
     display: inline-block;
     font-size: 46px;

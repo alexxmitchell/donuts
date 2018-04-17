@@ -38,7 +38,7 @@ class Donut extends Component {
           <button
             className="do"
             onClick={e => {
-              this.handleKind("Chocalate");
+              this.handleKind("Chocolate");
             }}
           >
             <img alt="chocolate donut" className="select-do" src={chocolate} />

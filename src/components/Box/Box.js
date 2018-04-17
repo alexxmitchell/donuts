@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { getBox, getDonuts, removeDonut } from "../../ducks/donutReducer";
 
 import image from "../../placeholder.png";
@@ -19,7 +20,7 @@ class Box extends Component {
     if (donuts && donuts.length > 0 && !isLoading) {
       dozen = donuts.map((e, i) => {
         return (
-          <div className="ind-donut">
+          <div key={i} className="ind-donut">
             <button
               onClick={() => {
                 this.props.removeDonut(e.id);
@@ -30,7 +31,7 @@ class Box extends Component {
 
             <img src={image} alt="placeholder" />
             <div>
-              <h2 key={i}>{e.kind} donut</h2>
+              <h2>{e.kind} donut</h2>
               <p>
                 with {e.topping1}, {e.topping2}, {e.topping3}
               </p>
@@ -47,6 +48,10 @@ class Box extends Component {
           Login to view previous order
         </button>
         <div>{dozen}</div>
+        <Link to="/">
+          <button>Get more donuts</button>
+        </Link>
+        <button>Order Now!</button>
       </div>
     );
   }

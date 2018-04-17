@@ -8,12 +8,12 @@ const Header = () => {
     <div className="outer-header">
       <div className="empty" />
       <div className="header-container">
-        {/* <Link to="/"> */}
-        <h2 className="title">Donut</h2>
-        <img className="donut-logo" src={logo} alt="donut" />
-        <h2 className="small-name">DF</h2>
-        <h2 className="title">Factory</h2>
-        {/* </Link> */}
+        <Link to="/">
+          <h2 className="title">Donut</h2>
+          <img className="donut-logo" src={logo} alt="donut" />
+          <h2 className="small-name">DF</h2>
+          <h2 className="title">Factory</h2>
+        </Link>
       </div>
       <Link to="/login">
         <img className="bag" src={bag} alt="bag" />

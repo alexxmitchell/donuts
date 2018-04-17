@@ -46,21 +46,7 @@ export function addToppings(topping1, topping2, topping3) {
   };
 }
 
-export function addDonut(
-  kind,
-  // peanuts,
-  // bacon,
-  // strawberries,
-  // gold,
-  // sprinkles,
-  // chocdrizzle,
-  // glaze,
-  // pbdrizzle
-  topping1,
-  topping2,
-  topping3,
-  price
-) {
+export function addDonut(kind, topping1, topping2, topping3, price) {
   return {
     type: ADD_DONUT,
     payload: axios.post(`/api/donut`, {

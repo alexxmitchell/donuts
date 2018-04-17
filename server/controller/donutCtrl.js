@@ -16,30 +16,10 @@ module.exports = {
   addDonut: (req, res) => {
     const dbInstance = req.app.get("db");
     console.log(req.body);
-    const {
-      kind,
-      peanuts,
-      bacon,
-      strawberries,
-      gold,
-      sprinkles,
-      chocdrizzle,
-      pbdrizzle,
-      glaze
-    } = req.body;
+    const { kind, topping1, topping2, topping3 } = req.body;
 
     dbInstance
-      .add_donut([
-        kind,
-        peanuts,
-        bacon,
-        strawberries,
-        gold,
-        sprinkles,
-        chocdrizzle,
-        pbdrizzle,
-        glaze
-      ])
+      .add_donut([kind, topping1, topping2, topping3])
       .then(() => {
         res.status(200).json();
       })
