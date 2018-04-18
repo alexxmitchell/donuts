@@ -45,7 +45,7 @@ passport.serializeUser((user, done) => {
       if (!response[0]) {
         app
           .get("db")
-          .add_user([user._json.name, user.id])
+          .add_user([user._json.name, user._json.id])
           .then(res => {
             return done(null, res[0]);
           })
@@ -82,7 +82,7 @@ app.put("/api/donut/:id", dc.editDonut);
 app.post("/api/donut", dc.addDonut);
 
 //box controller
-app.get("/api/box", bc.getBox);
+app.get("/api/box/:id", bc.getBox);
 app.post("/api/addbox", bc.addToBox);
 app.delete(`/api/removedonut/:id`, bc.removeDonut);
 

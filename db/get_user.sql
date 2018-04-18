@@ -1,1 +1,1 @@
-SELECT name FROM users WHERE authid = $1;
+SELECT name, id FROM users WHERE authid = $1;

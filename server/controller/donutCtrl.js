@@ -15,12 +15,13 @@ module.exports = {
 
   addDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    console.log(req.body);
+
     const { kind, price, boxid } = req.body;
-    const { users_id } = req.user;
+    const { id } = req.user;
+    console.log(req.body);
 
     dbInstance
-      .add_donut([users_id, kind, price, boxid])
+      .add_donut([id, kind, price, boxid])
       .then(() => {
         res.status(200).json();
       })

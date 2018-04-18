@@ -138,24 +138,25 @@ class Toppings extends Component {
         <button
           onClick={() => {
             this.props.addDonut(
+              this.props.userid,
               this.props.kind,
-              this.state.topping1,
-              this.state.topping2,
-              this.state.topping3,
-              this.props.price
+              this.props.price,
+              this.state.topping,
+              this.props.boxid
             );
           }}
         >
           >
         </button>
-        <button
-          onClick={() => {
-            this.props.addToBox(this.props.userid);
-          }}
-        >
-          Add to Box
-        </button>
-        {/* </Link> */}
+        <Link to="/box">
+          <button
+            onClick={() => {
+              this.props.addToBox(this.props.userid);
+            }}
+          >
+            Add to Box
+          </button>
+        </Link>
       </div>
     );
   }

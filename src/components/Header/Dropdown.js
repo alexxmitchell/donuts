@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { getDonuts } from "../../ducks/donutReducer";
+import { getBox } from "../../ducks/donutReducer";
 import bag from "../images/boxes.png";
 import "./Dropdown.css";
 class Dropdown extends Component {
@@ -14,15 +14,18 @@ class Dropdown extends Component {
     this.clicked = this.clicked.bind(this);
   }
 
-  componentDidMount() {
-    this.props.getDonuts();
-  }
+  // componentDidMount() {
+  //   this.props.getBox(id);
+  // }
   clicked(e) {
     this.setState({ show: !this.state.show });
   }
 
   render() {
-    const donutCount = this.props.donuts.length;
+    const donutCount = this.props.box.length;
+    this.props.box.map((e, i) => {
+      return <div key={i} id={e.id} />;
+    });
     return (
       <div className="dropdown">
         <button onClick={this.clicked} className="drop">
@@ -52,4 +55,4 @@ function mapStateToProps(state) {
     donuts
   };
 }
-export default connect(mapStateToProps, { getDonuts })(Dropdown);
+export default connect(mapStateToProps, { getBox })(Dropdown);

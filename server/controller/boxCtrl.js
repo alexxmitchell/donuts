@@ -28,12 +28,12 @@ module.exports = {
 
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { userid } = req.user;
+    const { id } = req.user;
     // const { price, donutid } = req.body;
-    console.log(req.session);
+    console.log(id);
 
     dbInstance
-      .add_to_box([userid])
+      .add_to_box([id])
       .then(() => {
         res.status(200).json();
       })

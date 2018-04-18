@@ -38,7 +38,7 @@ export function addToppings(topping1, topping2, topping3) {
   };
 }
 
-export function addDonut(kind, topping1, topping2, topping3, price) {
+export function addDonut(kind, topping1, topping2, topping3, price, boxid) {
   return {
     type: ADD_DONUT,
     payload: axios.post(`/api/donut`, {
@@ -61,18 +61,18 @@ export function addToBox(id) {
 export function getBox(id) {
   return {
     type: GET_BOX,
-    payload: axios.get(`/api/box`)
+    payload: axios.get(`/api/box/${id}`)
   };
 }
 //should get donuts by userid
-export function getDonuts() {
-  return {
-    type: GET_DONUTS,
-    payload: axios.get("/api/donuts").then(response => {
-      return response.data;
-    })
-  };
-}
+// export function getDonuts() {
+//   return {
+//     type: GET_DONUTS,
+//     payload: axios.get("/api/donuts").then(response => {
+//       return response.data;
+//     })
+//   };
+// }
 
 export function removeDonut(id) {
   return {
@@ -108,7 +108,7 @@ function donutReducer(state = initialState, action) {
         donuts: action.payload,
         isLoading: false
       });
-    case `${GET_DONUTS}_PENDING`:
+    case `${GET_BOX}_PENDING`:
       return {
         ...state,
         isLoading: true
