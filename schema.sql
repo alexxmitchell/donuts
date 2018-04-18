@@ -1,30 +1,16 @@
 -- Donut Table
 -- CREATE TABLE donuts (
---     id SERIAL PRIMARY KEY,
---     kind VARCHAR(50),
---     peanuts INT,
---     bacon INT,
---     strawberries INT,
---     gold INT,
---     sprinkles INT,
---     chocdrizzle INT,
---     glaze INT,
---     pbdrizzle INT
-
-)
---NEW TABLE STRUCTURE FOR DONUTS
--- CREATE TABLE donuts (
 -- id SERIAL PRIMARY KEY,
+-- users_id INTEGER REFERENCES users (id),
+-- boxid INTEGER REFERENCES box (id),
 -- kind VARCHAR(50),
 -- price MONEY,
--- users_id INTEGER REFERENCES users (id));
+-- quantity INTEGER);
 
 -- Box Table
 -- CREATE TABLE box (
---     id INT,
+--     id SERIAL PRIMARY KEY,
 --     userid INT REFERENCES users(id),
---     donutid INT REFERENCES donuts(id),
--- price MONEY
 -- )
 
 -- User Table
@@ -33,6 +19,11 @@
 --     authid VARCHAR(200),
 --     name VARCHAR(80)
 -- )
+--Dotop Table
+-- CREATE TABLE dotop(
+--     donut_id INT REFERENCES donuts(id),
+--     topping_id INT REFERENCES toppings(id)
+-- );
 
 
 -- DUMMY DATA FOR DONUT TABLE 
@@ -67,10 +58,7 @@
 -- ('drizzle','chocolate', 0),
 -- ('drizzle','peanut butter', 0)
 
--- CREATE TABLE dotop(
---     donut_id INT REFERENCES donuts(id),
---     topping_id INT REFERENCES toppings(id)
--- );
+
 
 -- INSERT INTO donuts (users_id, kind, price)
 -- VALUES (1, 'cake', '1');
@@ -78,3 +66,7 @@
 -- INSERT INTO dotop (donut_id, topping_id)
 -- VALUES (1, 2),
 -- (1,6);
+
+-- INSERT INTO box (id, userid, donutid, price)
+-- VALUES(1,1,1,1);
+
