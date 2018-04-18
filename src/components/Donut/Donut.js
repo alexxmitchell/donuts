@@ -44,7 +44,7 @@ class Donut extends Component {
             <img alt="chocolate donut" className="select-do" src={chocolate} />
             <p className="donut-type">Chocolate</p>
           </button>
-          <button
+          {/* <button
             className="do"
             onClick={e => {
               this.handleKind("Cruller");
@@ -59,7 +59,7 @@ class Donut extends Component {
             }}
           >
             Old-Fashioned
-          </button>
+          </button> */}
           <Link to="/donut/toppings">
             <button
               onClick={() => {

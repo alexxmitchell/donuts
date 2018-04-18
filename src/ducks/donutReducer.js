@@ -15,7 +15,7 @@ const initialState = {
   topping3: "",
   box: [],
   donuts: [],
-  price: 2,
+  price: "$2.00",
   isLoading: false
 };
 

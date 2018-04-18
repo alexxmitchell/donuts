@@ -11,8 +11,8 @@ class Landing extends Component {
     return (
       <div className="landing-container">
         <div className="large-text">
-          {/* <h2 className="large">Customizable</h2>
-          <h2 className="large">Donuts</h2> */}
+          <h2 className="large">Customizable Donuts</h2>
+
           <p>Create your own or select from our crafted selection</p>
           <div className="scrolls">
             <div className="boxes">
@@ -21,11 +21,11 @@ class Landing extends Component {
                   <p>custom</p>
                 </div>
               </Link>
-              <Link to="/crafted">
-                <div className="crafted-img">
-                  <p>crafted</p>
-                </div>
-              </Link>
+              {/* <Link to='/crafted'>
+              <div className="crafted-img">
+                <p>crafted</p>
+              </div>
+              </Link> */}
             </div>
           </div>
           <Link to="/donut">

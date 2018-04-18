@@ -1,6 +1,11 @@
 .landing-container {
   padding: 80px 40px 20px 40px;
   height: 80vh;
+  background-image: url("../../crafted-donuts.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  color: #fff;
 }
 
 .boxes {
@@ -18,6 +23,7 @@
   font-size: 50px;
   line-height: 45px;
   font-family: "Open Sans", sans-serif;
+
   /* text-align: right; */
 }
 
@@ -26,7 +32,10 @@
     font-size: 46px;
     text-decoration: none;
   }
-
+  .landing-container {
+    background-size: 200%;
+    background-position: -500px 0px;
+  }
   .scrolls {
     display: flex;
     justify-content: space-around;

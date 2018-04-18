@@ -15,13 +15,18 @@
   padding-right: 20px;
   font-family: "Fjalla One", sans-serif;
 }
+.outer-header a {
+  color: #735b69;
+}
 .title {
   display: none;
 }
 .empty {
   display: none;
 }
-
+.small-name {
+  display: inline-block;
+}
 .donut-logo,
 .bag {
   height: 50px;
@@ -31,15 +36,16 @@
 
 .header-container h2 {
   font-size: 24px;
-  color: #000;
+  color: #735b69;
 }
 
 @media (min-width: 767px) {
   .outer-header {
-    height: 20vh;
+    height: 15vh;
   }
   .header-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
   }
@@ -49,8 +55,9 @@
     width: 100px;
     margin: 5px;
   }
-  .donut-logo {
-    margin-top: 20px;
+  .bag {
+    height: 75px;
+    width: 75px;
   }
   .header-container .title {
     display: inline-block;

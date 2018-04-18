@@ -1,0 +1,12 @@
+@media (min-width: 767px) {
+  #head-drop {
+    background-color: #b7dde0;
+
+    order: 1;
+  }
+  .drop button {
+    background: transparent;
+    border: none;
+    position: fixed;
+  }
+}
