@@ -60,13 +60,24 @@
 
 
 
--- INSERT INTO donuts (users_id, kind, price)
--- VALUES (1, 'cake', '1');
+-- INSERT INTO donuts (users_id, boxid, kind, price, quantity)
+-- VALUES (2, 1, 'cake', 1, 1);
+-- INSERT INTO donuts (users_id, boxid, kind, price, quantity)
+-- VALUES (3, 2, 'chocolate', 0.5, 1);
 
 -- INSERT INTO dotop (donut_id, topping_id)
 -- VALUES (1, 2),
 -- (1,6);
 
--- INSERT INTO box (id, userid, donutid, price)
--- VALUES(1,1,1,1);
+
+-- INSERT INTO dotop (donut_id, topping_id)
+-- VALUES 
+-- (1, 2),
+-- (1,6)
+-- (2,4),
+-- (2,3),
+-- (3,5);
+
+-- INSERT INTO box (userid)
+-- VALUES(1);
 

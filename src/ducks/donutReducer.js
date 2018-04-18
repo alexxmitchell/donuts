@@ -2,14 +2,6 @@ import axios from "axios";
 
 const initialState = {
   kind: "",
-  // peanuts: 0,
-  // bacon: 0,
-  // strawberries: 0,
-  // gold: 0,
-  // sprinkles: 0,
-  // chocdrizzle: 0,
-  // glaze: 0,
-  // pbdrizzle: 0,
   topping1: "",
   topping2: "",
   topping3: "",

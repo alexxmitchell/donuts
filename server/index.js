@@ -78,8 +78,7 @@ app.get("/api/person", ac.getUser);
 app.get("/api/logout", ac.logoutUser);
 
 //donut controller
-app.get("/api/donuts", dc.getDonuts);
-
+app.put("/api/donut/:id", dc.editDonut);
 app.post("/api/donut", dc.addDonut);
 
 //box controller
