@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import chocolate from "../images/chocolate.png";
 import cake from "../images/cake.png";
+import Toppings from "../Toppings/Toppings";
 
 import { addKind } from "../../ducks/donutReducer";
 import "./Donut.css";
@@ -20,7 +21,7 @@ class Donut extends Component {
     this.setState({ kind: type });
   }
   render() {
-    console.log(this.state);
+    console.log(this.state.kind);
     return (
       <div className="donut-container">
         <h2>Select a Donut</h2>
@@ -44,7 +45,7 @@ class Donut extends Component {
             <img alt="chocolate donut" className="select-do" src={chocolate} />
             <p className="donut-type">Chocolate</p>
           </button>
-          {/* <button
+          <button
             className="do"
             onClick={e => {
               this.handleKind("Cruller");
@@ -59,7 +60,7 @@ class Donut extends Component {
             }}
           >
             Old-Fashioned
-          </button> */}
+          </button>
           <Link to="/donut/toppings">
             <button
               onClick={() => {
@@ -71,6 +72,7 @@ class Donut extends Component {
             </button>
           </Link>
         </div>
+        <Toppings />
       </div>
     );
   }

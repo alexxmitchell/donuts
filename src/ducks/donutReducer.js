@@ -19,7 +19,14 @@ const REMOVE_TOPPING = "REMOVE_TOPPING"; //need action
 const REMOVE_DONUT = "REMOVE_DONUT";
 const GET_BOX = "GET_BOX";
 const GET_DONUTS = "GET_DONUTS";
+const CREATE_BOX_SESSION = "CREATE_BOX_SESSION";
 
+export function createBoxSession() {
+  return {
+    type: CREATE_BOX_SESSION,
+    payload: axios.post("/api/thebox")
+  };
+}
 export function addKind(kind) {
   return {
     type: ADD_KIND,
@@ -38,15 +45,13 @@ export function addToppings(topping1, topping2, topping3) {
   };
 }
 
-export function addDonut(kind, topping1, topping2, topping3, price, boxid) {
+export function addDonut(kind) {
+  console.log(kind);
   return {
     type: ADD_DONUT,
     payload: axios.post(`/api/donut`, {
-      kind,
-      topping1,
-      topping2,
-      topping3,
-      price
+      kind
+      // price
     })
   };
 }
@@ -54,7 +59,7 @@ export function addDonut(kind, topping1, topping2, topping3, price, boxid) {
 export function addToBox(id) {
   return {
     type: ADD_TO_BOX,
-    payload: axios.post("/api/addbox")
+    payload: axios.post(`/api/addbox/${id}`)
   };
 }
 
@@ -83,6 +88,11 @@ export function removeDonut(id) {
 
 function donutReducer(state = initialState, action) {
   switch (action.type) {
+    case `${CREATE_BOX_SESSION}_FULFILLED`:
+      return {
+        ...state,
+        box: action.payload
+      };
     case ADD_KIND:
       return {
         ...state,

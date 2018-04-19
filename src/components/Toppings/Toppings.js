@@ -35,6 +35,7 @@ class Toppings extends Component {
   removeTopping() {}
   render() {
     console.log(this.state);
+    console.log("Front Kind", this.props.kind);
     const { isChecked, topping1, topping2, topping3 } = this.state;
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     if (isChecked) {
@@ -138,11 +139,9 @@ class Toppings extends Component {
         <button
           onClick={() => {
             this.props.addDonut(
-              this.props.userid,
-              this.props.kind,
-              this.props.price,
-              this.state.topping,
-              this.props.boxid
+              this.props.kind
+              // this.props.price
+              // this.props.boxid
             );
           }}
         >

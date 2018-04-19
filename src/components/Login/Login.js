@@ -13,7 +13,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        {" "}
+        {/* {" "}
         {this.state.loggedIn || this.props.box ? (
           <Box />
         ) : (
@@ -27,7 +27,7 @@ class Login extends Component {
               Login
             </button>
           </div>
-        )}
+        )} */}
         <div className="login-page" />
       </div>
     );

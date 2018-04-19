@@ -6,7 +6,7 @@ module.exports = {
       .get_all_donuts()
       .then(donuts => {
         res.status(200).json(donuts);
-        console.log(donuts);
+        // console.log(donuts);
       })
       .catch(() => {
         res.status(500).json();
@@ -15,13 +15,15 @@ module.exports = {
 
   addDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-
+    // console.log(req.body);
     const { kind, price, boxid } = req.body;
     const { id } = req.user;
-    console.log(req.body);
+    // console.log("KIND", kind);
+    // console.log("PRICE", price);
+    // console.log("BOXID", boxid);
 
     dbInstance
-      .add_donut([id, kind, price, boxid])
+      .add_donut([id, kind])
       .then(() => {
         res.status(200).json();
       })
@@ -33,7 +35,7 @@ module.exports = {
 
   editDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    console.log(req.params);
+    // console.log(req.params);
 
     const { id } = req.params;
     dbInstance
@@ -44,5 +46,6 @@ module.exports = {
       .catch(e => {
         console.log(e);
       });
-  }
+  },
+  addTopping: () => {}
 };

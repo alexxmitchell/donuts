@@ -42,11 +42,11 @@ class Box extends Component {
     }
     return (
       <div className="order">
-        <button
+        {/* <button
           onClick={() => (window.location.href = "http://localhost:3001/login")}
         >
           Login to view previous order
-        </button>
+        </button> */}
         <div>{dozen}</div>
         <Link to="/">
           <button>Get more donuts</button>

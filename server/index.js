@@ -31,13 +31,28 @@ massive(process.env.CONNECTION_STRING)
   })
   .catch(console.log);
 
+//create box on session
+// app.use((req, res, next) => {
+//   if (!req.session.box) {
+//     req.session.box = [];
+//   }
+//   next();
+// });
+
+//Post on session
+// app.post("/api/thebox", (req, res) => {
+//   req.session.box.push(req.body);
+//   console.log(req.session.box);
+//   res.status(200).json(req.session.box);
+// });
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(ac.strategy);
 
 passport.serializeUser((user, done) => {
-  console.log(user.id);
+  // console.log(user.id);
   app
     .get("db")
     .get_user(user.id)
@@ -67,7 +82,7 @@ passport.deserializeUser((obj, done) => {
 app.get(
   "/login",
   passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/box",
+    successRedirect: "http://localhost:3000/#/donut",
     failureRedirect: "/login",
     failureFlash: true
   })
@@ -83,7 +98,7 @@ app.post("/api/donut", dc.addDonut);
 
 //box controller
 app.get("/api/box/:id", bc.getBox);
-app.post("/api/addbox", bc.addToBox);
+app.post("/api/addbox/:id", bc.addToBox);
 app.delete(`/api/removedonut/:id`, bc.removeDonut);
 
 app.listen(port, () => {

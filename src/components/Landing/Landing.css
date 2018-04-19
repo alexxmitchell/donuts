@@ -1,13 +1,24 @@
 .landing-container {
-  padding: 80px 40px 20px 40px;
-  height: 80vh;
-  background-image: url("../../crafted-donuts.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-
+  width: 100vw;
+  height: 90vh;
+  /* overflow: hidden; */
   color: #fff;
 }
 
+.child {
+  padding: 80px 40px 20px 40px;
+  background-image: url("../../crafted-donuts.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.login {
+  width: 40%;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 40px auto;
+}
 .boxes {
   display: flex;
   flex-direction: column;
@@ -32,9 +43,12 @@
     font-size: 46px;
     text-decoration: none;
   }
-  .landing-container {
-    background-size: 200%;
-    background-position: -500px 0px;
+  .large-text {
+    text-align: center;
+    padding-left: 50px;
+  }
+  .large {
+    margin-top: 200px;
   }
   .scrolls {
     display: flex;
@@ -51,5 +65,19 @@
     width: 200px;
     height: 200px;
     margin: 20px;
+  }
+  .child {
+    transition: all 2s;
+    background-size: 200%;
+    background-position: -500px 0px;
+  }
+  .landing-container:hover .child,
+  .landing-container:focus .child {
+    transform: scale(1.1);
+  }
+
+  .login {
+    width: 300px;
+    font-size: 14px;
   }
 }
