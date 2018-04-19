@@ -93,15 +93,16 @@ app.get("/api/person", ac.getUser);
 app.get("/api/logout", ac.logoutUser);
 
 //donut controller
+app.get(`/api/mydonuts`, dc.getDonuts);
 app.put("/api/donut", dc.editDonut);
 app.post("/api/adddonut", dc.addDonut);
+app.delete(`/api/removedonut/:id`, bc.deleteDonut);
 app.post("/api/addTopping", dc.addTopping);
 
 //box controller
 app.get("/api/box/:id", bc.getBox);
+app.post("/api/createbox", bc.createBox);
 app.post("/api/addbox/:id", bc.addToBox);
-app.delete(`/api/removedonut/:id`, bc.removeDonut);
-
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
 });

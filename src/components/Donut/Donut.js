@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import axios from "axios";
 import chocolate from "../images/chocolate.png";
 import cake from "../images/cake.png";
 import Toppings from "../Toppings/Toppings";
@@ -17,6 +18,7 @@ class Donut extends Component {
     };
     this.handleKind = this.handleKind.bind(this);
   }
+
   handleKind(type) {
     this.setState({ kind: type });
     this.props.addKind(this.state.kind);

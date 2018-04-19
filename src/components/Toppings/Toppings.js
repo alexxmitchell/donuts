@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { addDonut, addToBox, addToppings } from "../../ducks/donutReducer";
+import {
+  createBox,
+  addDonut,
+  addToBox,
+  addToppings
+} from "../../ducks/donutReducer";
 
 import "./Toppings.css";
 
@@ -12,29 +17,34 @@ class Toppings extends Component {
 
     this.state = {
       isChecked: false,
-      topping1: "",
-      topping2: "",
-      topping3: "",
+      topping1: 0,
+      topping2: 0,
+      topping3: 0,
       numTopping: 1
     };
     this.handleSelect = this.handleSelect.bind(this);
   }
 
   handleSelect(type) {
-    this.setState({
-      isChecked: !this.state.isChecked,
-      //need a way to remove the value from the selected item
-      ["topping" + this.state.numTopping]: type,
-      numTopping: this.state.numTopping + 1
-      //numTopping should not exceed 3
-    });
-    this.props.addToppings(this.props.currentDonut.id, this.state.topping1);
+    this.setState(
+      {
+        isChecked: !this.state.isChecked,
+        //need a way to remove the value from the selected item
+        ["topping" + this.state.numTopping]: Number(type),
+        numTopping: this.state.numTopping + 1
+        //numTopping should not exceed 3
+      },
+      () => {
+        console.log(this.state.topping1);
+        this.props.addToppings(this.props.currentDonut.id, this.state.topping1);
+      }
+    );
     //sets the value for each item when clicked
   }
 
   removeTopping() {}
   render() {
-    console.log(this.props.currentDonut.id, this.state.topping1);
+    console.log(this.props.currentToppings);
     const { isChecked, topping1, topping2, topping3 } = this.state;
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     if (isChecked) {
@@ -54,8 +64,9 @@ class Toppings extends Component {
           <button
             className="peanuts top"
             onClick={e => {
-              this.handleSelect("1");
+              this.handleSelect(e.target.value);
             }}
+            value={1}
             name="peanuts"
           >
             {/* <img
@@ -68,8 +79,9 @@ class Toppings extends Component {
             className="bacon top"
             name="bacon"
             onClick={e => {
-              this.handleSelect(4);
+              this.handleSelect(e.target.value);
             }}
+            value={4}
           >
             bacon
           </button>
@@ -78,8 +90,9 @@ class Toppings extends Component {
             //
             name="strawberries"
             onClick={e => {
-              this.handleSelect(6);
+              this.handleSelect(e.target.value);
             }}
+            value={6}
           >
             strawberries
           </button>
@@ -87,8 +100,9 @@ class Toppings extends Component {
             className="gold top"
             name="gold"
             onClick={e => {
-              this.handleSelect(5);
+              this.handleSelect(e.target.value);
             }}
+            value={5}
           >
             gold
           </button>
@@ -96,8 +110,9 @@ class Toppings extends Component {
             className="walnuts top"
             name="walnuts"
             onClick={e => {
-              this.handleSelect(2);
+              this.handleSelect(e.target.value);
             }}
+            value={2}
           >
             walnuts
           </button>
@@ -105,8 +120,9 @@ class Toppings extends Component {
             className="pecans top"
             name="pecan"
             onClick={e => {
-              this.handleSelect(3);
+              this.handleSelect(e.target.value);
             }}
+            value={3}
           >
             pecans
           </button>
@@ -114,8 +130,9 @@ class Toppings extends Component {
             className="bananas top"
             name="bananas"
             onClick={e => {
-              this.handleSelect(7);
+              this.handleSelect(e.target.value);
             }}
+            value={7}
           >
             bananas
           </button>
@@ -123,8 +140,9 @@ class Toppings extends Component {
             className="sprinkles top"
             name="sprinkles"
             onClick={e => {
-              this.handleSelect(8);
+              this.handleSelect(e.target.value);
             }}
+            value={8}
           >
             sprinkles
           </button>
@@ -132,8 +150,9 @@ class Toppings extends Component {
             className="hot-fudge top"
             name="hot-fudge"
             onClick={e => {
-              this.handleSelect(10);
+              this.handleSelect(e.target.value);
             }}
+            value={10}
           >
             sprinkles
           </button>
@@ -141,8 +160,9 @@ class Toppings extends Component {
             className="chocdrizzle top"
             name="chocdrizzle"
             onClick={e => {
-              this.handleSelect(11);
+              this.handleSelect(e.target.value);
             }}
+            value={11}
           >
             chocolate drizzle
           </button>
@@ -150,8 +170,9 @@ class Toppings extends Component {
             className="glaze top"
             name="glaze"
             onClick={e => {
-              this.handleSelect(9);
+              this.handleSelect(e.target.value);
             }}
+            value={9}
           >
             glaze
           </button>
@@ -159,19 +180,17 @@ class Toppings extends Component {
             className="pbdrizzle top"
             name="pbdrizzle"
             onClick={e => {
-              this.handleSelect(12);
+              this.handleSelect(e.target.value);
             }}
+            value={12}
           >
             peanut butter drizzle
           </button>
         </div>
-
-        {/* <Link to="/login"> */}
-        <button onClick={() => {}}>></button>
         <Link to="/box">
           <button
             onClick={() => {
-              this.props.addToBox(this.props.userid);
+              this.props.createBox(this.props.userid);
             }}
           >
             Add to Box
@@ -183,17 +202,29 @@ class Toppings extends Component {
 }
 
 function mapStateToProps(state) {
-  const { kind, currentDonut, topping1, topping2, topping3, price } = state;
+  const {
+    kind,
+    currentDonut,
+    currentToppings,
+    topping1,
+    topping2,
+    topping3,
+    price
+  } = state;
 
   return {
     kind,
     currentDonut,
+    currentToppings,
     topping1,
     topping2,
     topping3,
     price
   };
 }
-export default connect(mapStateToProps, { addDonut, addToBox, addToppings })(
-  Toppings
-);
+export default connect(mapStateToProps, {
+  createBox,
+  addDonut,
+  addToBox,
+  addToppings
+})(Toppings);

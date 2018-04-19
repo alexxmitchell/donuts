@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { getBox, removeDonut } from "../../ducks/donutReducer";
+import { getBox, removeDonut, getDonuts } from "../../ducks/donutReducer";
 
 import image from "../../placeholder.png";
 import "./Box.css";
@@ -12,13 +12,15 @@ class Box extends Component {
   }
 
   componentDidMount() {
-    this.props.getBox();
+    this.props.getDonuts(this.props.userid);
   }
+
   render() {
+    console.log(this.props.donuts);
     let dozen = <p>loading...</p>;
-    const { box, isLoading } = this.props;
-    if (box && box.length > 0 && !isLoading) {
-      dozen = box.map((e, i) => {
+    const { donuts, isLoading } = this.props;
+    if (donuts && donuts.length > 0) {
+      dozen = donuts.map((e, i) => {
         return (
           <div key={i} className="ind-donut">
             <button
@@ -31,9 +33,11 @@ class Box extends Component {
 
             <img src={image} alt="placeholder" />
             <div>
-              <h2>{e.kind} donut</h2>
+              <button>
+                <h2>{e.kind} donut</h2>
+              </button>
               <p>
-                with {e.topping1}, {e.topping2}, {e.topping3}
+                with {e.label},{e.price}, {e.category}
               </p>
             </div>
           </div>
@@ -60,4 +64,6 @@ class Box extends Component {
 function mapStateToProps(state) {
   return state;
 }
-export default connect(mapStateToProps, { getBox, removeDonut })(Box);
+export default connect(mapStateToProps, { getBox, removeDonut, getDonuts })(
+  Box
+);

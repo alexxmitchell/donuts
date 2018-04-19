@@ -10,7 +10,7 @@ const initialState = {
   price: "$2.00",
   isLoading: false,
   currentDonut: {},
-  currentToppings: {}
+  currentToppings: []
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -21,12 +21,12 @@ const REMOVE_TOPPING = "REMOVE_TOPPING"; //need action
 const REMOVE_DONUT = "REMOVE_DONUT";
 const GET_BOX = "GET_BOX";
 const GET_DONUTS = "GET_DONUTS";
-const CREATE_BOX_SESSION = "CREATE_BOX_SESSION";
+const CREATE_BOX = "CREATE_BOX";
 
-export function createBoxSession() {
+export function createBox(id) {
   return {
-    type: CREATE_BOX_SESSION,
-    payload: axios.post("/api/thebox")
+    type: CREATE_BOX,
+    payload: axios.post("/api/createbox", { id })
   };
 }
 export function addKind(kind) {
@@ -36,10 +36,11 @@ export function addKind(kind) {
   };
 }
 
-export function addToppings(id) {
+export function addToppings(id, topping1) {
+  console.log(id, topping1);
   return {
     type: ADD_TOPPINGS,
-    payload: axios.post(`/api/addTopping`, { id })
+    payload: axios.post(`/api/addTopping`, { id, topping1 })
   };
 }
 
@@ -60,6 +61,13 @@ export function addToBox(id) {
   };
 }
 
+export function getDonuts(id) {
+  return {
+    type: GET_DONUTS,
+    payload: axios.get("/api/mydonuts")
+  };
+}
+
 export function getBox(id) {
   return {
     type: GET_BOX,
@@ -76,7 +84,7 @@ export function removeDonut(id) {
 
 function donutReducer(state = initialState, action) {
   switch (action.type) {
-    case `${CREATE_BOX_SESSION}_FULFILLED`:
+    case `${CREATE_BOX}_FULFILLED`:
       return {
         ...state,
         box: action.payload
@@ -102,10 +110,12 @@ function donutReducer(state = initialState, action) {
         box: action.payload.data
       };
     case `${GET_DONUTS}_FULFILLED`:
-      return Object.assign({}, state, {
-        donuts: action.payload,
+      return {
+        ...state,
+        donuts: action.payload.data,
         isLoading: false
-      });
+      };
+
     case `${GET_BOX}_PENDING`:
       return {
         ...state,
