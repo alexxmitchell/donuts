@@ -16,16 +16,13 @@ module.exports = {
   addDonut: (req, res) => {
     const dbInstance = req.app.get("db");
     // console.log(req.body);
-    const { kind, price, boxid } = req.body;
+    const { kind } = req.body;
     const { id } = req.user;
-    // console.log("KIND", kind);
-    // console.log("PRICE", price);
-    // console.log("BOXID", boxid);
 
     dbInstance
       .add_donut([id, kind])
-      .then(() => {
-        res.status(200).json();
+      .then(resp => {
+        res.status(200).json(resp[0]);
       })
       .catch(e => {
         console.log(e);
@@ -47,5 +44,19 @@ module.exports = {
         console.log(e);
       });
   },
-  addTopping: () => {}
+  addTopping: (req, res) => {
+    const dbInstance = req.app.get("db");
+    console.log(req.body);
+    const { donut_id, topping1 } = req;
+
+    dbInstance
+      .add_topping([donut_id, topping_id])
+      .then(topping => {
+        console.log(topping);
+        res.status(200).json(topping);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
 };

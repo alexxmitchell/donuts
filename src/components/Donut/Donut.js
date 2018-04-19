@@ -5,7 +5,7 @@ import chocolate from "../images/chocolate.png";
 import cake from "../images/cake.png";
 import Toppings from "../Toppings/Toppings";
 
-import { addKind } from "../../ducks/donutReducer";
+import { addKind, addDonut } from "../../ducks/donutReducer";
 import "./Donut.css";
 
 class Donut extends Component {
@@ -19,6 +19,7 @@ class Donut extends Component {
   }
   handleKind(type) {
     this.setState({ kind: type });
+    this.props.addKind(this.state.kind);
   }
   render() {
     console.log(this.state.kind);
@@ -64,7 +65,7 @@ class Donut extends Component {
           <Link to="/donut/toppings">
             <button
               onClick={() => {
-                this.props.addKind(this.state.kind);
+                this.props.addDonut(this.state.kind);
               }}
               className="right-arrow"
             >
@@ -84,4 +85,4 @@ function mapStateToProps(state) {
     kind
   };
 }
-export default connect(mapStateToProps, { addKind })(Donut);
+export default connect(mapStateToProps, { addKind, addDonut })(Donut);

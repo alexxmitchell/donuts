@@ -8,7 +8,9 @@ const initialState = {
   box: [],
   donuts: [],
   price: "$2.00",
-  isLoading: false
+  isLoading: false,
+  currentDonut: {},
+  currentToppings: {}
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -34,14 +36,10 @@ export function addKind(kind) {
   };
 }
 
-export function addToppings(topping1, topping2, topping3) {
+export function addToppings(id) {
   return {
     type: ADD_TOPPINGS,
-    payload: {
-      topping1,
-      topping2,
-      topping3
-    }
+    payload: axios.post(`/api/addTopping`, { id })
   };
 }
 
@@ -49,9 +47,8 @@ export function addDonut(kind) {
   console.log(kind);
   return {
     type: ADD_DONUT,
-    payload: axios.post(`/api/donut`, {
+    payload: axios.post(`/api/adddonut`, {
       kind
-      // price
     })
   };
 }
@@ -69,15 +66,6 @@ export function getBox(id) {
     payload: axios.get(`/api/box/${id}`)
   };
 }
-//should get donuts by userid
-// export function getDonuts() {
-//   return {
-//     type: GET_DONUTS,
-//     payload: axios.get("/api/donuts").then(response => {
-//       return response.data;
-//     })
-//   };
-// }
 
 export function removeDonut(id) {
   return {
@@ -98,15 +86,15 @@ function donutReducer(state = initialState, action) {
         ...state,
         kind: action.payload
       };
-    case ADD_TOPPINGS:
+    case `${ADD_TOPPINGS}_FULFILLED`:
       return {
         ...state,
-        ...action.payload
+        currentToppings: action.payload.data
       };
     case `${ADD_DONUT}_FULFILLED`:
       return {
         ...state,
-        ...action.payload
+        currentDonut: action.payload.data
       };
     case `${GET_BOX}_FULFILLED`:
       return {

@@ -2,10 +2,8 @@
 -- CREATE TABLE donuts (
 -- id SERIAL PRIMARY KEY,
 -- users_id INTEGER REFERENCES users (id),
--- boxid INTEGER REFERENCES box (id),
--- kind VARCHAR(50),
--- price MONEY,
--- quantity INTEGER);
+-- kind VARCHAR(50)
+-- );
 
 -- Box Table
 -- CREATE TABLE box (
@@ -62,8 +60,13 @@
 
 -- INSERT INTO donuts (users_id, boxid, kind, price, quantity)
 -- VALUES (2, 1, 'cake', 1, 1);
--- INSERT INTO donuts (users_id, boxid, kind, price, quantity)
--- VALUES (3, 2, 'chocolate', 0.5, 1);
+
+
+
+
+--New Donuts insert
+-- INSERT INTO donuts (users_id, kind)
+-- VALUES (2,'Chocolate'),(2,'Chocolate'),(2,'Chocolate'), (2, 'Cake'),(1,'Cruller')(1,'Cruller'),(2,'Old-Fashioned');
 
 -- INSERT INTO dotop (donut_id, topping_id)
 -- VALUES (1, 2),
@@ -76,8 +79,16 @@
 -- (1,6)
 -- (2,4),
 -- (2,3),
--- (3,5);
-
+-- (3,5),
+-- (3,2),
+-- (3,8),
+-- (4,5),
+-- (4,9),
+-- (5,10),
+-- (6,7),
+-- (6,10),
+-- (7,12),
+-- (7,4);
 -- INSERT INTO box (userid)
 -- VALUES(1);
 
