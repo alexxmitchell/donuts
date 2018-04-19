@@ -17,7 +17,7 @@ const Header = () => {
         </Link>
       </div>
       {/* <Dropdown /> */}
-      <Link to="/login">
+      <Link to="/box">
         <img className="bag" src={bag} alt="bag" />
         {/* <div>
               Dropdown for login

@@ -7,7 +7,6 @@ module.exports = {
     dbInstance
       .get_donuts([id])
       .then(donuts => {
-        console.log(donuts);
         res.status(200).json(donuts);
         // console.log(donuts);
       })
@@ -52,9 +51,9 @@ module.exports = {
     const { users_id, id } = req.params;
     console.log(req.params.id);
     dbInstance
-      .delete_donut([id])
-      .then(() => {
-        res.status(200).json();
+      .delete_donut([req.user.id, req.params.id])
+      .then(response => {
+        getDonuts(req, res);
       })
       .catch(() => {
         res.status(500).json();

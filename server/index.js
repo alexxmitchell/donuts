@@ -96,7 +96,7 @@ app.get("/api/logout", ac.logoutUser);
 app.get(`/api/mydonuts`, dc.getDonuts);
 app.put("/api/donut", dc.editDonut);
 app.post("/api/adddonut", dc.addDonut);
-app.delete(`/api/removedonut/:id`, bc.deleteDonut);
+app.delete(`/api/removedonut/:id`, dc.deleteDonut);
 app.post("/api/addTopping", dc.addTopping);
 
 //box controller

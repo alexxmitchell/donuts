@@ -17,7 +17,12 @@ class Box extends Component {
 
   render() {
     console.log(this.props.donuts);
-    let dozen = <p>loading...</p>;
+    let dozen = (
+      <div className="not-logged">
+        <p>You have no donuts. Please login to view donuts</p>
+        <button>Login now</button>
+      </div>
+    );
     const { donuts, isLoading } = this.props;
     if (donuts && donuts.length > 0) {
       dozen = donuts.map((e, i) => {
@@ -51,7 +56,7 @@ class Box extends Component {
         >
           Login to view previous order
         </button> */}
-        <div>{dozen}</div>
+        <div className="do-container">{dozen}</div>
         <Link to="/">
           <button>Get more donuts</button>
         </Link>
