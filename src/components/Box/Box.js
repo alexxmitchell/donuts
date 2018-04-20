@@ -17,6 +17,7 @@ class Box extends Component {
 
   render() {
     console.log(this.props.donuts);
+
     let dozen = (
       <div className="not-logged">
         <p>You have no donuts. Please login to view donuts</p>
@@ -26,6 +27,7 @@ class Box extends Component {
     const { donuts, isLoading } = this.props;
     if (donuts && donuts.length > 0) {
       dozen = donuts.map((e, i) => {
+        console.log(e.id);
         return (
           <div key={i} className="ind-donut">
             <button

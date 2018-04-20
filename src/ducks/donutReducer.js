@@ -2,15 +2,15 @@ import axios from "axios";
 
 const initialState = {
   kind: "",
-  topping1: "",
-  topping2: "",
-  topping3: "",
+  topping: 0,
+  // topping2: 0,
+  // topping3: 0,
   box: [],
   donuts: [],
   price: "$2.00",
   isLoading: false,
   currentDonut: {},
-  currentToppings: []
+  currentToppings: {}
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -36,11 +36,11 @@ export function addKind(kind) {
   };
 }
 
-export function addToppings(id, topping1) {
-  console.log(id, topping1);
+export function addToppings(id, topping) {
+  console.log(id, topping);
   return {
     type: ADD_TOPPINGS,
-    payload: axios.post(`/api/addTopping`, { id, topping1 })
+    payload: axios.post(`/api/addTopping`, { id, topping })
   };
 }
 
@@ -83,6 +83,7 @@ export function removeDonut(id) {
 }
 
 function donutReducer(state = initialState, action) {
+  console.log(action.payload);
   switch (action.type) {
     case `${CREATE_BOX}_FULFILLED`:
       return {
@@ -123,8 +124,7 @@ function donutReducer(state = initialState, action) {
       };
     case `${REMOVE_DONUT}_FULFILLED`:
       return {
-        ...state,
-        donuts: action.payload.data
+        ...state
       };
     default:
       return state;

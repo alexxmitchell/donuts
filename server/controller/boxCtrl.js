@@ -1,7 +1,7 @@
 module.exports = {
   createBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    console.log(req.user);
+
     const { id } = req.user;
 
     dbInstance
@@ -29,7 +29,6 @@ module.exports = {
     const dbInstance = req.app.get("db");
     const { id } = req.user;
     // const { price, donutid } = req.body;
-    console.log(id);
 
     dbInstance
       .add_to_box([id])

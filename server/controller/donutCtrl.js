@@ -48,12 +48,11 @@ module.exports = {
   },
   deleteDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { users_id, id } = req.params;
     console.log(req.params.id);
     dbInstance
-      .delete_donut([req.user.id, req.params.id])
-      .then(response => {
-        getDonuts(req, res);
+      .delete_donut([req.params.id])
+      .then(() => {
+        res.status(200).json();
       })
       .catch(() => {
         res.status(500).json();
@@ -62,12 +61,13 @@ module.exports = {
   addTopping: (req, res) => {
     const dbInstance = req.app.get("db");
 
-    const { id, topping1 } = req.body;
+    const { id, topping } = req.body;
 
     dbInstance
-      .add_topping([id, topping1])
-      .then(topping => {
-        res.status(200).json(topping);
+      .add_topping([id, topping])
+      .then(top => {
+        console.log(top);
+        res.status(200).json(top);
       })
       .catch(e => {
         console.log(e);

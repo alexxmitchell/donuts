@@ -17,26 +17,29 @@ class Toppings extends Component {
 
     this.state = {
       isChecked: false,
-      topping1: 0,
-      topping2: 0,
-      topping3: 0,
-      numTopping: 1
+      topping: 0
+      // topping1: 0,
+      // topping2: 0,
+      // topping3: 0,
+      // numTopping: 1
     };
     this.handleSelect = this.handleSelect.bind(this);
   }
 
-  handleSelect(type) {
+  handleSelect(e) {
     this.setState(
       {
         isChecked: !this.state.isChecked,
+
         //need a way to remove the value from the selected item
-        ["topping" + this.state.numTopping]: Number(type),
-        numTopping: this.state.numTopping + 1
+        // ["topping" + this.state.numTopping]
+        topping: Number(e.target.value)
+        // numTopping: this.state.numTopping + 1
         //numTopping should not exceed 3
       },
       () => {
-        console.log(this.state.topping1);
-        this.props.addToppings(this.props.currentDonut.id, this.state.topping1);
+        console.log(this.state.topping);
+        this.props.addToppings(this.props.currentDonut.id, this.state.topping);
       }
     );
     //sets the value for each item when clicked
@@ -44,8 +47,7 @@ class Toppings extends Component {
 
   removeTopping() {}
   render() {
-    console.log(this.props.currentToppings);
-    const { isChecked, topping1, topping2, topping3 } = this.state;
+    const { isChecked } = this.state;
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     if (isChecked) {
       <button>
@@ -63,9 +65,7 @@ class Toppings extends Component {
         <div className="topping-container">
           <button
             className="peanuts top"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            onClick={this.handleSelect}
             value={1}
             name="peanuts"
           >
@@ -78,9 +78,10 @@ class Toppings extends Component {
           <button
             className="bacon top"
             name="bacon"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={4}
           >
             bacon
@@ -89,9 +90,10 @@ class Toppings extends Component {
             className="strawberries top"
             //
             name="strawberries"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={6}
           >
             strawberries
@@ -99,9 +101,10 @@ class Toppings extends Component {
           <button
             className="gold top"
             name="gold"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={5}
           >
             gold
@@ -109,9 +112,10 @@ class Toppings extends Component {
           <button
             className="walnuts top"
             name="walnuts"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={2}
           >
             walnuts
@@ -119,9 +123,10 @@ class Toppings extends Component {
           <button
             className="pecans top"
             name="pecan"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={3}
           >
             pecans
@@ -129,9 +134,10 @@ class Toppings extends Component {
           <button
             className="bananas top"
             name="bananas"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={7}
           >
             bananas
@@ -139,9 +145,10 @@ class Toppings extends Component {
           <button
             className="sprinkles top"
             name="sprinkles"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={8}
           >
             sprinkles
@@ -149,9 +156,10 @@ class Toppings extends Component {
           <button
             className="hot-fudge top"
             name="hot-fudge"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={10}
           >
             sprinkles
@@ -159,9 +167,10 @@ class Toppings extends Component {
           <button
             className="chocdrizzle top"
             name="chocdrizzle"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={11}
           >
             chocolate drizzle
@@ -169,9 +178,10 @@ class Toppings extends Component {
           <button
             className="glaze top"
             name="glaze"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={9}
           >
             glaze
@@ -179,9 +189,10 @@ class Toppings extends Component {
           <button
             className="pbdrizzle top"
             name="pbdrizzle"
-            onClick={e => {
-              this.handleSelect(e.target.value);
-            }}
+            // onClick={e => {
+            //   this.handleSelect(e.target.value);
+            // }}
+            onClick={this.handleSelect}
             value={12}
           >
             peanut butter drizzle
