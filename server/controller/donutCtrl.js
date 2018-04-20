@@ -66,8 +66,19 @@ module.exports = {
     dbInstance
       .add_topping([id, topping])
       .then(top => {
-        console.log(top);
         res.status(200).json(top);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  },
+  getDoTop: (req, res) => {
+    const dbInstance = req.app.get("db");
+    const { id } = req.params;
+    dbInstance
+      .get_a_donut([id])
+      .then(donut => {
+        res.status(200).json(donut);
       })
       .catch(e => {
         console.log(e);

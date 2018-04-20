@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { getBox, removeDonut, getDonuts } from "../../ducks/donutReducer";
+import {
+  getBox,
+  removeDonut,
+  getDonuts,
+  getToppings
+} from "../../ducks/donutReducer";
 
 import image from "../../placeholder.png";
 import "./Box.css";
@@ -29,7 +34,7 @@ class Box extends Component {
       dozen = donuts.map((e, i) => {
         console.log(e.id);
         return (
-          <div key={i} className="ind-donut">
+          <div key={i} id={e.id} className="ind-donut">
             <button
               onClick={() => {
                 this.props.removeDonut(e.id);
@@ -40,7 +45,11 @@ class Box extends Component {
 
             <img src={image} alt="placeholder" />
             <div>
-              <button>
+              <button
+                onClick={() => {
+                  this.props.getToppings(this.props.currentDonut.id);
+                }}
+              >
                 <h2>{e.kind} donut</h2>
               </button>
               <p>
@@ -71,6 +80,9 @@ class Box extends Component {
 function mapStateToProps(state) {
   return state;
 }
-export default connect(mapStateToProps, { getBox, removeDonut, getDonuts })(
-  Box
-);
+export default connect(mapStateToProps, {
+  getBox,
+  removeDonut,
+  getDonuts,
+  getToppings
+})(Box);

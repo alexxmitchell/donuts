@@ -98,11 +98,13 @@ app.put("/api/donut", dc.editDonut);
 app.post("/api/adddonut", dc.addDonut);
 app.delete(`/api/removedonut/:id`, dc.deleteDonut);
 app.post("/api/addTopping", dc.addTopping);
+app.get(`/api/gettoppings/:id`, dc.getDoTop);
 
 //box controller
 app.get("/api/box/:id", bc.getBox);
 app.post("/api/createbox", bc.createBox);
 app.post("/api/addbox/:id", bc.addToBox);
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
 });
