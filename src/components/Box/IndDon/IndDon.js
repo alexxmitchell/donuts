@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getToppings } from "../../../ducks/donutReducer";
+import { getToppings, addToBox } from "../../../ducks/donutReducer";
 import image from "../../../placeholder.png";
 
 import IndTop from "./IndTop/IndTop";
@@ -40,6 +40,7 @@ class IndDon extends Component {
           </div>
           <p>{this.props.price}</p>
         </div>
+        <button onClick={()=this.props.addToBox(this.>Add to Box</button>
       </div>
     );
   }
@@ -48,8 +49,9 @@ class IndDon extends Component {
 function mapStateToProps(state) {
   return {
     currentToppings: state.donutReducer.currentToppings,
-    userid: state.userReducer.userid
+    userid: state.userReducer.userid,
+    box: state.donutReducer.box
   };
 }
 
-export default connect(mapStateToProps, { getToppings })(IndDon);
+export default connect(mapStateToProps, { getToppings, addToBox })(IndDon);

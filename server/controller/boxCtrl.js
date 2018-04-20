@@ -28,6 +28,7 @@ module.exports = {
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
     const { id } = req.user;
+
     // const { price, donutid } = req.body;
 
     dbInstance

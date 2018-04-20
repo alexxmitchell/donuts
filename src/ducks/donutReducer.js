@@ -136,11 +136,6 @@ function donutReducer(state = initialState, action) {
         isLoading: false
       };
 
-    case `${GET_BOX}_PENDING`:
-      return {
-        ...state,
-        isLoading: true
-      };
     case `${REMOVE_DONUT}_FULFILLED`:
       return {
         ...state,
@@ -155,6 +150,11 @@ function donutReducer(state = initialState, action) {
       return {
         ...state,
         currentDonut: action.payload.data
+      };
+    case `${ADD_TO_BOX}_FULFILLED`:
+      return {
+        ...state,
+        box: action.payload.data
       };
     default:
       return state;

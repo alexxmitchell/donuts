@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import chocolate from "../images/chocolate.png";
 import cake from "../images/cake.png";
+import scrolldown from "../images/scrolldown.png";
 import Toppings from "../Toppings/Toppings";
 
 import { addKind, addDonut } from "../../ducks/donutReducer";
@@ -64,17 +65,15 @@ class Donut extends Component {
           >
             Old-Fashioned
           </button>
-          <Link to="/donut/toppings">
-            <button
-              onClick={() => {
-                this.props.addDonut(this.state.kind);
-              }}
-              className="right-arrow"
-            >
-              >
-            </button>
-          </Link>
         </div>
+        <button
+          onClick={() => {
+            this.props.addDonut(this.state.kind);
+          }}
+          className="right-arrow"
+        >
+          <img src={scrolldown} />
+        </button>
         <Toppings />
       </div>
     );

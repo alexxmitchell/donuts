@@ -40,6 +40,8 @@ class Toppings extends Component {
       () => {
         console.log(this.state.topping);
         this.props.addToppings(this.props.currentDonut.id, this.state.topping);
+
+        this.removeTopping();
       }
     );
     //sets the value for each item when clicked
@@ -188,7 +190,7 @@ function mapStateToProps(state) {
     topping2,
     topping3,
     price
-  } = state;
+  } = state.donutReducer;
 
   return {
     kind,

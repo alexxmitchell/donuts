@@ -22,11 +22,11 @@ a {
 }
 @media (min-width: 767px) {
   .donut-container h2 {
-    font-size: 56px;
+    font-size: 40px;
     margin-bottom: 80px;
   }
   .don-container {
-    height: 60vh;
+    height: 40vh;
     display: flex;
     justify-content: space-around;
     align-items: center;

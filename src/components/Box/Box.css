@@ -15,9 +15,6 @@
   text-align: left;
   border: solid 1px black;
 }
-input[type="checkbox"] {
-  zoom: 2;
-}
 
 @media (min-width: 767px) {
   .ind-donut {
@@ -26,7 +23,7 @@ input[type="checkbox"] {
     height: 20vh;
   }
   .do-container {
-    width: 40vw;
+    width: 45vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
