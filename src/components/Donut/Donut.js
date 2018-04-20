@@ -28,7 +28,7 @@ class Donut extends Component {
     return (
       <div className="donut-container">
         <h2>Select a Donut</h2>
-        <div className="do-container">
+        <div className="don-container">
           <button
             className="do"
             onClick={e => {
@@ -82,7 +82,7 @@ class Donut extends Component {
 }
 
 function mapStateToProps(state) {
-  const { kind } = state;
+  const { kind } = state.donutReducer;
   return {
     kind
   };

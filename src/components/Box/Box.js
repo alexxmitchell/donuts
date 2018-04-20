@@ -1,19 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import IndDon from "./IndDon/IndDon";
 import {
   getBox,
   removeDonut,
   getDonuts,
-  getToppings
+  getToppings,
+  changeTopping
 } from "../../ducks/donutReducer";
 
-import image from "../../placeholder.png";
 import "./Box.css";
 
 class Box extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      toppings: []
+    };
   }
 
   componentDidMount() {
@@ -21,7 +26,13 @@ class Box extends Component {
   }
 
   render() {
-    console.log(this.props.donuts);
+    // let toppings = this.props.currentToppings.map((e, i) => {
+    //   return (
+    //     <div className="top-list" key={i}>
+    //       <p>{e}</p>
+    //     </div>
+    //   );
+    // });
 
     let dozen = (
       <div className="not-logged">
@@ -32,42 +43,24 @@ class Box extends Component {
     const { donuts, isLoading } = this.props;
     if (donuts && donuts.length > 0) {
       dozen = donuts.map((e, i) => {
-        console.log(e.id);
+        console.log(e);
         return (
-          <div key={i} id={e.id} className="ind-donut">
-            <button
-              onClick={() => {
-                this.props.removeDonut(e.id);
-              }}
-            >
-              <h2>Remove from box</h2>
-            </button>
-
-            <img src={image} alt="placeholder" />
-            <div>
-              <button
-                onClick={() => {
-                  this.props.getToppings(this.props.currentDonut.id);
-                }}
-              >
-                <h2>{e.kind} donut</h2>
-              </button>
-              <p>
-                with {e.label},{e.price}, {e.category}
-              </p>
-            </div>
-          </div>
+          <IndDon
+            key={e.id}
+            id={e.id}
+            type={e.kind}
+            price={e.price}
+            removeDonut={this.props.removeDonut}
+          />
         );
       });
     }
     return (
       <div className="order">
-        {/* <button
-          onClick={() => (window.location.href = "http://localhost:3001/login")}
-        >
-          Login to view previous order
-        </button> */}
-        <div className="do-container">{dozen}</div>
+        <div className="order-container">
+          <div className="do-container">{dozen}</div>
+          <div className="actual-box">Add to Box</div>
+        </div>
         <Link to="/">
           <button>Get more donuts</button>
         </Link>
@@ -78,11 +71,15 @@ class Box extends Component {
 }
 
 function mapStateToProps(state) {
-  return state;
+  return {
+    ...state.userReducer,
+    ...state.donutReducer
+  };
 }
 export default connect(mapStateToProps, {
   getBox,
   removeDonut,
   getDonuts,
-  getToppings
+  getToppings,
+  changeTopping
 })(Box);

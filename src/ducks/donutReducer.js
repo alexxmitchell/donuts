@@ -10,7 +10,7 @@ const initialState = {
   price: "$2.00",
   isLoading: false,
   currentDonut: {},
-  currentToppings: {}
+  currentToppings: []
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -25,6 +25,7 @@ const GET_BOX = "GET_BOX";
 const ADD_TOPPINGS = "ADD_TOPPINGS";
 const GET_TOPPINGS = "GET_TOPPINGS";
 const REMOVE_TOPPING = "REMOVE_TOPPING"; //need action
+const CHANGE_TOPPING = "CHANGE_TOPPING";
 
 export function createBox(id) {
   return {
@@ -85,9 +86,17 @@ export function removeDonut(id) {
   };
 }
 export function getToppings(id) {
+  console.log(id);
   return {
     type: GET_TOPPINGS,
     payload: axios.get(`/api/gettoppings/${id}`)
+  };
+}
+
+export function changeTopping(id) {
+  return {
+    type: CHANGE_TOPPING,
+    payload: axios.put(`/api/donut/${id}`)
   };
 }
 
@@ -133,12 +142,18 @@ function donutReducer(state = initialState, action) {
       };
     case `${REMOVE_DONUT}_FULFILLED`:
       return {
-        ...state
+        ...state,
+        donuts: action.payload.data
       };
     case `${GET_TOPPINGS}_FULFILLED`:
       return {
         ...state,
-        currentDonut: action.payload.data
+        currentToppings: state.currentToppings.concat(action.payload.data)
+      };
+    case `${CHANGE_TOPPING}_FULFILLED`:
+      return {
+        ...state,
+        currentToppings: action.payload.data
       };
     default:
       return state;

@@ -99,6 +99,7 @@ app.post("/api/adddonut", dc.addDonut);
 app.delete(`/api/removedonut/:id`, dc.deleteDonut);
 app.post("/api/addTopping", dc.addTopping);
 app.get(`/api/gettoppings/:id`, dc.getDoTop);
+app.put(`/api/donut/:id`, dc.editDonut);
 
 //box controller
 app.get("/api/box/:id", bc.getBox);
