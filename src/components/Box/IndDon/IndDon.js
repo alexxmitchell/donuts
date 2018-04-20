@@ -47,7 +47,8 @@ class IndDon extends Component {
 
 function mapStateToProps(state) {
   return {
-    currentToppings: state.donutReducer.currentToppings
+    currentToppings: state.donutReducer.currentToppings,
+    userid: state.userReducer.userid
   };
 }
 

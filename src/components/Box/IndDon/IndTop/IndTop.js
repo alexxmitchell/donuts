@@ -6,7 +6,7 @@ function IndTop(props) {
     console.log(current);
     return (
       <div key={i} className="top-listings">
-        <p>{e.label}</p>
+        <p>- {e.label}</p>
       </div>
     );
   });

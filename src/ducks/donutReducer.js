@@ -79,7 +79,8 @@ export function getBox(id) {
   };
 }
 
-export function removeDonut(id) {
+export function removeDonut(userid, id) {
+  console.log(id);
   return {
     type: REMOVE_DONUT,
     payload: axios.delete(`/api/removedonut/${id}`)
@@ -153,7 +154,7 @@ function donutReducer(state = initialState, action) {
     case `${CHANGE_TOPPING}_FULFILLED`:
       return {
         ...state,
-        currentToppings: action.payload.data
+        currentDonut: action.payload.data
       };
     default:
       return state;

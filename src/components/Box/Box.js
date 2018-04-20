@@ -33,6 +33,7 @@ class Box extends Component {
     //     </div>
     //   );
     // });
+    console.log(this.props.name);
 
     let dozen = (
       <div className="not-logged">
@@ -59,7 +60,7 @@ class Box extends Component {
       <div className="order">
         <div className="order-container">
           <div className="do-container">{dozen}</div>
-          <div className="actual-box">Add to Box</div>
+          <div className="actual-box">{this.props.user.name} 's Add to Box</div>
         </div>
         <Link to="/">
           <button>Get more donuts</button>
