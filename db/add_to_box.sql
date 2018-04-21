@@ -1,3 +1,3 @@
-INSERT INTO donuts(boxid)
-(SELECT id FROM box WHERE user_id = $1)
-WHERE id = $2;
+INSERT INTO boxdo(box_id, don_id)
+VALUES ($1, $2)
+RETURNING *;

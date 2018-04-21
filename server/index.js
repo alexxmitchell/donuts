@@ -102,7 +102,7 @@ app.get(`/api/gettoppings/:id`, dc.getDoTop);
 app.put(`/api/donut/:id`, dc.editDonut);
 
 //box controller
-app.get("/api/box/:id", bc.getBox);
+// app.get("/api/box/:id", bc.getDon);
 app.post("/api/createbox", bc.createBox);
 app.post("/api/addbox/:id", bc.addToBox);
 

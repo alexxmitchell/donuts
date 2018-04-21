@@ -5,7 +5,7 @@ const initialState = {
   topping: 0,
   // topping2: 0,
   // topping3: 0,
-  box: [],
+  box: {},
   donuts: [],
   price: "$2.00",
   isLoading: false,
@@ -61,7 +61,7 @@ export function addDonut(kind) {
 export function addToBox(id) {
   return {
     type: ADD_TO_BOX,
-    payload: axios.post(`/api/addbox/${id}`)
+    payload: axios.post(`/api/addbox`, { id })
   };
 }
 
@@ -107,7 +107,7 @@ function donutReducer(state = initialState, action) {
     case `${CREATE_BOX}_FULFILLED`:
       return {
         ...state,
-        box: action.payload
+        box: action.payload.data
       };
     case ADD_KIND:
       return {
@@ -124,11 +124,11 @@ function donutReducer(state = initialState, action) {
         ...state,
         currentDonut: action.payload.data
       };
-    case `${GET_BOX}_FULFILLED`:
-      return {
-        ...state,
-        box: action.payload.data
-      };
+    // case `${GET_BOX}_FULFILLED`:
+    //   return {
+    //     ...state,
+    //     box: action.payload.data
+    //   };
     case `${GET_DONUTS}_FULFILLED`:
       return {
         ...state,
@@ -152,6 +152,8 @@ function donutReducer(state = initialState, action) {
         currentDonut: action.payload.data
       };
     case `${ADD_TO_BOX}_FULFILLED`:
+      let doArr = state.donuts.slice();
+      doArr.splice(action.payload, 1);
       return {
         ...state,
         box: action.payload.data

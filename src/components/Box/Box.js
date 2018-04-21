@@ -50,7 +50,7 @@ class Box extends Component {
             key={e.id}
             id={e.id}
             type={e.kind}
-            price={e.price}
+            price={e.sum}
             removeDonut={this.props.removeDonut}
           />
         );

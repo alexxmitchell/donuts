@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getToppings, addToBox } from "../../../ducks/donutReducer";
 import image from "../../../placeholder.png";
-
+import "./IndDon.css";
 import IndTop from "./IndTop/IndTop";
 
 class IndDon extends Component {
@@ -14,7 +14,7 @@ class IndDon extends Component {
   }
   render() {
     console.log(this.props.id);
-    console.log(this.props.currentToppings);
+    console.log(this.props.box);
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id == this.props.id
     );
@@ -40,7 +40,13 @@ class IndDon extends Component {
           </div>
           <p>{this.props.price}</p>
         </div>
-        <button onClick={()=this.props.addToBox(this.>Add to Box</button>
+        <button
+          onClick={() => {
+            this.props.addToBox(this.props.box[0], this.props.id);
+          }}
+        >
+          Add to Box
+        </button>
       </div>
     );
   }

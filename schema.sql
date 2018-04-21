@@ -2,13 +2,14 @@
 -- CREATE TABLE donuts (
 -- id SERIAL PRIMARY KEY,
 -- users_id INTEGER REFERENCES users (id),
--- kind VARCHAR(50)
+-- kind VARCHAR(50),
+-- boxid INTEGER REFERENCES box (id)
 -- );
 
 -- Box Table
 -- CREATE TABLE box (
 --     id SERIAL PRIMARY KEY,
---     userid INT REFERENCES users(id),
+--     userid INT REFERENCES users(id)
 -- )
 
 -- User Table
@@ -22,6 +23,12 @@
 --     donut_id INT REFERENCES donuts(id),
 --     topping_id INT REFERENCES toppings(id)
 -- );
+
+-- Boxdo Table 
+-- CREATE TABLE boxdo(
+--     box_id INT REFERENCES box(id),
+--     don_id INT REFERENCES donuts(id)
+--   );
 
 
 -- DUMMY DATA FOR DONUT TABLE 

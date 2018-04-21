@@ -11,30 +11,29 @@ module.exports = {
       })
       .catch(e => console.log(e));
   },
-  getBox: (req, res) => {
-    const dbInstance = req.app.get("db");
-    const { id } = req.user;
+  // getDon: (req, res) => {
+  //   const dbInstance = req.app.get("db");
+  //   const { id } = req.user;
 
-    dbInstance
-      .get_box([id])
-      .then(box => {
-        res.status(200).json(box);
-      })
-      .catch(() => {
-        res.status(500).json();
-      });
-  },
+  //   dbInstance
+  //     .get_don_byuser([id])
+  //     .then(box => {
+  //       res.status(200).json(box);
+  //     })
+  //     .catch(() => {
+  //       res.status(500).json();
+  //     });
+  // },
 
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { id } = req.user;
-
-    // const { price, donutid } = req.body;
+    const { box_id, id } = req.body;
 
     dbInstance
-      .add_to_box([id])
-      .then(() => {
-        res.status(200).json();
+      .add_to_box([box_id, id])
+      .then(resp => {
+        console.log(resp);
+        res.status(200).json(resp);
       })
       .catch(() => {
         res.status(500).json();
