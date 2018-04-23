@@ -39,10 +39,11 @@ class Box extends Component {
         return (
           <IndDon
             key={e.id}
-            id={e.id}
+            do={e.id}
             type={e.kind}
             price={e.sum}
             removeDonut={this.props.removeDonut}
+            getDonuts={this.props.getDonuts}
           />
         );
       });

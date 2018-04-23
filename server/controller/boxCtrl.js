@@ -14,8 +14,8 @@ module.exports = {
 
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { box_id } = req.body;
-    const { don_id } = req.params;
+    const { don_id } = req.body;
+    const { box_id } = req.params;
 
     dbInstance
       .add_to_box([box_id, don_id])

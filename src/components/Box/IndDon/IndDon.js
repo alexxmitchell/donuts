@@ -12,17 +12,17 @@ class IndDon extends Component {
     this.removed = this.removed.bind(this);
   }
   componentDidMount() {
-    this.props.getToppings(this.props.id);
+    this.props.getToppings(this.props.do);
   }
   removed() {
-    this.props.removeDonut(this.props.userid, this.props.id);
-    this.props.getDonuts();
+    this.props.removeDonut(this.props.userid, this.props.do);
+    // this.props.getDonuts(this.props.userid);
   }
   render() {
     console.log("flag:", this.props);
 
     const correctToppings = this.props.currentToppings.filter(
-      e => e.donut_id == this.props.id
+      e => e.donut_id == this.props.do
     );
 
     console.log(correctToppings);
@@ -50,7 +50,7 @@ class IndDon extends Component {
         </div>
         <button
           onClick={() => {
-            this.props.addToBox(this.props.currentBox[0].id, this.props.id);
+            this.props.addToBox(this.props.currentBox[0].id, this.props.do);
           }}
         >
           Add to Box

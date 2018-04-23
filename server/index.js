@@ -104,7 +104,7 @@ app.put(`/api/donut/:id`, dc.editDonut);
 //box controller
 // app.get("/api/box/:id", bc.getDon);
 app.post("/api/createbox", bc.createBox);
-app.post("/api/addbox/:id", bc.addToBox);
+app.post("/api/addbox/:box_id", bc.addToBox);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);

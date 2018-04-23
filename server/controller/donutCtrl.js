@@ -8,7 +8,6 @@ module.exports = {
       .get_donuts([id])
       .then(donuts => {
         res.status(200).json(donuts);
-        console.log(donuts);
       })
       .catch(() => {
         res.status(500).json();
