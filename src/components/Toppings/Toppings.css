@@ -39,16 +39,18 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .bacon,
+  .peanuts {
+    background: #ffffff;
+  }
   .topping-container button {
-    margin-top: 100px;
+    margin-top: 30px;
+    color: black;
     width: 10vw;
     height: 10vw;
   }
   .topping h2 {
     font-size: 56px;
     margin-bottom: 200px;
-  }
-  .top {
-    background: #ffffff;
   }
 }

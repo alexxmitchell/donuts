@@ -8,7 +8,7 @@ module.exports = {
       .get_donuts([id])
       .then(donuts => {
         res.status(200).json(donuts);
-        // console.log(donuts);
+        console.log(donuts);
       })
       .catch(() => {
         res.status(500).json();
@@ -48,13 +48,12 @@ module.exports = {
   },
   deleteDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    console.log(req.user.id, Number(req.params.id));
+
     dbInstance
       .delete_donut([req.user.id, Number(req.params.id)])
-      .then(donuts => {
-        console.log(donuts);
+      .then(response => {
         // getDonuts(req, res);
-        res.status(200).json(donuts);
+        res.status(200).json();
       })
       .catch(e => {
         // res.status(500).json();
@@ -78,7 +77,7 @@ module.exports = {
   getDoTop: (req, res) => {
     const dbInstance = req.app.get("db");
     const { id } = req.params;
-    console.log(id);
+
     dbInstance
       .get_a_donut([id])
       .then(donut => {

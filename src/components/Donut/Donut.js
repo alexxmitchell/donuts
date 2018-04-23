@@ -5,7 +5,7 @@ import axios from "axios";
 import chocolate from "../images/chocolate.png";
 import cake from "../images/cake.png";
 import scrolldown from "../images/scrolldown.png";
-import Toppings from "../Toppings/Toppings";
+// import Toppings from "../Toppings/Toppings";
 
 import { addKind, addDonut } from "../../ducks/donutReducer";
 import "./Donut.css";
@@ -49,32 +49,18 @@ class Donut extends Component {
             <img alt="chocolate donut" className="select-do" src={chocolate} />
             <p className="donut-type">Chocolate</p>
           </button>
-          <button
-            className="do"
-            onClick={e => {
-              this.handleKind("Cruller");
-            }}
-          >
-            Cruller
-          </button>
-          <button
-            className="do"
-            onClick={e => {
-              this.handleKind("Old-Fashioned");
-            }}
-          >
-            Old-Fashioned
-          </button>
         </div>
-        <button
-          onClick={() => {
-            this.props.addDonut(this.state.kind);
-          }}
-          className="right-arrow"
-        >
-          <img src={scrolldown} />
-        </button>
-        <Toppings />
+        <Link to="/donut/toppings">
+          <button
+            onClick={() => {
+              this.props.addDonut(this.state.kind);
+            }}
+            className="right-arrow"
+          >
+            <img src={scrolldown} />
+          </button>
+          {/* <Toppings /> */}
+        </Link>
       </div>
     );
   }

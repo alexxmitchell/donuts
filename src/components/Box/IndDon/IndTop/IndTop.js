@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 function IndTop(props) {
   let current = props.currentToppings.map((e, i) => {
-    console.log(current);
     return (
       <div key={i} className="top-listings">
         <p>- {e.label}</p>

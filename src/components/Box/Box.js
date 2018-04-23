@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import IndDon from "./IndDon/IndDon";
+import ShowBox from "./ShowBox/ShowBox";
 import {
   getBox,
   removeDonut,
@@ -26,15 +27,6 @@ class Box extends Component {
   }
 
   render() {
-    // let toppings = this.props.currentToppings.map((e, i) => {
-    //   return (
-    //     <div className="top-list" key={i}>
-    //       <p>{e}</p>
-    //     </div>
-    //   );
-    // });
-    console.log(this.props.name);
-
     let dozen = (
       <div className="not-logged">
         <p>You have no donuts. Please login to view donuts</p>
@@ -44,7 +36,6 @@ class Box extends Component {
     const { donuts, isLoading } = this.props;
     if (donuts && donuts.length > 0) {
       dozen = donuts.map((e, i) => {
-        console.log(e);
         return (
           <IndDon
             key={e.id}
@@ -60,9 +51,10 @@ class Box extends Component {
       <div className="order">
         <div className="order-container">
           <div className="do-container">{dozen}</div>
-          <div className="actual-box">{this.props.user.name} 's Add to Box</div>
+          <div className="actual-box">Current Box</div>
+          <ShowBox />
         </div>
-        <Link to="/">
+        <Link to="/donut">
           <button>Get more donuts</button>
         </Link>
         <button>Order Now!</button>

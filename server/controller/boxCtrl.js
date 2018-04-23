@@ -6,37 +6,38 @@ module.exports = {
 
     dbInstance
       .create_box(id)
-      .then(() => {
-        res.status(200).json();
+      .then(resp => {
+        res.status(200).json(resp);
       })
       .catch(e => console.log(e));
   },
-  // getDon: (req, res) => {
-  //   const dbInstance = req.app.get("db");
-  //   const { id } = req.user;
-
-  //   dbInstance
-  //     .get_don_byuser([id])
-  //     .then(box => {
-  //       res.status(200).json(box);
-  //     })
-  //     .catch(() => {
-  //       res.status(500).json();
-  //     });
-  // },
 
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { box_id, id } = req.body;
+    const { box_id } = req.body;
+    const { don_id } = req.params;
 
     dbInstance
-      .add_to_box([box_id, id])
+      .add_to_box([box_id, don_id])
       .then(resp => {
         console.log(resp);
         res.status(200).json(resp);
       })
       .catch(() => {
         res.status(500).json();
+      });
+  },
+  getBox: (req, res) => {
+    const dbInstance = req.app.get("db");
+    const { id } = req.user;
+
+    dbInstance
+      .get_box([id])
+      .then(myBox => {
+        res.status(200).json(myBox);
+      })
+      .catch(e => {
+        console.log(e);
       });
   }
 };

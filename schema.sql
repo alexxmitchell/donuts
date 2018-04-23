@@ -3,7 +3,7 @@
 -- id SERIAL PRIMARY KEY,
 -- users_id INTEGER REFERENCES users (id),
 -- kind VARCHAR(50),
--- boxid INTEGER REFERENCES box (id)
+-- image TEXT
 -- );
 
 -- Box Table
@@ -43,25 +43,25 @@
 
 -- CREATE TABLE toppings (
 --     id SERIAL PRIMARY KEY,
---     price MONEY,
+--     price NUMERIC(10,2),
 --     label TEXT,
 --     category VARCHAR(80)
 -- ) 
 
 -- INSERT INTO toppings (category, label, price)
 -- VALUES
--- ('nuts','peanuts', 0),
--- ('nuts','walnuts', 0.50),
--- ('nuts','pecans', 0.50),
--- ('savory','bacon', 1),
--- ('savory','gold flakes', 2),
--- ('fruit','strawberries', 0.50),
--- ('fruit','bananas', 0.50),
+-- ('nuts','peanuts', 0.25),
+-- ('nuts','pecans', 0.25),
+-- ('savory','bacon', 0.5),
+-- ('savory','gold flakes', 1),
+-- ('fruit','strawberries', 0.25),
+-- ('fruit','bananas', 0.25),
 -- ('sweet','sprinkles', 0),
--- ('glaze','glaze', 0),
--- ('glaze', 'hot fudge', 0)
+-- ('frosting','chocolate', 0.25),
+-- ('frosting', 'caramel', 0.25),
+-- ('frosting', 'raspberry', 0.25),
 -- ('drizzle','chocolate', 0),
--- ('drizzle','peanut butter', 0)
+-- ('drizzle','peanut butter', 0);
 
 
 

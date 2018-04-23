@@ -5,9 +5,10 @@ const initialState = {
   topping: 0,
   // topping2: 0,
   // topping3: 0,
-  box: {},
+  currentBox: {}, //holds the boxid
+  box: [],
   donuts: [],
-  price: "$2.00",
+  cost: 1,
   isLoading: false,
   currentDonut: {},
   currentToppings: []
@@ -41,7 +42,6 @@ export function addKind(kind) {
 }
 
 export function addToppings(id, topping) {
-  console.log(id, topping);
   return {
     type: ADD_TOPPINGS,
     payload: axios.post(`/api/addTopping`, { id, topping })
@@ -49,7 +49,6 @@ export function addToppings(id, topping) {
 }
 
 export function addDonut(kind) {
-  console.log(kind);
   return {
     type: ADD_DONUT,
     payload: axios.post(`/api/adddonut`, {
@@ -61,7 +60,7 @@ export function addDonut(kind) {
 export function addToBox(id) {
   return {
     type: ADD_TO_BOX,
-    payload: axios.post(`/api/addbox`, { id })
+    payload: axios.post(`/api/addbox/${id}`)
   };
 }
 
@@ -80,14 +79,12 @@ export function getBox(id) {
 }
 
 export function removeDonut(userid, id) {
-  console.log(id);
   return {
     type: REMOVE_DONUT,
     payload: axios.delete(`/api/removedonut/${id}`)
   };
 }
 export function getToppings(id) {
-  console.log(id);
   return {
     type: GET_TOPPINGS,
     payload: axios.get(`/api/gettoppings/${id}`)
@@ -102,12 +99,11 @@ export function changeTopping(id) {
 }
 
 function donutReducer(state = initialState, action) {
-  console.log(action.payload);
   switch (action.type) {
     case `${CREATE_BOX}_FULFILLED`:
       return {
         ...state,
-        box: action.payload.data
+        currentBox: action.payload.data
       };
     case ADD_KIND:
       return {
@@ -154,10 +150,12 @@ function donutReducer(state = initialState, action) {
     case `${ADD_TO_BOX}_FULFILLED`:
       let doArr = state.donuts.slice();
       doArr.splice(action.payload, 1);
-      return {
-        ...state,
+      return Object.assign({}, state, {
+        donuts: doArr,
         box: action.payload.data
-      };
+      });
+    // box: action.payload.data
+
     default:
       return state;
   }
