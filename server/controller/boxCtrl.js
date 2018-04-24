@@ -14,8 +14,9 @@ module.exports = {
 
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { don_id } = req.body;
-    const { box_id } = req.params;
+    console.log(req.params);
+
+    const { box_id, don_id } = req.params;
 
     dbInstance
       .add_to_box([box_id, don_id])
@@ -29,10 +30,11 @@ module.exports = {
   },
   getBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    const { id } = req.user;
+
+    const { box_id } = req.params;
 
     dbInstance
-      .get_box([id])
+      .get_box([box_id])
       .then(myBox => {
         res.status(200).json(myBox);
       })

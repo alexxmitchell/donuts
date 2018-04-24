@@ -16,16 +16,14 @@ class IndDon extends Component {
   }
   removed() {
     this.props.removeDonut(this.props.user.id, this.props.do);
-    this.props.getDonuts(this.props.user.id);
+    // this.props.getDonuts(this.props.user.id);
   }
   render() {
-    console.log("flag:", this.props.user.id);
-
+    console.log(this.props.do);
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id == this.props.do
     );
 
-    console.log(correctToppings);
     return (
       <div className="ind-donut">
         <button onClick={this.removed}>

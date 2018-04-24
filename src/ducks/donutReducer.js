@@ -60,7 +60,7 @@ export function addDonut(kind) {
 export function addToBox(id, donut) {
   return {
     type: ADD_TO_BOX,
-    payload: axios.post(`/api/addbox/${id}`)
+    payload: axios.post(`/api/addbox/${id}/${donut}`)
   };
 }
 
@@ -120,11 +120,11 @@ function donutReducer(state = initialState, action) {
         ...state,
         currentDonut: action.payload.data
       };
-    // case `${GET_BOX}_FULFILLED`:
-    //   return {
-    //     ...state,
-    //     box: action.payload.data
-    //   };
+    case `${GET_BOX}_FULFILLED`:
+      return {
+        ...state,
+        box: action.payload.data
+      };
     case `${GET_DONUTS}_FULFILLED`:
       return {
         ...state,
@@ -154,7 +154,6 @@ function donutReducer(state = initialState, action) {
         donuts: doArr,
         box: action.payload.data
       });
-    // box: action.payload.data
 
     default:
       return state;

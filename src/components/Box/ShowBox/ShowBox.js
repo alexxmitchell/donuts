@@ -11,13 +11,15 @@ class ShowBox extends Component {
   }
 
   componentDidMount() {
-    this.props.getBox(this.props.userid);
+    this.props.getBox(this.props.currentBox[0].id);
   }
 
   render() {
+    console.log(this.props.box);
+    console.log(this.props.currentBox);
     const boxer = this.props.box.map((e, i) => {
       return (
-        <div className="ind-donut">
+        <div className="ind-donut" key={i}>
           <button onClick={this.removed}>
             <h2>Remove from box</h2>
           </button>
@@ -27,7 +29,7 @@ class ShowBox extends Component {
 
             <div>
               with
-              {this.props.currentToppings && <IndTop />}
+              {/* {this.props.currentToppings && <IndTop />} */}
             </div>
             {e.price ? (
               <p>$ {(+e.price + this.props.cost).toFixed(2)}</p>

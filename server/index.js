@@ -102,9 +102,9 @@ app.get(`/api/gettoppings/:id`, dc.getDoTop);
 app.put(`/api/donut/:id`, dc.editDonut);
 
 //box controller
-app.get("/api/box/:id", bc.getBox);
+app.get("/api/box/:box_id", bc.getBox);
 app.post("/api/createbox", bc.createBox);
-app.post("/api/addbox/:box_id", bc.addToBox);
+app.post("/api/addbox/:box_id/:don_id", bc.addToBox);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
