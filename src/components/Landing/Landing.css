@@ -1,17 +1,24 @@
 .landing-container {
   width: 100vw;
-  height: 90vh;
-  overflow: hidden;
+  height: 100vh;
+
+  overflow: scroll;
   color: #fff;
 }
-
+.landing-top {
+  height: 95vh;
+  background-image: url("../../crafted-donuts.jpg");
+  background-size: 400%;
+  background-position: -650px 0px;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-attachment: scroll;
+}
 .child {
   padding: 80px 40px 20px 40px;
-  background-image: url("../../crafted-donuts.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 .login {
   width: 40%;
@@ -43,12 +50,25 @@
     font-size: 46px;
     text-decoration: none;
   }
+  .landing-top {
+    /* transition: all 2s; */
+    width: 98vw;
+    margin: auto;
+    height: 100%;
+    background-size: 200%;
+    background-position: -500px 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
   .large-text {
     text-align: center;
     padding-left: 50px;
   }
   .large {
-    margin-top: 200px;
+    margin-top: 150px;
+    font-family: "Leckerli One", cursive;
+    font-size: 54px;
+    line-height: 50px;
   }
   .scrolls {
     display: flex;
@@ -66,16 +86,16 @@
     height: 200px;
     margin: 20px;
   }
-  .child {
-    transition: all 2s;
-    background-size: 200%;
-    background-position: -500px 0px;
-  }
-  .landing-container:hover .child,
-  .landing-container:focus .child {
+  /* .child {
+  } */
+  /* .section:hover .child,
+  .section:focus .child {
     transform: scale(1.1);
+  } */
+  .where {
+    margin-top: 100px;
+    height: 100vh;
   }
-
   .login {
     width: 300px;
     font-size: 14px;

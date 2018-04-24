@@ -47,6 +47,7 @@ class Toppings extends Component {
 
   render() {
     const { isChecked } = this.state;
+    console.log(this.props.currentBox);
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     if (isChecked) {
       <button>
@@ -167,13 +168,17 @@ class Toppings extends Component {
           </button>
         </div>
         <Link to="/box">
-          <button
-            onClick={() => {
-              this.props.createBox(this.props.userid);
-            }}
-          >
-            Add to Box
-          </button>
+          {!this.props.currentBox ? (
+            <button>Add to Contenders</button>
+          ) : (
+            <button
+              onClick={() => {
+                this.props.createBox(this.props.user.id);
+              }}
+            >
+              Add to Box
+            </button>
+          )}
         </Link>
       </div>
     );
@@ -185,20 +190,15 @@ function mapStateToProps(state) {
     kind,
     currentDonut,
     currentToppings,
-    topping1,
-    topping2,
-    topping3,
-    price
+    currentBox
   } = state.donutReducer;
-
+  const { user } = state.userReducer;
   return {
     kind,
     currentDonut,
     currentToppings,
-    topping1,
-    topping2,
-    topping3,
-    price
+    currentBox,
+    user
   };
 }
 export default connect(mapStateToProps, {

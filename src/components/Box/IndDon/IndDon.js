@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getToppings, addToBox, getDonuts } from "../../../ducks/donutReducer";
+import {
+  getToppings,
+  addToBox,
+  getDonuts,
+  getBox
+} from "../../../ducks/donutReducer";
 import image from "../../../placeholder.png";
 import "./IndDon.css";
 import IndTop from "./IndTop/IndTop";
@@ -10,16 +15,21 @@ class IndDon extends Component {
     super(props);
 
     this.removed = this.removed.bind(this);
+    this.added = this.added.bind(this);
   }
   componentDidMount() {
     this.props.getToppings(this.props.do);
   }
   removed() {
     this.props.removeDonut(this.props.user.id, this.props.do);
-    // this.props.getDonuts(this.props.user.id);
+    this.props.getDonuts(this.props.user.id);
+  }
+  added() {
+    this.props.addToBox(this.props.currentBox.id, this.props.do);
+    this.props.getBox(this.props.currentBox[0].id);
   }
   render() {
-    console.log(this.props.do);
+    console.log(this.props.currentBox);
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id == this.props.do
     );
@@ -46,13 +56,7 @@ class IndDon extends Component {
             <p>$1</p>
           )}
         </div>
-        <button
-          onClick={() => {
-            this.props.addToBox(this.props.currentBox[0].id, this.props.do);
-          }}
-        >
-          Add to Box
-        </button>
+        <button onClick={this.added}>Add to Box</button>
       </div>
     );
   }
@@ -71,6 +75,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { getToppings, addToBox, getDonuts })(
-  IndDon
-);
+export default connect(mapStateToProps, {
+  getBox,
+  getToppings,
+  addToBox,
+  getDonuts
+})(IndDon);

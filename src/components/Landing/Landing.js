@@ -17,32 +17,37 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing-container">
-        <div className="large-text child">
-          <h2 className="large">Customizable Donuts</h2>
-          <p>Create your own or select from our crafted selection</p>
+        <section className="landing-top">
+          <div className="large-text child">
+            <h2 className="large">Customizable Donuts</h2>
+            <p>Create your own or select from our crafted selection</p>
 
-          <div className="scrolls">
-            <div className="boxes">
-              <button
-                className="login"
-                onClick={() =>
-                  (window.location.href = "http://localhost:3001/login")
-                }
-              >
-                <h2>Login to start your box</h2>
-              </button>
+            <div className="scrolls">
+              <div className="boxes">
+                <button
+                  className="login"
+                  onClick={() =>
+                    (window.location.href = "http://localhost:3001/login")
+                  }
+                >
+                  <h2>Login to start your box</h2>
+                </button>
 
-              {/* <Link to="/donut">
+                {/* <Link to="/donut">
                 <div>
                   <p>custom</p>
                 </div>
               </Link> */}
+              </div>
             </div>
-          </div>
-          {/* <Link to="/donut">
+            {/* <Link to="/donut">
             <span className="scroll">></span>
           </Link> */}
-        </div>
+          </div>
+        </section>
+        <section className="where" href="#where">
+          <h1>Find us</h1>
+        </section>
       </div>
     );
   }

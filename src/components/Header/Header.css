@@ -1,6 +1,8 @@
 .outer-header {
+  position: fixed;
   background: #ffd0d6;
   height: 10vh;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +44,7 @@
 
 @media (min-width: 767px) {
   .outer-header {
-    height: 15vh;
+    height: 10vh;
   }
   .header-container {
     display: flex;
@@ -52,17 +54,17 @@
   }
   .donut-logo,
   .bag {
-    height: 100px;
-    width: 100px;
+    height: 65px;
+    width: 65px;
     margin: 5px;
   }
   .bag {
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
   }
   .header-container .title {
     display: inline-block;
-    font-size: 46px;
+    font-size: 35px;
   }
   .small-name {
     display: none;

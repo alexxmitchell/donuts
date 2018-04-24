@@ -10,9 +10,7 @@ class ShowBox extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.getBox(this.props.currentBox[0].id);
-  }
+  componentDidMount() {}
 
   render() {
     console.log(this.props.box);

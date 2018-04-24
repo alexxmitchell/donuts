@@ -21,7 +21,6 @@ module.exports = {
     dbInstance
       .add_to_box([box_id, don_id])
       .then(resp => {
-        console.log(resp);
         res.status(200).json(resp);
       })
       .catch(() => {
