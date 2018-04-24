@@ -8,6 +8,7 @@ import scrolldown from "../images/scrolldown.png";
 // import Toppings from "../Toppings/Toppings";
 
 import { addKind, addDonut } from "../../ducks/donutReducer";
+import { getUser } from "../../ducks/userReducer";
 import "./Donut.css";
 
 class Donut extends Component {
@@ -19,13 +20,16 @@ class Donut extends Component {
     };
     this.handleKind = this.handleKind.bind(this);
   }
-
+  componentDidMount() {
+    this.props.getUser();
+  }
   handleKind(type) {
     this.setState({ kind: type });
     this.props.addKind(this.state.kind);
   }
   render() {
-    console.log(this.state.kind);
+    console.log(this.props.user.id);
+
     return (
       <div className="donut-container">
         <h2>Select a Donut</h2>
@@ -68,8 +72,10 @@ class Donut extends Component {
 
 function mapStateToProps(state) {
   const { kind } = state.donutReducer;
+  const { user } = state.userReducer;
   return {
-    kind
+    kind,
+    user
   };
 }
-export default connect(mapStateToProps, { addKind, addDonut })(Donut);
+export default connect(mapStateToProps, { addKind, addDonut, getUser })(Donut);

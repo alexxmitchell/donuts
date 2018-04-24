@@ -1,12 +1,13 @@
 module.exports = {
   getDonuts: (req, res) => {
     const dbInstance = req.app.get("db");
-
+    console.log(req.user);
     const { id } = req.user;
 
     dbInstance
       .get_donuts([id])
       .then(donuts => {
+        console.log(donuts);
         res.status(200).json(donuts);
       })
       .catch(() => {
@@ -47,7 +48,7 @@ module.exports = {
   },
   deleteDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-
+    console.log(req.user.id, Number(req.params.id));
     dbInstance
       .delete_donut([req.user.id, Number(req.params.id)])
       .then(response => {

@@ -15,11 +15,11 @@ class IndDon extends Component {
     this.props.getToppings(this.props.do);
   }
   removed() {
-    this.props.removeDonut(this.props.userid, this.props.do);
-    // this.props.getDonuts(this.props.userid);
+    this.props.removeDonut(this.props.user.id, this.props.do);
+    this.props.getDonuts(this.props.user.id);
   }
   render() {
-    console.log("flag:", this.props);
+    console.log("flag:", this.props.user.id);
 
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id == this.props.do
@@ -62,12 +62,14 @@ class IndDon extends Component {
 
 function mapStateToProps(state) {
   return {
-    currentToppings: state.donutReducer.currentToppings,
-    userid: state.userReducer.userid,
-    currentBox: state.donutReducer.currentBox,
-    cost: state.donutReducer.cost,
-    donuts: state.donutReducer.donuts,
-    box: state.donutReducer.donuts
+    // currentToppings: state.donutReducer.currentToppings,
+    // userid: state.userReducer.userid,
+    // currentBox: state.donutReducer.currentBox,
+    // cost: state.donutReducer.cost,
+    // donuts: state.donutReducer.donuts,
+    // box: state.donutReducer.donuts
+    ...state.userReducer,
+    ...state.donutReducer
   };
 }
 

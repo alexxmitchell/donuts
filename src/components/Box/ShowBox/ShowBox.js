@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../IndDon/IndDon.css";
 import IndTop from "../IndDon/IndTop/IndTop";
+import { getBox } from "../../../ducks/donutReducer";
 
 import image from "../../../placeholder.png";
 class ShowBox extends Component {
@@ -10,7 +11,7 @@ class ShowBox extends Component {
   }
 
   componentDidMount() {
-    // this.props.getBox();
+    this.props.getBox(this.props.userid);
   }
 
   render() {
@@ -52,4 +53,4 @@ function mapStateToProps(state) {
     ...state.userReducer
   };
 }
-export default connect(mapStateToProps)(ShowBox);
+export default connect(mapStateToProps, { getBox })(ShowBox);

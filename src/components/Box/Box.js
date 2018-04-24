@@ -23,7 +23,7 @@ class Box extends Component {
   }
 
   componentDidMount() {
-    this.props.getDonuts(this.props.userid);
+    this.props.getDonuts(this.props.user.id);
   }
 
   render() {

@@ -17,6 +17,7 @@ const getUser = (req, res) => {
   if (!req.user) {
     res.status(401).json({ message: "Please login" });
   } else {
+    console.log(req.user);
     res.status(200).json(req.user);
   }
 };

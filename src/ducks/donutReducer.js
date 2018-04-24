@@ -57,7 +57,7 @@ export function addDonut(kind) {
   };
 }
 
-export function addToBox(id) {
+export function addToBox(id, donut) {
   return {
     type: ADD_TO_BOX,
     payload: axios.post(`/api/addbox/${id}`)
