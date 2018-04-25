@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../IndDon/IndDon.css";
 import ShowTop from "../IndDon/IndTop/IndTop";
-import { getBox, getToppings } from "../../../ducks/donutReducer";
+import {
+  getBox,
+  getToppings,
+  getBoxtops,
+  getTotal
+} from "../../../ducks/donutReducer";
 
 import image from "../../../placeholder.png";
 class ShowBox extends Component {
@@ -12,13 +17,22 @@ class ShowBox extends Component {
 
   componentDidMount() {
     // this.props.getBox(this.props.currentBox[0].id);
-    this.props.getToppings(this.props.do);
+    this.props.getBoxtops(this.props.do);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (
+      this.props.total[0] &&
+      this.props.total[0].sum !== nextProps.total[0].sum
+    ) {
+      this.props.getTotal(this.props.currentBox[0].id);
+    }
   }
 
   render() {
-    console.log(this.props.box);
-    console.log(this.props.currentBox);
-    const boxToppings = this.props.currentToppings.filter(
+    // console.log(this.props.total[0].sum);
+
+    const correctBoxToppings = this.props.boxToppings.filter(
       e => e.donut_id == this.props.do
     );
     const boxer = this.props.box.map((e, i) => {
@@ -33,7 +47,9 @@ class ShowBox extends Component {
 
             <div>
               with
-              {this.props.currentToppings && <ShowTop />}
+              {/* {this.props.boxToppings && (
+                <ShowTop boxToppings={correctBoxToppings} />
+              )} */}
             </div>
             {e.sum ? (
               <p>$ {(+e.sum + this.props.cost).toFixed(2)}</p>
@@ -48,6 +64,16 @@ class ShowBox extends Component {
       <div>
         <p>Show Box</p>
         <div className="yoDos">{boxer}</div>
+        <p>Box Total: </p>
+        {this.props.currentBox && this.props.total[0] ? (
+          <p>
+            {Math.floor(
+              this.props.total[0].sum + this.props.cost * this.props.box.length
+            )}
+          </p>
+        ) : (
+          <p>$0</p>
+        )}
       </div>
     );
   }
@@ -59,4 +85,6 @@ function mapStateToProps(state) {
     ...state.userReducer
   };
 }
-export default connect(mapStateToProps, { getBox, getToppings })(ShowBox);
+export default connect(mapStateToProps, { getBox, getBoxtops, getTotal })(
+  ShowBox
+);

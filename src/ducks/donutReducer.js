@@ -11,7 +11,9 @@ const initialState = {
   cost: 1,
   isLoading: false,
   currentDonut: {},
-  currentToppings: []
+  currentToppings: [],
+  boxToppings: [],
+  total: []
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -22,6 +24,8 @@ const GET_DONUTS = "GET_DONUTS";
 const CREATE_BOX = "CREATE_BOX";
 const ADD_TO_BOX = "ADD_TO_BOX";
 const GET_BOX = "GET_BOX";
+const GET_BOXTOPS = "GET_BOXTOPS";
+const GET_TOTAL = "GET_TOTAL";
 
 const ADD_TOPPINGS = "ADD_TOPPINGS";
 const GET_TOPPINGS = "GET_TOPPINGS";
@@ -97,6 +101,18 @@ export function changeTopping(id) {
     payload: axios.put(`/api/donut/${id}`)
   };
 }
+export function getBoxtops(id) {
+  return {
+    type: GET_BOXTOPS,
+    payload: axios.get(`/api/boxtops/${id}`)
+  };
+}
+export function getTotal(id) {
+  return {
+    type: GET_TOTAL,
+    payload: axios.get(`/api/total/${id}`)
+  };
+}
 
 function donutReducer(state = initialState, action) {
   switch (action.type) {
@@ -155,7 +171,16 @@ function donutReducer(state = initialState, action) {
         donuts: doArr,
         box: action.payload.data
       });
-
+    case `${GET_BOXTOPS}_FULFILLED`:
+      return {
+        ...state,
+        boxToppings: action.payload.data
+      };
+    case `${GET_TOTAL}_FULFILLED`:
+      return {
+        ...state,
+        total: action.payload.data
+      };
     default:
       return state;
   }

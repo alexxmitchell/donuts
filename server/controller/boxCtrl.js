@@ -41,5 +41,31 @@ module.exports = {
       .catch(e => {
         console.log(e);
       });
+  },
+  boxToppings: (req, res) => {
+    const dbInstance = req.app.get("db");
+    const { donut_id } = req.body;
+    dbInstance
+      .box_toppings([donut_id])
+      .then(boxTops => {
+        console.log("boxTops:", boxTops);
+        res.status(200).json(boxTops);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  },
+  boxTotal: (req, res) => {
+    const dbInstance = req.app.get("db");
+    const { box_id } = req.params;
+    dbInstance
+      .box_total([box_id])
+      .then(total => {
+        console.log(total);
+        res.status(200).json(total);
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 };

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 function ShowTop(props) {
-  let boxCurrent = props.currentToppings.map((e, i) => {
+  let boxCurrent = props.boxToppings.map((e, i) => {
     return (
       <div key={i} className="top-listings">
         <p>- {e.label}</p>

@@ -105,7 +105,8 @@ app.put(`/api/donut/:id`, dc.editDonut);
 app.get("/api/box/:box_id", bc.getBox);
 app.post("/api/createbox", bc.createBox);
 app.post("/api/addbox/:box_id/:don_id", bc.addToBox);
-
+app.get("/api/boxtops/:donut_id", bc.boxToppings);
+app.get("/api/total/:box_id", bc.boxTotal);
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
 });

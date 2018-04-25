@@ -4,7 +4,8 @@ import {
   getToppings,
   addToBox,
   getDonuts,
-  getBox
+  getBox,
+  getTotal
 } from "../../../ducks/donutReducer";
 import image from "../../../placeholder.png";
 import "./IndDon.css";
@@ -27,10 +28,9 @@ class IndDon extends Component {
   added() {
     this.props.addToBox(this.props.currentBox[0].id, this.props.do);
     this.props.getBox(this.props.currentBox[0].id);
+    this.props.getTotal(this.props.currentBox[0].id);
   }
   render() {
-    console.log(typeof this.props.do);
-    console.log(this.props.currentBox[0].id, this.props.do);
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id == this.props.do
     );
@@ -38,7 +38,7 @@ class IndDon extends Component {
     return (
       <div className="ind-donut">
         <button onClick={this.removed}>
-          <h2>Remove from box</h2>
+          <h2>Remove from List</h2>
         </button>
 
         <img src={image} alt="placeholder" />
@@ -80,5 +80,6 @@ export default connect(mapStateToProps, {
   getBox,
   getToppings,
   addToBox,
-  getDonuts
+  getDonuts,
+  getTotal
 })(IndDon);
