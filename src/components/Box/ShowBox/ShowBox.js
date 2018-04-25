@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../IndDon/IndDon.css";
-import IndTop from "../IndDon/IndTop/IndTop";
-import { getBox } from "../../../ducks/donutReducer";
+import ShowTop from "../IndDon/IndTop/IndTop";
+import { getBox, getToppings } from "../../../ducks/donutReducer";
 
 import image from "../../../placeholder.png";
 class ShowBox extends Component {
@@ -10,11 +10,17 @@ class ShowBox extends Component {
     super(props);
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    // this.props.getBox(this.props.currentBox[0].id);
+    this.props.getToppings(this.props.do);
+  }
 
   render() {
     console.log(this.props.box);
     console.log(this.props.currentBox);
+    const boxToppings = this.props.currentToppings.filter(
+      e => e.donut_id == this.props.do
+    );
     const boxer = this.props.box.map((e, i) => {
       return (
         <div className="ind-donut" key={i}>
@@ -23,14 +29,14 @@ class ShowBox extends Component {
           </button>
           <img src={image} alt="placeholder" />
           <div>
-            <h2>{e.type} donut</h2>
+            <h2>{e.kind} donut</h2>
 
             <div>
               with
-              {/* {this.props.currentToppings && <IndTop />} */}
+              {this.props.currentToppings && <ShowTop />}
             </div>
-            {e.price ? (
-              <p>$ {(+e.price + this.props.cost).toFixed(2)}</p>
+            {e.sum ? (
+              <p>$ {(+e.sum + this.props.cost).toFixed(2)}</p>
             ) : (
               <p>$1</p>
             )}
@@ -41,7 +47,7 @@ class ShowBox extends Component {
     return (
       <div>
         <p>Show Box</p>
-        {boxer}
+        <div className="yoDos">{boxer}</div>
       </div>
     );
   }
@@ -53,4 +59,4 @@ function mapStateToProps(state) {
     ...state.userReducer
   };
 }
-export default connect(mapStateToProps, { getBox })(ShowBox);
+export default connect(mapStateToProps, { getBox, getToppings })(ShowBox);

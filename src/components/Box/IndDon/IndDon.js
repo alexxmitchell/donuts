@@ -22,14 +22,15 @@ class IndDon extends Component {
   }
   removed() {
     this.props.removeDonut(this.props.user.id, this.props.do);
-    this.props.getDonuts(this.props.user.id);
+    // this.props.getDonuts(this.props.user.id);
   }
   added() {
-    this.props.addToBox(this.props.currentBox.id, this.props.do);
+    this.props.addToBox(this.props.currentBox[0].id, this.props.do);
     this.props.getBox(this.props.currentBox[0].id);
   }
   render() {
-    console.log(this.props.currentBox);
+    console.log(typeof this.props.do);
+    console.log(this.props.currentBox[0].id, this.props.do);
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id == this.props.do
     );

@@ -15,6 +15,10 @@
   text-align: left;
   border: solid 1px black;
 }
+.order-container {
+  height: 80vh;
+  display: flex;
+}
 
 @media (min-width: 767px) {
   .ind-donut {
@@ -28,9 +32,6 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-  }
-  .order-container {
-    display: flex;
-    flex-direction: column;
+    overflow: scroll;
   }
 }

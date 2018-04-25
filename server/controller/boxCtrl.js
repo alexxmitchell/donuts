@@ -14,14 +14,14 @@ module.exports = {
 
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
-    console.log(req.params);
+    console.log("params:", req.params);
 
     const { box_id, don_id } = req.params;
 
     dbInstance
-      .add_to_box([box_id, don_id])
-      .then(resp => {
-        res.status(200).json(resp);
+      .add_to_box([Number(box_id), Number(don_id)])
+      .then(boxy => {
+        res.status(200).json(boxy);
       })
       .catch(() => {
         res.status(500).json();
@@ -35,6 +35,7 @@ module.exports = {
     dbInstance
       .get_box([box_id])
       .then(myBox => {
+        console.log("myBox:", myBox);
         res.status(200).json(myBox);
       })
       .catch(e => {

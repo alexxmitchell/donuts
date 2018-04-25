@@ -148,6 +148,7 @@ function donutReducer(state = initialState, action) {
         currentDonut: action.payload.data
       };
     case `${ADD_TO_BOX}_FULFILLED`:
+      console.log("I hit add box");
       let doArr = state.donuts.slice();
       doArr.splice(action.payload, 1);
       return Object.assign({}, state, {
