@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import "../IndDon/IndDon.css";
 import ShowTop from "../IndDon/IndTop/IndTop";
 import {
@@ -30,17 +31,17 @@ class ShowBox extends Component {
   }
 
   render() {
-    // console.log(this.props.total[0].sum);
-
+    let length = this.props.box.length;
+    console.log(this.props.total);
     const correctBoxToppings = this.props.boxToppings.filter(
       e => e.donut_id == this.props.do
     );
     const boxer = this.props.box.map((e, i) => {
       return (
         <div className="ind-donut" key={i}>
-          <button onClick={this.removed}>
+          {/* <button onClick={this.removed}>
             <h2>Remove from box</h2>
-          </button>
+          </button> */}
           <img src={image} alt="placeholder" />
           <div>
             <h2>{e.kind} donut</h2>
@@ -66,14 +67,11 @@ class ShowBox extends Component {
         <div className="yoDos">{boxer}</div>
         <p>Box Total: </p>
         {this.props.currentBox && this.props.total[0] ? (
-          <p>
-            {Math.floor(
-              this.props.total[0].sum + this.props.cost * this.props.box.length
-            )}
-          </p>
+          <p>{(+this.props.total[0].sum + this.props.cost).toFixed(2)}</p>
         ) : (
           <p>$0</p>
         )}
+        <button>Order Now!</button>
       </div>
     );
   }

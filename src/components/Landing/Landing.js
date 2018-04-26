@@ -19,7 +19,7 @@ class Landing extends Component {
       <div className="landing-container">
         <section className="landing-top">
           <div className="large-text child">
-            <h2 className="large">Customizable Donuts</h2>
+            <h2 className="large">Sinfully sweet</h2>
             <p>Create your own or select from our crafted selection</p>
 
             <div className="scrolls">
@@ -47,6 +47,16 @@ class Landing extends Component {
         </section>
         <section className="where" href="#where">
           <h1>Find us</h1>
+          <p>Located on the corner of Ervay and Young.</p>
+          <div>
+            <h3>Good Donut</h3>
+            <h3>501 S Ervay St</h3>
+            <h3>Dallas, TX 75201</h3>
+          </div>
+          <div>
+            <h3>Let's get social</h3>
+            <p>Links</p>
+          </div>
         </section>
       </div>
     );

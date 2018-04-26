@@ -33,8 +33,8 @@ class Box extends Component {
         <button>Login now</button>
       </div>
     );
-    const { donuts, isLoading } = this.props;
-    if (donuts && donuts.length > 0) {
+    const { donuts, isLoading, box } = this.props;
+    if ((donuts && donuts.length > 0) || box.length > 0) {
       dozen = donuts.map((e, i) => {
         return (
           <IndDon
@@ -58,7 +58,6 @@ class Box extends Component {
         <Link to="/donut">
           <button>Get more donuts</button>
         </Link>
-        <button>Order Now!</button>
       </div>
     );
   }

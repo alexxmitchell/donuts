@@ -5,6 +5,7 @@ const session = require("express-session");
 const massive = require("massive");
 const passport = require("passport");
 const port = process.env.PORT || 3001;
+const stripe = require("stripe")(process.env.SECRET_KEY);
 
 //controllers
 const dc = require(`${__dirname}/controller/donutCtrl`);
