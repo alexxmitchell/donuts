@@ -1,20 +1,25 @@
 require("dotenv").config();
 const express = require("express");
 const { json } = require("body-parser");
+const cors = require("cors");
+
 const session = require("express-session");
 const massive = require("massive");
 const passport = require("passport");
 const port = process.env.PORT || 3001;
-const stripe = require("stripe")(process.env.SECRET_KEY);
+const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET);
 
 //controllers
 const dc = require(`${__dirname}/controller/donutCtrl`);
 const bc = require(`${__dirname}/controller/boxCtrl`);
 const ac = require(`${__dirname}/controller/authCtrl`);
+const map = require(`${__dirname}/controller/mapCtrl`);
 
 const app = express();
 
 app.use(json());
+app.use(cors());
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -31,21 +36,6 @@ massive(process.env.CONNECTION_STRING)
     app.set("db", dbInstance);
   })
   .catch(console.log);
-
-//create box on session
-// app.use((req, res, next) => {
-//   if (!req.session.box) {
-//     req.session.box = [];
-//   }
-//   next();
-// });
-
-//Post on session
-// app.post("/api/thebox", (req, res) => {
-//   req.session.box.push(req.body);
-//   console.log(req.session.box);
-//   res.status(200).json(req.session.box);
-// });
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -93,6 +83,9 @@ app.get(
 app.get("/api/person", ac.getUser);
 app.get("/api/logout", ac.logoutUser);
 
+//map controller
+app.get("/api/map", map.getMap);
+
 //donut controller
 app.get(`/api/mydonuts`, dc.getDonuts);
 app.put("/api/donut", dc.editDonut);
@@ -105,9 +98,10 @@ app.put(`/api/donut/:id`, dc.editDonut);
 //box controller
 app.get("/api/box/:box_id", bc.getBox);
 app.post("/api/createbox", bc.createBox);
-app.post("/api/addbox/:box_id/:don_id", bc.addToBox);
+app.put("/api/addbox/:box_id/:don_id", bc.addToBox);
 app.get("/api/boxtops/:donut_id", bc.boxToppings);
 app.get("/api/total/:box_id", bc.boxTotal);
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
 });

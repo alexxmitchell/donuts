@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import Check from "./Check/Check";
+
 import {
   createBox,
   addDonut,
@@ -30,12 +32,7 @@ class Toppings extends Component {
     this.setState(
       {
         isChecked: !this.state.isChecked,
-
-        //need a way to remove the value from the selected item
-        // ["topping" + this.state.numTopping]
         topping: Number(e.target.value)
-        // numTopping: this.state.numTopping + 1
-        //numTopping should not exceed 3
       },
       () => {
         console.log(this.state.topping);
@@ -54,9 +51,7 @@ class Toppings extends Component {
         <img src="https://cdn1.iconfinder.com/data/icons/interface-elements/32/accept-circle-512.png" />
       </button>;
     }
-    if (this.state.numTopping > 3) {
-      alert("Only select 3 toppings please");
-    }
+
     return (
       <div className="topping">
         <h2>Toppings</h2>
@@ -65,6 +60,7 @@ class Toppings extends Component {
         <div className="topping-container">
           <button
             className="peanuts top"
+            g
             onClick={this.handleSelect}
             value={1}
             name="peanuts"
@@ -73,6 +69,7 @@ class Toppings extends Component {
               src="http://www.jandgpecans.com/data/images/Codengine_1661_2e21b5f960905423db9f6b44244b10dc.png"
               alt="peanuts"
             /> */}
+            <Check clicked={this.state.checked} />
             peanuts
           </button>
           <button
@@ -81,6 +78,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={2}
           >
+            <Check />
             pecans
           </button>
           <button
@@ -89,6 +87,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={3}
           >
+            <Check />
             bacon
           </button>
           <button
@@ -97,6 +96,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={4}
           >
+            <Check />
             gold
           </button>
           <button
@@ -106,6 +106,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={5}
           >
+            <Check />
             strawberries
           </button>
 
@@ -115,6 +116,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={6}
           >
+            <Check />
             bananas
           </button>
           <button
@@ -123,6 +125,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={7}
           >
+            <Check />
             sprinkles
           </button>
           <button
@@ -131,6 +134,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={8}
           >
+            <Check />
             chocolate icing
           </button>
           <button
@@ -139,6 +143,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={9}
           >
+            <Check />
             caramel icing
           </button>
           <button
@@ -147,6 +152,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={10}
           >
+            <Check />
             raspberry icing
           </button>
           <button
@@ -155,6 +161,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={11}
           >
+            <Check />
             chocolate drizzle
           </button>
 
@@ -164,6 +171,7 @@ class Toppings extends Component {
             onClick={this.handleSelect}
             value={12}
           >
+            <Check />
             peanut butter drizzle
           </button>
         </div>

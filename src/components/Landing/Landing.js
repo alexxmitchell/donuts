@@ -4,16 +4,13 @@ import "../../";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import { createBoxSession } from "../../ducks/donutReducer";
+import Find from "./Find/Find";
 
 class Landing extends Component {
   constructor(props) {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.createBoxSession();
-  // }
   render() {
     return (
       <div className="landing-container">
@@ -45,19 +42,7 @@ class Landing extends Component {
           </Link> */}
           </div>
         </section>
-        <section className="where" href="#where">
-          <h1>Find us</h1>
-          <p>Located on the corner of Ervay and Young.</p>
-          <div>
-            <h3>Good Donut</h3>
-            <h3>501 S Ervay St</h3>
-            <h3>Dallas, TX 75201</h3>
-          </div>
-          <div>
-            <h3>Let's get social</h3>
-            <p>Links</p>
-          </div>
-        </section>
+        <Find />
       </div>
     );
   }

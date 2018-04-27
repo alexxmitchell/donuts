@@ -3,8 +3,6 @@ import axios from "axios";
 const initialState = {
   kind: "",
   topping: 0,
-  // topping2: 0,
-  // topping3: 0,
   currentBox: {}, //holds the boxid
   box: [],
   donuts: [],
@@ -64,7 +62,7 @@ export function addDonut(kind) {
 export function addToBox(id, donut) {
   return {
     type: ADD_TO_BOX,
-    payload: axios.post(`/api/addbox/${id}/${donut}`)
+    payload: axios.put(`/api/addbox/${id}/${donut}`)
   };
 }
 

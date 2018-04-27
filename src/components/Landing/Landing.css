@@ -69,6 +69,7 @@
     font-family: "Leckerli One", cursive;
     font-size: 54px;
     line-height: 50px;
+    letter-spacing: 0.1em;
   }
   .scrolls {
     display: flex;
@@ -92,10 +93,7 @@
   .section:focus .child {
     transform: scale(1.1);
   } */
-  .where {
-    margin-top: 100px;
-    height: 100vh;
-  }
+
   .login {
     width: 300px;
     font-size: 14px;
