@@ -32,12 +32,15 @@
 }
 
 @media (min-width: 767px) {
+  .container-drop-topping {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    width: 100%;
+    height: 60vh;
+  }
   .topping-container {
-    width: 80vw;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-area: 2/1/6/2;
   }
   .bacon,
   .peanuts {

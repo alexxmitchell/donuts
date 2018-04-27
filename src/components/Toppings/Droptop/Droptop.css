@@ -1,0 +1,12 @@
+.hide {
+  display: none;
+}
+
+@media (min-width: 767px) {
+  .droptop-donut {
+    height: 300px;
+  }
+  .hide {
+    display: inline-block;
+  }
+}

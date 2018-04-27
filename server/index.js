@@ -13,7 +13,6 @@ const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET);
 const dc = require(`${__dirname}/controller/donutCtrl`);
 const bc = require(`${__dirname}/controller/boxCtrl`);
 const ac = require(`${__dirname}/controller/authCtrl`);
-const map = require(`${__dirname}/controller/mapCtrl`);
 
 const app = express();
 
@@ -82,9 +81,6 @@ app.get(
 //auth controller
 app.get("/api/person", ac.getUser);
 app.get("/api/logout", ac.logoutUser);
-
-//map controller
-app.get("/api/map", map.getMap);
 
 //donut controller
 app.get(`/api/mydonuts`, dc.getDonuts);

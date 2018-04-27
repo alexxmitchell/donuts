@@ -1,22 +1,41 @@
 .where {
   height: 80vh;
-  overflow: hidden;
   background: #b7dde0;
   padding: 40px;
+}
+
+.find-container {
+  margin: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .where h1 {
   font-size: 20px;
   font-family: "Leckerli One", cursive;
   letter-spacing: 1.2em;
 }
-
-.find-container {
-  margin: 40px 0px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+.find-title {
+  margin-top: 20px;
 }
 
-.where h3 {
-  font-size: 20px;
+@media (min-width: 767px) {
+  .where {
+    overflow: hidden;
+  }
+
+  .find-container {
+    margin: 40px 0px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .location {
+    text-align: left;
+  }
+
+  .where h3 {
+    font-size: 20px;
+  }
 }

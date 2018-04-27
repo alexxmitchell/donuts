@@ -18,7 +18,7 @@ const Find = () => {
           containerElement={<div style={{ height: `300px`, width: "300px" }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-        <div>
+        <div className="location">
           <h3 className="find-title">Good Donut</h3>
           <h3>501 S Ervay St</h3>
           <h3>Dallas, TX 75201</h3>
