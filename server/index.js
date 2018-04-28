@@ -9,6 +9,10 @@ const passport = require("passport");
 const port = process.env.PORT || 3001;
 const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET);
 
+const SERVER_CONFIGS = require("./constants/server");
+const configureServer = require("./server");
+const configureRoutes = require("./routes");
+
 //controllers
 const dc = require(`${__dirname}/controller/donutCtrl`);
 const bc = require(`${__dirname}/controller/boxCtrl`);
@@ -78,6 +82,8 @@ app.get(
   })
 );
 
+configureServer(app);
+configureRoutes(app);
 //auth controller
 app.get("/api/person", ac.getUser);
 app.get("/api/logout", ac.logoutUser);

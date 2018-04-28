@@ -4,7 +4,16 @@ import "./Category.css";
 class Category extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      category: ""
+    };
+    this.changeCategory = this.changeCategory.bind(this);
   }
+  changeCategory(val) {
+    this.setState({ category: val });
+  }
+
   render() {
     return (
       <select className="category-selector">

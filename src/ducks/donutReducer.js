@@ -11,7 +11,8 @@ const initialState = {
   currentDonut: {},
   currentToppings: [],
   boxToppings: [],
-  total: []
+  total: [],
+  category: ""
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -105,6 +106,7 @@ export function getBoxtops(id) {
     payload: axios.get(`/api/boxtops/${id}`)
   };
 }
+
 export function getTotal(id) {
   return {
     type: GET_TOTAL,
@@ -174,11 +176,7 @@ function donutReducer(state = initialState, action) {
         ...state,
         boxToppings: action.payload.data
       };
-    case `${GET_TOTAL}_FULFILLED`:
-      return {
-        ...state,
-        total: action.payload.data
-      };
+
     default:
       return state;
   }

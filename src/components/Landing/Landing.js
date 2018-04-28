@@ -4,6 +4,7 @@ import "../../";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import About from "./About/About";
 import Find from "./Find/Find";
 
 class Landing extends Component {
@@ -16,7 +17,7 @@ class Landing extends Component {
       <div className="landing-container">
         <section className="landing-top">
           <div className="large-text child">
-            <h2 className="large">Sinfully sweet</h2>
+            <h2 className="large">Go nuts for Good Donuts</h2>
             <p>Create your own or select from our crafted selection</p>
 
             <div className="scrolls">
@@ -42,6 +43,7 @@ class Landing extends Component {
           </Link> */}
           </div>
         </section>
+        <About />
         <Find />
       </div>
     );

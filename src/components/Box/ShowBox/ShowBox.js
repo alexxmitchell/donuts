@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "../IndDon/IndDon.css";
 import ShowTop from "../IndDon/IndTop/IndTop";
-// import Checkout from "../../../Checkout";
+import Checkout from "../../../Checkout";
 import {
   getBox,
   getToppings,
@@ -74,11 +74,11 @@ class ShowBox extends Component {
         )}
         <button>Order Now!</button>
         <p>
-          {/* <Checkout
+          <Checkout
             name={"Donut payment"}
             description={"Buy your delectable donuts"}
-            amount={1}
-          /> */}
+            // amount={+this.props.total[0].sum + this.props.cost} // may need to send the total cost back to the back end
+          />
         </p>
       </div>
     );

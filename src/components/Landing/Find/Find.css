@@ -2,6 +2,7 @@
   height: 80vh;
   background: #b7dde0;
   padding: 40px;
+  font-family: "Dokdo", cursive;
 }
 
 .find-container {
@@ -12,9 +13,9 @@
   align-items: center;
 }
 .where h1 {
-  font-size: 20px;
-  font-family: "Leckerli One", cursive;
-  letter-spacing: 1.2em;
+  font-size: 36px;
+  font-family: "Dokdo", cursive;
+  /* letter-spacing: 1.2em; */
 }
 .find-title {
   margin-top: 20px;
@@ -23,6 +24,7 @@
 @media (min-width: 767px) {
   .where {
     overflow: hidden;
+    color: #fff9dd;
   }
 
   .find-container {
@@ -36,6 +38,6 @@
   }
 
   .where h3 {
-    font-size: 20px;
+    font-size: 36px;
   }
 }

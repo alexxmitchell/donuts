@@ -13,7 +13,7 @@ const Header = () => {
           <h2 className="title">Good D</h2>
           <img className="donut-logo" src={logo} alt="donut" />
           <h2 className="small-name">GD</h2>
-          <h2 className="title">nut</h2>
+          <h2 className="title">nuts</h2>
         </Link>
         <a name="about">About</a>
         <a name="where">Where</a>

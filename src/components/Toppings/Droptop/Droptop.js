@@ -10,7 +10,7 @@ class Droptop extends Component {
   }
   render() {
     let image = "";
-    if (this.props.kind === "Cake") {
+    if (this.props.kind === "cake") {
       image = cake;
     } else {
       image = choc;
