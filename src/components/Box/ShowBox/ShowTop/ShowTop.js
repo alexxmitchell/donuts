@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 function ShowTop(props) {
   let boxCurrent = props.boxToppings.map((e, i) => {
     return (
-      <div key={i} className="top-listings">
+      <div key={i} className="listings">
         <p>- {e.label}</p>
       </div>
     );

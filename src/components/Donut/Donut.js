@@ -22,7 +22,7 @@ class Donut extends Component {
   }
   componentDidMount() {
     this.props.getUser();
-    this.setState({ kind: this.props.kind });
+    // this.setState({ kind: this.props.kind });
   }
   handleKind(type) {
     this.setState({ kind: type });

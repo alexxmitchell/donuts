@@ -10,7 +10,8 @@ import {
   createBox,
   addDonut,
   addToBox,
-  addToppings
+  addToppings,
+  getAllToppings
 } from "../../ducks/donutReducer";
 
 import "./Toppings.css";
@@ -26,6 +27,9 @@ class Toppings extends Component {
     this.handleSelect = this.handleSelect.bind(this);
   }
 
+  componentDidMount() {
+    this.props.getAllToppings();
+  }
   handleSelect(e) {
     this.setState(
       {
@@ -59,7 +63,11 @@ class Toppings extends Component {
         <h2>Toppings</h2>
         <Category />
         <h4>Select your toppings (max 4)</h4>
-
+        <p>Start with a base</p>
+        <p>
+          then go <span className="sweet">sweet</span> or{" "}
+          <span className="savory">savory</span> or both
+        </p>
         <div className="container-drop-topping">
           <div className="topping-container">
             <button
@@ -219,5 +227,6 @@ export default connect(mapStateToProps, {
   createBox,
   addDonut,
   addToBox,
-  addToppings
+  addToppings,
+  getAllToppings
 })(Toppings);

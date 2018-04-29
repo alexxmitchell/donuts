@@ -45,19 +45,23 @@ class ShowBox extends Component {
           </button> */}
           <img src={image} alt="placeholder" />
           <div>
-            <h2>{e.kind} donut</h2>
+            <span>
+              <h2>{e.kind} donut</h2>
+            </span>
 
-            <div>
+            {/* <div>
               with
-              {/* {this.props.boxToppings && (
+              {this.props.boxToppings && (
                 <ShowTop boxToppings={correctBoxToppings} />
-              )} */}
+              )}
+            </div> */}
+            <div className="hovering">
+              {e.sum ? (
+                <p>$ {(+e.sum + this.props.cost).toFixed(2)}</p>
+              ) : (
+                <p>$1</p>
+              )}
             </div>
-            {e.sum ? (
-              <p>$ {(+e.sum + this.props.cost).toFixed(2)}</p>
-            ) : (
-              <p>$1</p>
-            )}
           </div>
         </div>
       );
@@ -65,7 +69,9 @@ class ShowBox extends Component {
     return (
       <div>
         <p>Show Box</p>
-        <div className="yoDos">{boxer}</div>
+        <div className="donut-box">
+          <div className="yoDos">{boxer}</div>
+        </div>
         <p>Box Total: </p>
         {this.props.currentBox && this.props.total[0] ? (
           <p>{(+this.props.total[0].sum + this.props.cost).toFixed(2)}</p>

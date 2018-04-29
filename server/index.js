@@ -93,6 +93,7 @@ app.get(`/api/mydonuts`, dc.getDonuts);
 app.put("/api/donut", dc.editDonut);
 app.post("/api/adddonut", dc.addDonut);
 app.delete(`/api/removedonut/:donut_id`, dc.deleteDonut);
+app.get("/api/alltoppings", dc.getAllToppings);
 app.post("/api/addTopping", dc.addTopping);
 app.get(`/api/gettoppings/:id`, dc.getDoTop);
 app.put(`/api/donut/:id`, dc.editDonut);

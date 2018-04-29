@@ -1,3 +1,17 @@
 .yoDos {
   border: solid 1px #735b69;
 }
+
+@media (min-width: 767px) {
+  .donut-box {
+    border: 1px solid #735b69;
+  }
+}
+
+div.hovering {
+  display: none;
+}
+
+span:hover + div {
+  display: inline-block;
+}

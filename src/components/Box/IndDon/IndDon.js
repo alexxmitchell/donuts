@@ -35,6 +35,8 @@ class IndDon extends Component {
       e => e.donut_id == this.props.do
     );
 
+    console.log(this.props.donuts);
+
     return (
       <div className="ind-donut">
         <button onClick={this.removed}>

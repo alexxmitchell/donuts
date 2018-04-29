@@ -3,7 +3,7 @@
 -- id SERIAL PRIMARY KEY,
 -- users_id INTEGER REFERENCES users (id),
 -- kind VARCHAR(50),
--- image TEXT
+-- box_id INTEGER REFERENCES box(id)
 -- );
 
 -- Box Table
@@ -24,11 +24,6 @@
 --     topping_id INT REFERENCES toppings(id)
 -- );
 
--- Boxdo Table 
--- CREATE TABLE boxdo(
---     box_id INT REFERENCES box(id),
---     don_id INT REFERENCES donuts(id)
---   );
 
 
 -- DUMMY DATA FOR DONUT TABLE 

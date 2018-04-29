@@ -11,11 +11,12 @@ class Droptop extends Component {
   }
   render() {
     let image = "";
-    if (this.props.kind === "cake") {
-      image = cake;
-    } else {
-      image = choc;
-    }
+    // if (this.props.currentDonut.kind === "Cake") {
+    //   image = cake;
+    // } else {
+    //   image = choc;
+    // }
+    console.log(this.props);
     return (
       <div className="parent-droptop  hide">
         <img className="droptop-icing size" src={chocrasp} />

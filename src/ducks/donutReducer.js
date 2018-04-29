@@ -12,7 +12,8 @@ const initialState = {
   currentToppings: [],
   boxToppings: [],
   total: [],
-  category: ""
+  category: "",
+  toppings: []
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -26,6 +27,7 @@ const GET_BOX = "GET_BOX";
 const GET_BOXTOPS = "GET_BOXTOPS";
 const GET_TOTAL = "GET_TOTAL";
 
+const GET_ALL_TOPPINGS = "GET_ALL_TOPPINGS";
 const ADD_TOPPINGS = "ADD_TOPPINGS";
 const GET_TOPPINGS = "GET_TOPPINGS";
 const REMOVE_TOPPING = "REMOVE_TOPPING"; //need action
@@ -48,6 +50,13 @@ export function addToppings(id, topping) {
   return {
     type: ADD_TOPPINGS,
     payload: axios.post(`/api/addTopping`, { id, topping })
+  };
+}
+
+export function getAllToppings() {
+  return {
+    type: GET_ALL_TOPPINGS,
+    payload: axios.get("/api/alltoppings")
   };
 }
 
@@ -125,6 +134,11 @@ function donutReducer(state = initialState, action) {
       return {
         ...state,
         kind: action.payload
+      };
+    case `${GET_ALL_TOPPINGS}_FULFILLED`:
+      return {
+        ...state,
+        toppings: action.payload.data
       };
     case `${ADD_TOPPINGS}_FULFILLED`:
       return {

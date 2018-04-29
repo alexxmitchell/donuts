@@ -7,7 +7,6 @@ module.exports = {
     dbInstance
       .get_donuts([id])
       .then(donuts => {
-        console.log(donuts);
         res.status(200).json(donuts);
       })
       .catch(() => {
@@ -24,7 +23,6 @@ module.exports = {
     dbInstance
       .add_donut([id, kind])
       .then(resp => {
-        console.log(resp[0]);
         res.status(200).json(resp[0]);
       })
       .catch(e => {
@@ -69,7 +67,21 @@ module.exports = {
     dbInstance
       .add_topping([id, topping])
       .then(top => {
+        console.log(top);
         res.status(200).json(top);
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  },
+  getAllToppings: (req, res) => {
+    const dbInstance = req.app.get("db");
+
+    dbInstance
+      .get_all_toppings()
+      .then(toppings => {
+        // console.log(toppings);
+        res.status(200).json(toppings);
       })
       .catch(e => {
         console.log(e);
