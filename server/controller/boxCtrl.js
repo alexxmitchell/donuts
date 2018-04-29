@@ -65,5 +65,19 @@ module.exports = {
       .catch(e => {
         console.log(e);
       });
+  },
+  previousBoxes: (req, res) => {
+    const dbInstance = req.app.get("db");
+    const { id } = req.user;
+
+    dbInstance
+      .previous_boxes([id])
+      .then(oldboxes => {
+        console.log(oldboxes);
+        res.status(200).json(oldboxes);
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
 };

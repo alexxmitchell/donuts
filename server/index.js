@@ -104,6 +104,7 @@ app.post("/api/createbox", bc.createBox);
 app.put("/api/addbox/:box_id/:don_id", bc.addToBox);
 app.get("/api/boxtops/:donut_id", bc.boxToppings);
 app.get("/api/total/:box_id", bc.boxTotal);
+app.get("/api/oldboxes", bc.previousBoxes);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
