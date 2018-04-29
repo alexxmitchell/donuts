@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React from "react";
+
 import "./Find.css";
 import Map from "./Map/Map";
 require("dotenv").config();

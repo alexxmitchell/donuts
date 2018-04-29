@@ -22,13 +22,14 @@ class Donut extends Component {
   }
   componentDidMount() {
     this.props.getUser();
+    this.setState({ kind: this.props.kind });
   }
   handleKind(type) {
     this.setState({ kind: type });
     this.props.addKind(this.state.kind);
   }
   render() {
-    console.log(this.props.user.id);
+    console.log(this.state.kind);
 
     return (
       <div className="donut-container">

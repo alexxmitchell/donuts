@@ -15,8 +15,8 @@ const Header = () => {
           <h2 className="small-name">GD</h2>
           <h2 className="title">nuts</h2>
         </Link>
-        <a name="about">About</a>
-        <a name="where">Where</a>
+        {/* <a name="about">About</a>
+        <a name="where">Where</a> */}
       </div>
       {/* <Dropdown /> */}
       <Link to="/box">

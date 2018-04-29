@@ -3,10 +3,26 @@
 }
 
 @media (min-width: 767px) {
-  .droptop-donut {
-    height: 300px;
+  .parent-droptop {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 95%;
+
+    margin: 40px auto;
+    /* padding-right: 50px; */
+  }
+
+  .size {
+    height: 290px;
   }
   .hide {
     display: inline-block;
+  }
+  .droptop-icing {
+    position: relative;
+    left: 353px;
+    z-index: 4;
   }
 }

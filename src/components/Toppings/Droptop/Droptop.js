@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import "./Droptop.css";
 import cake from "../../images/cake.png";
 import choc from "../../images/chocolate.png";
+import chocrasp from "../../images/chocwrasp.png";
 
 class Droptop extends Component {
   constructor(props) {
@@ -16,16 +17,17 @@ class Droptop extends Component {
       image = choc;
     }
     return (
-      <div>
-        <img className="droptop-donut hide" src={image} />
+      <div className="parent-droptop  hide">
+        <img className="droptop-icing size" src={chocrasp} />
+        <img className="droptop-donut size" src={image} />
       </div>
     );
   }
 }
 function mapStateToProps(state) {
-  const { kind } = state.donutReducer.kind;
+  const { currentDonut } = state.donutReducer.currentDonut;
   return {
-    kind
+    currentDonut
   };
 }
 

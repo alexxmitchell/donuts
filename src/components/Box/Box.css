@@ -30,8 +30,15 @@
     width: 45vw;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     overflow: scroll;
+  }
+  .order-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .not-logged {
+    margin: 0 auto;
   }
 }

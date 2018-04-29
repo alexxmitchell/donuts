@@ -69,9 +69,9 @@
   .small-name {
     display: none;
   }
-  .empty {
+  /* .empty {
     width: 100px;
     visibility: hidden;
     display: block;
-  }
+  } */
 }

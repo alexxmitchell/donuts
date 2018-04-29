@@ -48,12 +48,21 @@ class Box extends Component {
         );
       });
     }
+
+    let gotDonuts = <div className="hidden" />;
+    if ((donuts && donuts.length > 0) || box.length > 0) {
+      gotDonuts = (
+        <div className="actual-box">
+          <ShowBox />
+        </div>
+      );
+    }
+
     return (
       <div className="order">
         <div className="order-container">
           <div className="do-container">{dozen}</div>
-          <div className="actual-box">Current Box</div>
-          <ShowBox />
+          {gotDonuts}
         </div>
         <Link to="/donut">
           <button>Get more donuts</button>

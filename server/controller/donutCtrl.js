@@ -24,6 +24,7 @@ module.exports = {
     dbInstance
       .add_donut([id, kind])
       .then(resp => {
+        console.log(resp[0]);
         res.status(200).json(resp[0]);
       })
       .catch(e => {

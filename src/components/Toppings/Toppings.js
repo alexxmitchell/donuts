@@ -22,10 +22,6 @@ class Toppings extends Component {
     this.state = {
       isChecked: false,
       topping: 0
-      // topping1: 0,
-      // topping2: 0,
-      // topping3: 0,
-      // numTopping: 1
     };
     this.handleSelect = this.handleSelect.bind(this);
   }
@@ -41,12 +37,16 @@ class Toppings extends Component {
         this.props.addToppings(this.props.currentDonut.id, this.state.topping);
       }
     );
+    // switch (this.state.topping) {
+    //   case 10:
+    //   return <img
+    // }
     //sets the value for each item when clicked
   }
 
   render() {
     const { isChecked } = this.state;
-    console.log(this.props.currentBox);
+    console.log(this.props);
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     if (isChecked) {
       <button>
@@ -58,11 +58,9 @@ class Toppings extends Component {
       <div className="topping">
         <h2>Toppings</h2>
         <Category />
-        <h4>Select your toppings</h4>
+        <h4>Select your toppings (max 4)</h4>
 
-        <p>Max 4 toppings</p>
         <div className="container-drop-topping">
-          <Droptop />
           <div className="topping-container">
             <button
               className="peanuts top"
@@ -180,6 +178,8 @@ class Toppings extends Component {
               peanut butter drizzle
             </button>
           </div>
+
+          <Droptop />
         </div>
         <Link to="/box">
           {!this.props.currentBox ? (
