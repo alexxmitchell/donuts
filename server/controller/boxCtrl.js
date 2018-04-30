@@ -18,8 +18,9 @@ module.exports = {
     const { box_id, don_id } = req.params;
 
     dbInstance
-      .add_to_box([Number(box_id), Number(don_id)])
+      .add_to_box([box_id, don_id])
       .then(boxy => {
+        // res.status(200).json();
         res.status(200).json(boxy);
       })
       .catch(() => {
@@ -56,6 +57,7 @@ module.exports = {
   boxTotal: (req, res) => {
     const dbInstance = req.app.get("db");
     const { box_id } = req.params;
+    console.log("box_id:", box_id);
     dbInstance
       .box_total([box_id])
       .then(total => {

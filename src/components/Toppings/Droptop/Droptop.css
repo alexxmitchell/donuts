@@ -8,9 +8,9 @@
     top: 0;
     left: 0;
     width: 60%;
-    height: 95%;
+    height: 90%;
 
-    margin: 40px auto;
+    /* margin: 40px auto; */
     /* padding-right: 50px; */
   }
 
@@ -22,7 +22,12 @@
   }
   .droptop-icing {
     position: relative;
-    left: 353px;
+    top: 83px;
     z-index: 4;
+  }
+
+  .droptop-donut {
+    position: relative;
+    bottom: 207px;
   }
 }

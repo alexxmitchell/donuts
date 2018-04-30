@@ -38,16 +38,16 @@
 @media (min-width: 767px) {
   .container-drop-topping {
     display: flex;
-    height: 60vh;
+    height: 57vh;
     justify-content: center;
     align-items: center;
   }
 
   .topping-container {
-    flex-direction: column;
+    /* flex-direction: ; */
     justify-content: center;
     height: 40vh;
-    width: 20vw;
+    width: 30vw;
   }
   .bacon,
   .peanuts {

@@ -1,6 +1,7 @@
 .order {
   margin: auto;
   width: 80%;
+  overflow: scroll;
 }
 .ind-donut img {
   width: 100px;

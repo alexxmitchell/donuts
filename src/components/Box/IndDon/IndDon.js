@@ -8,6 +8,8 @@ import {
   getTotal
 } from "../../../ducks/donutReducer";
 import image from "../../../placeholder.png";
+import cake from "../../images/cake.png";
+import choc from "../../images/chocolate.png";
 import "./IndDon.css";
 import IndTop from "./IndTop/IndTop";
 
@@ -43,7 +45,11 @@ class IndDon extends Component {
           <h2>Remove from List</h2>
         </button>
 
-        <img src={image} alt="placeholder" />
+        {this.props.type === "Cake" ? (
+          <img className="lildo" src={cake} alt="cake" />
+        ) : (
+          <img className="lildo" src={choc} alt="chocolate" />
+        )}
         <div>
           <h2>{this.props.type} donut</h2>
 
@@ -59,7 +65,7 @@ class IndDon extends Component {
             <p>$1</p>
           )}
         </div>
-        <button onClick={this.added}>Add to Box</button>
+        <button onClick={() => this.added()}>Add to Box</button>
       </div>
     );
   }

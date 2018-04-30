@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import "../IndDon/IndDon.css";
+import "./ShowBox.css";
 import ShowTop from "../IndDon/IndTop/IndTop";
 import Checkout from "../../../Checkout";
+import cake from "../../images/cake.png";
+import choc from "../../images/chocolate.png";
 import {
   getBox,
   getToppings,
@@ -43,7 +46,12 @@ class ShowBox extends Component {
           {/* <button onClick={this.removed}>
             <h2>Remove from box</h2>
           </button> */}
-          <img src={image} alt="placeholder" />
+          {e.kind === "Cake" ? (
+            <img className="lildo" src={cake} alt="cake" />
+          ) : (
+            <img className="lildo" src={choc} alt="chocolate" />
+          )}
+
           <div>
             <span>
               <h2>{e.kind} donut</h2>

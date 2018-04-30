@@ -190,6 +190,11 @@ function donutReducer(state = initialState, action) {
         ...state,
         boxToppings: action.payload.data
       };
+    case `${GET_TOTAL}_FULFILLED`:
+      return {
+        ...state,
+        total: action.payload.data
+      };
 
     default:
       return state;

@@ -30,27 +30,23 @@ class Toppings extends Component {
   componentDidMount() {
     this.props.getAllToppings();
   }
-  handleSelect(e) {
+  handleSelect(val) {
+    console.log(val);
     this.setState(
       {
         isChecked: !this.state.isChecked,
-        topping: Number(e.target.value)
+        topping: Number(val)
       },
       () => {
         console.log(this.state.topping);
         this.props.addToppings(this.props.currentDonut.id, this.state.topping);
       }
     );
-    // switch (this.state.topping) {
-    //   case 10:
-    //   return <img
-    // }
-    //sets the value for each item when clicked
   }
 
   render() {
     const { isChecked } = this.state;
-    console.log(this.props);
+    console.log(this.props.currentDonut.kind);
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     if (isChecked) {
       <button>
@@ -71,9 +67,32 @@ class Toppings extends Component {
         <div className="container-drop-topping">
           <div className="topping-container">
             <button
+              className="hot-fudge top"
+              name="hot-fudge"
+              onClick={() => this.handleSelect(8)}
+            >
+              <Check />
+              chocolate icing
+            </button>
+            <button
+              className="caramel top"
+              name="caramel"
+              onClick={() => this.handleSelect(9)}
+            >
+              <Check />
+              caramel icing
+            </button>
+            <button
+              className="raspberry top"
+              name="raspberry"
+              onClick={() => this.handleSelect(10)}
+            >
+              <Check />
+              raspberry icing
+            </button>
+            <button
               className="peanuts top"
-              onClick={this.handleSelect}
-              value={1}
+              onClick={() => this.handleSelect(1)}
               name="peanuts"
             >
               {/* <img
@@ -86,8 +105,7 @@ class Toppings extends Component {
             <button
               className="pecans top"
               name="pecan"
-              onClick={this.handleSelect}
-              value={2}
+              onClick={() => this.handleSelect(2)}
             >
               <Check />
               pecans
@@ -95,8 +113,7 @@ class Toppings extends Component {
             <button
               className="bacon top"
               name="bacon"
-              onClick={this.handleSelect}
-              value={3}
+              onClick={() => this.handleSelect(3)}
             >
               <Check />
               bacon
@@ -104,8 +121,7 @@ class Toppings extends Component {
             <button
               className="gold top"
               name="gold flakes"
-              onClick={this.handleSelect}
-              value={4}
+              onClick={() => this.handleSelect(4)}
             >
               <Check />
               gold
@@ -114,8 +130,7 @@ class Toppings extends Component {
               className="strawberries top"
               //
               name="strawberries"
-              onClick={this.handleSelect}
-              value={5}
+              onClick={() => this.handleSelect(5)}
             >
               <Check />
               strawberries
@@ -124,8 +139,7 @@ class Toppings extends Component {
             <button
               className="bananas top"
               name="bananas"
-              onClick={this.handleSelect}
-              value={6}
+              onClick={() => this.handleSelect(6)}
             >
               <Check />
               bananas
@@ -133,44 +147,16 @@ class Toppings extends Component {
             <button
               className="sprinkles top"
               name="sprinkles"
-              onClick={this.handleSelect}
-              value={7}
+              onClick={() => this.handleSelect(7)}
             >
               <Check />
               sprinkles
             </button>
-            <button
-              className="hot-fudge top"
-              name="hot-fudge"
-              onClick={this.handleSelect}
-              value={8}
-            >
-              <Check />
-              chocolate icing
-            </button>
-            <button
-              className="caramel top"
-              name="caramel"
-              onClick={this.handleSelect}
-              value={9}
-            >
-              <Check />
-              caramel icing
-            </button>
-            <button
-              className="raspberry top"
-              name="raspberry"
-              onClick={this.handleSelect}
-              value={10}
-            >
-              <Check />
-              raspberry icing
-            </button>
+
             <button
               className="chocdrizzle top"
               name="chocdrizzle"
-              onClick={this.handleSelect}
-              value={11}
+              onClick={() => this.handleSelect(11)}
             >
               <Check />
               chocolate drizzle
@@ -179,15 +165,14 @@ class Toppings extends Component {
             <button
               className="pbdrizzle top"
               name="pbdrizzle"
-              onClick={this.handleSelect}
-              value={12}
+              onClick={() => this.handleSelect(12)}
             >
               <Check />
               peanut butter drizzle
             </button>
           </div>
 
-          <Droptop />
+          <Droptop atop={this.state.topping} />
         </div>
         <Link to="/box">
           {!this.props.currentBox ? (
@@ -209,6 +194,7 @@ class Toppings extends Component {
 
 function mapStateToProps(state) {
   const {
+    topping,
     kind,
     currentDonut,
     currentToppings,
