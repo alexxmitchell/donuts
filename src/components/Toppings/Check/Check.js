@@ -3,10 +3,13 @@ import { checkmark } from "../../images/checkmark.svg";
 import "./Check.css";
 
 class Check extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
+  selected() {
+    this.props.isChecked;
+  }
   render() {
     return (
       <div className="checks">

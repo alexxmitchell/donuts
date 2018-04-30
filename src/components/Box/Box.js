@@ -54,6 +54,9 @@ class Box extends Component {
       gotDonuts = (
         <div className="actual-box">
           <ShowBox />
+          <Link to="/donut">
+            <button>Get more donuts</button>
+          </Link>
         </div>
       );
     }
@@ -64,9 +67,6 @@ class Box extends Component {
           <div className="do-container">{dozen}</div>
           {gotDonuts}
         </div>
-        <Link to="/donut">
-          <button>Get more donuts</button>
-        </Link>
       </div>
     );
   }

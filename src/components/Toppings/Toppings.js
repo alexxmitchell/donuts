@@ -15,44 +15,36 @@ import {
 } from "../../ducks/donutReducer";
 
 import "./Toppings.css";
+import TopButton from "./TopButton";
 
 class Toppings extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isChecked: false,
       topping: 0
     };
-    this.handleSelect = this.handleSelect.bind(this);
   }
 
   componentDidMount() {
     this.props.getAllToppings();
   }
-  handleSelect(val) {
-    console.log(val);
-    this.setState(
-      {
-        isChecked: !this.state.isChecked,
-        topping: Number(val)
-      },
-      () => {
-        console.log(this.state.topping);
-        this.props.addToppings(this.props.currentDonut.id, this.state.topping);
-      }
-    );
-  }
 
   render() {
-    const { isChecked } = this.state;
     console.log(this.props.currentDonut.kind);
+    console.log(this.props.toppings);
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
-    if (isChecked) {
-      <button>
-        <img src="https://cdn1.iconfinder.com/data/icons/interface-elements/32/accept-circle-512.png" />
-      </button>;
-    }
+    let mappedToppings = this.props.toppings.map((e, i) => {
+      return (
+        <TopButton
+          key={e.id}
+          id={e.id}
+          price={e.price}
+          name={e.label}
+          category={e.category}
+        />
+      );
+    });
 
     return (
       <div className="topping">
@@ -65,13 +57,14 @@ class Toppings extends Component {
           <span className="savory">savory</span> or both
         </p>
         <div className="container-drop-topping">
-          <div className="topping-container">
+          <div className="to-contain">{mappedToppings}</div>
+          {/* <div className="topping-container">
             <button
               className="hot-fudge top"
               name="hot-fudge"
               onClick={() => this.handleSelect(8)}
             >
-              <Check />
+              <Check checked={this.isChecked} />
               chocolate icing
             </button>
             <button
@@ -99,7 +92,7 @@ class Toppings extends Component {
               src="http://www.jandgpecans.com/data/images/Codengine_1661_2e21b5f960905423db9f6b44244b10dc.png"
               alt="peanuts"
             /> */}
-              <Check clicked={this.state.checked} />
+          {/* <Check clicked={this.state.checked} />
               peanuts
             </button>
             <button
@@ -170,7 +163,7 @@ class Toppings extends Component {
               <Check />
               peanut butter drizzle
             </button>
-          </div>
+          </div> */}
 
           <Droptop atop={this.state.topping} />
         </div>
@@ -198,7 +191,8 @@ function mapStateToProps(state) {
     kind,
     currentDonut,
     currentToppings,
-    currentBox
+    currentBox,
+    toppings
   } = state.donutReducer;
   const { user } = state.userReducer;
   return {
@@ -206,7 +200,8 @@ function mapStateToProps(state) {
     currentDonut,
     currentToppings,
     currentBox,
-    user
+    user,
+    toppings
   };
 }
 export default connect(mapStateToProps, {

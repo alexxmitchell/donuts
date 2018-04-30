@@ -28,8 +28,9 @@
   }
 
   .droptop-cakedon {
-    position: relative;
-    bottom: 207px;
+    position: absolute;
+    right: 171px;
+    top: 56px;
   }
   .droptop-chocdon {
     position: absolute;

@@ -10,7 +10,7 @@
   height: 60vh;
   overflow: scroll;
 }
-.topping-container {
+.to-contain {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -22,7 +22,7 @@
   height: 10vh;
   background-repeat: no-repeat;
   background-position: center;
-  color: #fff;
+  color: black;
   font-size: 16px;
 }
 .peanuts {
@@ -34,6 +34,9 @@
 .bacon {
   background: url("https://assets.honestbee.com/products/images/480/villamarket_0174393_0174393-1.png");
 }
+.label {
+  color: black;
+}
 
 @media (min-width: 767px) {
   .container-drop-topping {
@@ -42,13 +45,13 @@
     justify-content: center;
     align-items: center;
   }
-
-  .topping-container {
-    /* flex-direction: ; */
+  .to-contain {
+    flex-direction: column;
     justify-content: center;
     height: 40vh;
     width: 30vw;
   }
+
   .bacon,
   .peanuts {
     background: #ffffff;
