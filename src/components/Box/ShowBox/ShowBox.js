@@ -20,10 +20,10 @@ class ShowBox extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    // this.props.getBox(this.props.currentBox[0].id);
-    this.props.getBoxtops(this.props.do);
-  }
+  // componentDidMount() {
+  //   // this.props.getBox(this.props.currentBox[0].id);
+  //   this.props.getBoxtops(this.props.do);
+  // }
 
   componentWillReceiveProps(nextProps) {
     if (

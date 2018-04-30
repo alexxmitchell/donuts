@@ -17,7 +17,7 @@ class Droptop extends Component {
   }
   render() {
     let image = "";
-
+    let topping1 = "";
     if (this.props.currentDonut && this.props.currentDonut.kind === "Cake") {
       switch (this.props.atop) {
         case 1:
@@ -115,6 +115,7 @@ class Droptop extends Component {
           break;
         case 10:
           image = choc;
+          topping1 = chocrasp;
           console.log("raspberry icing");
           break;
         case 11:
@@ -133,8 +134,20 @@ class Droptop extends Component {
     console.log(this.props);
     return (
       <div className="parent-droptop  hide">
-        <img className="droptop-icing size" src={chocrasp} alt="icing" />
-        <img className="droptop-donut size" src={image} alt="kind of donut" />
+        <img className="droptop-icing size" src={topping1} alt="icing" />
+        {image && image === choc ? (
+          <img
+            className="droptop-chocdon size"
+            src={image}
+            alt="kind of donut"
+          />
+        ) : (
+          <img
+            className="droptop-cakedon size"
+            src={image}
+            alt="kind of donut"
+          />
+        )}
       </div>
     );
   }

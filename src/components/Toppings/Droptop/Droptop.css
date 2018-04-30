@@ -21,13 +21,19 @@
     display: inline-block;
   }
   .droptop-icing {
-    position: relative;
-    top: 83px;
-    z-index: 4;
+    position: absolute;
+    top: 54px;
+    left: 192px;
+    z-index: 10;
   }
 
-  .droptop-donut {
+  .droptop-cakedon {
     position: relative;
     bottom: 207px;
+  }
+  .droptop-chocdon {
+    position: absolute;
+    right: 171px;
+    top: 56px;
   }
 }
