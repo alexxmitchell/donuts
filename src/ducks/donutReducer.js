@@ -13,7 +13,8 @@ const initialState = {
   boxToppings: [],
   total: [],
   category: "",
-  toppings: []
+  toppings: [],
+  previous: []
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -26,6 +27,7 @@ const ADD_TO_BOX = "ADD_TO_BOX";
 const GET_BOX = "GET_BOX";
 const GET_BOXTOPS = "GET_BOXTOPS";
 const GET_TOTAL = "GET_TOTAL";
+const PREVIOUS_ORDERS = "PREVIOUS_ORDERS";
 
 const GET_ALL_TOPPINGS = "GET_ALL_TOPPINGS";
 const ADD_TOPPINGS = "ADD_TOPPINGS";
@@ -122,6 +124,12 @@ export function getTotal(id) {
     payload: axios.get(`/api/total/${id}`)
   };
 }
+export function previousOrders(id) {
+  return {
+    type: PREVIOUS_ORDERS,
+    payload: axios.get(`/api/oldboxes`)
+  };
+}
 
 function donutReducer(state = initialState, action) {
   switch (action.type) {
@@ -194,6 +202,11 @@ function donutReducer(state = initialState, action) {
       return {
         ...state,
         total: action.payload.data
+      };
+    case `${PREVIOUS_ORDERS}_FULFILLED`:
+      return {
+        ...state,
+        previous: action.payload.data
       };
 
     default:

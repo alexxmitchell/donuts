@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../IndDon/IndDon.css";
 import "./ShowBox.css";
 import ShowTop from "../IndDon/IndTop/IndTop";
-import Checkout from "../../../Checkout";
+
 import cake from "../../images/cake.png";
 import choc from "../../images/chocolate.png";
 import {
@@ -86,14 +86,10 @@ class ShowBox extends Component {
         ) : (
           <p>$0</p>
         )}
-        <button>Order Now!</button>
-        <p>
-          <Checkout
-            name={"Donut payment"}
-            description={"Buy your delectable donuts"}
-            // amount={+this.props.total[0].sum + this.props.cost} // may need to send the total cost back to the back end
-          />
-        </p>
+        <Link to="/order">
+          <button>Order Now!</button>
+        </Link>
+        <p />
       </div>
     );
   }
