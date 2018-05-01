@@ -17,11 +17,20 @@
   border: solid 1px black;
 }
 .order-container {
-  height: 80vh;
+  height: 50vh;
   display: flex;
+  flex-direction: column;
 }
 
+.box-text {
+  font-size: 24px;
+  font-family: "Dokdo", cursive;
+  margin-top: 50px;
+}
 @media (min-width: 767px) {
+  .order {
+    width: 100%;
+  }
   .ind-donut {
     font-size: 14px;
     width: 25vw;
@@ -30,14 +39,14 @@
   .do-container {
     width: 45vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     overflow: scroll;
   }
   .order-container {
-    display: flex;
     flex-direction: column;
+    height: 60vh;
+    justify-content: space-around;
   }
   .not-logged {
     margin: 0 auto;

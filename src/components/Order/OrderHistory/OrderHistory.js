@@ -6,18 +6,18 @@ class OrderHistory extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
-    this.props.previousOrders(this.props.user.id);
-  }
+  //   componentDidMount() {
+  //     this.props.previousOrders(this.props.user.id);
+  //   }
   render() {
-    let oldOrders = this.props.previous.map((e, i) => {
-      return (
-        <div className="old" key={i}>
-          <h2>Old Box</h2>
-          <h2>{e.sum}</h2>
-        </div>
-      );
-    });
+    // let oldOrders = this.props.previous.map((e, i) => {
+    //   return (
+    //     <div className="old" key={i}>
+    //       <h2>Old Box</h2>
+    //       <h2>{e.sum}</h2>
+    //     </div>
+    //   );
+    // });
     return <div>OrderHistory</div>;
   }
 }

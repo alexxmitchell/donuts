@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { checkmark } from "../../images/checkmark.svg";
+import { checkmark } from "../../images/checkmark.png";
 import "./Check.css";
 
 class Check extends Component {

@@ -14,7 +14,8 @@ const initialState = {
   total: [],
   category: "",
   toppings: [],
-  previous: []
+  previous: [],
+  currDonutTop: []
 };
 
 const ADD_KIND = "ADD_KIND";
@@ -34,6 +35,7 @@ const ADD_TOPPINGS = "ADD_TOPPINGS";
 const GET_TOPPINGS = "GET_TOPPINGS";
 const REMOVE_TOPPING = "REMOVE_TOPPING"; //need action
 const CHANGE_TOPPING = "CHANGE_TOPPING";
+const CURRENT_DONUT_TOP = "CURRENT_DONUT_TOP";
 
 export function createBox(id) {
   return {
@@ -130,6 +132,12 @@ export function previousOrders(id) {
     payload: axios.get(`/api/oldboxes`)
   };
 }
+export function currentDonutTop(id) {
+  return {
+    type: CURRENT_DONUT_TOP,
+    payload: axios.get(`/api/gettoppings/${id}`)
+  };
+}
 
 function donutReducer(state = initialState, action) {
   switch (action.type) {
@@ -164,6 +172,7 @@ function donutReducer(state = initialState, action) {
         box: action.payload.data
       };
     case `${GET_DONUTS}_FULFILLED`:
+      console.log("got donuts");
       return {
         ...state,
         donuts: action.payload.data,
@@ -207,6 +216,11 @@ function donutReducer(state = initialState, action) {
       return {
         ...state,
         previous: action.payload.data
+      };
+    case `${CURRENT_DONUT_TOP}_FULFILLED`:
+      return {
+        ...state,
+        currDonutTop: action.payload.data
       };
 
     default:

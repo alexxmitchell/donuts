@@ -22,17 +22,47 @@ class Toppings extends Component {
     super(props);
 
     this.state = {
-      topping: 0
+      currDonutTop: [],
+      topping: 0,
+      countTop: 0
     };
+    this.handleSelect = this.handleSelect.bind(this);
+    this.addTop = this.addTop.bind(this);
   }
 
   componentDidMount() {
     this.props.getAllToppings();
   }
 
+  handleSelect(val) {
+    console.log(val);
+    this.setState(
+      {
+        topping: Number(val)
+      },
+      () => {
+        console.log(this.state.topping);
+
+        this.addTop();
+        this.props.addToppings(this.props.currentDonut.id, this.state.topping);
+      }
+    );
+  }
+
+  addTop() {
+    console.log("length:", this.state.currDonutTop.length);
+    if (this.state.currDonutTop.length <= 4) {
+      let newArr = this.state.currDonutTop.slice();
+      //push setstate
+      newArr.push(this.state.topping);
+      this.setState({ currDonutTop: newArr });
+    } else {
+      alert("You have selected 1 too many toppings");
+    }
+  }
+
   render() {
-    console.log(this.props.currentDonut.kind);
-    console.log(this.props.toppings);
+    console.log(this.state);
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     let mappedToppings = this.props.toppings.map((e, i) => {
       return (
@@ -42,6 +72,8 @@ class Toppings extends Component {
           price={e.price}
           name={e.label}
           category={e.category}
+          handleSelect={this.handleSelect}
+          selected={this.state.currDonutTop.includes(e.id)}
         />
       );
     });
@@ -50,122 +82,19 @@ class Toppings extends Component {
       <div className="topping">
         <h2>Toppings</h2>
         <Category />
-        <h4>Select your toppings (max 4)</h4>
-        <p>Start with a base</p>
+        <h4>Select toppings (max 4)</h4>
+        <p>1. Start with a base</p>
         <p>
-          then go <span className="sweet">sweet</span> or{" "}
+          2. Go <span className="sweet">sweet</span> or{" "}
           <span className="savory">savory</span> or both
         </p>
         <div className="container-drop-topping">
           <div className="to-contain">{mappedToppings}</div>
-          {/* <div className="topping-container">
-            <button
-              className="hot-fudge top"
-              name="hot-fudge"
-              onClick={() => this.handleSelect(8)}
-            >
-              <Check checked={this.isChecked} />
-              chocolate icing
-            </button>
-            <button
-              className="caramel top"
-              name="caramel"
-              onClick={() => this.handleSelect(9)}
-            >
-              <Check />
-              caramel icing
-            </button>
-            <button
-              className="raspberry top"
-              name="raspberry"
-              onClick={() => this.handleSelect(10)}
-            >
-              <Check />
-              raspberry icing
-            </button>
-            <button
-              className="peanuts top"
-              onClick={() => this.handleSelect(1)}
-              name="peanuts"
-            >
-              {/* <img
-              src="http://www.jandgpecans.com/data/images/Codengine_1661_2e21b5f960905423db9f6b44244b10dc.png"
-              alt="peanuts"
-            /> */}
-          {/* <Check clicked={this.state.checked} />
-              peanuts
-            </button>
-            <button
-              className="pecans top"
-              name="pecan"
-              onClick={() => this.handleSelect(2)}
-            >
-              <Check />
-              pecans
-            </button>
-            <button
-              className="bacon top"
-              name="bacon"
-              onClick={() => this.handleSelect(3)}
-            >
-              <Check />
-              bacon
-            </button>
-            <button
-              className="gold top"
-              name="gold flakes"
-              onClick={() => this.handleSelect(4)}
-            >
-              <Check />
-              gold
-            </button>
-            <button
-              className="strawberries top"
-              //
-              name="strawberries"
-              onClick={() => this.handleSelect(5)}
-            >
-              <Check />
-              strawberries
-            </button>
 
-            <button
-              className="bananas top"
-              name="bananas"
-              onClick={() => this.handleSelect(6)}
-            >
-              <Check />
-              bananas
-            </button>
-            <button
-              className="sprinkles top"
-              name="sprinkles"
-              onClick={() => this.handleSelect(7)}
-            >
-              <Check />
-              sprinkles
-            </button>
-
-            <button
-              className="chocdrizzle top"
-              name="chocdrizzle"
-              onClick={() => this.handleSelect(11)}
-            >
-              <Check />
-              chocolate drizzle
-            </button>
-
-            <button
-              className="pbdrizzle top"
-              name="pbdrizzle"
-              onClick={() => this.handleSelect(12)}
-            >
-              <Check />
-              peanut butter drizzle
-            </button>
-          </div> */}
-
-          <Droptop atop={this.state.topping} />
+          <Droptop
+            currentDoTop={this.state.currDonutTop}
+            atop={this.state.topping}
+          />
         </div>
         <Link to="/box">
           {!this.props.currentBox ? (

@@ -4,9 +4,10 @@
 
 @media (min-width: 767px) {
   .parent-droptop {
-    position: relative;
-    top: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     width: 60%;
     height: 90%;
 
@@ -21,20 +22,25 @@
     display: inline-block;
   }
   .droptop-icing {
-    position: absolute;
+    position: relative;
     top: 54px;
     left: 192px;
     z-index: 10;
   }
 
   .droptop-cakedon {
-    position: absolute;
+    position: relative;
     right: 171px;
     top: 56px;
   }
   .droptop-chocdon {
-    position: absolute;
+    position: relative;
     right: 171px;
     top: 56px;
+  }
+  #column {
+    margin: auto;
+    width: 60%;
+    height: 100%;
   }
 }

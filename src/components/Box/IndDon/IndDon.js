@@ -37,7 +37,7 @@ class IndDon extends Component {
       e => e.donut_id == this.props.do
     );
 
-    console.log(this.props.donuts);
+    console.log(this.props.currentDonut);
 
     return (
       <div className="ind-donut">

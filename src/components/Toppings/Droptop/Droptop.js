@@ -4,20 +4,29 @@ import "./Droptop.css";
 import cake from "../../images/cake.png";
 import choc from "../../images/chocolate.png";
 import chocrasp from "../../images/chocwrasp.png";
+import caramel from "../../images/chocwcaramelicing.png";
+import chocwchoc from "../../images/chocwchocicing.png";
 
 class Droptop extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      icing: 0,
-      topping1: 0,
-      topping2: 0,
-      topping3: 0
-    };
   }
   render() {
     let image = "";
+    let icing = "";
     let topping1 = "";
+    let topping2 = "";
+    let topping3 = "";
+    let topping4 = "";
+    let topping5 = "";
+    let topping6 = "";
+    let topping7 = "";
+    let topping8 = "";
+    let topping9 = "";
+    let topping10 = "";
+    let topping11 = "";
+    let topping12 = "";
+
     if (this.props.currentDonut && this.props.currentDonut.kind === "Cake") {
       switch (this.props.atop) {
         case 1:
@@ -107,10 +116,12 @@ class Droptop extends Component {
           break;
         case 8:
           image = choc;
+          icing = chocwchoc;
           console.log("chocolate icing");
           break;
         case 9:
           image = choc;
+          icing = caramel;
           console.log("caramel icing");
           break;
         case 10:
@@ -134,20 +145,24 @@ class Droptop extends Component {
     console.log(this.props);
     return (
       <div className="parent-droptop  hide">
-        <img className="droptop-icing size" src={topping1} alt="icing" />
-        {image && image === choc ? (
-          <img
-            className="droptop-chocdon size"
-            src={image}
-            alt="kind of donut"
-          />
-        ) : (
-          <img
-            className="droptop-cakedon size"
-            src={image}
-            alt="kind of donut"
-          />
-        )}
+        <div id="column">
+          <img className="droptop-icing size" src={icing} alt="icing" />
+          {/* <img className="droptop-icing size" src={topping2} alt="a topping" />
+        <img className="droptop-icing size" src={topping3} alt="a topping" /> */}
+          {image && image === choc ? (
+            <img
+              className="droptop-chocdon size"
+              src={image}
+              alt="kind of donut"
+            />
+          ) : (
+            <img
+              className="droptop-cakedon size"
+              src={image}
+              alt="kind of donut"
+            />
+          )}
+        </div>
       </div>
     );
   }

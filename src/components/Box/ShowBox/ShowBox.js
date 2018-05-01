@@ -75,17 +75,18 @@ class ShowBox extends Component {
       );
     });
     return (
-      <div>
-        <p>Show Box</p>
+      <div className="to-checkout">
+        <p>Summary</p>
         <div className="donut-box">
           <div className="yoDos">{boxer}</div>
+          <p>Box Total: </p>
+          {this.props.currentBox && this.props.total[0] ? (
+            <p>{(+this.props.total[0].sum + this.props.cost).toFixed(2)}</p>
+          ) : (
+            <p>$0</p>
+          )}
         </div>
-        <p>Box Total: </p>
-        {this.props.currentBox && this.props.total[0] ? (
-          <p>{(+this.props.total[0].sum + this.props.cost).toFixed(2)}</p>
-        ) : (
-          <p>$0</p>
-        )}
+
         <Link to="/order">
           <button>Order Now!</button>
         </Link>

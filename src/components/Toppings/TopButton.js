@@ -14,27 +14,13 @@ class TopButton extends Component {
     super(props);
 
     this.state = {
-      isChecked: false,
-      topping: 0
+      isChecked: false
     };
-    this.handleSelect = this.handleSelect.bind(this);
-  }
-  handleSelect(val) {
-    console.log(val);
-    this.setState(
-      {
-        topping: Number(val)
-      },
-      () => {
-        console.log(this.state.topping);
-        this.props.addToppings(this.props.currentDonut.id, this.state.topping);
-      }
-    );
   }
 
   render() {
     const { isChecked } = this.state;
-    console.log(this.props.currentDonut.kind);
+
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     // if (isChecked) {
     //   <button>
@@ -44,9 +30,10 @@ class TopButton extends Component {
 
     return (
       <div className="topping-container">
-        <button onClick={() => this.handleSelect(this.props.id)}>
-          <Check checked={this.isChecked} />
-          <p className="label">{this.props.label}</p>
+        <button onClick={() => this.props.handleSelect(this.props.id)}>
+          {this.props.selected ? <Check checked={this.isChecked} /> : null}
+          <p className="label">{this.props.name}</p>
+          <p className="price">$ {this.props.price}</p>
         </button>
       </div>
     );
@@ -59,7 +46,8 @@ function mapStateToProps(state) {
     kind,
     currentDonut,
     currentToppings,
-    currentBox
+    currentBox,
+    currDonutTop
   } = state.donutReducer;
   const { user } = state.userReducer;
   return {
@@ -67,6 +55,7 @@ function mapStateToProps(state) {
     currentDonut,
     currentToppings,
     currentBox,
+    currDonutTop,
     user
   };
 }
