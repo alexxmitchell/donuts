@@ -14,6 +14,7 @@ class Droptop extends Component {
   render() {
     let image = "";
     let icing = "";
+    let toppings = [];
     let topping1 = "";
     let topping2 = "";
     let topping3 = "";
@@ -88,6 +89,7 @@ class Droptop extends Component {
       switch (this.props.atop) {
         case 1:
           image = choc;
+          topping1 = cake;
           console.log("peanuts");
           break;
         case 2:
@@ -116,17 +118,17 @@ class Droptop extends Component {
           break;
         case 8:
           image = choc;
-          icing = chocwchoc;
+          toppings.push(chocwchoc);
           console.log("chocolate icing");
           break;
         case 9:
           image = choc;
-          icing = caramel;
+          toppings.push(caramel);
           console.log("caramel icing");
           break;
         case 10:
           image = choc;
-          topping1 = chocrasp;
+          toppings.push(chocrasp);
           console.log("raspberry icing");
           break;
         case 11:
@@ -143,6 +145,10 @@ class Droptop extends Component {
       }
     }
     console.log(this.props);
+
+    let displayToppings = toppings.map(e => {
+      return <img className="stacking" src={e} />;
+    });
     return (
       <div className="parent-droptop  hide">
         <div id="column">
@@ -150,11 +156,14 @@ class Droptop extends Component {
           {/* <img className="droptop-icing size" src={topping2} alt="a topping" />
         <img className="droptop-icing size" src={topping3} alt="a topping" /> */}
           {image && image === choc ? (
-            <img
-              className="droptop-chocdon size"
-              src={image}
-              alt="kind of donut"
-            />
+            <div>
+              <img
+                className="droptop-chocdon size"
+                src={image}
+                alt="kind of donut"
+              />
+              {displayToppings}
+            </div>
           ) : (
             <img
               className="droptop-cakedon size"

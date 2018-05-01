@@ -13,7 +13,10 @@ const Landing = () => {
       <section className="landing-top">
         <div className="large-text child">
           <h2 className="large">Go nuts for Good Donuts</h2>
-          <p>Create your own or select from our crafted selection</p>
+          <p>
+            Hand crafted donuts to address your sweet craving. Each donut that
+            we craft is created with happiness.
+          </p>
 
           <div className="scrolls">
             <div className="boxes">
