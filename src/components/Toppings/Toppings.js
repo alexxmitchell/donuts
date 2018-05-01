@@ -35,34 +35,30 @@ class Toppings extends Component {
   }
 
   handleSelect(val) {
-    console.log(val);
     this.setState(
       {
         topping: Number(val)
       },
       () => {
-        console.log(this.state.topping);
-
         this.addTop();
-        this.props.addToppings(this.props.currentDonut.id, this.state.topping);
       }
     );
   }
 
   addTop() {
     console.log("length:", this.state.currDonutTop.length);
-    if (this.state.currDonutTop.length <= 4) {
+    if (this.state.currDonutTop.length <= 3) {
       let newArr = this.state.currDonutTop.slice();
       //push setstate
       newArr.push(this.state.topping);
       this.setState({ currDonutTop: newArr });
+      this.props.addToppings(this.props.currentDonut.id, this.state.topping);
     } else {
       alert("You have selected 1 too many toppings");
     }
   }
 
   render() {
-    console.log(this.state);
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     let mappedToppings = this.props.toppings.map((e, i) => {
       return (

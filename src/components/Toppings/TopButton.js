@@ -16,11 +16,19 @@ class TopButton extends Component {
     this.state = {
       isChecked: false
     };
+    this.selectedVal = this.selectedVal.bind(this);
+  }
+
+  selectedVal(id) {
+    this.props.handleSelect(id);
+    this.setState({
+      isChecked: true
+    });
   }
 
   render() {
     const { isChecked } = this.state;
-
+    console.log(isChecked);
     //click event for selecting toppings; want to have a checkmark display if the topping is selected
     // if (isChecked) {
     //   <button>
@@ -30,8 +38,8 @@ class TopButton extends Component {
 
     return (
       <div className="topping-container">
-        <button onClick={() => this.props.handleSelect(this.props.id)}>
-          {this.props.selected ? <Check checked={this.isChecked} /> : null}
+        <button onClick={() => this.selectedVal(this.props.id)}>
+          {this.state.isChecked && <Check />}
           <p className="label">{this.props.name}</p>
           <p className="price">$ {this.props.price}</p>
         </button>
