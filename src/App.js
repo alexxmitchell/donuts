@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header/Header";
 import Landing from "./components/Landing/Landing";
 import Box from "./components/Box/Box";
-import Login from "./components/Login/Login";
+import Logout from "./components/Logout/Logout";
 import Donut from "./components/Donut/Donut";
 import Toppings from "./components/Toppings/Toppings";
 

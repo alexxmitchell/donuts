@@ -93,15 +93,23 @@ class Toppings extends Component {
           />
         </div>
         <Link to="/box">
-          {!this.props.currentBox ? (
-            <button>Add to Contenders</button>
+          {this.props.currentBox.id ? (
+            <button>Add to Box</button>
           ) : (
             <button
               onClick={() => {
-                this.props.createBox(this.props.user.id);
+                this.props
+                  .createBox(this.props.user.id)
+                  .then(res =>
+                    this.props.addToBox(
+                      res.value.data[0].id,
+                      this.props.currentDonut.id
+                    )
+                  )
+                  .catch(console.log);
               }}
             >
-              Add to Box
+              Create Box
             </button>
           )}
         </Link>

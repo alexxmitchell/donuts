@@ -2,6 +2,7 @@
   margin: auto;
   width: 80%;
   overflow: scroll;
+  height: 80%;
 }
 .ind-donut img {
   width: 100px;
@@ -23,32 +24,52 @@
 }
 
 .box-text {
-  font-size: 24px;
+  font-size: 32px;
   font-family: "Dokdo", cursive;
   margin-top: 50px;
+}
+.more {
+  padding: 10px;
+  background: #735b69;
+  border: solid 1px #735b69;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+}
+.do-container {
+  margin: 20px 0;
+  border: solid 1px #735b69;
+  border-radius: 2px;
+  background: white;
+  padding: 10px;
+}
+
+.not-logged {
+  font-family: "Roboto", sans-serif;
+  margin: auto;
 }
 @media (min-width: 767px) {
   .order {
     width: 100%;
   }
-  .ind-donut {
-    font-size: 14px;
-    width: 25vw;
-    height: 20vh;
-  }
+
   .do-container {
-    width: 45vw;
+    width: 60vw;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     overflow: scroll;
   }
   .order-container {
-    flex-direction: column;
+    flex-direction: row;
     height: 60vh;
     justify-content: space-around;
   }
   .not-logged {
     margin: 0 auto;
+  }
+  .box-text {
+    font-size: 36px;
   }
 }

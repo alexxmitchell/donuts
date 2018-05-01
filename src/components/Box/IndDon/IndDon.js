@@ -18,20 +18,21 @@ class IndDon extends Component {
     super(props);
 
     this.removed = this.removed.bind(this);
-    this.added = this.added.bind(this);
+    // this.added = this.added.bind(this);
   }
   componentDidMount() {
+    this.props.getBox(this.props.currentBox[0].id);
     this.props.getToppings(this.props.do);
   }
   removed() {
     this.props.removeDonut(this.props.user.id, this.props.do);
     // this.props.getDonuts(this.props.user.id);
   }
-  added() {
-    this.props.addToBox(this.props.currentBox[0].id, this.props.do);
-    this.props.getBox(this.props.currentBox[0].id);
-    this.props.getTotal(this.props.currentBox[0].id);
-  }
+  // added() {
+  //   this.props.addToBox(this.props.currentBox[0].id, this.props.do);
+  //   ;
+  //   this.props.getTotal(this.props.currentBox[0].id);
+  // }
   render() {
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id == this.props.do
@@ -65,7 +66,7 @@ class IndDon extends Component {
             <p>$1</p>
           )}
         </div>
-        <button onClick={() => this.added()}>Add to Box</button>
+        {/* <button onClick={() => this.added()}>Add to Box</button> */}
       </div>
     );
   }

@@ -42,7 +42,7 @@ class ShowBox extends Component {
     );
     const boxer = this.props.box.map((e, i) => {
       return (
-        <div className="ind-donut" key={i}>
+        <div className="box" key={i}>
           {/* <button onClick={this.removed}>
             <h2>Remove from box</h2>
           </button> */}
@@ -64,6 +64,7 @@ class ShowBox extends Component {
               )}
             </div> */}
             <div className="hovering">
+              <p>Items: {this.props.box.length}</p>
               {e.sum ? (
                 <p>$ {(+e.sum + this.props.cost).toFixed(2)}</p>
               ) : (
@@ -75,22 +76,22 @@ class ShowBox extends Component {
       );
     });
     return (
-      <div className="to-checkout">
-        <p>Summary</p>
-        <div className="donut-box">
-          <div className="yoDos">{boxer}</div>
-          <p>Box Total: </p>
-          {this.props.currentBox && this.props.total[0] ? (
-            <p>{(+this.props.total[0].sum + this.props.cost).toFixed(2)}</p>
-          ) : (
-            <p>$0</p>
-          )}
+      <div>
+        <div className="to-checkout">
+          <h2>Summary</h2>
+          <div className="donut-box">
+            <div className="yoDos">{boxer}</div>
+            <p>Box Total: </p>
+            {this.props.currentBox && this.props.total[0] ? (
+              <p>{(+this.props.total[0].sum + this.props.cost).toFixed(2)}</p>
+            ) : (
+              <p>$0</p>
+            )}
+          </div>
         </div>
-
         <Link to="/order">
-          <button>Order Now!</button>
+          <button className="now">Order Now!</button>
         </Link>
-        <p />
       </div>
     );
   }

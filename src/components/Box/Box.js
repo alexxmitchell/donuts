@@ -23,14 +23,18 @@ class Box extends Component {
   }
 
   componentDidMount() {
-    this.props.getDonuts(this.props.user.id);
+    this.props.getBox(this.props.currentBox[0].id);
   }
 
   render() {
     let dozen = (
       <div className="not-logged">
         <p>You have no donuts. Please login to view donuts</p>
-        <button>Login now</button>
+        <button
+          onClick={() => (window.location.href = "http://localhost:3001/login")}
+        >
+          Login now
+        </button>
       </div>
     );
     const { donuts, isLoading, box } = this.props;
@@ -57,7 +61,7 @@ class Box extends Component {
           <ShowBox />
         </div>
         <Link to="/donut">
-          <button>Get more donuts</button>
+          <button className="more">Get more donuts</button>
         </Link>
       </div>
     );

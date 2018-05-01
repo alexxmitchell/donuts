@@ -1,15 +1,17 @@
 .donut-container h2 {
   font-family: "Dokdo", cursive;
   font-size: 36px;
+  margin-bottom: 20px;
 }
 
 .donut-container {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .don-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -26,14 +28,21 @@ a {
 .select-do {
   width: 200px;
 }
+
+.right-arrow {
+  background: transparent;
+  border: none;
+}
 @media (min-width: 767px) {
   .donut-container h2 {
     font-size: 40px;
     margin-bottom: 80px;
   }
   .don-container {
+    margin-top: 100px;
     height: 40vh;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
   }

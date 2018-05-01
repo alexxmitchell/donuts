@@ -6,6 +6,7 @@ import choc from "../../images/chocolate.png";
 import chocrasp from "../../images/chocwrasp.png";
 import caramel from "../../images/chocwcaramelicing.png";
 import chocwchoc from "../../images/chocwchocicing.png";
+import bacon from "../../images/bacon.png";
 
 class Droptop extends Component {
   constructor(props) {
