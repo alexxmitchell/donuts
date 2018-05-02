@@ -4,6 +4,8 @@ import "./Header.css";
 import logo from "../images/cropped-DonutIcon.png";
 import bag from "../images/lunchbox.png";
 import Dropdown from "./Dropdown";
+import Profile from "../Profile/Profile";
+import profileimg from "../images/profile.png";
 const Header = () => {
   return (
     <div className="outer-header">
@@ -19,6 +21,9 @@ const Header = () => {
         <a name="where">Where</a> */}
       </div>
       {/* <Dropdown /> */}
+      <Link to="/profile">
+        <img className="person" src={profileimg} alt="profile icon" />
+      </Link>
       <Link to="/box">
         <img className="bag" src={bag} alt="bag" />
         {/* <div>

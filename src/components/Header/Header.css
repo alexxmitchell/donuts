@@ -41,6 +41,10 @@
   font-size: 50px;
   color: #735b69;
 }
+.person {
+  height: 35px;
+  width: 35px;
+}
 
 @media (min-width: 767px) {
   .outer-header {

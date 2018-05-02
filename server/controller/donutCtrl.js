@@ -46,6 +46,17 @@ module.exports = {
         console.log(e);
       });
   },
+  removeTopping: (req, res) => {
+    const dbInstance = req.app.get("db");
+    const { donut_id, topping_id } = req.params;
+
+    dbInstance
+      .remove_topping([donut_id, topping_id])
+      .then(resp => {
+        res.status(200).json(resp);
+      })
+      .catch(e => console.log(e));
+  },
   changeQuantity: (req, res) => {
     const dbInstance = req.app.get("db");
 

@@ -43,4 +43,13 @@
     width: 60%;
     height: 100%;
   }
+  .cakeStack {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  /* .stacking {
+    position: absolute;
+  } */
 }

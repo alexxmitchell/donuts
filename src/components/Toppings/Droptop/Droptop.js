@@ -7,6 +7,11 @@ import chocrasp from "../../images/chocwrasp.png";
 import caramel from "../../images/chocwcaramelicing.png";
 import chocwchoc from "../../images/chocwchocicing.png";
 import bacon from "../../images/bacon.png";
+import cakechocdriz from "../../images/cakewchocdrizzle.png";
+import cakepbdriz from "../../images/cakewpbdrizzle.png";
+import cakecaramel from "../../images/cakewcaramelicing.png";
+import cakerasp from "../../images/cakewraspicing.png";
+import cakechoc from "../../images/cakewchocicing.png";
 
 class Droptop extends Component {
   constructor(props) {
@@ -61,22 +66,27 @@ class Droptop extends Component {
           break;
         case 8:
           image = cake;
+          toppings.push(cakechoc);
           console.log("chocolate icing");
           break;
         case 9:
           image = cake;
+          toppings.push(cakecaramel);
           console.log("caramel icing");
           break;
         case 10:
           image = cake;
+          toppings.push(cakerasp);
           console.log("raspberry icing");
           break;
         case 11:
           image = cake;
+          toppings.push(cakechocdriz);
           console.log("chocolate drizzle");
           break;
         case 12:
           image = cake;
+          toppings.push(cakepbdriz);
           console.log("pb drizzle");
           break;
         default:
@@ -147,8 +157,8 @@ class Droptop extends Component {
     }
     console.log(this.props);
 
-    let displayToppings = toppings.map(e => {
-      return <img key={e.id} className="stacking" src={e} />;
+    let displayToppings = this.props.currentToppings.map(e => {
+      return <img key={e} className="stacking size" src={e} />;
     });
     return (
       <div className="parent-droptop  hide">
@@ -157,7 +167,7 @@ class Droptop extends Component {
           {/* <img className="droptop-icing size" src={topping2} alt="a topping" />
         <img className="droptop-icing size" src={topping3} alt="a topping" /> */}
           {image && image === choc ? (
-            <div>
+            <div className="chocStack">
               <img
                 className="droptop-chocdon size"
                 src={image}
@@ -166,11 +176,14 @@ class Droptop extends Component {
               {displayToppings}
             </div>
           ) : (
-            <img
-              className="droptop-cakedon size"
-              src={image}
-              alt="kind of donut"
-            />
+            <div className="cakeStack">
+              <img
+                className="droptop-cakedon size"
+                src={image}
+                alt="kind of donut"
+              />
+              {displayToppings}
+            </div>
           )}
         </div>
       </div>

@@ -113,6 +113,13 @@ export function changeTopping(id) {
     payload: axios.put(`/api/donut/${id}`)
   };
 }
+
+export function removeTopping(donut, topping) {
+  return {
+    type: REMOVE_TOPPING,
+    payload: axios.delete(`/api/removetopping/${donut}/${topping}`)
+  };
+}
 export function getBoxtops(id) {
   return {
     type: GET_BOXTOPS,
@@ -221,6 +228,12 @@ function donutReducer(state = initialState, action) {
       return {
         ...state,
         currDonutTop: action.payload.data
+      };
+    case `${REMOVE_TOPPING}_FULFILLED`:
+      console.log(action);
+      return {
+        ...state,
+        currentToppings: action.payload.data
       };
 
     default:

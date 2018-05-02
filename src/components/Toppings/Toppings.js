@@ -10,7 +10,8 @@ import {
   addDonut,
   addToBox,
   addToppings,
-  getAllToppings
+  getAllToppings,
+  removeTopping
 } from "../../ducks/donutReducer";
 
 import "./Toppings.css";
@@ -29,6 +30,7 @@ class Toppings extends Component {
     this.handleSelect = this.handleSelect.bind(this);
     this.addTop = this.addTop.bind(this);
     this.setCategory = this.setCategory.bind(this);
+    this.removeTop = this.removeTop.bind(this);
   }
 
   componentDidMount() {
@@ -50,9 +52,10 @@ class Toppings extends Component {
   }
 
   removeTop(id) {
-    let removeTopping = this.state.currDonutTop.slice();
-    removeTopping.splice(removeTopping.indexOf(id), 1);
-    this.setState({ currDonutTop: removeTopping });
+    let removedTopping = this.state.currDonutTop.slice();
+    removedTopping.splice(removedTopping.indexOf(id), 1);
+    this.setState({ currDonutTop: removedTopping });
+    this.props.removeTopping(this.props.currentDonut.id, id);
   }
 
   addTop() {
@@ -80,6 +83,7 @@ class Toppings extends Component {
             name={top.label}
             category={top.category}
             handleSelect={this.handleSelect}
+            removeTop={this.removeTop}
             selected={this.state.currDonutTop.includes(top.id)}
           />
         );
@@ -153,5 +157,6 @@ export default connect(mapStateToProps, {
   addDonut,
   addToBox,
   addToppings,
-  getAllToppings
+  getAllToppings,
+  removeTopping
 })(Toppings);

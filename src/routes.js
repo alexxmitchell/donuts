@@ -7,6 +7,7 @@ import Logout from "./components/Logout/Logout";
 import Donut from "./components/Donut/Donut";
 import Toppings from "./components/Toppings/Toppings";
 import Order from "./components/Order/Order";
+import Profile from "./components/Profile/Profile";
 
 export default (
   <Route
@@ -19,6 +20,7 @@ export default (
         <Route path="/donut" component={Donut} />
         <Route path="/box" component={Box} />
         <Route path="/order" component={Order} />
+        <Route path="/profile" component={Profile} />
       </Switch>
       // </PageTransition>
     )}
