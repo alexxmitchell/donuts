@@ -21,22 +21,16 @@
   .hide {
     display: inline-block;
   }
-  .droptop-icing {
-    position: relative;
-    top: 54px;
-    left: 192px;
-    z-index: 10;
-  }
 
   .droptop-cakedon {
-    position: relative;
-    right: 171px;
-    top: 56px;
+    position: absolute;
+    /* right: 171px;
+    top: 56px; */
   }
   .droptop-chocdon {
-    position: relative;
-    right: 171px;
-    top: 56px;
+    position: absolute;
+    /* right: 171px;
+    top: 56px; */
   }
   #column {
     margin: auto;
@@ -45,14 +39,14 @@
   }
   .cakeStack {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
   .chocStack {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
