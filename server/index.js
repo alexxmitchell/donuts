@@ -17,6 +17,7 @@ const configureRoutes = require("./routes");
 const dc = require(`${__dirname}/controller/donutCtrl`);
 const bc = require(`${__dirname}/controller/boxCtrl`);
 const ac = require(`${__dirname}/controller/authCtrl`);
+const uc = require(`${__dirname}/controller/userCtrl`);
 
 const app = express();
 
@@ -88,16 +89,17 @@ configureRoutes(app);
 app.get("/api/person", ac.getUser);
 app.get("/api/logout", ac.logoutUser);
 
+//user controller
+app.put(`/api/updateprofile`, uc.updateUser);
 //donut controller
 app.get(`/api/mydonuts`, dc.getDonuts);
-app.put("/api/donut", dc.editDonut);
 app.post("/api/adddonut", dc.addDonut);
 app.delete(`/api/removedonut/:donut_id`, dc.deleteDonut);
 app.get("/api/alltoppings", dc.getAllToppings);
 app.post("/api/addTopping", dc.addTopping);
 app.get(`/api/gettoppings/:id`, dc.getDoTop);
 app.put(`/api/donut/:id`, dc.editDonut);
-app.put(`/api/changequantity/:id`);
+// app.put(`/api/changequantity/:id`);
 app.delete("/api/removetopping/:donut_id/:topping_id", dc.removeTopping);
 
 //box controller

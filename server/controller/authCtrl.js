@@ -21,6 +21,7 @@ const getUser = (req, res) => {
     res.status(200).json(req.user);
   }
 };
+
 const logoutUser = (req, res) => {
   req.session.destroy(() => {
     res.redirect("http://localhost:3000/#/");

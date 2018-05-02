@@ -4,7 +4,7 @@ import "./Droptop.css";
 import cake from "../../images/cake.png";
 import choc from "../../images/chocolate.png";
 import chocrasp from "../../images/chocwrasp.png";
-import caramel from "../../images/chocwcaramelicing.png";
+import chocwcaramel from "../../images/chocwcaramelicing.png";
 import chocwchoc from "../../images/chocwchocicing.png";
 import bacon from "../../images/bacon.png";
 import cakechocdriz from "../../images/cakewchocdrizzle.png";
@@ -134,7 +134,7 @@ class Droptop extends Component {
           break;
         case 9:
           image = choc;
-          toppings.push(caramel);
+          toppings.push(chocwcaramel);
           console.log("caramel icing");
           break;
         case 10:

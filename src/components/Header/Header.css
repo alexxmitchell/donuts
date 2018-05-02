@@ -45,6 +45,12 @@
   height: 35px;
   width: 35px;
 }
+.right-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
 
 @media (min-width: 767px) {
   .outer-header {
@@ -66,12 +72,19 @@
     height: 50px;
     width: 50px;
   }
+  .person {
+    height: 40px;
+    width: 40px;
+  }
   .header-container .title {
     display: inline-block;
     font-size: 60px;
   }
   .small-name {
     display: none;
+  }
+  .right-header {
+    width: 120px;
   }
   /* .empty {
     width: 100px;

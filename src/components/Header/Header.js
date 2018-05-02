@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "./Header.css";
 import logo from "../images/cropped-DonutIcon.png";
 import bag from "../images/lunchbox.png";
 import Dropdown from "./Dropdown";
 import Profile from "../Profile/Profile";
 import profileimg from "../images/profile.png";
-const Header = () => {
+
+const Header = props => {
   return (
     <div className="outer-header">
       <div className="empty" />
@@ -21,17 +23,26 @@ const Header = () => {
         <a name="where">Where</a> */}
       </div>
       {/* <Dropdown /> */}
-      <Link to="/profile">
-        <img className="person" src={profileimg} alt="profile icon" />
-      </Link>
-      <Link to="/box">
-        <img className="bag" src={bag} alt="bag" />
-        {/* <div>
+      <div className="right-header">
+        {props.user.id ? (
+          <Link to="/profile">
+            <img className="person" src={profileimg} alt="profile icon" />
+          </Link>
+        ) : (
+          ""
+        )}
+        <Link to="/box">
+          <img className="bag" src={bag} alt="bag" />
+          {/* <div>
               Dropdown for login
               </div> */}
-      </Link>
+        </Link>
+      </div>
     </div>
   );
 };
 
-export default Header;
+function mapStateToProps(state) {
+  return { ...state.userReducer };
+}
+export default connect(mapStateToProps)(Header);

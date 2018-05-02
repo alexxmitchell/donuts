@@ -1,8 +1,22 @@
 .about-container {
-  width: 60vw;
-  margin: 60px auto;
+  width: 100vw;
+  height: 30vh;
+  margin: 0 auto;
+  background: white;
 }
 
 .about-text {
   font-size: 20px;
+  color: black;
+}
+
+@media (min-width: 767px) {
+  .process {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .process section {
+    width: 30%;
+  }
 }
