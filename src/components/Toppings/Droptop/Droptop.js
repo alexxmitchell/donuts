@@ -148,7 +148,7 @@ class Droptop extends Component {
     console.log(this.props);
 
     let displayToppings = toppings.map(e => {
-      return <img className="stacking" src={e} />;
+      return <img key={e.id} className="stacking" src={e} />;
     });
     return (
       <div className="parent-droptop  hide">

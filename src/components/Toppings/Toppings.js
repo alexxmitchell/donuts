@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import Category from "./Category/Category";
 import Check from "./Check/Check";
 import Droptop from "./Droptop/Droptop";
-import Category from "./Category/Category";
 
 import {
   createBox,
@@ -24,16 +23,21 @@ class Toppings extends Component {
     this.state = {
       currDonutTop: [],
       topping: 0,
-      countTop: 0
+      countTop: 0,
+      category: ""
     };
     this.handleSelect = this.handleSelect.bind(this);
     this.addTop = this.addTop.bind(this);
+    this.setCategory = this.setCategory.bind(this);
   }
 
   componentDidMount() {
     this.props.getAllToppings();
   }
 
+  setCategory(val) {
+    this.setState({ category: val });
+  }
   handleSelect(val) {
     this.setState(
       {
@@ -43,6 +47,12 @@ class Toppings extends Component {
         this.addTop();
       }
     );
+  }
+
+  removeTop(id) {
+    let removeTopping = this.state.currDonutTop.slice();
+    removeTopping.splice(removeTopping.indexOf(id), 1);
+    this.setState({ currDonutTop: removeTopping });
   }
 
   addTop() {
@@ -59,20 +69,21 @@ class Toppings extends Component {
   }
 
   render() {
-    //click event for selecting toppings; want to have a checkmark display if the topping is selected
-    let mappedToppings = this.props.toppings.map((e, i) => {
-      return (
-        <TopButton
-          key={e.id}
-          id={e.id}
-          price={e.price}
-          name={e.label}
-          category={e.category}
-          handleSelect={this.handleSelect}
-          selected={this.state.currDonutTop.includes(e.id)}
-        />
-      );
-    });
+    let mappedToppings = this.props.toppings
+      .filter(top => top.category.includes(this.state.category))
+      .map((top, i) => {
+        return (
+          <TopButton
+            key={top.id}
+            id={top.id}
+            price={top.price}
+            name={top.label}
+            category={top.category}
+            handleSelect={this.handleSelect}
+            selected={this.state.currDonutTop.includes(top.id)}
+          />
+        );
+      });
 
     return (
       <div className="topping">

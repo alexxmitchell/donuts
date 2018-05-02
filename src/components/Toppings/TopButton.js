@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Check from "./Check/Check";
-import Droptop from "./Droptop/Droptop";
-import Category from "./Category/Category";
 
 import { addToppings } from "../../ducks/donutReducer";
 
@@ -20,22 +17,18 @@ class TopButton extends Component {
   }
 
   selectedVal(id) {
-    this.props.handleSelect(id);
-    this.setState({
-      isChecked: true
-    });
+    if (this.state.isChecked == false) {
+      this.props.handleSelect(id);
+      this.setState({
+        isChecked: true
+      });
+    } else {
+      this.props.removeTop(id);
+      this.setState({ isChecked: false });
+    }
   }
 
   render() {
-    const { isChecked } = this.state;
-    console.log(isChecked);
-    //click event for selecting toppings; want to have a checkmark display if the topping is selected
-    // if (isChecked) {
-    //   <button>
-    //     <img src="https://cdn1.iconfinder.com/data/icons/interface-elements/32/accept-circle-512.png" />
-    //   </button>;
-    // }
-
     return (
       <div className="topping-container">
         <button onClick={() => this.selectedVal(this.props.id)}>
@@ -51,7 +44,6 @@ class TopButton extends Component {
 
 function mapStateToProps(state) {
   const {
-    topping,
     kind,
     currentDonut,
     currentToppings,

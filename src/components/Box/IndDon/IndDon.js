@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import {
   getToppings,
   addToBox,
-  getDonuts,
   getBox,
   getTotal
 } from "../../../ducks/donutReducer";
@@ -21,24 +20,16 @@ class IndDon extends Component {
     // this.added = this.added.bind(this);
   }
   componentDidMount() {
-    this.props.getBox(this.props.currentBox[0].id);
     this.props.getToppings(this.props.do);
   }
   removed() {
     this.props.removeDonut(this.props.user.id, this.props.do);
-    // this.props.getDonuts(this.props.user.id);
   }
-  // added() {
-  //   this.props.addToBox(this.props.currentBox[0].id, this.props.do);
-  //   ;
-  //   this.props.getTotal(this.props.currentBox[0].id);
-  // }
+
   render() {
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id == this.props.do
     );
-
-    console.log(this.props.currentDonut);
 
     return (
       <div className="ind-donut">
@@ -74,12 +65,6 @@ class IndDon extends Component {
 
 function mapStateToProps(state) {
   return {
-    // currentToppings: state.donutReducer.currentToppings,
-    // userid: state.userReducer.userid,
-    // currentBox: state.donutReducer.currentBox,
-    // cost: state.donutReducer.cost,
-    // donuts: state.donutReducer.donuts,
-    // box: state.donutReducer.donuts
     ...state.userReducer,
     ...state.donutReducer
   };
@@ -89,6 +74,5 @@ export default connect(mapStateToProps, {
   getBox,
   getToppings,
   addToBox,
-  getDonuts,
   getTotal
 })(IndDon);

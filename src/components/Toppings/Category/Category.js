@@ -8,16 +8,17 @@ class Category extends Component {
     this.state = {
       category: ""
     };
-    this.changeCategory = this.changeCategory.bind(this);
-  }
-  changeCategory(val) {
-    this.setState({ category: val });
   }
 
   render() {
     return (
-      <select className="category-selector">
-        <option value="All">All</option>
+      <select
+        className="category-selector"
+        onChange={e => {
+          this.props.setCategory(e.target.value);
+        }}
+      >
+        <option value="">All</option>
         <option value="Icing">Icing</option>
         <option value="Nuts">Nuts</option>
         <option value="Fruit">Fruit</option>

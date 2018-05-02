@@ -97,6 +97,7 @@ app.get("/api/alltoppings", dc.getAllToppings);
 app.post("/api/addTopping", dc.addTopping);
 app.get(`/api/gettoppings/:id`, dc.getDoTop);
 app.put(`/api/donut/:id`, dc.editDonut);
+app.put(`/api/changequantity/:id`);
 
 //box controller
 app.get("/api/box/:box_id", bc.getBox);

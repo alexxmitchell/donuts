@@ -20,6 +20,7 @@
   .to-checkout {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 20vw;
     height: 100%;
     background: white;

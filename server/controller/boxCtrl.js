@@ -23,8 +23,8 @@ module.exports = {
         // res.status(200).json();
         res.status(200).json(boxy);
       })
-      .catch(() => {
-        res.status(500).json();
+      .catch(e => {
+        console.log(e);
       });
   },
   getBox: (req, res) => {

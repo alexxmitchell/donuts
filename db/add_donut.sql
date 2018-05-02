@@ -1,3 +1,3 @@
-INSERT INTO donuts (users_id, kind)
-VALUES($1, $2)
+INSERT INTO donuts (users_id, kind, quantity)
+VALUES($1, $2, 1)
 RETURNING *;

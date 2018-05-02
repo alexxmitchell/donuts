@@ -46,6 +46,13 @@ module.exports = {
         console.log(e);
       });
   },
+  changeQuantity: (req, res) => {
+    const dbInstance = req.app.get("db");
+
+    const { id } = req.params;
+
+    dbInstance.change_quantity([id]).then(() => {});
+  },
   deleteDonut: (req, res) => {
     const dbInstance = req.app.get("db");
     console.log("delete:", req.user.id, req.params.donut_id);

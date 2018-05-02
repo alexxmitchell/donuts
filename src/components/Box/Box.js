@@ -18,13 +18,16 @@ class Box extends Component {
     super(props);
 
     this.state = {
-      toppings: []
+      toppings: [],
+      userInput: ""
     };
   }
 
   componentDidMount() {
-    this.props.getBox(this.props.currentBox[0].id);
+    // this.props.getBox(this.props.currentBox[0].id);
   }
+
+  edit;
 
   render() {
     let dozen = (
@@ -38,8 +41,8 @@ class Box extends Component {
       </div>
     );
     const { donuts, isLoading, box } = this.props;
-    if ((donuts && donuts.length > 0) || box.length > 0) {
-      dozen = donuts.map((e, i) => {
+    if ((box && box.length > 0) || box.length > 0) {
+      dozen = box.map((e, i) => {
         return (
           <IndDon
             key={e.id}
@@ -52,10 +55,11 @@ class Box extends Component {
         );
       });
     }
+    let first = this.props.user.name.split(" ").shift();
 
     return (
       <div className="order">
-        <h2 className="box-text">Your Current Box</h2>
+        <h2 className="box-text">{first}'s Current Box</h2>
         <div className="order-container">
           <div className="do-container">{dozen}</div>
           <ShowBox />
