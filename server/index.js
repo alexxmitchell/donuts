@@ -21,6 +21,12 @@ const uc = require(`${__dirname}/controller/userCtrl`);
 
 const app = express();
 
+massive(process.env.CONNECTION_STRING)
+  .then(dbInstance => {
+    app.set("db", dbInstance);
+  })
+  .catch(console.log);
+
 app.use(json());
 app.use(cors());
 
@@ -30,16 +36,10 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 20000000
+      maxAge: 1000000
     }
   })
 );
-
-massive(process.env.CONNECTION_STRING)
-  .then(dbInstance => {
-    app.set("db", dbInstance);
-  })
-  .catch(console.log);
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -47,7 +47,7 @@ app.use(passport.session());
 passport.use(ac.strategy);
 
 passport.serializeUser((user, done) => {
-  // console.log(user.id);
+  console.log(user.id);
   app
     .get("db")
     .get_user(user.id)
@@ -55,7 +55,7 @@ passport.serializeUser((user, done) => {
       if (!response[0]) {
         app
           .get("db")
-          .add_user([user._json.name, user._json.id])
+          .add_user([user.name, user.id])
           .then(res => {
             return done(null, res[0]);
           })

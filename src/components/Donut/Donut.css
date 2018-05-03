@@ -35,10 +35,6 @@ a {
   border: none;
 }
 
-.right-arrow:hover {
-  transform: rotate(270deg);
-  /* transform: scale(2); */
-}
 @media (min-width: 767px) {
   .donut-container h2 {
     font-size: 40px;

@@ -22,22 +22,25 @@ class ShowBox extends Component {
 
   componentDidMount() {
     this.props.getBox(this.props.currentBox.id);
-    this.props.getTotal(this.props.currentBox.id);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (
-      this.props.total[0] &&
-      this.props.total[0].sum !== nextProps.total[0].sum
-    ) {
-      this.props.getTotal(this.props.currentBox.id);
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (prevProps.currentBox !== this.props.currentBox) {
+  //     this.props.getTotal(this.props.currentBox.id);
+  //   }
+  //   if (prevProps.total[0] !== this.props.total[0]) {
+  //     this.props.getTotal(this.props.currentBox.id);
+  //   }
+  // }
 
   render() {
-    console.log(this.props.total);
-    // console.log(this.props);
+    console.log(this.props);
+    let boxTotal = this.props.box.reduce((acc, sum, i) => {
+      return acc + Number(this.props.box[i].sum);
+    }, 0);
     let length = this.props.box.length;
+
+    console.log(boxTotal + this.props.cost * Number(length));
     // console.log(this.props.total);
     const correctBoxToppings = this.props.boxToppings.filter(
       e => e.donut_id == this.props.do
@@ -71,8 +74,12 @@ class ShowBox extends Component {
           <div className="donut-box">
             <div className="yoDos">{boxer}</div>
             <p>Box Total: </p>
-            {this.props.currentBox && this.props.total[0] ? (
-              <p>{(+this.props.total[0].sum + this.props.cost).toFixed(2)}</p>
+            {this.props.currentBox && boxTotal ? (
+              <p>
+                {(Number(boxTotal) + this.props.cost * Number(length)).toFixed(
+                  2
+                )}
+              </p>
             ) : (
               <p>$0</p>
             )}

@@ -57,7 +57,7 @@ class Donut extends Component {
             onClick={() => {
               this.props.addDonut(this.state.kind);
             }}
-            className="right-arrow"
+            className="right-arrow "
           >
             <img src={scrolldown} />
           </button>

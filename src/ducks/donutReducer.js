@@ -11,7 +11,7 @@ const initialState = {
   currentDonut: {},
   currentToppings: [],
   boxToppings: [],
-  total: [],
+  total: 0,
   category: "",
   toppings: [],
   previous: [],
@@ -129,6 +129,7 @@ export function getBoxtops(id) {
 }
 
 export function getTotal(id) {
+  console.log("GET TOTAL :", id);
   return {
     type: GET_TOTAL,
     payload: axios.get(`/api/total/${id}`)
@@ -219,7 +220,7 @@ function donutReducer(state = initialState, action) {
       console.log(action);
       return {
         ...state,
-        total: action.payload.data
+        total: Number(action.payload.data)
       };
     case `${PREVIOUS_ORDERS}_FULFILLED`:
       return {

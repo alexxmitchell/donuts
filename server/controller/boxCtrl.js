@@ -16,12 +16,12 @@ module.exports = {
     const dbInstance = req.app.get("db");
 
     const { box_id, id } = req.params;
-    console.log("box_id and id:", box_id, id);
+    console.log("addto box_id and id:", box_id, id);
     dbInstance
       .add_to_box([box_id, id])
       .then(boxy => {
-        console.log("boxy:", boxy);
-        // res.status(200).json();
+        console.log("addto boxy:", boxy);
+
         res.status(200).json(boxy);
       })
       .catch(e => {
@@ -36,6 +36,7 @@ module.exports = {
     dbInstance
       .get_box([box_id])
       .then(myBox => {
+        console.log("get myBox:", myBox);
         res.status(200).json(myBox);
       })
       .catch(e => {
@@ -48,7 +49,6 @@ module.exports = {
     dbInstance
       .box_toppings([donut_id])
       .then(boxTops => {
-        console.log("boxTops:", boxTops);
         res.status(200).json(boxTops);
       })
       .catch(e => {
@@ -58,12 +58,12 @@ module.exports = {
   boxTotal: (req, res) => {
     const dbInstance = req.app.get("db");
     const { box_id } = req.params;
-    console.log("box_id:", box_id);
+    console.log("total box_id:", box_id);
     dbInstance
-      .box_total([box_id])
+      .box_total(box_id)
       .then(total => {
-        console.log(total);
-        res.status(200).json(total);
+        console.log("TOTAL HERE: ", total[0]);
+        res.status(200).json(total[0].sum);
       })
       .catch(e => {
         console.log(e);

@@ -9,6 +9,7 @@ const strategy = new Auth0strategy(
     callbackURL: "/login"
   },
   function(accessToken, refreshToken, extraParams, profile, done) {
+    console.log(profile);
     return done(null, profile);
   }
 );
