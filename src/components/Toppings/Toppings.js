@@ -92,7 +92,7 @@ class Toppings extends Component {
     return (
       <div className="topping">
         <h2>Toppings</h2>
-        <Category />
+        {/* <Category /> */}
         <h4>Select toppings (max 4)</h4>
         <p>1. Start with a base</p>
         <p>

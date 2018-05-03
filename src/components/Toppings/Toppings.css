@@ -20,8 +20,10 @@
 .topping-container button {
   width: 40vw;
   height: 10vh;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: white;
+  border: 1px solid #735b69;
+  /* background-repeat: no-repeat;
+  background-position: center; */
   color: black;
   font-size: 16px;
 }

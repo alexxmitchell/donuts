@@ -1,4 +1,23 @@
+.profile-page {
+  padding-top: 40px;
+  width: 80vw;
+  margin: 0 auto;
+}
+
 .profile-page input {
   border: 1px solid #735b69;
   border-radius: 4px;
+}
+.profile-page h2 {
+  font-family: "Dokdo", cursive;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.profile-page form {
+  background: white;
+  padding: 20px 0;
+}
+
+@media (min-width: 767px) {
 }

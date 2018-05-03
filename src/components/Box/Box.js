@@ -18,8 +18,7 @@ class Box extends Component {
     super(props);
 
     this.state = {
-      toppings: [],
-      userInput: ""
+      toppings: []
     };
   }
 
@@ -32,12 +31,21 @@ class Box extends Component {
   render() {
     let dozen = (
       <div className="not-logged">
-        <p>You have no donuts. Please login to view donuts</p>
-        <button
-          onClick={() => (window.location.href = "http://localhost:3001/login")}
-        >
-          Login now
-        </button>
+        {this.props.user.id ? (
+          <p>You have 0 donuts.</p>
+        ) : (
+          <div>
+            <p>Please login to view donuts</p>
+            <button
+              className="more"
+              onClick={() =>
+                (window.location.href = "http://localhost:3001/login")
+              }
+            >
+              Login now
+            </button>{" "}
+          </div>
+        )}
       </div>
     );
     const { donuts, isLoading, box } = this.props;
@@ -55,18 +63,24 @@ class Box extends Component {
         );
       });
     }
-    let first = this.props.user.name.split(" ").shift();
 
     return (
       <div className="order">
-        <h2 className="box-text">{first}'s Current Box</h2>
+        <h2 className="box-text">Your Current Box</h2>
         <div className="order-container">
-          <div className="do-container">{dozen}</div>
-          <ShowBox />
+          <div>
+            <div className="do-container">{dozen}</div>
+            {this.props.user.id ? (
+              <Link to="/donut">
+                <button className="more">Get more donuts</button>
+              </Link>
+            ) : (
+              ""
+            )}
+          </div>
+
+          {this.props.user.id ? <ShowBox /> : ""}
         </div>
-        <Link to="/donut">
-          <button className="more">Get more donuts</button>
-        </Link>
       </div>
     );
   }

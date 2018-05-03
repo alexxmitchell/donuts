@@ -11,11 +11,10 @@
 .ind-donut {
   margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 10px;
   text-align: left;
-  border: solid 1px black;
 }
 .order-container {
   height: 50vh;
@@ -38,8 +37,7 @@
 }
 .do-container {
   margin: 20px 0;
-  border: solid 1px #735b69;
-  border-radius: 2px;
+
   background: white;
   padding: 10px;
 }
@@ -47,7 +45,13 @@
 .not-logged {
   font-family: "Roboto", sans-serif;
   margin: auto;
+  padding: 100px;
 }
+
+.not-logged button {
+  margin-top: 30px;
+}
+
 @media (min-width: 767px) {
   .order {
     width: 100%;

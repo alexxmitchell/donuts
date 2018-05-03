@@ -6,14 +6,15 @@
   overflow: scroll;
 }
 .landing-top {
-  height: 90vh;
+  height: 80vh;
   /* background-image: url("../../crafted-donuts.jpg"); */
-  background-size: 250%;
-  background-position: -650px 0px;
+  /* background-size: 250%;
+  background-position: -650px 0px; */
+
   background-repeat: no-repeat;
   z-index: 0;
   background-attachment: scroll;
-  background-image: url("../images/cartoon-donuts.png");
+  background-image: url("../images/cart-donuts.png");
 
   color: #735b69;
 }
@@ -44,6 +45,7 @@
   font-size: 50px;
   line-height: 45px;
   font-family: "Dokdo", cursive;
+  text-shadow: 2px 2px gray;
 
   /* text-align: right; */
 }
@@ -57,10 +59,10 @@
     /* transition: all 2s; */
     width: 100vw;
     margin: auto;
-    height: 100%;
-    background-size: 192%;
+    background-size: cover;
+    /* background-size: 192%;
     background-position: -550px 0px;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     background-attachment: fixed;
   }
   .large-text {
@@ -68,21 +70,20 @@
     padding-left: 50px;
   }
   .large {
-    width: 20%;
     margin: 100px auto;
-    font-size: 54px;
+    font-size: 72px;
     line-height: 50px;
     letter-spacing: 0.1em;
   }
   .scrolls {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
   }
-  .boxes {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  .scrolls h3 {
+    font-size: 24px;
+    text-shadow: 1px 1px gray;
   }
   .boxes div {
     border: solid #735b69 1px;

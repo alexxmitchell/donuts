@@ -35,6 +35,7 @@ class ShowBox extends Component {
   }
 
   render() {
+    console.log(this.props);
     let length = this.props.box.length;
     console.log(this.props.total);
     const correctBoxToppings = this.props.boxToppings.filter(
@@ -46,11 +47,11 @@ class ShowBox extends Component {
           {/* <button onClick={this.removed}>
             <h2>Remove from box</h2>
           </button> */}
-          {e.kind === "Cake" ? (
+          {/* {e.kind === "Cake" ? (
             <img className="lildo" src={cake} alt="cake" />
           ) : (
             <img className="lildo" src={choc} alt="chocolate" />
-          )}
+          )} */}
 
           <div>
             <span>

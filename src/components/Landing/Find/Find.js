@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const Find = () => {
   return (
-    <div className="where" href="#where">
+    <div className="where">
       <h1>Find us</h1>
       <div className="find-container">
         <Map
@@ -28,6 +28,10 @@ const Find = () => {
         <h3>Let's get social</h3>
         <p>Links</p>
       </div>
+      <footer className="footer">
+        Disclaimer: This is a demo full-stack application. By no means will this
+        site be used to provide donuts
+      </footer>
     </div>
   );
 };

@@ -1,13 +1,21 @@
 .about-container {
   width: 100vw;
-  height: 30vh;
+
   margin: 0 auto;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .about-text {
   font-size: 20px;
   color: black;
+}
+.process section {
+  width: 100%;
+  padding: 10px;
+}
+.step2 {
+  border-top: 3px dashed #735b69;
+  border-bottom: 3px dashed #735b69;
 }
 
 @media (min-width: 767px) {
@@ -18,5 +26,10 @@
   }
   .process section {
     width: 30%;
+  }
+
+  .step2 {
+    border-left: 3px dashed #735b69;
+    border-right: 3px dashed #735b69;
   }
 }

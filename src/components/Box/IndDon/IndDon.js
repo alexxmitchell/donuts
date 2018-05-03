@@ -33,10 +33,6 @@ class IndDon extends Component {
 
     return (
       <div className="ind-donut">
-        <button onClick={this.removed}>
-          <h2>Remove from List</h2>
-        </button>
-
         {this.props.type === "Cake" ? (
           <img className="lildo" src={cake} alt="cake" />
         ) : (
@@ -51,13 +47,17 @@ class IndDon extends Component {
               <IndTop currentToppings={correctToppings} />
             )}
           </div>
-          {this.props.price ? (
-            <p>$ {(+this.props.price + this.props.cost).toFixed(2)}</p>
-          ) : (
-            <p>$1</p>
-          )}
+          <div className="price">
+            {this.props.price ? (
+              <p>$ {(+this.props.price + this.props.cost).toFixed(2)}</p>
+            ) : (
+              <p>$1</p>
+            )}
+          </div>
         </div>
-        {/* <button onClick={() => this.added()}>Add to Box</button> */}
+        <button onClick={this.removed}>
+          <h2>Remove from List</h2>
+        </button>
       </div>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateUser } from "../../ducks/userReducer";
+import "./Profile.css";
 
 class Profile extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="profile-page">
-        <h4>Keep us up to date</h4>
+        <h2>Keep us up to date</h2>
         <form onSubmit={this.submitForm}>
           <p>name</p>
           <input
@@ -50,6 +51,7 @@ class Profile extends Component {
             placeholder={this.props.user.name}
             onChange={this.handleInput}
           />
+
           <p>email</p>
           <input
             type="text"

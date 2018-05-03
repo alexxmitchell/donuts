@@ -12,6 +12,7 @@ class Order extends Component {
       <div>
         <div className="hold-form">
           <h4>Complete Your Order</h4>
+          <p>Please enter your billing information</p>
           <form>
             <label>
               Name

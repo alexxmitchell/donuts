@@ -12,20 +12,15 @@ import cakepbdriz from "../../images/cakewpbdrizzle.png";
 import cakecaramel from "../../images/cakewcaramelicing.png";
 import cakerasp from "../../images/cakewraspicing.png";
 import cakechoc from "../../images/cakewchocicing.png";
-import { ifError } from "assert";
+import cakebacon from "../../images/cakebacon.png";
 
 class Droptop extends Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   toppings: []
-    // }
   }
   render() {
     let image = "";
     let icing = "";
-    let toppings = [];
 
     if (this.props.currentDonut.kind === "Cake") {
       image = cake;
@@ -45,7 +40,7 @@ class Droptop extends Component {
             console.log("pecans");
             break;
           case 3:
-            return <img key={i} className="stacking size" src={bacon} />;
+            return <img key={i} className="stacking size" src={cakebacon} />;
             console.log("bacon");
             break;
           case 4:
