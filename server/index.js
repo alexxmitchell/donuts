@@ -91,6 +91,7 @@ app.get("/api/logout", ac.logoutUser);
 
 //user controller
 app.put(`/api/updateprofile`, uc.updateUser);
+
 //donut controller
 app.get(`/api/mydonuts`, dc.getDonuts);
 app.post("/api/adddonut", dc.addDonut);
@@ -98,14 +99,13 @@ app.delete(`/api/removedonut/:donut_id`, dc.deleteDonut);
 app.get("/api/alltoppings", dc.getAllToppings);
 app.post("/api/addTopping", dc.addTopping);
 app.get(`/api/gettoppings/:id`, dc.getDoTop);
-app.put(`/api/donut/:id`, dc.editDonut);
-// app.put(`/api/changequantity/:id`);
+
 app.delete("/api/removetopping/:donut_id/:topping_id", dc.removeTopping);
 
 //box controller
 app.get("/api/box/:box_id", bc.getBox);
 app.post("/api/createbox", bc.createBox);
-app.put("/api/addbox/:box_id/:don_id", bc.addToBox);
+app.put("/api/addbox/:box_id/:id", bc.addToBox);
 app.get("/api/boxtops/:donut_id", bc.boxToppings);
 app.get("/api/total/:box_id", bc.boxTotal);
 app.get("/api/oldboxes", bc.previousBoxes);

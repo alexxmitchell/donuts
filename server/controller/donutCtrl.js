@@ -32,20 +32,6 @@ module.exports = {
       });
   },
 
-  editDonut: (req, res) => {
-    const dbInstance = req.app.get("db");
-    // console.log(req.params);
-
-    const { id } = req.params;
-    dbInstance
-      .edit_donut([newtoppingid, donutid, oldtoppingid])
-      .then(() => {
-        res.status(200).json();
-      })
-      .catch(e => {
-        console.log(e);
-      });
-  },
   removeTopping: (req, res) => {
     const dbInstance = req.app.get("db");
     const { donut_id, topping_id } = req.params;

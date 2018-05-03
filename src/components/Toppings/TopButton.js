@@ -17,7 +17,7 @@ class TopButton extends Component {
   }
 
   selectedVal(id) {
-    if (this.state.isChecked == false) {
+    if (this.state.isChecked === false) {
       this.props.handleSelect(id);
       this.setState({
         isChecked: true

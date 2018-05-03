@@ -20,17 +20,17 @@ class ShowBox extends Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   // this.props.getBox(this.props.currentBox[0].id);
-  //   this.props.getBoxtops(this.props.do);
-  // }
+  componentDidMount() {
+    this.props.getBox(this.props.currentBox.id);
+    this.props.getTotal(this.props.currentBox.id);
+  }
 
   componentWillReceiveProps(nextProps) {
     if (
       this.props.total[0] &&
       this.props.total[0].sum !== nextProps.total[0].sum
     ) {
-      this.props.getTotal(this.props.currentBox[0].id);
+      this.props.getTotal(this.props.currentBox.id);
     }
   }
 
@@ -44,34 +44,21 @@ class ShowBox extends Component {
     const boxer = this.props.box.map((e, i) => {
       return (
         <div className="box" key={i}>
-          {/* <button onClick={this.removed}>
-            <h2>Remove from box</h2>
-          </button> */}
-          {/* {e.kind === "Cake" ? (
-            <img className="lildo" src={cake} alt="cake" />
-          ) : (
-            <img className="lildo" src={choc} alt="chocolate" />
-          )} */}
+          <h2>{e.kind} donut</h2>
 
-          <div>
-            <span>
-              <h2>{e.kind} donut</h2>
-            </span>
-
-            {/* <div>
+          {/* <div>
               with
               {this.props.boxToppings && (
                 <ShowTop boxToppings={correctBoxToppings} />
               )}
             </div> */}
-            <div className="hovering">
-              <p>Items: {this.props.box.length}</p>
-              {e.sum ? (
-                <p>$ {(+e.sum + this.props.cost).toFixed(2)}</p>
-              ) : (
-                <p>$1</p>
-              )}
-            </div>
+          <div>
+            <p>Items: {this.props.box.length}</p>
+            {e.sum ? (
+              <p>$ {(+e.sum + this.props.cost).toFixed(2)}</p>
+            ) : (
+              <p>$1</p>
+            )}
           </div>
         </div>
       );

@@ -15,11 +15,12 @@ module.exports = {
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
 
-    const { box_id, don_id } = req.params;
-
+    const { box_id, id } = req.params;
+    console.log("box_id and id:", box_id, id);
     dbInstance
-      .add_to_box([box_id, don_id])
+      .add_to_box([box_id, id])
       .then(boxy => {
+        console.log("boxy:", boxy);
         // res.status(200).json();
         res.status(200).json(boxy);
       })

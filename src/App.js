@@ -1,24 +1,12 @@
 import React, { Component } from "react";
 import Header from "./components/Header/Header";
-import Landing from "./components/Landing/Landing";
-import Box from "./components/Box/Box";
-import Logout from "./components/Logout/Logout";
-import Donut from "./components/Donut/Donut";
-import Toppings from "./components/Toppings/Toppings";
-
-import { Switch, Route } from "react-router-dom";
 import routes from "./routes";
-import axios from "axios";
+
 import "./App.css";
-import { RouteTransition } from "react-router-transition";
 
 class App extends Component {
   constructor() {
     super();
-
-    this.state = {
-      donuts: []
-    };
   }
 
   render() {

@@ -20,7 +20,6 @@ class Droptop extends Component {
   }
   render() {
     let image = "";
-    let icing = "";
 
     if (this.props.currentDonut.kind === "Cake") {
       image = cake;
@@ -32,53 +31,110 @@ class Droptop extends Component {
       if (this.props.currentDonut && this.props.currentDonut.kind === "Cake") {
         switch (e) {
           case 1:
-            return <img key={i} className="stacking size" src={choc} />;
-            console.log("peanuts");
-            break;
+            return (
+              <img key={i} className="stacking size" alt="peanuts" src={choc} />
+            );
+
           case 2:
-            return <img key={i} className="stacking size" src={choc} />;
-            console.log("pecans");
-            break;
+            return (
+              <img key={i} className="stacking size" src={choc} alt="pecans" />
+            );
+
           case 3:
-            return <img key={i} className="stacking size" src={cakebacon} />;
-            console.log("bacon");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cakebacon}
+                alt="bacon"
+              />
+            );
+
           case 4:
-            return <img key={i} className="stacking size" src={choc} />;
-            console.log("gold");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={choc}
+                alt="gold flakes"
+              />
+            );
+
           case 5:
-            return <img key={i} className="stacking size" src={choc} />;
-            console.log("strawberries");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={choc}
+                alt="strawberries"
+              />
+            );
+
           case 6:
-            return <img key={i} className="stacking size" src={choc} />;
-            console.log("bananas");
-            break;
+            return (
+              <img key={i} className="stacking size" src={choc} alt="bananas" />
+            );
+
           case 7:
-            return <img key={i} className="stacking size" src={choc} />;
-            console.log("sprinkles");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={choc}
+                alt="sprinkles"
+              />
+            );
+
           case 8:
-            return <img key={i} className="stacking size" src={cakechoc} />;
-            console.log("chocolate icing");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cakechoc}
+                alt="chocolate icing"
+              />
+            );
+
           case 9:
-            return <img key={i} className="stacking size" src={cakecaramel} />;
-            console.log("caramel icing");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cakecaramel}
+                alt="caramel icing"
+              />
+            );
+
           case 10:
-            return <img key={i} className="stacking size" src={cakerasp} />;
-            console.log("raspberry icing");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cakerasp}
+                alt="raspberry icing"
+              />
+            );
+
           case 11:
-            return <img key={i} className="stacking size" src={cakechocdriz} />;
-            console.log("chocolate drizzle");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cakechocdriz}
+                alt="chocolate drizzle"
+              />
+            );
+
           case 12:
-            return <img key={i} className="stacking size" src={cakepbdriz} />;
-            console.log("pb drizzle");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cakepbdriz}
+                alt="peanut butter drizzle"
+              />
+            );
+
           default:
             console.log("default", this.props.atop);
         }
@@ -88,55 +144,105 @@ class Droptop extends Component {
       ) {
         switch (e) {
           case 1:
-            return <img key={i} className="stacking size" src={cake} />;
-            console.log("peanuts");
-            break;
+            return (
+              <img key={i} className="stacking size" src={cake} alt="peanuts" />
+            );
+
           case 2:
-            return <img key={i} className="stacking size" src={cake} />;
-            console.log("pecans");
-            break;
+            return (
+              <img key={i} className="stacking size" src={cake} alt="pecans" />
+            );
+
           case 3:
-            return <img key={i} className="stacking size" src={bacon} />;
-            console.log("bacon");
-            break;
+            return (
+              <img key={i} className="stacking size" src={bacon} alt="bacon" />
+            );
+
           case 4:
-            return <img key={i} className="stacking size" src={cake} />;
-            console.log("gold");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cake}
+                alt="gold flakes"
+              />
+            );
+
           case 5:
-            return <img key={i} className="stacking size" src={cake} />;
-            console.log("strawberries");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cake}
+                alt="strawberries"
+              />
+            );
+
           case 6:
-            return <img key={i} className="stacking size" src={cake} />;
-            console.log("bananas");
-            break;
+            return (
+              <img key={i} className="stacking size" src={cake} alt="bananas" />
+            );
+
           case 7:
-            return <img key={i} className="stacking size" src={cake} />;
-            console.log("sprinkles");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cake}
+                alt="sprinkles"
+              />
+            );
+
           case 8:
-            return <img key={i} className="stacking size" src={chocwchoc} />;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={chocwchoc}
+                alt="chocolate icing"
+              />
+            );
 
-            console.log("chocolate icing");
-            break;
           case 9:
-            return <img key={i} className="stacking size" src={chocwcaramel} />;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={chocwcaramel}
+                alt="caramel icing"
+              />
+            );
 
-            console.log("caramel icing");
-            break;
           case 10:
-            return <img key={i} className="stacking size" src={chocrasp} />;
-            console.log("raspberry icing");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={chocrasp}
+                alt="raspberry icing"
+              />
+            );
+
           case 11:
-            return <img key={i} className="stacking size" src={choc} />;
-            console.log("chocolate drizzle");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={choc}
+                alt="chocolate drizzle"
+              />
+            );
+
           case 12:
-            return <img key={i} className="stacking size" src={choc} />;
-            console.log("pb drizzle");
-            break;
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={choc}
+                alt="peanut butter drizzle"
+              />
+            );
+
           default:
             console.log("default");
         }

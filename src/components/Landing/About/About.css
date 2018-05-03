@@ -29,6 +29,8 @@
   }
 
   .step2 {
+    border-top: none;
+    border-bottom: none;
     border-left: 3px dashed #735b69;
     border-right: 3px dashed #735b69;
   }

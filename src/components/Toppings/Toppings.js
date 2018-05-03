@@ -108,8 +108,17 @@ class Toppings extends Component {
           />
         </div>
         <Link to="/box">
-          {this.props.currentBox.id ? (
-            <button>Add to Box</button>
+          {this.props.box && this.props.box.length > 0 ? (
+            <button
+              onClick={() => {
+                this.props.addToBox(
+                  this.props.currentBox.id,
+                  this.props.currentDonut.id
+                );
+              }}
+            >
+              Add to Box
+            </button>
           ) : (
             <button
               onClick={() => {
@@ -140,7 +149,8 @@ function mapStateToProps(state) {
     currentDonut,
     currentToppings,
     currentBox,
-    toppings
+    toppings,
+    box
   } = state.donutReducer;
   const { user } = state.userReducer;
   return {
@@ -149,7 +159,8 @@ function mapStateToProps(state) {
     currentToppings,
     currentBox,
     user,
-    toppings
+    toppings,
+    box
   };
 }
 export default connect(mapStateToProps, {

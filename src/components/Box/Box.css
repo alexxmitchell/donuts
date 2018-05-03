@@ -4,18 +4,18 @@
   overflow: scroll;
   height: 80%;
 }
-.ind-donut img {
+/* .ind-donut img {
   width: 100px;
-}
+} */
 
-.ind-donut {
+/* .ind-donut {
   margin-top: 40px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
   text-align: left;
-}
+} */
 .order-container {
   height: 50vh;
   display: flex;
@@ -60,8 +60,7 @@
   .do-container {
     width: 60vw;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     overflow: scroll;
   }

@@ -23,7 +23,7 @@ class Box extends Component {
   }
 
   componentDidMount() {
-    // this.props.getBox(this.props.currentBox[0].id);
+    this.props.getBox(this.props.currentBox.id);
   }
 
   edit;
@@ -48,7 +48,7 @@ class Box extends Component {
         )}
       </div>
     );
-    const { donuts, isLoading, box } = this.props;
+    const { box } = this.props;
     if ((box && box.length > 0) || box.length > 0) {
       dozen = box.map((e, i) => {
         return (

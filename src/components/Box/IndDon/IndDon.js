@@ -40,13 +40,10 @@ class IndDon extends Component {
         )}
         <div>
           <h2>{this.props.type} donut</h2>
-
-          <div>
-            with
-            {this.props.currentToppings && (
-              <IndTop currentToppings={correctToppings} />
-            )}
-          </div>
+          with
+          {this.props.currentToppings && (
+            <IndTop currentToppings={correctToppings} />
+          )}
           <div className="price">
             {this.props.price ? (
               <p>$ {(+this.props.price + this.props.cost).toFixed(2)}</p>

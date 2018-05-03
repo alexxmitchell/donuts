@@ -33,7 +33,7 @@ const PREVIOUS_ORDERS = "PREVIOUS_ORDERS";
 const GET_ALL_TOPPINGS = "GET_ALL_TOPPINGS";
 const ADD_TOPPINGS = "ADD_TOPPINGS";
 const GET_TOPPINGS = "GET_TOPPINGS";
-const REMOVE_TOPPING = "REMOVE_TOPPING"; //need action
+const REMOVE_TOPPING = "REMOVE_TOPPING";
 const CHANGE_TOPPING = "CHANGE_TOPPING";
 const CURRENT_DONUT_TOP = "CURRENT_DONUT_TOP";
 
@@ -203,6 +203,7 @@ function donutReducer(state = initialState, action) {
       };
     case `${ADD_TO_BOX}_FULFILLED`:
       console.log("I hit add box");
+      console.log(action);
       let doArr = state.donuts.slice();
       doArr.splice(action.payload, 1);
       return Object.assign({}, state, {
