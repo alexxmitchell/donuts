@@ -72,6 +72,7 @@ class Toppings extends Component {
   }
 
   render() {
+    console.log(this.props);
     let mappedToppings = this.props.toppings
       .filter(top => top.category.includes(this.state.category))
       .map((top, i) => {

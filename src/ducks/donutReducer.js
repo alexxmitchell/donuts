@@ -74,6 +74,7 @@ export function addDonut(kind) {
 }
 
 export function addToBox(id, donut) {
+  console.log(id, donut);
   return {
     type: ADD_TO_BOX,
     payload: axios.put(`/api/addbox/${id}/${donut}`)
@@ -151,7 +152,7 @@ function donutReducer(state = initialState, action) {
     case `${CREATE_BOX}_FULFILLED`:
       return {
         ...state,
-        currentBox: action.payload.data
+        currentBox: action.payload.data[0]
       };
     case ADD_KIND:
       return {
@@ -179,7 +180,6 @@ function donutReducer(state = initialState, action) {
         box: action.payload.data
       };
     case `${GET_DONUTS}_FULFILLED`:
-      console.log("got donuts");
       return {
         ...state,
         donuts: action.payload.data,
@@ -216,6 +216,7 @@ function donutReducer(state = initialState, action) {
         boxToppings: action.payload.data
       };
     case `${GET_TOTAL}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         total: action.payload.data
@@ -231,7 +232,6 @@ function donutReducer(state = initialState, action) {
         currDonutTop: action.payload.data
       };
     case `${REMOVE_TOPPING}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         currentToppings: action.payload.data

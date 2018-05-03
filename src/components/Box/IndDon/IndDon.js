@@ -17,7 +17,6 @@ class IndDon extends Component {
     super(props);
 
     this.removed = this.removed.bind(this);
-    // this.added = this.added.bind(this);
   }
   componentDidMount() {
     this.props.getToppings(this.props.do);

@@ -35,9 +35,10 @@ class ShowBox extends Component {
   }
 
   render() {
-    console.log(this.props);
-    let length = this.props.box.length;
     console.log(this.props.total);
+    // console.log(this.props);
+    let length = this.props.box.length;
+    // console.log(this.props.total);
     const correctBoxToppings = this.props.boxToppings.filter(
       e => e.donut_id == this.props.do
     );

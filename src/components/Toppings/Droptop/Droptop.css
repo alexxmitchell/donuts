@@ -22,16 +22,11 @@
     display: inline-block;
   }
 
-  .droptop-cakedon {
-    position: absolute;
-    /* right: 171px;
-    top: 56px; */
-  }
+  .droptop-cakedon,
   .droptop-chocdon {
-    position: absolute;
-    /* right: 171px;
-    top: 56px; */
+    position: relative;
   }
+
   #column {
     margin: auto;
     width: 60%;

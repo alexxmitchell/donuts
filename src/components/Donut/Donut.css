@@ -11,8 +11,9 @@
 .don-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  height: 60vh;
 }
 
 a {
@@ -32,6 +33,11 @@ a {
 .right-arrow {
   background: transparent;
   border: none;
+}
+
+.right-arrow:hover {
+  transform: rotate(270deg);
+  /* transform: scale(2); */
 }
 @media (min-width: 767px) {
   .donut-container h2 {
