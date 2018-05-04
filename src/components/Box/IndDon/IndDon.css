@@ -4,4 +4,10 @@
   display: flex;
   justify-content: space-around;
   height: 10vh;
+  position: relative;
+}
+
+.closed {
+  border: none;
+  position: relative;
 }

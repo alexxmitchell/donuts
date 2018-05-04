@@ -51,8 +51,8 @@ class IndDon extends Component {
             )}
           </div>
         </div>
-        <button onClick={this.removed}>
-          <h2>Remove from List</h2>
+        <button className="closed" onClick={this.removed}>
+          <i className="fa fa-window-close-o fa-2x" aria-hidden="false" />
         </button>
       </div>
     );

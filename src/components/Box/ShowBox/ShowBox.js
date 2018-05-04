@@ -85,8 +85,8 @@ class ShowBox extends Component {
             )}
           </div>
         </div>
-        <Link to="/order">
-          <button className="now">Order Now!</button>
+        <Link to="/order/pay">
+          <button className="now">Confirm Order</button>
         </Link>
       </div>
     );

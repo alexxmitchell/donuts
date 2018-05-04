@@ -1,8 +1,26 @@
 .order-page {
+  margin: auto;
   height: 80vh;
-  width: 100vw;
+  width: 80vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  background: white;
+  border: 4px solid #736b73;
+}
+.order-page h4 {
+  padding-top: 20px;
+  font-size: 36px;
+  font-family: "Dokdo", cursive;
+}
+
+.order-p {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding-top: 20px;
+}
+.order-container {
+  width: 80%;
   justify-content: space-between;
 }

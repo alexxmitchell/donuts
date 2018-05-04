@@ -1,21 +1,14 @@
 import React, { Component } from "react";
-import Checkout from "../../Checkout";
+
 import { connect } from "react-redux";
 import Form from "../Form/Form";
+import ShowBox from "../Box/ShowBox/ShowBox";
 import "./Order.css";
 import { getUser } from "../../ducks/userReducer";
 
 class Order extends Component {
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   name: "",
-    //   address: "",
-    //   city: "",
-    //   st: "",
-    //   zip: 0
-    // };
   }
 
   handleInput(e) {
@@ -28,14 +21,15 @@ class Order extends Component {
     return (
       <div className="order-page">
         <h4>We just need a little more info</h4>
-        <p>Please enter your billing information</p>
-        <Form />
-
-        <Checkout
-          name={"Donut payment"}
-          description={"Buy your delectable donuts"}
-          amount={boxTotal + this.props.cost * Number(this.props.box.length)}
-        />
+        <p className="order-p">Please enter your billing information</p>
+        <div className="order-container">
+          <Form />
+          {/* <p>
+          Order Total:{" "}
+          {boxTotal + this.props.cost * Number(this.props.box.length)}{" "}
+        </p> */}
+          {this.props.user.id ? <ShowBox /> : ""}
+        </div>
       </div>
     );
   }

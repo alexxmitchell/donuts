@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./Droptop.css";
+
 import cake from "../../images/cake.png";
 import choc from "../../images/chocolate.png";
 import chocrasp from "../../images/chocwrasp.png";
@@ -267,6 +268,7 @@ class Droptop extends Component {
                 src={image}
                 alt="kind of donut"
               />
+
               {displayToppings}
             </div>
           ) : (

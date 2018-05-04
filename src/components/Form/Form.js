@@ -108,11 +108,8 @@ class Form extends Component {
               onChange={this.handleInput}
             />
           </div>
-          <input type="submit" value="Submit Details" />
+          <input className="submit" type="submit" value="Submit Details" />
         </form>
-        <Link to="/donut">
-          <button>Get Some Donuts</button>
-        </Link>
       </div>
     );
   }

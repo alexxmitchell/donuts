@@ -24,6 +24,15 @@ a {
 .do {
   background: transparent;
   border: none;
+  outline: none;
+  cursor: pointer;
+}
+.do:active {
+  transform: scale(1.1);
+}
+
+.do:hover {
+  transform: scale(1.1);
 }
 
 .select-do {

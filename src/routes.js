@@ -8,12 +8,12 @@ import Donut from "./components/Donut/Donut";
 import Toppings from "./components/Toppings/Toppings";
 import Order from "./components/Order/Order";
 import Profile from "./components/Profile/Profile";
+import Pay from "./components/Order/Pay/Pay";
 
 export default (
   <Route
     render={({ location }) => (
-      // <PageTransition timeout={500}>
-      <Switch location={location}>
+      <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/logout" component={Logout} />
         <Route path="/donut/toppings" component={Toppings} />
@@ -21,8 +21,8 @@ export default (
         <Route path="/box" component={Box} />
         <Route path="/order" component={Order} />
         <Route path="/profile" component={Profile} />
+        <Route pathe="/order/pay" component={Pay} />
       </Switch>
-      // </PageTransition>
     )}
   />
 );

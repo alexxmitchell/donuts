@@ -7,7 +7,7 @@
 }
 .landing-top {
   height: 80vh;
-  opacity: 0.6;
+
   /* background-image: url("../../crafted-donuts.jpg"); */
   /* background-size: 250%;
   background-position: -650px 0px; */
@@ -31,18 +31,9 @@
   border-radius: 10px;
   margin: 40px auto;
 }
-.boxes {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  margin-top: 50px;
-}
-.boxes div {
-  border: solid #735b69 1px;
-  height: 200px;
-}
+
 .large {
+  opacity: 1;
   font-size: 50px;
   line-height: 45px;
   font-family: "Dokdo", cursive;

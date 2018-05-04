@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import IndDon from "./IndDon/IndDon";
-import ShowBox from "./ShowBox/ShowBox";
+import Form from "../Form/Form";
 import {
   getBox,
   removeDonut,
@@ -72,15 +72,22 @@ class Box extends Component {
           <div>
             <div className="do-container">{dozen}</div>
             {this.props.user.id ? (
-              <Link to="/donut">
-                <button className="more">Get more donuts</button>
-              </Link>
+              <div>
+                <Link to="/donut">
+                  <button className="more">Get more donuts</button>
+                </Link>
+                {this.props.box.length > 0 ? (
+                  <Link to="/order">
+                    <button className="more">Order Now</button>
+                  </Link>
+                ) : (
+                  ""
+                )}
+              </div>
             ) : (
               ""
             )}
           </div>
-
-          {this.props.user.id ? <ShowBox /> : ""}
         </div>
       </div>
     );

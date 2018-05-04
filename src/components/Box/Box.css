@@ -1,6 +1,6 @@
 .order {
-  margin: auto;
-  width: 80%;
+  margin: 30px auto;
+  width: 100%;
   overflow: scroll;
   height: 80%;
 }
@@ -17,6 +17,7 @@
   text-align: left;
 } */
 .order-container {
+  margin: auto;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -34,10 +35,12 @@
   border-radius: 4px;
   color: white;
   font-size: 14px;
+  margin: 20px;
 }
 .do-container {
   margin: 20px 0;
-
+  box-shadow: 4px 3px 2px #735b69;
+  width: 80vw;
   background: white;
   padding: 10px;
 }
@@ -58,7 +61,6 @@
   }
 
   .do-container {
-    width: 60vw;
     display: flex;
     justify-content: space-between;
     align-items: center;

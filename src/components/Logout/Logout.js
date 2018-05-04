@@ -13,8 +13,10 @@ class Logout extends Component {
   render() {
     return (
       <div>
-        {/* <div> */}
-        {/* <h2>It's sad to see you go</h2>
+        <div>
+          {" "}
+          */}
+          <h2>It's sad to see you go</h2>
           <button
             onClick={() =>
               (window.location.href = "http://localhost:3001/login")
@@ -23,8 +25,8 @@ class Logout extends Component {
             Login
           </button>
         </div>
-        )} */}
-        {/* <div className="login-page" /> */}
+        )}
+        {/* {/* <div className="login-page" /> */}
       </div>
     );
   }

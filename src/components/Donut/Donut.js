@@ -30,6 +30,7 @@ class Donut extends Component {
   render() {
     return (
       <div className="donut-container">
+        <h2>Step 1</h2>
         <h2>Select a Donut</h2>
         <div className="don-container">
           <button

@@ -1,5 +1,5 @@
 .outer-header {
-  position: top;
+  position: relative;
   background: #ffd0d6;
   height: 10vh;
   width: 100vw;
@@ -9,7 +9,6 @@
   /* z-index: 10; */
 }
 .header-container {
-  background: #ffd0d6;
   height: 10vh;
   display: flex;
   justify-content: flex-start;
@@ -17,6 +16,11 @@
   padding-left: 20px;
   padding-right: 20px;
   font-family: "Dokdo", cursive;
+}
+
+.header-container a {
+  display: flex;
+  align-items: center;
 }
 .outer-header a {
   color: #735b69;
@@ -52,6 +56,18 @@
   width: 100px;
 }
 
+.outer-header::after {
+  position: absolute;
+  bottom: -47px;
+  left: 0px;
+  width: 100%;
+  content: " ";
+  background-image: url("../images/scallop.png");
+  z-index: 100;
+
+  height: 50px;
+  background-repeat: repeat-x;
+}
 @media (min-width: 767px) {
   .outer-header {
     height: 10vh;
@@ -86,23 +102,5 @@
   }
   .right-header {
     width: 120px;
-  }
-
-  .outer-header::after {
-    position: absolute;
-    bottom: -50px;
-    left: 0px;
-    width: 100%;
-    content: " ";
-    background: radial-gradient(
-      circle at 50% 0%,
-      #ffd0d6 25%,
-      #b7dde0 26%,
-      #b7dde0 40%
-    );
-    background-color: #ffd0d6;
-    background-size: 50px 100px;
-    height: 50px;
-    background-repeat: repeat-x;
   }
 }

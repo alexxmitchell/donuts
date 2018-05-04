@@ -1,8 +1,7 @@
 {
   "name": "donuts",
   "version": "1.0.0",
-  "description":
-    "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
@@ -28,6 +27,7 @@
     "react-scripts": "^1.1.4",
     "react-sidebar": "^2.3.2",
     "react-stripe-checkout": "^2.6.3",
+    "react-transition-group": "^1.2.1",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^5.0.0",
     "stripe": "^5.8.0"
@@ -39,6 +39,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3001",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mitchell0625/donuts.git"
