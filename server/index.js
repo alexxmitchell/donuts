@@ -8,7 +8,7 @@ const massive = require("massive");
 const passport = require("passport");
 const port = process.env.PORT || 3001;
 const stripe = require("stripe")(process.env.REACT_APP_STRIPE_SECRET);
-
+const path = require("path");
 const SERVER_CONFIGS = require("./constants/server");
 const configureServer = require("./server");
 const configureRoutes = require("./routes");
@@ -110,6 +110,10 @@ app.put("/api/addbox/:box_id/:id", bc.addToBox);
 app.get("/api/boxtops/:donut_id", bc.boxToppings);
 app.get("/api/total/:box_id", bc.boxTotal);
 app.get("/api/oldboxes", bc.previousBoxes);
+
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "/../build/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
