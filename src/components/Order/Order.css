@@ -1,10 +1,12 @@
 .hold-form {
   height: 50vh;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 form {
   display: flex;
   flex-direction: column;
@@ -16,5 +18,41 @@ form input {
   width: 150px;
 }
 
-form label {
+.inputIcon {
+  position: relative;
+}
+.inputIcon input {
+  padding-left: 40px;
+  line-height: 2px;
+  font-size: 14px;
+}
+
+.inputIcon i {
+  position: absolute;
+  bottom: 12px;
+  left: 10px;
+}
+@media (min-width: 767px) {
+  .hold-form h4 {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  .hold-form p {
+    font-size: 20px;
+  }
+
+  .inputIcon {
+    position: relative;
+  }
+  .inputIcon input {
+    padding-left: 40px;
+    line-height: 2px;
+    font-size: 14px;
+  }
+
+  .inputIcon i {
+    position: absolute;
+    bottom: 12px;
+    left: 10px;
+  }
 }

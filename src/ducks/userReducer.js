@@ -4,8 +4,7 @@ const initialState = {
   user: [],
   name: "",
   email: "",
-  address1: "",
-  address2: "",
+  address: "",
   city: "",
   st: "",
   zip: ""
@@ -21,15 +20,14 @@ export function getUser() {
   };
 }
 
-export function updateUser(id, name, email, address1, address2, city, st, zip) {
+export function updateUser(id, name, email, address, city, st, zip) {
   return {
     type: UPDATE_USER,
     payload: axios.put(`/api/updateprofile`, {
       id,
       name,
       email,
-      address1,
-      address2,
+      address,
       city,
       st,
       zip

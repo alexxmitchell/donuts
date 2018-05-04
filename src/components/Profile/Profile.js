@@ -11,8 +11,8 @@ class Profile extends Component {
     this.state = {
       name: "",
       email: "",
-      address1: "",
-      address2: "",
+      address: "",
+
       city: "",
       st: "",
       zip: ""
@@ -30,8 +30,7 @@ class Profile extends Component {
       this.props.user.id,
       this.state.name,
       this.state.email,
-      this.state.address1,
-      this.state.address2,
+      this.state.address,
       this.state.city,
       this.state.st,
       this.state.zip
@@ -43,63 +42,77 @@ class Profile extends Component {
       <div className="profile-page">
         <h2>Keep us up to date</h2>
         <form onSubmit={this.submitForm}>
-          <p>name</p>
-          <input
-            type="text"
-            name="name"
-            value={this.state.name}
-            placeholder={this.props.user.name}
-            onChange={this.handleInput}
-          />
+          <div className="inputIcon">
+            <p>name</p>
+            <i
+              className="fa fa-user"
+              aria-hidden="true"
+              value={this.props.user.name}
+            />
+            <input
+              type="text"
+              name="name"
+              value={this.state.name}
+              placeholder={this.props.user.name}
+              onChange={this.handleInput}
+            />
+          </div>
+          <div className="inputIcon">
+            <p>email</p>
+            <i class="fa fa-envelope" aria-hidden="true" />
+            <input
+              type="text"
+              name="email"
+              value={this.state.email}
+              placeholder="email"
+              onChange={this.handleInput}
+            />
+          </div>
+          <div className="inputIcon">
+            <p>address</p>
+            <i class="fa fa-address-card" aria-hidden="true" />
+            <input
+              type="text"
+              name="address1"
+              value={this.state.address1}
+              placeholder="address"
+              onChange={this.handleInput}
+            />
+          </div>
 
-          <p>email</p>
-          <input
-            type="text"
-            name="email"
-            value={this.state.email}
-            placeholder="email"
-            onChange={this.handleInput}
-          />
-          <p>address line 1</p>
-          <input
-            type="text"
-            name="address1"
-            value={this.state.address1}
-            placeholder="address line 1"
-            onChange={this.handleInput}
-          />
-          <p>address line 2</p>
-          <input
-            type="text"
-            name="address2"
-            value={this.state.address2}
-            placeholder="address line 2"
-            onChange={this.handleInput}
-          />
-          <p>city</p>
-          <input
-            type="text"
-            name="city"
-            value={this.state.city}
-            placeholder="city"
-            onChange={this.handleInput}
-          />
-          <p>state</p>
-          <input
-            type="text"
-            name="st"
-            value={this.state.st}
-            placeholder="state"
-            onChange={this.handleInput}
-          />
-          <p>zipcode</p>
-          <input
-            type="text"
-            name="zip"
-            value={this.state.zip}
-            placeholder="zipcode"
-            onChange={this.handleInput}
-          />
+          <div className="inputIcon">
+            <p>city</p>
+            <i class="fa fa-address-card" aria-hidden="true" />
+            <input
+              type="text"
+              name="city"
+              value={this.state.city}
+              placeholder="city"
+              onChange={this.handleInput}
+            />
+          </div>
+          <div className="inputIcon">
+            <p>state</p>
+            <i class="fa fa-address-card" aria-hidden="true" />
+            <input
+              type="text"
+              name="st"
+              value={this.state.st}
+              placeholder="state"
+              onChange={this.handleInput}
+            />
+          </div>
+          <div className="inputIcon">
+            <p>zipcode</p>
+            <i class="fa fa-address-card" aria-hidden="true" />
+            <input
+              type="text"
+              name="zip"
+              value={this.state.zip}
+              placeholder="zipcode"
+              onChange={this.handleInput}
+            />
+          </div>
           <input type="submit" value="Update Account" />
         </form>
         <Link to="/donut">

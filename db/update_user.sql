@@ -1,6 +1,6 @@
 UPDATE users
-SET name=$2, email = $3, address_line_1 = $4, address_line_2 = $5, city = $6, st = $7, zip = $8
+SET name=$2, email = $3, address = $4, city = $5, st = $6, zip = $7
 WHERE id = $1;
 
-SELECT id, name, email, address_line_1, address_line_2, city, st, zip FROM users
+SELECT id, name, email, address, city, st, zip FROM users
 WHERE id = $1;
