@@ -50,6 +50,9 @@ form input {
   color: #735b69;
   transition: 0.3s;
 }
+.inputIcon input[type="submit"] {
+  margin-top: 20px;
+}
 
 .inputIcon input:focus + i {
   color: #735b69;

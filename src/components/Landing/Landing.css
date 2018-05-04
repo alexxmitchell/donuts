@@ -7,6 +7,7 @@
 }
 .landing-top {
   height: 80vh;
+  opacity: 0.6;
   /* background-image: url("../../crafted-donuts.jpg"); */
   /* background-size: 250%;
   background-position: -650px 0px; */

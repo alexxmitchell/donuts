@@ -12,6 +12,7 @@ const Profile = () => {
         <img src={filled} alt="donut animation " />
       </div>
       <Form />
+      <button>Logout</button>
     </div>
   );
 };

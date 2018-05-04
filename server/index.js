@@ -30,8 +30,6 @@ massive(process.env.CONNECTION_STRING)
 app.use(json());
 app.use(cors());
 
-// app.use(express.static(`${__dirname}/../build/`));
-
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -84,6 +82,7 @@ app.get(
     failureFlash: true
   })
 );
+app.use(express.static(`${__dirname}/../build/`));
 
 configureServer(app);
 configureRoutes(app);
