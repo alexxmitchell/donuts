@@ -55,6 +55,7 @@
 @media (min-width: 767px) {
   .outer-header {
     height: 10vh;
+    position: relative;
   }
   .header-container {
     display: flex;
@@ -86,9 +87,22 @@
   .right-header {
     width: 120px;
   }
-  /* .empty {
-    width: 100px;
-    visibility: hidden;
-    display: block;
-  } */
+
+  .outer-header::after {
+    position: absolute;
+    bottom: -50px;
+    left: 0px;
+    width: 100%;
+    content: " ";
+    background: radial-gradient(
+      circle at 50% 0%,
+      #ffd0d6 25%,
+      #b7dde0 26%,
+      #b7dde0 40%
+    );
+    background-color: #ffd0d6;
+    background-size: 50px 100px;
+    height: 50px;
+    background-repeat: repeat-x;
+  }
 }

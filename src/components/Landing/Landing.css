@@ -12,7 +12,7 @@
   background-position: -650px 0px; */
 
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: 20;
   background-attachment: scroll;
   background-image: url("../images/cart-donuts.png");
 

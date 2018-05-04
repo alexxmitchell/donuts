@@ -4,19 +4,16 @@
   margin: 0 auto;
 }
 
-.profile-page input {
-  border: 1px solid #735b69;
-  border-radius: 4px;
-}
 .profile-page h2 {
   font-family: "Dokdo", cursive;
-  font-size: 34px;
+  font-size: 44px;
   margin-bottom: 20px;
+  text-align: left;
 }
 
-.profile-page form {
-  background: white;
-  padding: 20px 0;
+.animation img {
+  display: inline-block;
+  width: 100px;
 }
 
 @media (min-width: 767px) {

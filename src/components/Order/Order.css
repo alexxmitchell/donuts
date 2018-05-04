@@ -1,58 +1,8 @@
-.hold-form {
-  height: 50vh;
-  width: 60vw;
+.order-page {
+  height: 80vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-}
-form input {
-  padding: 10px;
-  width: 150px;
-}
-
-.inputIcon {
-  position: relative;
-}
-.inputIcon input {
-  padding-left: 40px;
-  line-height: 2px;
-  font-size: 14px;
-}
-
-.inputIcon i {
-  position: absolute;
-  bottom: 12px;
-  left: 10px;
-}
-@media (min-width: 767px) {
-  .hold-form h4 {
-    font-size: 30px;
-    margin-bottom: 40px;
-  }
-  .hold-form p {
-    font-size: 20px;
-  }
-
-  .inputIcon {
-    position: relative;
-  }
-  .inputIcon input {
-    padding-left: 40px;
-    line-height: 2px;
-    font-size: 14px;
-  }
-
-  .inputIcon i {
-    position: absolute;
-    bottom: 12px;
-    left: 10px;
-  }
 }

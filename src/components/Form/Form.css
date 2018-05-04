@@ -1,0 +1,56 @@
+.form-page {
+  height: 100%;
+  padding-top: 40px;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.form-page input {
+  border: 1px solid #735b69;
+  border-radius: 4px;
+}
+.form-page h2 {
+  font-family: "Dokdo", cursive;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+form input {
+  padding: 10px;
+  width: 150px;
+}
+
+.form-page form {
+  padding: 20px 0;
+}
+.inputIcon {
+  position: relative;
+}
+.inputIcon input {
+  padding-left: 40px;
+  line-height: 2px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+.inputIcon input:focus {
+  border-color: #735b69;
+  box-shadow: 0 0 8px 0 #735b69;
+}
+
+.inputIcon i {
+  position: absolute;
+  bottom: 12px;
+  left: 10px;
+  color: #735b69;
+  transition: 0.3s;
+}
+
+.inputIcon input:focus + i {
+  color: #735b69;
+}
