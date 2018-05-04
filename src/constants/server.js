@@ -1,3 +1,5 @@
+// require("dotenv").config();
+
 const PAYMENT_SERVER_URL =
   process.env.NODE_ENV === "production"
     ? "http://myapidomain.com"

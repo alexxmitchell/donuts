@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Find.css";
 import Map from "./Map/Map";
-require("dotenv").config();
+// require("dotenv").config();
 
 const Find = () => {
   return (

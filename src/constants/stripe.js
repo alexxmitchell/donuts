@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 const STRIPE_PUBLISHABLE =
   process.env.NODE_ENV === "production"
