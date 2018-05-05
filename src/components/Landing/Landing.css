@@ -1,12 +1,14 @@
 .landing-container {
   width: 100vw;
   height: 90vh;
-  /* position: relative; */
   font-family: "Roboto", sans-serif;
   overflow: scroll;
 }
 .landing-top {
   height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   /* background-image: url("../../crafted-donuts.jpg"); */
   /* background-size: 250%;
@@ -20,12 +22,7 @@
 
   color: #735b69;
 }
-.child {
-  padding: 80px 40px 20px 40px;
 
-  width: 100%;
-  /* height: 100%; */
-}
 .login {
   width: 40%;
   padding: 30px;
@@ -33,27 +30,15 @@
   margin: 40px auto;
 }
 
-.large {
-  opacity: 1;
-  font-size: 50px;
-  line-height: 45px;
-  font-family: "Dokdo", cursive;
-  text-shadow: 2px 2px gray;
-
-  /* text-align: right; */
-}
-.large-text {
-  padding-left: 57px;
-  text-align: left;
-}
-
 .land-text {
-  font-size: 40px;
+  font-size: 50px;
+  text-align: left;
+  padding-left: 20px;
 }
 
 .logo-font {
   font-family: "Dokdo", cursive;
-  font-size: 30px;
+  font-size: 50px;
 }
 
 @media (min-width: 767px) {
@@ -67,47 +52,30 @@
     background-repeat: no-repeat; */
     background-attachment: fixed;
   }
-  .large-text {
-    text-align: left;
-    padding-left: 57px;
-  }
+
   .land-text {
     font-size: 50px;
-    line-height: 50px;
+    line-height: 80px;
     letter-spacing: 1px;
     padding-top: 10px;
+    padding-left: 60px;
   }
   .logo-font {
-    font-family: "Dokdo", cursive;
     font-size: 90px;
   }
-  .large {
-    margin: 100px auto;
-    font-size: 72px;
-    line-height: 50px;
-    letter-spacing: 0.1em;
-  }
+
   .bold {
     font-weight: 500;
-    font-size: 52px;
+    font-size: 55px;
+    text-decoration: underline;
+    transition: scale(2) 2s;
   }
-  .scrolls {
+  .log {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
-  .scrolls h3 {
-    font-size: 24px;
-    text-shadow: 1px 1px gray;
-  }
-
-  /* .child {
-  } */
-  /* .section:hover .child,
-  .section:focus .child {
-    transform: scale(1.1);
-  } */
 
   .login {
     width: 300px;

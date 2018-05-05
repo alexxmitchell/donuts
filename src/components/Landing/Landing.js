@@ -13,7 +13,7 @@ const Landing = () => {
   return (
     <div className="landing-container">
       <section className="landing-top">
-        <div className="land-text child">
+        <div className="land-text">
           <h2>We make</h2>
           <h2>
             really, <span className="bold">really</span>
@@ -22,25 +22,25 @@ const Landing = () => {
           <h2 className="logo-font">
             Good D<span>
               <img className="donut-logo" src={logo} alt="donut" />
-            </span>nuts
+            </span>nuts<span className="bold">.</span>
           </h2>
-          {/* <img className="anime" src={donut} alt="donut-animation" />
+        </div>
+        {/* <img className="anime" src={donut} alt="donut-animation" />
           <img className="anime" src={donut} alt="donut-animation" />
           <img className="anime" src={donut} alt="donut-animation" /> */}
-          <div className="scrolls">
-            <button
-              className="login"
-              onClick={() =>
-                (window.location.href = "http://localhost:3001/login")
-              }
-            >
-              <h2>Login to start your box</h2>
-            </button>
-            {/* <h3>
+        <div className="log">
+          <button
+            className="login"
+            onClick={() =>
+              (window.location.href = "http://localhost:3001/login")
+            }
+          >
+            <h2>Login to start your box</h2>
+          </button>
+          {/* <h3>
               Hand crafted donuts to address your sweet craving. Each donut that
               we craft is created with happiness.
             </h3> */}
-          </div>
         </div>
       </section>
       <About />
