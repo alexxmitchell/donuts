@@ -30,11 +30,14 @@ class Donut extends Component {
   render() {
     return (
       <div className="donut-container">
-        <h2>Step 1</h2>
-        <h2>Select a Donut</h2>
+        <div className="don-top">
+          <h2>Step 1</h2>
+          <h2>Select a Donut</h2>
+        </div>
         <div className="don-container">
           <button
             className="do"
+            disabled={this.state.disabled}
             onClick={e => {
               this.handleKind("Cake");
             }}
@@ -45,6 +48,7 @@ class Donut extends Component {
 
           <button
             className="do"
+            disabled={this.state.disabled}
             onClick={e => {
               this.handleKind("Chocolate");
             }}
@@ -53,16 +57,20 @@ class Donut extends Component {
             <p className="donut-type">Chocolate</p>
           </button>
         </div>
-        <Link to="/donut/toppings">
-          <button
-            onClick={() => {
-              this.props.addDonut(this.state.kind);
-            }}
-            className="right-arrow "
-          >
-            <img src={scrolldown} />
-          </button>
-        </Link>
+        {this.state.kind ? (
+          <Link to="/donut/toppings">
+            <button
+              onClick={() => {
+                this.props.addDonut(this.state.kind);
+              }}
+              className="right-arrow "
+            >
+              <img src={scrolldown} />
+            </button>
+          </Link>
+        ) : (
+          ""
+        )}
       </div>
     );
   }

@@ -5,7 +5,7 @@
 }
 
 .donut-container {
-  margin-top: 50px;
+  margin-top: 55px;
 }
 
 .don-container {
@@ -38,10 +38,43 @@ a {
 .select-do {
   width: 200px;
 }
+.don-top {
+  width: 80vw;
+  margin: auto;
+
+  box-shadow: 4px 3px 2px #735b69;
+  background: white;
+  border: 1px solid #735b69;
+}
 
 .right-arrow {
   background: transparent;
   border: none;
+  animation: 2s right infinite linear;
+}
+
+@keyframes right {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  35% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  65% {
+    transform: scale(1.15);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @media (min-width: 767px) {
@@ -49,6 +82,7 @@ a {
     font-size: 40px;
     margin-bottom: 80px;
   }
+
   .don-container {
     margin-top: 100px;
     height: 40vh;
@@ -68,5 +102,11 @@ a {
 
   .select-do {
     width: 250px;
+  }
+
+  .don-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

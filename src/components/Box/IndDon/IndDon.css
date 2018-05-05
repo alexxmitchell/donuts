@@ -10,4 +10,7 @@
 .closed {
   border: none;
   position: relative;
+  color: #735b69;
+  background-color: transparent;
+  outline: none;
 }

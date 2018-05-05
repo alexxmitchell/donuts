@@ -66,28 +66,26 @@ class Box extends Component {
     }
 
     return (
-      <div className="order">
+      <div className="box">
         <h2 className="box-text">Your Current Box</h2>
-        <div className="order-container">
-          <div>
-            <div className="do-container">{dozen}</div>
-            {this.props.user.id ? (
-              <div>
-                <Link to="/donut">
-                  <button className="more">Get more donuts</button>
+        <div className="box-container">
+          <div className="do-container">{dozen}</div>
+          {this.props.user.id ? (
+            <div>
+              <Link to="/donut">
+                <button className="more">Get more donuts</button>
+              </Link>
+              {this.props.box.length > 0 ? (
+                <Link to="/order">
+                  <button className="more">Order Now</button>
                 </Link>
-                {this.props.box.length > 0 ? (
-                  <Link to="/order">
-                    <button className="more">Order Now</button>
-                  </Link>
-                ) : (
-                  ""
-                )}
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
+              ) : (
+                ""
+              )}
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     );

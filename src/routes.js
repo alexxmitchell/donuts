@@ -19,9 +19,9 @@ export default (
         <Route path="/donut/toppings" component={Toppings} />
         <Route path="/donut" component={Donut} />
         <Route path="/box" component={Box} />
+        <Route path="/order/pay" component={Pay} />
         <Route path="/order" component={Order} />
         <Route path="/profile" component={Profile} />
-        <Route pathe="/order/pay" component={Pay} />
       </Switch>
     )}
   />

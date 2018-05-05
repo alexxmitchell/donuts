@@ -4,6 +4,8 @@ import "../../";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+import logo from "../images/cropped-DonutIcon.png";
+
 import About from "./About/About";
 import Find from "./Find/Find";
 
@@ -11,9 +13,20 @@ const Landing = () => {
   return (
     <div className="landing-container">
       <section className="landing-top">
-        <div className="large-text child">
-          <h2 className="large">Go nuts for Good Donuts</h2>
+        <div className="land-text child">
+          <h2>We make</h2>
+          <h2>
+            really, <span className="bold">really</span>
+          </h2>
 
+          <h2 className="logo-font">
+            Good D<span>
+              <img className="donut-logo" src={logo} alt="donut" />
+            </span>nuts
+          </h2>
+          {/* <img className="anime" src={donut} alt="donut-animation" />
+          <img className="anime" src={donut} alt="donut-animation" />
+          <img className="anime" src={donut} alt="donut-animation" /> */}
           <div className="scrolls">
             <button
               className="login"
@@ -23,10 +36,10 @@ const Landing = () => {
             >
               <h2>Login to start your box</h2>
             </button>
-            <h3>
+            {/* <h3>
               Hand crafted donuts to address your sweet craving. Each donut that
               we craft is created with happiness.
-            </h3>
+            </h3> */}
           </div>
         </div>
       </section>

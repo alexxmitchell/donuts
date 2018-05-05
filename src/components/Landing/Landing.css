@@ -1,21 +1,22 @@
 .landing-container {
   width: 100vw;
   height: 90vh;
-
+  /* position: relative; */
   font-family: "Roboto", sans-serif;
   overflow: scroll;
 }
 .landing-top {
-  height: 80vh;
+  height: 90%;
 
   /* background-image: url("../../crafted-donuts.jpg"); */
   /* background-size: 250%;
   background-position: -650px 0px; */
-
+  /* background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   z-index: 20;
   background-attachment: scroll;
-  background-image: url("../images/cart-donuts.png");
+  background-image: url("../images/cart-donuts.png"); */
 
   color: #735b69;
 }
@@ -41,12 +42,21 @@
 
   /* text-align: right; */
 }
+.large-text {
+  padding-left: 57px;
+  text-align: left;
+}
+
+.land-text {
+  font-size: 40px;
+}
+
+.logo-font {
+  font-family: "Dokdo", cursive;
+  font-size: 30px;
+}
 
 @media (min-width: 767px) {
-  .scroll {
-    font-size: 46px;
-    text-decoration: none;
-  }
   .landing-top {
     /* transition: all 2s; */
     width: 100vw;
@@ -58,14 +68,28 @@
     background-attachment: fixed;
   }
   .large-text {
-    text-align: center;
-    padding-left: 50px;
+    text-align: left;
+    padding-left: 57px;
+  }
+  .land-text {
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    padding-top: 10px;
+  }
+  .logo-font {
+    font-family: "Dokdo", cursive;
+    font-size: 90px;
   }
   .large {
     margin: 100px auto;
     font-size: 72px;
     line-height: 50px;
     letter-spacing: 0.1em;
+  }
+  .bold {
+    font-weight: 500;
+    font-size: 52px;
   }
   .scrolls {
     display: flex;
@@ -77,12 +101,7 @@
     font-size: 24px;
     text-shadow: 1px 1px gray;
   }
-  .boxes div {
-    border: solid #735b69 1px;
-    width: 200px;
-    height: 200px;
-    margin: 20px;
-  }
+
   /* .child {
   } */
   /* .section:hover .child,
@@ -93,5 +112,37 @@
   .login {
     width: 300px;
     font-size: 14px;
+  }
+
+  .anime {
+    width: 20vw;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /* animation: 3s anime infinite linear; */
+  }
+
+  @keyframes anime {
+    0% {
+      transform: rotate(20deg);
+    }
+    20% {
+      transform: rotate(100deg);
+    }
+    35% {
+      transform: rotate(140deg);
+    }
+    50% {
+      transform: rotate(170deg);
+    }
+    65% {
+      transform: rotate(220deg);
+    }
+    80% {
+      transform: rotate(280deg);
+    }
+    100% {
+      transform: rotate(350deg);
+    }
   }
 }

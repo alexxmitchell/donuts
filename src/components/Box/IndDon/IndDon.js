@@ -52,7 +52,7 @@ class IndDon extends Component {
           </div>
         </div>
         <button className="closed" onClick={this.removed}>
-          <i className="fa fa-window-close-o fa-2x" aria-hidden="false" />
+          <i class="fa fa-window-close fa-2x" aria-hidden="false" />
         </button>
       </div>
     );

@@ -13,7 +13,7 @@ class Pay extends Component {
       return acc + Number(this.props.box[i].sum);
     }, 0);
     return (
-      <div>
+      <div className="pay-summary">
         <div className="ship-info">
           <p>{this.props.user.name}</p>
           <p>{this.props.user.email}</p>

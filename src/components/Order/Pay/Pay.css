@@ -1,0 +1,10 @@
+.pay-summary {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  margin-top: 80px;
+}
+
+.ship-info {
+  height: 80%;
+}

@@ -14,12 +14,17 @@ const About = () => {
           <img className="icon" src={donut} alt="donut svg" />
 
           <p className="about-text">Select a donut </p>
+          <p>Choose between cake and chocolate</p>
         </section>
         <section className="step2">
           <h4>Step 2</h4>
           <img src={filled} alt="complete donut" />
 
           <p className="about-text">Add toppings</p>
+          <p>
+            Currently, we offer 12 toppings of varying amounts. Start with an
+            icing => add sweet or savory => finish with a drizzle
+          </p>
         </section>
         <section className="step3">
           <h4>Step 3</h4>

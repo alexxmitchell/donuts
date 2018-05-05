@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getBox } from "../../ducks/donutReducer";
 import bag from "../images/boxes.png";
 import "./Dropdown.css";
-class Dropdown extends Component {
+class Slide extends Component {
   constructor(props) {
     super(props);
 
@@ -13,6 +13,8 @@ class Dropdown extends Component {
     };
     this.clicked = this.clicked.bind(this);
   }
+
+  showSide() {}
 
   // componentDidMount() {
   //   this.props.getBox(id);
@@ -27,7 +29,7 @@ class Dropdown extends Component {
       return <div key={i} id={e.id} />;
     });
     return (
-      <div className="dropdown">
+      <div className="slide-menu">
         <button onClick={this.clicked} className="drop">
           <img className="bag" src={bag} alt="bag" />
         </button>
@@ -55,4 +57,4 @@ function mapStateToProps(state) {
     donuts
   };
 }
-export default connect(mapStateToProps, { getBox })(Dropdown);
+export default connect(mapStateToProps, { getBox })(Slide);
