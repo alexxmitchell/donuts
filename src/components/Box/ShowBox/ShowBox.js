@@ -80,9 +80,9 @@ class ShowBox extends Component {
             )}
           </div>
         </div>
-        <Link to="/order/pay">
+        {/* <Link to="/order/pay">
           <button className="now">Proceed to Checkout</button>
-        </Link>
+        </Link> */}
       </div>
     );
   }

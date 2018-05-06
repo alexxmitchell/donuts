@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Form from "../Form/Form";
 import ShowBox from "../Box/ShowBox/ShowBox";
@@ -27,6 +27,9 @@ class Order extends Component {
 
           {this.props.user.id ? <ShowBox /> : ""}
         </div>
+        <Link to="/box">
+          <button>Go back</button>
+        </Link>
       </div>
     );
   }
