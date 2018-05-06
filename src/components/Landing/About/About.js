@@ -14,17 +14,29 @@ const About = () => {
           <img className="icon" src={donut} alt="donut svg" />
 
           <p className="about-text">Select a donut </p>
-          <p>Choose between cake and chocolate</p>
+          <div className="description">
+            <p>Choose between cake and chocolate</p>
+            <p>All donuts have a base price of $1</p>
+          </div>
         </section>
         <section className="step2">
           <h4>Step #2</h4>
           <img src={filled} alt="complete donut" />
 
           <p className="about-text">Add toppings</p>
-          <p>Choose up to 4 toppings. </p>
-          <p>
-            Start with an icing => add sweet / savory => finish with a drizzle
-          </p>
+          <div className="description">
+            <p>Choose up to 4 toppings. </p>
+            <p>
+              Start with an icing{" "}
+              <span>
+                <i className="fas fa-long-arrow-alt-right" />
+              </span>{" "}
+              add sweet / savory{" "}
+              <span>
+                <i className="fas fa-long-arrow-alt-right" />
+              </span>finish with a drizzle
+            </p>
+          </div>
         </section>
         <section className="step3">
           <h4>Step #3</h4>

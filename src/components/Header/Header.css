@@ -25,12 +25,11 @@
 .outer-header a {
   color: #735b69;
 }
-.title {
-  display: none;
-}
+.title,
 .empty {
   display: none;
 }
+
 .small-name {
   display: inline-block;
 }

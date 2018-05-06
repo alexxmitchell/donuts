@@ -9,7 +9,6 @@ const strategy = new Auth0strategy(
     callbackURL: "/login"
   },
   function(accessToken, refreshToken, extraParams, profile, done) {
-    console.log(profile);
     return done(null, profile);
   }
 );
@@ -18,7 +17,6 @@ const getUser = (req, res) => {
   if (!req.user) {
     res.status(401).json({ message: "Please login" });
   } else {
-    console.log(req.user);
     res.status(200).json(req.user);
   }
 };

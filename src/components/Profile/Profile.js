@@ -6,17 +6,18 @@ import "./Profile.css";
 import filled from "../images/filled-donut.png";
 import { logout } from "../../ducks/userReducer";
 
-const Profile = () => {
+const Profile = props => {
   return (
     <div className="profile-page">
       <div className="animation">
         <h2>Your profile</h2>
         <img src={filled} alt="profile-donut" />
+
+        <Form />
+        <button className="submit" onClick={() => props.logout()}>
+          Logout
+        </button>
       </div>
-      <Form />
-      <button className="submit" onClick={this.logout}>
-        Logout
-      </button>
     </div>
   );
 };

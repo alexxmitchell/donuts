@@ -81,4 +81,13 @@
     width: 10vw;
     height: 10vh;
   }
+  .create-button {
+    margin: 20px auto;
+    padding: 10px 30px;
+    background: #735b69;
+    border: solid 1px #735b69;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+  }
 }

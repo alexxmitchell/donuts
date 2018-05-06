@@ -40,9 +40,11 @@ class IndDon extends Component {
         <div>
           <h2>{this.props.type} donut</h2>
           with
-          {this.props.currentToppings && (
-            <IndTop currentToppings={correctToppings} />
-          )}
+          <span>
+            {this.props.currentToppings && (
+              <IndTop currentToppings={correctToppings} />
+            )}
+          </span>
           <div className="price">
             {this.props.price ? (
               <p>$ {(+this.props.price + this.props.cost).toFixed(2)}</p>
@@ -52,7 +54,7 @@ class IndDon extends Component {
           </div>
         </div>
         <button className="closed" onClick={this.removed}>
-          <i class="fa fa-window-close fa-2x" aria-hidden="false" />
+          <i className="fas fa-times fa-3x" />
         </button>
       </div>
     );

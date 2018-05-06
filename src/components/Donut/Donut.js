@@ -37,7 +37,6 @@ class Donut extends Component {
         <div className="don-container">
           <button
             className="do"
-            disabled={this.state.disabled}
             onClick={e => {
               this.handleKind("Cake");
             }}
@@ -48,7 +47,6 @@ class Donut extends Component {
 
           <button
             className="do"
-            disabled={this.state.disabled}
             onClick={e => {
               this.handleKind("Chocolate");
             }}

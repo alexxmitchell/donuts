@@ -9,6 +9,7 @@
 
 .about-container > h4 {
   font-size: 35px;
+  line-height: 20px;
   padding-bottom: 40px;
   font-family: "Dokdo", cursive;
   text-decoration: underline;
@@ -25,6 +26,16 @@
 .step2 {
   border-top: 3px dashed #735b69;
   border-bottom: 3px dashed #735b69;
+}
+
+section > h4 {
+  margin-bottom: 20px;
+  font-size: 27px;
+  letter-spacing: 2px;
+  font-family: "Dokdo", cursive;
+}
+.description {
+  padding-top: 20px;
 }
 
 @media (min-width: 767px) {
@@ -48,9 +59,6 @@
 
   section > h4 {
     font-size: 30px;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    font-family: "Dokdo", cursive;
   }
   .step2 {
     border-top: none;

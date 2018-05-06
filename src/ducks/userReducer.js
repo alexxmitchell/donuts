@@ -56,6 +56,7 @@ export default function userReducer(state = initialState, action) {
         user: action.payload.data
       };
     case `${LOGOUT}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         user: [],

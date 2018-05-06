@@ -1,8 +1,11 @@
 .profile-page {
-  padding-top: 40px;
+  padding-top: 60px;
   width: 80vw;
+  margin: auto;
+  height: 80%;
+}
+.animation {
   margin: 20px auto;
-  height: 90%;
   background: white;
   border: 1px solid #735b69;
   overflow: scroll;
@@ -12,7 +15,7 @@
   font-family: "Dokdo", cursive;
   font-size: 44px;
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .animation img {
@@ -21,5 +24,7 @@
 }
 
 @media (min-width: 767px) {
-  .profile-pagewidth: 60vw;
+  .profile-page {
+    width: 60vw;
+  }
 }

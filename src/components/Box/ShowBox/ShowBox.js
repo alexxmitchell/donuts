@@ -18,20 +18,15 @@ import image from "../../../placeholder.png";
 class ShowBox extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      disabled: true
+    };
   }
 
   componentDidMount() {
     this.props.getBox(this.props.currentBox.id);
   }
-
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (prevProps.currentBox !== this.props.currentBox) {
-  //     this.props.getTotal(this.props.currentBox.id);
-  //   }
-  //   if (prevProps.total[0] !== this.props.total[0]) {
-  //     this.props.getTotal(this.props.currentBox.id);
-  //   }
-  // }
 
   render() {
     console.log(this.props);
@@ -86,7 +81,7 @@ class ShowBox extends Component {
           </div>
         </div>
         <Link to="/order/pay">
-          <button className="now">Confirm Order</button>
+          <button className="now">Proceed to Checkout</button>
         </Link>
       </div>
     );

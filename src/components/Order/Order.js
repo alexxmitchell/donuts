@@ -24,10 +24,7 @@ class Order extends Component {
         <p className="order-p">Please enter your billing information</p>
         <div className="order-container">
           <Form />
-          {/* <p>
-          Order Total:{" "}
-          {boxTotal + this.props.cost * Number(this.props.box.length)}{" "}
-        </p> */}
+
           {this.props.user.id ? <ShowBox /> : ""}
         </div>
       </div>

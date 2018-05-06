@@ -124,6 +124,7 @@ class Toppings extends Component {
             </button>
           ) : (
             <button
+              className="create-button"
               onClick={() => {
                 this.props
                   .createBox(this.props.user.id)

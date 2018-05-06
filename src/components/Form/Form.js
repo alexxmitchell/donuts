@@ -43,7 +43,7 @@ class Form extends Component {
         <form onSubmit={this.submitForm}>
           <div className="inputIcon">
             <p>name</p>
-            <i class="fas fa-user" />
+            <i className="fas fa-user" />
             <input
               type="text"
               name="name"
@@ -65,7 +65,7 @@ class Form extends Component {
           </div>
           <div className="inputIcon">
             <p>address</p>
-            <i class="fas fa-address-card" />
+            <i className="fas fa-address-card" />
             <input
               type="text"
               name="address"
@@ -77,7 +77,7 @@ class Form extends Component {
 
           <div className="inputIcon">
             <p>city</p>
-            <i class="fas fa-address-card" />
+            <i className="fas fa-address-card" />
             <input
               type="text"
               name="city"
@@ -88,7 +88,7 @@ class Form extends Component {
           </div>
           <div className="inputIcon">
             <p>state</p>
-            <i class="fas fa-address-card" />
+            <i className="fas fa-address-card" />
             <input
               type="text"
               name="st"
@@ -99,7 +99,7 @@ class Form extends Component {
           </div>
           <div className="inputIcon">
             <p>zipcode</p>
-            <i class="fas fa-address-card" />
+            <i className="fas fa-address-card" />
             <input
               type="text"
               name="zip"

@@ -25,9 +25,6 @@ form input {
   width: 150px;
 }
 
-.form-page form {
-  padding: 20px 0;
-}
 .inputIcon {
   position: relative;
 }
@@ -42,9 +39,14 @@ form input {
   border-color: #735b69;
   box-shadow: 0 0 8px 0 #735b69;
 }
-
+.inputIcon p {
+  padding: 12px 0px 5px 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
 .inputIcon i {
   position: absolute;
+
   bottom: 12px;
   left: 10px;
   color: #735b69;
