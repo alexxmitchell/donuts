@@ -86,7 +86,7 @@
     animation: 3s fade linear;
   } */
   .logo-font {
-    font-size: 90px;
+    font-size: 128px;
   }
 
   .log {
@@ -105,7 +105,7 @@
     border: solid 1px #735b69;
     border-radius: 4px;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .anime {

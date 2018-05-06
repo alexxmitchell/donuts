@@ -37,14 +37,14 @@ class IndDon extends Component {
         ) : (
           <img className="lildo" src={choc} alt="chocolate" />
         )}
-        <div>
-          <h2>{this.props.type} donut</h2>
-          with
-          <span>
+        <div className="donut-description">
+          <h2>
+            {this.props.type} donut with{" "}
             {this.props.currentToppings && (
               <IndTop currentToppings={correctToppings} />
             )}
-          </span>
+          </h2>
+          {/* </div> */}
           <div className="price">
             {this.props.price ? (
               <p>$ {(+this.props.price + this.props.cost).toFixed(2)}</p>
@@ -54,7 +54,7 @@ class IndDon extends Component {
           </div>
         </div>
         <button className="closed" onClick={this.removed}>
-          <i className="fas fa-times fa-3x" />
+          <i className="fas fa-times fa-2x" />
         </button>
       </div>
     );

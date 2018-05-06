@@ -134,4 +134,5 @@ table {
   height: 100vh;
   background: #b7dde0;
   overflow: scroll;
+  font-family: "Roboto", sans-serif;
 }

@@ -29,7 +29,7 @@
 }
 .do-container {
   margin: 20px auto;
-  box-shadow: 4px 3px 2px #735b69;
+  border: 4px double #735b69;
   width: 80vw;
   background: white;
   padding: 10px;
@@ -38,7 +38,7 @@
 .not-logged {
   font-family: "Roboto", sans-serif;
   margin: auto;
-  padding: 100px;
+  padding: 65px;
 }
 
 .not-logged button {
@@ -63,6 +63,7 @@
   }
   .not-logged {
     margin: 0 auto;
+    padding: 100px;
   }
   .box-text {
     font-size: 36px;

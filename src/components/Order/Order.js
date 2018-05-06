@@ -20,15 +20,21 @@ class Order extends Component {
     }, 0);
     return (
       <div className="order-page">
-        <h4>We just need a little more info</h4>
-        <p className="order-p">Please enter your billing information</p>
-        <div className="order-container">
-          <Form />
-
-          {this.props.user.id ? <ShowBox /> : ""}
+        <div className="order-inner">
+          <h4>We just need a little more info</h4>
+          <p className="order-p">Please enter your billing information</p>
+          <div className="order-container">
+            <div>
+              <Form />
+            </div>
+            <div className="float-box">
+              {" "}
+              {this.props.user.id ? <ShowBox /> : ""}
+            </div>
+          </div>
         </div>
         <Link to="/box">
-          <button>Go back</button>
+          <button className="back">Go back</button>
         </Link>
       </div>
     );

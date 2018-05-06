@@ -20,7 +20,7 @@ class Slide extends Component {
   //   this.props.getBox(id);
   // }
   clicked(e) {
-    this.setState({ show: !this.state.show });
+    this.setState({ show: !this.state.show }, () => {});
   }
 
   render() {
@@ -41,7 +41,7 @@ class Slide extends Component {
               this.dropmenu = element;
             }}
           >
-            <Link to="/login">Login</Link>
+            <Link to="/profile">Your Account</Link>
             <h1>Current Box: {donutCount} </h1>
             <Link to="/box">View Box</Link>
           </div>

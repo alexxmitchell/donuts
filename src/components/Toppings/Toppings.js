@@ -95,16 +95,25 @@ class Toppings extends Component {
         <div className="topping-header">
           <h2>Step #2: Add Toppings</h2>
         </div>
-
-        <h4>Max 4</h4>
-        <p>
-          Pick an icing<span>
-            <i className="fas fa-long-arrow-alt-right" />
-          </span>go sweet, savory or both!{" "}
-          <span>
-            <i className="fas fa-long-arrow-alt-right" />
-          </span>finish with a drizzle
-        </p>
+        <div className="top-plan">
+          <p>(Max 4)</p>
+          <h4>
+            <span>
+              <i className="fas fa-long-arrow-alt-right" />
+            </span>
+            Pick an icing
+          </h4>
+          <h4>
+            <span>
+              <i className="fas fa-long-arrow-alt-right" />
+            </span>go sweet, savory or both!
+          </h4>
+          <h4>
+            <span>
+              <i className="fas fa-long-arrow-alt-right" />
+            </span>finish with a drizzle
+          </h4>
+        </div>
 
         <div className="container-drop-topping">
           <div className="to-contain">{mappedToppings}</div>
@@ -117,6 +126,7 @@ class Toppings extends Component {
         <Link to="/box">
           {this.props.box && this.props.box.length > 0 ? (
             <button
+              className="create-button"
               onClick={() => {
                 this.props.addToBox(
                   this.props.currentBox.id,

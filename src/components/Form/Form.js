@@ -50,6 +50,7 @@ class Form extends Component {
               value={this.state.name}
               placeholder="name"
               onChange={this.handleInput}
+              required
             />
           </div>
           <div className="inputIcon">
@@ -61,6 +62,7 @@ class Form extends Component {
               value={this.state.email}
               placeholder="email"
               onChange={this.handleInput}
+              required
             />
           </div>
           <div className="inputIcon">

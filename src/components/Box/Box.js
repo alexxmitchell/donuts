@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import IndDon from "./IndDon/IndDon";
-import Form from "../Form/Form";
+
 import {
   getBox,
   removeDonut,

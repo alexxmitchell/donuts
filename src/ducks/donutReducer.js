@@ -151,6 +151,7 @@ export function currentDonutTop(id) {
 function donutReducer(state = initialState, action) {
   switch (action.type) {
     case `${CREATE_BOX}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         currentBox: action.payload.data[0]
@@ -171,16 +172,19 @@ function donutReducer(state = initialState, action) {
         currentToppings: action.payload.data
       };
     case `${ADD_DONUT}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         currentDonut: action.payload.data
       };
     case `${GET_BOX}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         box: action.payload.data
       };
     case `${GET_DONUTS}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         donuts: action.payload.data,
@@ -190,9 +194,10 @@ function donutReducer(state = initialState, action) {
     case `${REMOVE_DONUT}_FULFILLED`:
       return {
         ...state,
-        donuts: action.payload.data
+        box: action.payload.data
       };
     case `${GET_TOPPINGS}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         currentToppings: state.currentToppings.concat(action.payload.data)
@@ -203,8 +208,9 @@ function donutReducer(state = initialState, action) {
         currentDonut: action.payload.data
       };
     case `${ADD_TO_BOX}_FULFILLED`:
-      console.log("I hit add box");
       console.log(action);
+      console.log("I hit add box");
+
       let doArr = state.donuts.slice();
       doArr.splice(action.payload, 1);
       return Object.assign({}, state, {
@@ -212,6 +218,7 @@ function donutReducer(state = initialState, action) {
         box: action.payload.data
       });
     case `${GET_BOXTOPS}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         boxToppings: action.payload.data
@@ -228,6 +235,7 @@ function donutReducer(state = initialState, action) {
         previous: action.payload.data
       };
     case `${CURRENT_DONUT_TOP}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         currDonutTop: action.payload.data

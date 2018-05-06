@@ -1,7 +1,7 @@
 .donut-container h2 {
   font-family: "Dokdo", cursive;
   font-size: 35px;
-  padding: 20px 0;
+  padding: 17px 0;
 }
 
 .donut-container {
@@ -43,10 +43,8 @@ a {
 .don-top {
   width: 80vw;
   margin: 60px auto 20px auto;
-
-  box-shadow: 4px 3px 2px #735b69;
   background: white;
-  border: 1px solid #735b69;
+  border: 4px double #735b69;
 }
 p.donut-type {
   font-size: 16px;

@@ -14,21 +14,25 @@ class Pay extends Component {
     }, 0);
     return (
       <div className="pay-summary">
-        <div className="ship-info">
-          <p>{this.props.user.name}</p>
-          <p>{this.props.user.email}</p>
-          <p>{this.props.user.address}</p>
-          <p>
-            {this.props.user.city}, {this.props.user.st}
-          </p>
-          <p>{this.props.user.zip}</p>
+        <div className="ready">
+          <div className="ship-info">
+            <p>{this.props.user.name}</p>
+            <p>{this.props.user.email}</p>
+            <p>{this.props.user.address}</p>
+            <p>
+              {this.props.user.city}, {this.props.user.st}
+            </p>
+            <p>{this.props.user.zip}</p>
+          </div>
+          <ShowBox />
         </div>
-        <ShowBox />
-        <Checkout
-          name={"Donut payment"}
-          description={"Buy your delectable donuts"}
-          amount={boxTotal + this.props.cost * Number(this.props.box.length)}
-        />
+        <div className="final-pay">
+          <Checkout
+            name={"Donut payment"}
+            description={"Buy your delectable donuts"}
+            amount={boxTotal + this.props.cost * Number(this.props.box.length)}
+          />
+        </div>
       </div>
     );
   }

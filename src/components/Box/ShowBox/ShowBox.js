@@ -35,8 +35,6 @@ class ShowBox extends Component {
     }, 0);
     let length = this.props.box.length;
 
-    console.log(boxTotal + this.props.cost * Number(length));
-    // console.log(this.props.total);
     const correctBoxToppings = this.props.boxToppings.filter(
       e => e.donut_id == this.props.do
     );
@@ -65,7 +63,7 @@ class ShowBox extends Component {
     return (
       <div>
         <div className="to-checkout">
-          <h2>Summary</h2>
+          <h2>Order Summary</h2>
           <div className="donut-box">
             <div className="yoDos">{boxer}</div>
             <p>Box Total: </p>

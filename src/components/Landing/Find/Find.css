@@ -1,5 +1,5 @@
 .where {
-  height: 80vh;
+  height: 94vh;
   background: #b7dde0;
   padding-top: 30px;
   font-family: "Dokdo", cursive;
@@ -55,6 +55,9 @@
 }
 
 @media (min-width: 767px) {
+  .where {
+    height: 80vh;
+  }
   .find-container {
     margin: 40px 0px;
     flex-direction: row;

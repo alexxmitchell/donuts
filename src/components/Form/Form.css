@@ -1,7 +1,7 @@
 .form-page {
   height: 60%;
   padding-top: 40px;
-  width: 60vw;
+  width: 30vw;
   margin: 0 auto;
 }
 
@@ -9,11 +9,7 @@
   border: 1px solid #735b69;
   border-radius: 4px;
 }
-.form-page h2 {
-  font-family: "Dokdo", cursive;
-  font-size: 34px;
-  margin-bottom: 20px;
-}
+
 form {
   display: flex;
   flex-direction: column;
@@ -22,7 +18,7 @@ form {
 }
 form input {
   padding: 10px;
-  width: 150px;
+  width: 130px;
 }
 
 .inputIcon {
@@ -64,4 +60,18 @@ form input {
   border-radius: 4px;
   color: white;
   font-size: 14px;
+}
+
+@media (min-width: 767px) {
+  form input {
+    padding: 10px;
+    width: 150px;
+  }
+  .inputIcon input {
+    padding-left: 40px;
+    line-height: 2px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+  }
 }
