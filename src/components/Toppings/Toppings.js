@@ -92,14 +92,16 @@ class Toppings extends Component {
 
     return (
       <div className="topping">
-        <h2>Toppings</h2>
+        <div className="topping-header">
+          <h2>Step #2: Add Toppings</h2>
+        </div>
         {/* <Category /> */}
-        <h4>Select toppings (max 4)</h4>
-        <p>1. Start with a base</p>
+        <h4>Max 4</h4>
         <p>
-          2. Go <span className="sweet">sweet</span> or{" "}
-          <span className="savory">savory</span> or both
+          Start with an icing => go sweet or savory or both => finish with a
+          drizzle
         </p>
+
         <div className="container-drop-topping">
           <div className="to-contain">{mappedToppings}</div>
 

@@ -31,8 +31,8 @@ class Donut extends Component {
     return (
       <div className="donut-container">
         <div className="don-top">
-          <h2>Step 1</h2>
-          <h2>Select a Donut</h2>
+          <h2>Step #1: Select a Donut</h2>
+          {/* <h2>Select a Donut</h2> */}
         </div>
         <div className="don-container">
           <button

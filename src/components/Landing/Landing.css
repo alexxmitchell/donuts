@@ -5,40 +5,50 @@
   overflow: scroll;
 }
 .landing-top {
+  padding-top: 70px;
+  overflow: hidden;
   height: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-
-  /* background-image: url("../../crafted-donuts.jpg"); */
-  /* background-size: 250%;
-  background-position: -650px 0px; */
-  /* background-size: contain;
+  justify-content: space-around;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 20;
   background-attachment: scroll;
-  background-image: url("../images/cart-donuts.png"); */
-
-  color: #735b69;
+  background-image: url("../images/cart-donuts.png");
+  filter: drop-shadow(20px 0px 10px gray);
+  /* filter: blur(5px); */
 }
 
 .login {
-  width: 40%;
-  padding: 30px;
+  width: 50%;
+  padding: 20px 0px;
   border-radius: 10px;
   margin: 40px auto;
+  background: #735b69;
+  border: solid 1px #735b69;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
 }
 
 .land-text {
-  font-size: 50px;
-  text-align: left;
-  padding-left: 20px;
+  font-size: 40px;
+  line-height: 70px;
+  color: white;
+  z-index: 20;
 }
 
 .logo-font {
   font-family: "Dokdo", cursive;
-  font-size: 50px;
+  font-size: 59px;
+  color: #735b69;
+}
+.bold {
+  font-weight: 500;
+  font-size: 55px;
+  /* border-bottom: double 4px #735b69; */
+  text-decoration: underline;
 }
 
 @media (min-width: 767px) {
@@ -46,30 +56,39 @@
     /* transition: all 2s; */
     width: 100vw;
     margin: auto;
-    background-size: cover;
+
     /* background-size: 192%;
     background-position: -550px 0px;
     background-repeat: no-repeat; */
     background-attachment: fixed;
+    overflow: hidden;
   }
 
   .land-text {
-    font-size: 50px;
+    font-size: 55px;
+    font-weight: bold;
     line-height: 80px;
     letter-spacing: 1px;
     padding-top: 10px;
-    padding-left: 60px;
   }
+
+  /* .make {
+    position: relative;
+    animation: 1s fade linear;
+  }
+
+  .bold {
+    position: relative;
+    animation: 2s fade linear;
+  }
+  .donuts {
+    position: relative;
+    animation: 3s fade linear;
+  } */
   .logo-font {
     font-size: 90px;
   }
 
-  .bold {
-    font-weight: 500;
-    font-size: 55px;
-    text-decoration: underline;
-    transition: scale(2) 2s;
-  }
   .log {
     display: flex;
     flex-direction: column;
@@ -78,8 +97,15 @@
   }
 
   .login {
-    width: 300px;
-    font-size: 14px;
+    width: 22%;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px auto;
+    background: #735b69;
+    border: solid 1px #735b69;
+    border-radius: 4px;
+    color: white;
+    font-size: 20px;
   }
 
   .anime {
@@ -113,4 +139,28 @@
       transform: rotate(350deg);
     }
   }
+
+  /* @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.2;
+    }
+    35% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    65% {
+      opacity: 0.8;
+    }
+    80% {
+      opacity: 0.9;
+    }
+    100% {
+      opacity: 1;
+    }
+  } */
 }

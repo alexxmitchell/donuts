@@ -1,5 +1,5 @@
 .form-page {
-  height: 100%;
+  height: 60%;
   padding-top: 40px;
   width: 60vw;
   margin: 0 auto;
@@ -55,5 +55,11 @@ form input {
   color: #735b69;
 }
 .submit {
-  margin-top: 20px;
+  margin: 20px auto;
+  padding: 10px 30px;
+  background: #735b69;
+  border: solid 1px #735b69;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
 }

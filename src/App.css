@@ -133,4 +133,5 @@ table {
   text-align: center;
   height: 100vh;
   background: #b7dde0;
+  overflow: scroll;
 }

@@ -1,10 +1,18 @@
 .topping {
-  margin-top: 40px;
+  margin-top: 80px;
 }
-.topping h2 {
+.topping-header {
+  width: 80vw;
+  margin: auto;
+  background: white;
   font-family: "Dokdo", cursive;
   font-size: 38px;
   margin-bottom: 20px;
+  box-shadow: 4px 3px 2px #735b69;
+  background: white;
+  border: 1px solid #735b69;
+}
+.topping h2 {
 }
 .container-drop-topping {
   height: 60vh;
@@ -41,11 +49,21 @@
 }
 
 @media (min-width: 767px) {
+  .topping h2 {
+    font-size: 40px;
+    padding: 20px 0;
+  }
   .container-drop-topping {
     display: flex;
     height: 57vh;
     justify-content: center;
     align-items: center;
+  }
+  .topping-header {
+    margin: auto;
+    width: 60vw;
+    font-size: 40px;
+    margin-bottom: 50px;
   }
   .to-contain {
     flex-direction: column;
@@ -62,9 +80,5 @@
     color: black;
     width: 10vw;
     height: 10vh;
-  }
-  .topping h2 {
-    font-size: 56px;
-    margin-bottom: 70px;
   }
 }

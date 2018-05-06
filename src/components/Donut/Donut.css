@@ -1,11 +1,11 @@
 .donut-container h2 {
   font-family: "Dokdo", cursive;
   font-size: 36px;
-  margin-bottom: 20px;
+  padding: 20px 0;
 }
 
 .donut-container {
-  margin-top: 55px;
+  height: 100%;
 }
 
 .don-container {
@@ -14,6 +14,7 @@
   justify-content: space-around;
   align-items: center;
   height: 60vh;
+  margin-top: 30px;
 }
 
 a {
@@ -78,9 +79,10 @@ a {
 }
 
 @media (min-width: 767px) {
+  .donut-container {
+  }
   .donut-container h2 {
     font-size: 40px;
-    margin-bottom: 80px;
   }
 
   .don-container {
@@ -105,8 +107,10 @@ a {
   }
 
   .don-top {
+    width: 40vw;
+    margin: 100px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
   }
 }

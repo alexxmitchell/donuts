@@ -11,10 +11,12 @@ const Profile = () => {
     <div className="profile-page">
       <div className="animation">
         <h2>Your profile</h2>
-        <img src={filled} alt="donut animation " />
+        <img src={filled} alt="profile-donut" />
       </div>
       <Form />
-      <button onClick={this.logout}>Logout</button>
+      <button className="submit" onClick={this.logout}>
+        Logout
+      </button>
     </div>
   );
 };

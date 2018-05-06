@@ -9,6 +9,9 @@ import chocwcaramel from "../../images/chocwcaramelicing.png";
 import chocwchoc from "../../images/chocwchocicing.png";
 import chocbacon from "../../images/chocbacon.png";
 import chocstraw from "../../images/chocstraw.png";
+import chocpecan from "../../images/chocpecan.png";
+import chocpbdriz from "../../images/chocpbdrizzle.png";
+import chocchocdriz from "../../images/chocchocdrizzle.png";
 import cakechocdriz from "../../images/cakewchocdrizzle.png";
 import cakepbdriz from "../../images/cakewpbdrizzle.png";
 import cakecaramel from "../../images/cakewcaramelicing.png";
@@ -153,7 +156,12 @@ class Droptop extends Component {
 
           case 2:
             return (
-              <img key={i} className="stacking size" src={cake} alt="pecans" />
+              <img
+                key={i}
+                className="stacking size"
+                src={chocpecan}
+                alt="pecans"
+              />
             );
 
           case 3:
@@ -236,7 +244,7 @@ class Droptop extends Component {
               <img
                 key={i}
                 className="stacking size"
-                src={choc}
+                src={chocchocdriz}
                 alt="chocolate drizzle"
               />
             );
@@ -246,7 +254,7 @@ class Droptop extends Component {
               <img
                 key={i}
                 className="stacking size"
-                src={choc}
+                src={chocpbdriz}
                 alt="peanut butter drizzle"
               />
             );

@@ -43,7 +43,7 @@ class Form extends Component {
         <form onSubmit={this.submitForm}>
           <div className="inputIcon">
             <p>name</p>
-            <i className="fa fa-user" aria-hidden="true" />
+            <i class="fas fa-user" />
             <input
               type="text"
               name="name"
@@ -54,7 +54,7 @@ class Form extends Component {
           </div>
           <div className="inputIcon">
             <p>email</p>
-            <i class="fa fa-envelope" aria-hidden="true" />
+            <i className="fa fa-envelope" aria-hidden="true" />
             <input
               type="text"
               name="email"
@@ -65,11 +65,11 @@ class Form extends Component {
           </div>
           <div className="inputIcon">
             <p>address</p>
-            <i class="fa fa-address-card" aria-hidden="true" />
+            <i class="fas fa-address-card" />
             <input
               type="text"
-              name="address1"
-              value={this.state.address1}
+              name="address"
+              value={this.state.address}
               placeholder="address"
               onChange={this.handleInput}
             />
@@ -77,7 +77,7 @@ class Form extends Component {
 
           <div className="inputIcon">
             <p>city</p>
-            <i class="fa fa-address-card" aria-hidden="true" />
+            <i class="fas fa-address-card" />
             <input
               type="text"
               name="city"
@@ -88,7 +88,7 @@ class Form extends Component {
           </div>
           <div className="inputIcon">
             <p>state</p>
-            <i class="fa fa-address-card" aria-hidden="true" />
+            <i class="fas fa-address-card" />
             <input
               type="text"
               name="st"
@@ -99,7 +99,7 @@ class Form extends Component {
           </div>
           <div className="inputIcon">
             <p>zipcode</p>
-            <i class="fa fa-address-card" aria-hidden="true" />
+            <i class="fas fa-address-card" />
             <input
               type="text"
               name="zip"
@@ -108,13 +108,27 @@ class Form extends Component {
               onChange={this.handleInput}
             />
           </div>
-          <input className="submit" type="submit" value="Submit Details" />
+          {this.props.box.length > 0 ? (
+            <div>
+              <Link to="/order/pay">
+                <input
+                  className="submit"
+                  type="submit"
+                  value="Submit Details"
+                />
+              </Link>
+            </div>
+          ) : (
+            <div>
+              <input className="submit" type="submit" value="Update Profile" />
+            </div>
+          )}
         </form>
       </div>
     );
   }
 }
 function mapStateToProps(state) {
-  return { ...state.userReducer };
+  return { ...state.userReducer, ...state.donutReducer };
 }
 export default connect(mapStateToProps, { updateUser })(Form);

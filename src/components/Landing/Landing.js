@@ -14,20 +14,20 @@ const Landing = () => {
     <div className="landing-container">
       <section className="landing-top">
         <div className="land-text">
-          <h2>We make</h2>
-          <h2>
-            really, <span className="bold">really</span>
+          <h2 className="make">We make</h2>
+          <h2 className="make">
+            really, <span className="bold"> really</span>
           </h2>
-
-          <h2 className="logo-font">
-            Good D<span>
-              <img className="donut-logo" src={logo} alt="donut" />
-            </span>nuts<span className="bold">.</span>
-          </h2>
+          <div className="landing-logo">
+            <h2 className="logo-font donuts">
+              Good D<span>
+                <img className="donut-logo" src={logo} alt="donut" />
+              </span>nuts
+              {/* <span className="period">.</span> */}
+            </h2>
+          </div>
         </div>
-        {/* <img className="anime" src={donut} alt="donut-animation" />
-          <img className="anime" src={donut} alt="donut-animation" />
-          <img className="anime" src={donut} alt="donut-animation" /> */}
+
         <div className="log">
           <button
             className="login"

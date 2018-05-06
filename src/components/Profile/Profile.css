@@ -1,7 +1,11 @@
 .profile-page {
   padding-top: 40px;
   width: 80vw;
-  margin: 0 auto;
+  margin: 20px auto;
+  height: 90%;
+  background: white;
+  border: 1px solid #735b69;
+  overflow: scroll;
 }
 
 .profile-page h2 {
@@ -17,4 +21,5 @@
 }
 
 @media (min-width: 767px) {
+  .profile-pagewidth: 60vw;
 }
