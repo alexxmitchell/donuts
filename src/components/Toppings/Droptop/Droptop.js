@@ -38,61 +38,6 @@ class Droptop extends Component {
         switch (e) {
           case 1:
             return (
-              <img key={i} className="stacking size" alt="peanuts" src={choc} />
-            );
-
-          case 2:
-            return (
-              <img key={i} className="stacking size" src={choc} alt="pecans" />
-            );
-
-          case 3:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={cakebacon}
-                alt="bacon"
-              />
-            );
-
-          case 4:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={choc}
-                alt="gold flakes"
-              />
-            );
-
-          case 5:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={cakestraw}
-                alt="strawberries"
-              />
-            );
-
-          case 6:
-            return (
-              <img key={i} className="stacking size" src={choc} alt="bananas" />
-            );
-
-          case 7:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={choc}
-                alt="sprinkles"
-              />
-            );
-
-          case 8:
-            return (
               <img
                 key={i}
                 className="stacking size"
@@ -101,7 +46,7 @@ class Droptop extends Component {
               />
             );
 
-          case 9:
+          case 2:
             return (
               <img
                 key={i}
@@ -111,13 +56,66 @@ class Droptop extends Component {
               />
             );
 
-          case 10:
+          case 3:
             return (
               <img
                 key={i}
                 className="stacking size"
                 src={cakerasp}
-                alt="raspberry icing"
+                alt="strawberry icing"
+              />
+            );
+          case 4:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cakestraw}
+                alt="strawberries"
+              />
+            );
+
+          case 5:
+            return (
+              <img key={i} className="stacking size" src={choc} alt="bananas" />
+            );
+
+          case 6:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cakebacon}
+                alt="bacon"
+              />
+            );
+          case 7:
+            return (
+              <img key={i} className="stacking size" alt="peanuts" src={choc} />
+            );
+
+          case 8:
+            return (
+              <img key={i} className="stacking size" src={choc} alt="pecans" />
+            );
+
+          case 9:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={choc}
+                alt="sprinkles"
+              />
+            );
+
+          case 10:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={choc}
+                alt="gold flakes"
               />
             );
 
@@ -151,66 +149,6 @@ class Droptop extends Component {
         switch (e) {
           case 1:
             return (
-              <img key={i} className="stacking size" src={cake} alt="peanuts" />
-            );
-
-          case 2:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={chocpecan}
-                alt="pecans"
-              />
-            );
-
-          case 3:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={chocbacon}
-                alt="bacon"
-              />
-            );
-
-          case 4:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={cake}
-                alt="gold flakes"
-              />
-            );
-
-          case 5:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={chocstraw}
-                alt="strawberries"
-              />
-            );
-
-          case 6:
-            return (
-              <img key={i} className="stacking size" src={cake} alt="bananas" />
-            );
-
-          case 7:
-            return (
-              <img
-                key={i}
-                className="stacking size"
-                src={cake}
-                alt="sprinkles"
-              />
-            );
-
-          case 8:
-            return (
               <img
                 key={i}
                 className="stacking size"
@@ -219,7 +157,7 @@ class Droptop extends Component {
               />
             );
 
-          case 9:
+          case 2:
             return (
               <img
                 key={i}
@@ -229,13 +167,71 @@ class Droptop extends Component {
               />
             );
 
-          case 10:
+          case 3:
             return (
               <img
                 key={i}
                 className="stacking size"
                 src={chocrasp}
-                alt="raspberry icing"
+                alt="strawberry icing"
+              />
+            );
+
+          case 4:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={chocstraw}
+                alt="strawberries"
+              />
+            );
+
+          case 5:
+            return (
+              <img key={i} className="stacking size" src={cake} alt="bananas" />
+            );
+          case 6:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={chocbacon}
+                alt="bacon"
+              />
+            );
+          case 7:
+            return (
+              <img key={i} className="stacking size" src={cake} alt="peanuts" />
+            );
+
+          case 8:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={chocpecan}
+                alt="pecans"
+              />
+            );
+
+          case 9:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cake}
+                alt="sprinkles"
+              />
+            );
+
+          case 10:
+            return (
+              <img
+                key={i}
+                className="stacking size"
+                src={cake}
+                alt="gold flakes"
               />
             );
 

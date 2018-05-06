@@ -4,6 +4,8 @@
   padding-top: 30px;
   font-family: "Dokdo", cursive;
   position: relative;
+  overflow: hidden;
+  color: #fff;
 }
 
 .find-container {
@@ -23,7 +25,7 @@
 }
 
 .location {
-  font-size: 20px;
+  font-size: 27px;
 }
 
 .footer {
@@ -37,12 +39,22 @@
   font-family: "Roboto", sans-serif;
 }
 
-@media (min-width: 767px) {
-  .where {
-    overflow: hidden;
-    color: #fff;
-  }
+.hours {
+  margin-top: 20px;
+}
 
+.links {
+  margin: 20px auto 0px auto;
+  width: 40vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.social {
+  font-size: 23px;
+}
+
+@media (min-width: 767px) {
   .find-container {
     margin: 40px 0px;
     flex-direction: row;

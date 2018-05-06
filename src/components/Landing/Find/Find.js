@@ -22,15 +22,19 @@ const Find = () => {
           <h3 className="find-title">Good Donut</h3>
           <h3>501 S Ervay St</h3>
           <h3>Dallas, TX 75201</h3>
-          <p>Hours of Operation</p>
+          <p className="hours">Hours of Operation:</p>
           <p>M-F 6am-11am</p>
           <p>Sa 9am-1pm</p>
         </div>
       </div>
 
       <div>
-        <h3>Let's get social</h3>
-        <p>Links</p>
+        <h3 className="social">Let's get social!</h3>
+        <div className="links">
+          <i className="fab fa-google-plus-square fa-3x" />
+          <i className="fab fa-facebook-square fa-3x" />
+          <i className="fab fa-twitter-square fa-3x" />
+        </div>
       </div>
 
       <footer className="footer">

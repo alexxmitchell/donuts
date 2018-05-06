@@ -95,11 +95,15 @@ class Toppings extends Component {
         <div className="topping-header">
           <h2>Step #2: Add Toppings</h2>
         </div>
-        {/* <Category /> */}
+
         <h4>Max 4</h4>
         <p>
-          Start with an icing => go sweet or savory or both => finish with a
-          drizzle
+          Pick an icing<span>
+            <i className="fas fa-long-arrow-alt-right" />
+          </span>go sweet, savory or both!{" "}
+          <span>
+            <i className="fas fa-long-arrow-alt-right" />
+          </span>finish with a drizzle
         </p>
 
         <div className="container-drop-topping">

@@ -1,11 +1,12 @@
 .donut-container h2 {
   font-family: "Dokdo", cursive;
-  font-size: 36px;
+  font-size: 35px;
   padding: 20px 0;
 }
 
 .donut-container {
   height: 100%;
+  overflow: hidden;
 }
 
 .don-container {
@@ -41,11 +42,14 @@ a {
 }
 .don-top {
   width: 80vw;
-  margin: auto;
+  margin: 60px auto 20px auto;
 
   box-shadow: 4px 3px 2px #735b69;
   background: white;
   border: 1px solid #735b69;
+}
+p.donut-type {
+  font-size: 16px;
 }
 
 .right-arrow {

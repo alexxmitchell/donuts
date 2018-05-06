@@ -34,7 +34,7 @@ class TopButton extends Component {
         <button onClick={() => this.selectedVal(this.props.id)}>
           {this.state.isChecked && <Check />}
           <p className="label">{this.props.name}</p>
-          {/* <p className="category">{this.props.category}</p> */}
+          <p className="category">{this.props.category}</p>
           <p className="price">$ {this.props.price}</p>
         </button>
       </div>
