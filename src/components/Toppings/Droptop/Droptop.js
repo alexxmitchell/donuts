@@ -10,6 +10,9 @@ import chocwchoc from "../../images/chocwchocicing.png";
 import chocbacon from "../../images/chocbacon.png";
 import chocstraw from "../../images/chocstraw.png";
 import chocpecan from "../../images/chocpecan.png";
+import chocpeanut from "../../images/chocpeanuts.png";
+import chocsprinkles from "../../images/chocsprinkles.png";
+import chocgold from "../../images/chocgold.png";
 import chocpbdriz from "../../images/chocpbdrizzle.png";
 import chocchocdriz from "../../images/chocchocdrizzle.png";
 import cakechocdriz from "../../images/cakewchocdrizzle.png";
@@ -19,6 +22,9 @@ import cakerasp from "../../images/cakewraspicing.png";
 import cakechoc from "../../images/cakewchocicing.png";
 import cakebacon from "../../images/cakebacon.png";
 import cakestraw from "../../images/cakestraw.png";
+import cakepeanut from "../../images/cakepeanut.png";
+import cakesprinkles from "../../images/cakesprinkles.png";
+import cakegold from "../../images/cakegold.png";
 
 class Droptop extends Component {
   constructor(props) {
@@ -91,7 +97,12 @@ class Droptop extends Component {
             );
           case 7:
             return (
-              <img key={i} className="stacking size" alt="peanuts" src={choc} />
+              <img
+                key={i}
+                className="stacking size"
+                alt="peanuts"
+                src={cakepeanut}
+              />
             );
 
           case 8:
@@ -104,7 +115,7 @@ class Droptop extends Component {
               <img
                 key={i}
                 className="stacking size"
-                src={choc}
+                src={cakesprinkles}
                 alt="sprinkles"
               />
             );
@@ -114,7 +125,7 @@ class Droptop extends Component {
               <img
                 key={i}
                 className="stacking size"
-                src={choc}
+                src={cakegold}
                 alt="gold flakes"
               />
             );
@@ -202,7 +213,12 @@ class Droptop extends Component {
             );
           case 7:
             return (
-              <img key={i} className="stacking size" src={cake} alt="peanuts" />
+              <img
+                key={i}
+                className="stacking size"
+                src={chocpeanut}
+                alt="peanuts"
+              />
             );
 
           case 8:
@@ -220,7 +236,7 @@ class Droptop extends Component {
               <img
                 key={i}
                 className="stacking size"
-                src={cake}
+                src={chocsprinkles}
                 alt="sprinkles"
               />
             );
@@ -230,7 +246,7 @@ class Droptop extends Component {
               <img
                 key={i}
                 className="stacking size"
-                src={cake}
+                src={chocgold}
                 alt="gold flakes"
               />
             );

@@ -4,6 +4,11 @@
   width: 80vw;
   position: relative;
 }
+.order-holder {
+  background: white;
+  border: 4px double #735b69;
+  width: 100%;
+}
 
 .order-inner {
   display: flex;
@@ -11,8 +16,6 @@
   justify-content: space-between;
   align-items: center;
   overflow: scroll;
-  background: white;
-  border: 4px double #735b69;
 }
 .order-page h4 {
   padding: 17px 13px;

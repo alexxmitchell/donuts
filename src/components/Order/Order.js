@@ -20,9 +20,11 @@ class Order extends Component {
     }, 0);
     return (
       <div className="order-page">
-        <div className="order-inner">
-          <h4>Billing Info</h4>
-          <p className="order-p">Please enter your billing information</p>
+        <div className="order-holder">
+          <div className="order-inner">
+            <h4>Billing Info</h4>
+            <p className="order-p">Please enter your billing information</p>
+          </div>
           <div className="order-container">
             <div>
               <Form />
