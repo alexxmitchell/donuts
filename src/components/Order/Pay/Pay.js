@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import "./Pay.css";
 import ShowBox from "../../Box/ShowBox/ShowBox";
 import Checkout from "../../../Checkout";
@@ -15,15 +16,18 @@ class Pay extends Component {
     return (
       <div className="pay-summary">
         <div className="ready">
+          <h2>Final Review</h2>
           <div className="ship-info">
-            <p>{this.props.user.name}</p>
-            <p>{this.props.user.email}</p>
-            <p>{this.props.user.address}</p>
+            <p>Name: {this.props.user.name}</p>
+            <p>Address: {this.props.user.address}</p>
             <p>
+              City, St:
               {this.props.user.city}, {this.props.user.st}
             </p>
-            <p>{this.props.user.zip}</p>
+            <p>Zipcode: {this.props.user.zip}</p>
+            <p>Email: {this.props.user.email}</p>
           </div>
+
           <ShowBox />
         </div>
         <div className="final-pay">
@@ -33,6 +37,9 @@ class Pay extends Component {
             amount={boxTotal + this.props.cost * Number(this.props.box.length)}
           />
         </div>
+        <Link to="/order">
+          <button className="return">Return to Billing Info</button>
+        </Link>
       </div>
     );
   }

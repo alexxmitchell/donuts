@@ -34,19 +34,8 @@
   font-weight: bold;
 
   border: 1px solid white;
-  /* background-repeat: no-repeat;
-  background-position: center; */
 
   font-size: 16px;
-}
-.peanuts {
-  background: url("http://www.jandgpecans.com/data/images/Codengine_1661_2e21b5f960905423db9f6b44244b10dc.png");
-  /* background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center; */
-}
-.bacon {
-  background: url("https://assets.honestbee.com/products/images/480/villamarket_0174393_0174393-1.png");
 }
 
 .create-button {
@@ -94,10 +83,10 @@
     width: 30vw;
   }
 
-  .bacon,
+  /* .bacon,
   .peanuts {
     background: #ffffff;
-  }
+  } */
   .topping-container button {
     font-weight: normal;
     color: #131112;
@@ -111,5 +100,7 @@
     display: inline-block;
     color: white;
     margin: 0 10px;
+    letter-spacing: 4px;
+    line-height: 20px;
   }
 }

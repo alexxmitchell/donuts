@@ -40,7 +40,7 @@ class ShowBox extends Component {
     );
     const boxer = this.props.box.map((e, i) => {
       return (
-        <div className="box" key={i}>
+        <div className="showbox" key={i}>
           <h2>{e.kind} donut</h2>
 
           <div>
@@ -54,16 +54,17 @@ class ShowBox extends Component {
       );
     });
     return (
-      <div>
-        <div className="to-checkout">
-          <h2>Order Summary</h2>
-          <div className="donut-box">
-            <div className="yoDos">{boxer}</div>
-            <p>Box Total: </p>
+      <div className="to-checkout">
+        <h2>Order Summary</h2>
+        <div className="donut-box">
+          <div className="yoDos">{boxer}</div>
+          <div className="order-summary">
             {this.props.currentBox && boxTotal ? (
               <div>
                 <p>Items: {this.props.box.length}</p>
+                {/* <p>Box Total: </p> */}
                 <p className="inline-price">
+                  Box Total: ${" "}
                   {(
                     Number(boxTotal) +
                     this.props.cost * Number(length)
@@ -75,9 +76,6 @@ class ShowBox extends Component {
             )}
           </div>
         </div>
-        {/* <Link to="/order/pay">
-          <button className="now">Proceed to Checkout</button>
-        </Link> */}
       </div>
     );
   }

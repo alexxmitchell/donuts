@@ -24,17 +24,14 @@ class Order extends Component {
           <div className="order-inner">
             <h4>Billing Info</h4>
             <p className="order-p">Please enter your billing information</p>
+            <Form />
           </div>
-          <div className="order-container">
-            <div>
-              <Form />
-            </div>
-            <div className="float-box">
-              {" "}
-              {this.props.user.id ? <ShowBox /> : ""}
-            </div>
+          <div className="float-box">
+            {" "}
+            {this.props.user.id ? <ShowBox /> : ""}
           </div>
         </div>
+
         <Link to="/box">
           <button className="back">Go back</button>
         </Link>

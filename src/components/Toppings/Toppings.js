@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Category from "./Category/Category";
 import Check from "./Check/Check";
 import Droptop from "./Droptop/Droptop";
+import TopButton from "./TopButton";
 
 import {
   createBox,
@@ -15,7 +15,6 @@ import {
 } from "../../ducks/donutReducer";
 
 import "./Toppings.css";
-import TopButton from "./TopButton";
 
 class Toppings extends Component {
   constructor(props) {
@@ -59,10 +58,9 @@ class Toppings extends Component {
   }
 
   addTop() {
-    console.log("length:", this.state.currDonutTop.length);
     if (this.state.currDonutTop.length <= 3) {
       let newArr = this.state.currDonutTop.slice();
-      //push setstate
+
       newArr.push(this.state.topping);
       this.setState({ currDonutTop: newArr });
       this.props.addToppings(this.props.currentDonut.id, this.state.topping);
@@ -104,7 +102,7 @@ class Toppings extends Component {
             </span>Go sweet! Go savory! Or both!
             <span>
               <i className="fas fa-long-arrow-alt-right" />
-            </span>finish with a drizzle
+            </span>Finish with a drizzle
           </h4>
           <p>(Max 4)</p>
         </div>

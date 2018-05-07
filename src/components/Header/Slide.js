@@ -41,9 +41,10 @@ class Slide extends Component {
     let length = this.props.box.length;
     return (
       <div className="slide-menu">
-        <button onClick={() => this.openMenu()}>
+        <button className="bag" onClick={() => this.openMenu()}>
           <img className="bag" src={bag} alt="bag" />
         </button>
+
         <div className="menu" style={{ display: `${this.state.display}` }}>
           <div>
             <button
@@ -76,7 +77,7 @@ class Slide extends Component {
             </Link>
             {this.props.box && this.props.box.length > 0 ? (
               <Link to="/order">
-                <button onClick={() => this.closeMenu()}>
+                <button className="checktime" onClick={() => this.closeMenu()}>
                   <h1 className="slide-items">Checkout</h1>
                 </button>
               </Link>

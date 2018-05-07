@@ -5,17 +5,14 @@
   position: relative;
 }
 .order-holder {
-  background: white;
-  border: 4px double #735b69;
   width: 100%;
-}
-
-.order-inner {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  overflow: scroll;
+  background: white;
+  border: 4px double #735b69;
+}
+.order-inner {
+  flex-grow: 1;
 }
 .order-page h4 {
   padding: 17px 13px;
@@ -30,10 +27,8 @@
 }
 .order-container {
   width: 80%;
+  margin: auto;
   height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 .back {
@@ -59,14 +54,30 @@
     font-size: 14px;
   }
 
+  .order-inner {
+    /* width: 50vw; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: white;
+    border: 4px double #735b69;
+  }
+
   .order-page h4 {
     /* padding: 40px 0px 0px 0px; */
     padding: 20px 50px;
     font-size: 36px;
     font-family: "Dokdo", cursive;
   }
-  /* .float-box {
-    position: relative;
-    float: right;
-  } */
+
+  .order-holder {
+    flex-direction: row;
+  }
+  .float-box {
+    flex-grow: 1;
+    /* height: 600px; */
+    /* position: relative;
+    float: right; */
+  }
 }

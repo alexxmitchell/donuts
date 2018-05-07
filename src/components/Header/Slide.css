@@ -13,6 +13,8 @@
   line-height: 45px;
   text-align: left;
   padding-left: 50px;
+
+  /* border-left: 2px double white; */
 }
 
 .slide-items {
@@ -21,12 +23,18 @@
   line-height: 45px;
   text-align: left;
   border-bottom: 1px solid white;
+  padding: 10px 0px;
 }
 .bag {
   height: 50px;
   width: 50px;
   margin-right: 10px;
   background-color: transparent;
+  border: none;
+}
+.slide-menu button {
+  background: transparent;
+  border: none;
 }
 .menu a {
   color: white;
@@ -46,6 +54,11 @@
   border-radius: 4px;
   color: #735b69;
   font-size: 14px;
+}
+.checktime {
+  display: block;
+}
+.slide-border {
 }
 
 @media (min-width: 767px) {

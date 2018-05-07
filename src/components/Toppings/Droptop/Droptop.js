@@ -9,6 +9,7 @@ import chocwcaramel from "../../images/chocwcaramelicing.png";
 import chocwchoc from "../../images/chocwchocicing.png";
 import chocbacon from "../../images/chocbacon.png";
 import chocstraw from "../../images/chocstraw.png";
+import chocban from "../../images/chocbanana.png";
 import chocpecan from "../../images/chocpecan.png";
 import chocpeanut from "../../images/chocpeanuts.png";
 import chocsprinkles from "../../images/chocsprinkles.png";
@@ -22,9 +23,11 @@ import cakerasp from "../../images/cakewraspicing.png";
 import cakechoc from "../../images/cakewchocicing.png";
 import cakebacon from "../../images/cakebacon.png";
 import cakestraw from "../../images/cakestraw.png";
+import cakeban from "../../images/cakebanana.png";
 import cakepeanut from "../../images/cakepeanut.png";
 import cakesprinkles from "../../images/cakesprinkles.png";
 import cakegold from "../../images/cakegold.png";
+import cakepecan from "../../images/cakewithpecan.png";
 
 class Droptop extends Component {
   constructor(props) {
@@ -83,7 +86,12 @@ class Droptop extends Component {
 
           case 5:
             return (
-              <img key={i} className="stacking size" src={choc} alt="bananas" />
+              <img
+                key={i}
+                className="stacking size"
+                src={cakeban}
+                alt="bananas"
+              />
             );
 
           case 6:
@@ -107,7 +115,12 @@ class Droptop extends Component {
 
           case 8:
             return (
-              <img key={i} className="stacking size" src={choc} alt="pecans" />
+              <img
+                key={i}
+                className="stacking size"
+                src={cakepecan}
+                alt="pecans"
+              />
             );
 
           case 9:
@@ -200,7 +213,12 @@ class Droptop extends Component {
 
           case 5:
             return (
-              <img key={i} className="stacking size" src={cake} alt="bananas" />
+              <img
+                key={i}
+                className="stacking size"
+                src={chocban}
+                alt="bananas"
+              />
             );
           case 6:
             return (
