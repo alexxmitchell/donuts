@@ -20,7 +20,7 @@ const Header = props => {
           <h2 className="title">nuts</h2>
         </Link>
       </div>
-      {/* <Dropdown /> */}
+
       <div className="right-header">
         <Slide />
         <div />

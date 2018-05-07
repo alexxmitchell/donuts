@@ -23,7 +23,7 @@
   border-radius: 4px;
   color: white;
   font-size: 14px;
-  margin: 0 20px;
+  margin: 10px 20px;
 }
 .do-container {
   margin: 20px auto;
@@ -31,7 +31,6 @@
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  /* height: 15vh; */
   background: white;
   padding: 10px;
 }
@@ -39,7 +38,7 @@
 .not-logged {
   font-family: "Roboto", sans-serif;
   margin: auto;
-  padding: 65px;
+  padding: 38px;
 }
 
 .not-logged button {
@@ -51,8 +50,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 40px;
+  margin: auto;
 }
-
+.box-links {
+}
 @media (min-width: 767px) {
   .box {
     width: 80%;
@@ -72,6 +73,11 @@
   .not-logged {
     margin: 0 auto;
     padding: 100px;
+  }
+  .not-logged {
+    font-family: "Roboto", sans-serif;
+    margin: auto;
+    padding: 65px;
   }
   .box-text {
     font-size: 36px;

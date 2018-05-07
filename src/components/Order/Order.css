@@ -3,6 +3,7 @@
   height: 80vh;
   width: 80vw;
   position: relative;
+  overflow: scroll;
 }
 .order-holder {
   width: 100%;

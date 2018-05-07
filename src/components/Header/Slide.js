@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getBox } from "../../ducks/donutReducer";
 import bag from "../images/lunchbox.png";
+import profileimg from "../images/profile.png";
 import "./Slide.css";
 class Slide extends Component {
   constructor(props) {
@@ -60,8 +61,15 @@ class Slide extends Component {
               <div className="user-box">
                 <h1>Welcome {this.props.user.name}</h1>
                 <Link to="/profile">
-                  <button onClick={() => this.closeMenu()}>
-                    <h1 className="slide-items">Your Account</h1>
+                  <button
+                    className="slide-button"
+                    onClick={() => this.closeMenu()}
+                  >
+                    <h1 className="slide-items">
+                      <span>
+                        <img className="sma-img" src={profileimg} alt="bag" />
+                      </span>Your Account
+                    </h1>
                   </button>
                 </Link>
               </div>
@@ -69,10 +77,14 @@ class Slide extends Component {
               ""
             )}
 
-            <h1 className="slide-items">Current Box: {donutCount} </h1>
+            {/* <h1 className="slide-items">Current Box: </h1> */}
             <Link to="/box">
-              <button onClick={() => this.closeMenu()}>
-                <h1 className="slide-items">View Box</h1>
+              <button className="slide-button" onClick={() => this.closeMenu()}>
+                <h1 className="slide-items">
+                  <span>
+                    <img className="sma-img" src={bag} alt="bag" />
+                  </span>View Box: {donutCount} items
+                </h1>
               </button>
             </Link>
             {this.props.box && this.props.box.length > 0 ? (

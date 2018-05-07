@@ -93,7 +93,7 @@ class Box extends Component {
           )}
 
           {this.props.user.id ? (
-            <div>
+            <div className="box-links">
               <Link to="/donut">
                 <button className="more">Get more donuts</button>
               </Link>

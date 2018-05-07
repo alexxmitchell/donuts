@@ -24,6 +24,7 @@
   text-align: left;
   border-bottom: 1px solid white;
   padding: 10px 0px;
+  display: inline-block;
 }
 .bag {
   height: 50px;
@@ -32,10 +33,7 @@
   background-color: transparent;
   border: none;
 }
-.slide-menu button {
-  background: transparent;
-  border: none;
-}
+
 .menu a {
   color: white;
 }
@@ -58,7 +56,9 @@
 .checktime {
   display: block;
 }
-.slide-border {
+img.sma-img {
+  width: 20px;
+  color: white;
 }
 
 @media (min-width: 767px) {
