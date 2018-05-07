@@ -82,6 +82,7 @@ class Toppings extends Component {
             id={top.id}
             price={top.price}
             name={top.label}
+            image={top.image}
             category={top.category}
             handleSelect={this.handleSelect}
             removeTop={this.removeTop}
@@ -96,23 +97,16 @@ class Toppings extends Component {
           <h2>Step #2: Add Toppings</h2>
         </div>
         <div className="top-plan">
-          <p>(Max 4)</p>
           <h4>
+            Pick your frosting
             <span>
               <i className="fas fa-long-arrow-alt-right" />
-            </span>
-            Pick an icing
-          </h4>
-          <h4>
-            <span>
-              <i className="fas fa-long-arrow-alt-right" />
-            </span>go sweet, savory or both!
-          </h4>
-          <h4>
+            </span>Go sweet! Go savory! Or both!
             <span>
               <i className="fas fa-long-arrow-alt-right" />
             </span>finish with a drizzle
           </h4>
+          <p>(Max 4)</p>
         </div>
 
         <div className="container-drop-topping">

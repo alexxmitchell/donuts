@@ -6,8 +6,8 @@ function IndTop(props) {
   let current = props.currentToppings.map((e, i) => {
     console.log("currentTops:", props.currentToppings);
     return (
-      <div key={e.id} className="top-listings">
-        {e.label}
+      <div key={i} className="top-listings">
+        <p>{e.label}</p>
       </div>
     );
   });

@@ -122,7 +122,7 @@ class Form extends Component {
             </div>
           ) : (
             <div>
-              <input className="submit" type="submit" value="Update Profile" />
+              <input className="submit" type="submit" value="Update account" />
             </div>
           )}
         </form>

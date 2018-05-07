@@ -93,7 +93,7 @@ p.donut-type {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
   }
   .right-arrow {
     font-size: 50px;

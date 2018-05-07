@@ -21,7 +21,7 @@ class Order extends Component {
     return (
       <div className="order-page">
         <div className="order-inner">
-          <h4>We just need a little more info</h4>
+          <h4>Billing Info</h4>
           <p className="order-p">Please enter your billing information</p>
           <div className="order-container">
             <div>

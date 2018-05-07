@@ -31,10 +31,24 @@ class TopButton extends Component {
   render() {
     return (
       <div className="topping-container">
-        <button onClick={() => this.selectedVal(this.props.id)}>
+        <button
+          onClick={() => this.selectedVal(this.props.id)}
+          style={{
+            backgroundImage: `url(${this.props.image})`,
+            backgroundPosition: "center",
+            opacity: 0.8
+          }}
+        >
           {this.state.isChecked && <Check />}
+          {/* {this.props.image && (
+            <img
+              className="background-im"
+              src={this.props.image}
+              alt="topping"
+            />
+          )} */}
           <p className="label">{this.props.name}</p>
-          <p className="category">{this.props.category}</p>
+
           <p className="price">$ {this.props.price}</p>
         </button>
       </div>

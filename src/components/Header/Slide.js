@@ -9,24 +9,13 @@ class Slide extends Component {
     super(props);
 
     this.state = {
-      // show: false
       display: "none"
     };
-    // this.clicked = this.clicked.bind(this);
+
     this.openMenu = this.openMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
 
-  // showSide() {
-  //   this.setState({ show: true });
-  //   return (
-  //     <div className="menu" style={{ width: 250 }}>
-  //       <Link to="/profile">Your Account</Link>
-  //       <h1>Current Box: donutCount </h1>
-  //       <Link to="/box">View Box</Link>
-  //     </div>
-  //   );
-  // }
   openMenu() {
     if (
       this.state.display === "none"
@@ -38,13 +27,6 @@ class Slide extends Component {
     this.setState({ display: "none" });
   }
 
-  // componentDidMount() {
-  //   this.props.getBox(id);
-  // }
-  // clicked(e) {
-  //   this.setState({ show: !this.state.show }, () => {});
-  // }
-
   render() {
     let donutCount = 0;
     {
@@ -53,9 +35,10 @@ class Slide extends Component {
         : (donutCount = 0);
     }
 
-    // this.props.box.map((e, i) => {
-    //   return <div key={i} id={e.id} />;
-    // });
+    let boxTotal = this.props.box.reduce((acc, sum, i) => {
+      return acc + Number(this.props.box[i].sum);
+    }, 0);
+    let length = this.props.box.length;
     return (
       <div className="slide-menu">
         <button onClick={() => this.openMenu()}>
@@ -69,11 +52,11 @@ class Slide extends Component {
                 this.closeMenu();
               }}
             >
-              <i class="fas fa-times" />
+              <i className="fas fa-times" />
             </button>
 
             {this.props.user.id ? (
-              <div>
+              <div className="user-box">
                 <h1>Welcome {this.props.user.name}</h1>
                 <Link to="/profile">
                   <button onClick={() => this.closeMenu()}>
@@ -91,8 +74,18 @@ class Slide extends Component {
                 <h1 className="slide-items">View Box</h1>
               </button>
             </Link>
+            {this.props.box && this.props.box.length > 0 ? (
+              <Link to="/order">
+                <button onClick={() => this.closeMenu()}>
+                  <h1 className="slide-items">Checkout</h1>
+                </button>
+              </Link>
+            ) : (
+              ""
+            )}
             {!this.props.user.id ? (
               <button
+                className="log-button"
                 onClick={() =>
                   (window.location.href = "http://localhost:3001/login")
                 }
@@ -100,7 +93,7 @@ class Slide extends Component {
                 Login
               </button>
             ) : (
-              <button>Logout</button>
+              <button className="log-button">Logout</button>
             )}
           </div>
         </div>

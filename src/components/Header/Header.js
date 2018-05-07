@@ -22,13 +22,6 @@ const Header = props => {
       </div>
       {/* <Dropdown /> */}
       <div className="right-header">
-        {props.user.id ? (
-          <Link to="/profile">
-            <img className="person" src={profileimg} alt="profile icon" />
-          </Link>
-        ) : (
-          ""
-        )}
         <Slide />
         <div />
       </div>

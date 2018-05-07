@@ -1,6 +1,6 @@
 .menu {
   position: absolute;
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
   z-index: 1000;
   background-color: #735b69;
@@ -14,18 +14,43 @@
   text-align: left;
   padding-left: 50px;
 }
+
+.slide-items {
+  color: white;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: left;
+  border-bottom: 1px solid white;
+}
 .bag {
   height: 50px;
   width: 50px;
   margin-right: 10px;
+  background-color: transparent;
 }
 .menu a {
   color: white;
 }
+.menu i {
+  color: white;
+}
+
+.log-button {
+  display: block;
+
+  margin: 20px auto;
+  padding: 10px 30px;
+  background: white;
+  border: solid 1px gray;
+  box-shadow: 1px, 5px, black;
+  border-radius: 4px;
+  color: #735b69;
+  font-size: 14px;
+}
 
 @media (min-width: 767px) {
   .menu {
-    width: 20vw;
+    width: 30vw;
     font-size: 20px;
   }
   .bag {

@@ -3,10 +3,6 @@
   height: 80vh;
   width: 80vw;
   position: relative;
-
-  background: white;
-  border: 4px double #735b69;
-  overflow: scroll;
 }
 
 .order-inner {
@@ -15,6 +11,8 @@
   justify-content: center;
   align-items: center;
   overflow: scroll;
+  background: white;
+  border: 4px double #735b69;
 }
 .order-page h4 {
   padding: 17px 13px;
@@ -30,10 +28,13 @@
 .order-container {
   width: 80%;
   height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .back {
-  margin-top: 20px;
+  margin: 20px auto;
   padding: 10px 30px;
   background: #735b69;
   border: solid 1px #735b69;

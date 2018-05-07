@@ -32,27 +32,26 @@ class IndDon extends Component {
 
     return (
       <div className="ind-donut">
-        {this.props.type === "Cake" ? (
+        {/* {this.props.type === "Cake" ? (
           <img className="lildo" src={cake} alt="cake" />
         ) : (
           <img className="lildo" src={choc} alt="chocolate" />
-        )}
+        )} */}
         <div className="donut-description">
-          <h2>
-            {this.props.type} donut with{" "}
-            {this.props.currentToppings && (
-              <IndTop currentToppings={correctToppings} />
-            )}
-          </h2>
-          {/* </div> */}
-          <div className="price">
-            {this.props.price ? (
-              <p>$ {(+this.props.price + this.props.cost).toFixed(2)}</p>
-            ) : (
-              <p>$1</p>
-            )}
-          </div>
+          <h2>{this.props.type} donut</h2>
+          <p>toppings:</p>
+          {this.props.currentToppings && (
+            <IndTop currentToppings={correctToppings} />
+          )}
         </div>
+        <div className="price">
+          {this.props.price ? (
+            <p>$ {(+this.props.price + this.props.cost).toFixed(2)}</p>
+          ) : (
+            <p>$1</p>
+          )}
+        </div>
+
         <button className="closed" onClick={this.removed}>
           <i className="fas fa-times fa-2x" />
         </button>

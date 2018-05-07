@@ -43,12 +43,12 @@ class ShowBox extends Component {
         <div className="box" key={i}>
           <h2>{e.kind} donut</h2>
 
-          {/* <div>
-              with
-              {this.props.boxToppings && (
-                <ShowTop boxToppings={correctBoxToppings} />
-              )}
-            </div> */}
+          <div>
+            with
+            {this.props.boxToppings && (
+              <ShowTop boxToppings={correctBoxToppings} />
+            )}
+          </div>
           <div>
             <p>Items: {this.props.box.length}</p>
             {e.sum ? (
