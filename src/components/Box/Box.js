@@ -65,11 +65,33 @@ class Box extends Component {
       });
     }
 
+    let boxTotal = box.reduce((acc, sum, i) => {
+      return acc + Number(box[i].sum);
+    }, 0);
+    let length = box.length;
+
     return (
       <div className="box">
         <h2 className="box-text">Your Current Box</h2>
         <div className="box-container">
           <div className="do-container">{dozen}</div>
+          {this.props.box && this.props.box.length ? (
+            <div className="how-many">
+              <h4>
+                Donut Count: {""} {this.props.box.length}
+              </h4>
+              <h4>
+                Box Total:{"  "}
+                {"$"}
+                {(Number(boxTotal) + this.props.cost * Number(length)).toFixed(
+                  2
+                )}
+              </h4>
+            </div>
+          ) : (
+            ""
+          )}
+
           {this.props.user.id ? (
             <div>
               <Link to="/donut">

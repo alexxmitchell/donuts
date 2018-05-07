@@ -1,15 +1,13 @@
 .box {
   margin: 30px auto;
-  width: 100%;
+  width: 100vw;
   overflow: scroll;
   height: 80%;
 }
 
 .box-container {
   margin: auto;
-  /* height: 50vh; */
-  display: flex;
-  flex-direction: column;
+  width: 80vw;
 }
 
 .box-text {
@@ -30,7 +28,10 @@
 .do-container {
   margin: 20px auto;
   border: 4px double #735b69;
-  width: 80vw;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  /* height: 15vh; */
   background: white;
   padding: 10px;
 }
@@ -44,10 +45,17 @@
 .not-logged button {
   margin-top: 30px;
 }
+.how-many {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
 
 @media (min-width: 767px) {
   .box {
-    width: 100%;
+    width: 80%;
   }
 
   .do-container {
@@ -56,11 +64,11 @@
     align-items: center;
     overflow: scroll;
   }
-  .order-container {
+  /* .order-container {
     flex-direction: row;
     height: 60vh;
     justify-content: space-around;
-  }
+  } */
   .not-logged {
     margin: 0 auto;
     padding: 100px;

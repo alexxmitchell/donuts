@@ -1,4 +1,9 @@
-.yoDos {
+.to-checkout {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: stretch; */
+  width: 20vw;
+  height: 100%;
   border: solid 1px #735b69;
   width: 100%;
 }
@@ -15,19 +20,13 @@
   color: white;
   font-size: 14px;
 }
-
+.inline-price {
+  display: inline-block;
+}
 @media (min-width: 767px) {
-  .to-checkout {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 20vw;
-    height: 100%;
-    background: white;
-    padding: 5px;
-  }
-  .to-checkout h2 {
+  .summary {
     border-bottom: solid 1px #735b69;
+    background: #735b69;
     font-family: "Dokdo", cursive;
     /* font-family: "Roboto", sans-serif; */
     font-size: 30px;

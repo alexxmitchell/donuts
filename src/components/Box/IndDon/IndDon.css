@@ -2,21 +2,51 @@
   width: 100%;
   border-bottom: 1px solid #735b69;
   display: flex;
-
+  position: relative;
   justify-content: space-around;
-  height: 10vh;
+  align-items: center;
+  height: 14vh;
+  font-family: "Roboto", sans-serif;
 }
 
 .closed {
   border: none;
-  position: relative;
+  position: absolute;
+  left: 90%;
+  top: -10%;
   color: #735b69;
   background-color: transparent;
   outline: none;
 }
-
+.donut-grouped {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  width: 60%;
+}
 .donut-description {
-  /* display: flex;
-  justify-content: center;
-  flex-direction: column; */
+  margin-left: 20px;
+  font-size: 12px;
+}
+.lildo {
+  width: 60px;
+}
+.price {
+  font-size: 12px;
+}
+@media (min-width: 767px) {
+  .closed {
+    left: 95%;
+    top: 7%;
+  }
+  .donut-description {
+    font-size: 14px;
+  }
+  .price {
+    font-size: 16px;
+  }
+  .lildo {
+    width: 80px;
+  }
 }

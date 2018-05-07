@@ -1,4 +1,9 @@
 .checks {
-  z-index: 10;
-  height: 30px;
+  height: 25px;
+}
+@media (min-width: 767px) {
+  .checks {
+    z-index: 10;
+    height: 30px;
+  }
 }

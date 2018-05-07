@@ -32,17 +32,19 @@ class IndDon extends Component {
 
     return (
       <div className="ind-donut">
-        {/* {this.props.type === "Cake" ? (
-          <img className="lildo" src={cake} alt="cake" />
-        ) : (
-          <img className="lildo" src={choc} alt="chocolate" />
-        )} */}
-        <div className="donut-description">
-          <h2>{this.props.type} donut</h2>
-          <p>toppings:</p>
-          {this.props.currentToppings && (
-            <IndTop currentToppings={correctToppings} />
+        <div className="donut-grouped">
+          {this.props.type === "Cake" ? (
+            <img className="lildo" src={cake} alt="cake" />
+          ) : (
+            <img className="lildo" src={choc} alt="chocolate" />
           )}
+          <div className="donut-description">
+            <h2>{this.props.type} donut</h2>
+            <p>toppings:</p>
+            {this.props.currentToppings && (
+              <IndTop currentToppings={correctToppings} />
+            )}
+          </div>
         </div>
         <div className="price">
           {this.props.price ? (

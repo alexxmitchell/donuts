@@ -116,7 +116,7 @@ class Form extends Component {
                 <input
                   className="submit"
                   type="submit"
-                  value="Submit Details"
+                  value="Proceed to Checkout"
                 />
               </Link>
             </div>

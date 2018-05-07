@@ -44,13 +44,6 @@ class ShowBox extends Component {
           <h2>{e.kind} donut</h2>
 
           <div>
-            with
-            {this.props.boxToppings && (
-              <ShowTop boxToppings={correctBoxToppings} />
-            )}
-          </div>
-          <div>
-            <p>Items: {this.props.box.length}</p>
             {e.sum ? (
               <p>$ {(+e.sum + this.props.cost).toFixed(2)}</p>
             ) : (
@@ -68,11 +61,15 @@ class ShowBox extends Component {
             <div className="yoDos">{boxer}</div>
             <p>Box Total: </p>
             {this.props.currentBox && boxTotal ? (
-              <p>
-                {(Number(boxTotal) + this.props.cost * Number(length)).toFixed(
-                  2
-                )}
-              </p>
+              <div>
+                <p>Items: {this.props.box.length}</p>
+                <p className="inline-price">
+                  {(
+                    Number(boxTotal) +
+                    this.props.cost * Number(length)
+                  ).toFixed(2)}
+                </p>
+              </div>
             ) : (
               <p>$0</p>
             )}

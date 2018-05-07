@@ -74,7 +74,6 @@ export function addDonut(kind) {
 }
 
 export function addToBox(id, donut) {
-  console.log(id, donut);
   return {
     type: ADD_TO_BOX,
     payload: axios.put(`/api/addbox/${id}/${donut}`)
@@ -129,7 +128,6 @@ export function getBoxtops(id) {
 }
 
 export function getTotal(id) {
-  console.log("GET TOTAL :", id);
   return {
     type: GET_TOTAL,
     payload: axios.get(`/api/total/${id}`)
@@ -151,7 +149,6 @@ export function currentDonutTop(id) {
 function donutReducer(state = initialState, action) {
   switch (action.type) {
     case `${CREATE_BOX}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         currentBox: action.payload.data[0]
@@ -172,19 +169,16 @@ function donutReducer(state = initialState, action) {
         currentToppings: action.payload.data
       };
     case `${ADD_DONUT}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         currentDonut: action.payload.data
       };
     case `${GET_BOX}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         box: action.payload.data
       };
     case `${GET_DONUTS}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         donuts: action.payload.data,
@@ -197,7 +191,6 @@ function donutReducer(state = initialState, action) {
         box: action.payload.data
       };
     case `${GET_TOPPINGS}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         currentToppings: state.currentToppings.concat(action.payload.data)
@@ -208,9 +201,6 @@ function donutReducer(state = initialState, action) {
         currentDonut: action.payload.data
       };
     case `${ADD_TO_BOX}_FULFILLED`:
-      console.log(action);
-      console.log("I hit add box");
-
       let doArr = state.donuts.slice();
       doArr.splice(action.payload, 1);
       return Object.assign({}, state, {
@@ -218,13 +208,11 @@ function donutReducer(state = initialState, action) {
         box: action.payload.data
       });
     case `${GET_BOXTOPS}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         boxToppings: action.payload.data
       };
     case `${GET_TOTAL}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         total: Number(action.payload.data)
@@ -235,7 +223,6 @@ function donutReducer(state = initialState, action) {
         previous: action.payload.data
       };
     case `${CURRENT_DONUT_TOP}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         currDonutTop: action.payload.data

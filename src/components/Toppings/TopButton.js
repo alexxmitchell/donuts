@@ -40,13 +40,7 @@ class TopButton extends Component {
           }}
         >
           {this.state.isChecked && <Check />}
-          {/* {this.props.image && (
-            <img
-              className="background-im"
-              src={this.props.image}
-              alt="topping"
-            />
-          )} */}
+
           <p className="label">{this.props.name}</p>
 
           <p className="price">$ {this.props.price}</p>

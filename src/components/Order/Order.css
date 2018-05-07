@@ -8,7 +8,7 @@
 .order-inner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   overflow: scroll;
   background: white;
@@ -62,8 +62,8 @@
     font-size: 36px;
     font-family: "Dokdo", cursive;
   }
-  .float-box {
+  /* .float-box {
     position: relative;
     float: right;
-  }
+  } */
 }
