@@ -10,7 +10,8 @@
 .final-pay {
   margin-top: 30px;
 }
-.ship-info {
+.ship-info p {
+  padding: 10px;
 }
 
 .ready {

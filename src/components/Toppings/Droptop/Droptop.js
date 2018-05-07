@@ -294,10 +294,9 @@ class Droptop extends Component {
         }
       }
     });
-    console.log(this.props);
 
     return (
-      <div className="parent-droptop  hide">
+      <div className="parent-droptop hide">
         <div id="column">
           {image && image === choc ? (
             <div className="chocStack">

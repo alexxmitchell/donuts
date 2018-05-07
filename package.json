@@ -1,7 +1,8 @@
 {
   "name": "donuts",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description":
+    "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
@@ -10,24 +11,18 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "fs": "0.0.1-security",
     "google-map-react": "^0.34.0",
     "massive": "^4.7.1",
     "passport": "^0.4.0",
     "passport-auth0": "^0.6.1",
     "react": "^16.3.1",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.3.1",
     "react-google-maps": "^9.4.5",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-router-scroll": "^0.4.4",
-    "react-router-transition": "^1.2.1",
     "react-scripts": "^1.1.4",
-    "react-sidebar": "^2.3.2",
     "react-stripe-checkout": "^2.6.3",
-    "react-transition-group": "^1.2.1",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^5.0.0",
     "stripe": "^5.8.0"
@@ -48,6 +43,5 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Mitchell0625/donuts/issues"
-  },
-  "homepage": "https://github.com/Mitchell0625/donuts#readme"
+  }
 }

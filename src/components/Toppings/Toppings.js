@@ -28,7 +28,7 @@ class Toppings extends Component {
     };
     this.handleSelect = this.handleSelect.bind(this);
     this.addTop = this.addTop.bind(this);
-    this.setCategory = this.setCategory.bind(this);
+
     this.removeTop = this.removeTop.bind(this);
   }
 
@@ -70,7 +70,6 @@ class Toppings extends Component {
   }
 
   render() {
-    console.log(this.props);
     let mappedToppings = this.props.toppings
       .filter(top => top.category.includes(this.state.category))
       .map((top, i) => {

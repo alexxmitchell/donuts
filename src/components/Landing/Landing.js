@@ -1,6 +1,6 @@
 import React from "react";
 import "./Landing.css";
-import "../../";
+
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -23,7 +23,6 @@ const Landing = () => {
               Good D<span>
                 <img className="donut-logo" src={logo} alt="donut" />
               </span>nuts
-              {/* <span className="period">.</span> */}
             </h2>
           </div>
         </div>
@@ -37,10 +36,6 @@ const Landing = () => {
           >
             <h2>Login to start your box</h2>
           </button>
-          {/* <h3>
-              Hand crafted donuts to address your sweet craving. Each donut that
-              we craft is created with happiness.
-            </h3> */}
         </div>
       </section>
       <About />

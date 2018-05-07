@@ -27,7 +27,6 @@ class Order extends Component {
             <Form />
           </div>
           <div className="float-box">
-            {" "}
             {this.props.user.id ? <ShowBox /> : ""}
           </div>
         </div>

@@ -23,7 +23,6 @@ const Header = props => {
 
       <div className="right-header">
         <Slide />
-        <div />
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import axios from "axios";
 import chocolate from "../images/chocolate.png";
 import cake from "../images/cake.png";
 import scrolldown from "../images/scrolldown.png";
-// import Toppings from "../Toppings/Toppings";
 
 import { addKind, addDonut } from "../../ducks/donutReducer";
 import { getUser } from "../../ducks/userReducer";
@@ -32,7 +31,6 @@ class Donut extends Component {
       <div className="donut-container">
         <div className="don-top">
           <h2>Step #1: Select a Donut</h2>
-          {/* <h2>Select a Donut</h2> */}
         </div>
         <div className="don-container">
           <button

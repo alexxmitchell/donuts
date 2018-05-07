@@ -21,8 +21,7 @@ class Pay extends Component {
             <p>Name: {this.props.user.name}</p>
             <p>Address: {this.props.user.address}</p>
             <p>
-              City, St:
-              {this.props.user.city}, {this.props.user.st}
+              City, St: {this.props.user.city}, {this.props.user.st}
             </p>
             <p>Zipcode: {this.props.user.zip}</p>
             <p>Email: {this.props.user.email}</p>

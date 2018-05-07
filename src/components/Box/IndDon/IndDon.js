@@ -6,7 +6,6 @@ import {
   getBox,
   getTotal
 } from "../../../ducks/donutReducer";
-import image from "../../../placeholder.png";
 import cake from "../../images/cake.png";
 import choc from "../../images/chocolate.png";
 import "./IndDon.css";

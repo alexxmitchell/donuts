@@ -77,7 +77,6 @@ class Slide extends Component {
               ""
             )}
 
-            {/* <h1 className="slide-items">Current Box: </h1> */}
             <Link to="/box">
               <button className="slide-button" onClick={() => this.closeMenu()}>
                 <h1 className="slide-items">
