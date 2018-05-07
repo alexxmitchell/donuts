@@ -9,7 +9,7 @@ import { logout } from "../../ducks/userReducer";
 const Profile = props => {
   return (
     <div className="profile-page">
-      <h2>Your profile</h2>
+      <h2>Your account</h2>
       <div className="animation">
         <img src={filled} alt="profile-donut" />
 

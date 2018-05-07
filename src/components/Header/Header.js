@@ -29,14 +29,8 @@ const Header = props => {
         ) : (
           ""
         )}
-        <div>
-          <Link to="/box">
-            <img className="bag" src={bag} alt="bag" />
-            {/* <div>
-              Dropdown for login
-              </div> */}
-          </Link>
-        </div>
+        <Slide />
+        <div />
       </div>
     </div>
   );

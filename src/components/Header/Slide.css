@@ -1,0 +1,36 @@
+.menu {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #735b69;
+  transition: 0.5s;
+  right: 0;
+  top: 0;
+  padding-top: 40px;
+  color: white;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: left;
+  padding-left: 50px;
+}
+.bag {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.menu a {
+  color: white;
+}
+
+@media (min-width: 767px) {
+  .menu {
+    width: 20vw;
+    font-size: 20px;
+  }
+  .bag {
+    height: 65px;
+    width: 65px;
+    margin: 5px;
+  }
+}
