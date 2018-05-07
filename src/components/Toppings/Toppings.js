@@ -98,10 +98,10 @@ class Toppings extends Component {
             Pick your frosting
             <span>
               <i className="fas fa-long-arrow-alt-right" />
-            </span>Go sweet! Go savory! Or both!
+            </span>Go sweet, or savory, or both!
             <span>
               <i className="fas fa-long-arrow-alt-right" />
-            </span>Finish with a drizzle
+            </span>Then finish with a drizzle
           </h4>
           <p>(Max 4)</p>
         </div>

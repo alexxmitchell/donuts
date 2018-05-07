@@ -65,11 +65,7 @@ class Slide extends Component {
                     className="slide-button"
                     onClick={() => this.closeMenu()}
                   >
-                    <h1 className="slide-items">
-                      <span>
-                        <img className="sma-img" src={profileimg} alt="bag" />
-                      </span>Your Account
-                    </h1>
+                    <h1 className="slide-items">Your Account</h1>
                   </button>
                 </Link>
               </div>
@@ -79,11 +75,7 @@ class Slide extends Component {
 
             <Link to="/box">
               <button className="slide-button" onClick={() => this.closeMenu()}>
-                <h1 className="slide-items">
-                  <span>
-                    <img className="sma-img" src={bag} alt="bag" />
-                  </span>View Box: {donutCount} items
-                </h1>
+                <h1 className="slide-items">View Box: {donutCount} items</h1>
               </button>
             </Link>
             {this.props.box && this.props.box.length > 0 ? (

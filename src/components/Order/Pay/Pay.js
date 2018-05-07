@@ -26,9 +26,12 @@ class Pay extends Component {
             <p>Zipcode: {this.props.user.zip}</p>
             <p>Email: {this.props.user.email}</p>
           </div>
+        </div>
 
+        <div>
           <ShowBox />
         </div>
+
         <div className="final-pay">
           <Checkout
             name={"Donut payment"}

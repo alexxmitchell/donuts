@@ -65,7 +65,7 @@ form input {
 @media (min-width: 767px) {
   form input {
     padding: 10px;
-    width: 150px;
+    width: 160px;
   }
   .inputIcon input {
     padding-left: 40px;

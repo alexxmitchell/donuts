@@ -6,8 +6,9 @@
   height: 100%;
   border: solid 1px #735b69;
   /* width: 100%; */
-  border: solid 1px #735b69;
+  border: double 4px #735b69;
   border-radius: 2px;
+  background: white;
 }
 .now {
   margin-top: 10px;
@@ -49,10 +50,11 @@
   }
 }
 
-div.hovering {
-  display: none;
+.to-checkout h2 {
+  font-size: 20px;
+  padding: 10px;
+  /* font-family: "Dokdo", cursive; */
 }
-
 .order-summary {
   width: 100%;
   border-top: 1px solid black;
