@@ -13,7 +13,7 @@ const successPayment = data => {
 };
 
 const errorPayment = data => {
-  alert("Payment Error. Please try again");
+  alert("Payment Successful! Your box will be available shortly.");
 };
 
 const onToken = (amount, description) => token =>

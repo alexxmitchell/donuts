@@ -28,7 +28,7 @@ class Pay extends Component {
           </div>
         </div>
 
-        <div>
+        <div className="thebox">
           <ShowBox />
         </div>
 
