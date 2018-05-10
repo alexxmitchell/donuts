@@ -94,10 +94,10 @@ export function getBox(id) {
   };
 }
 
-export function removeDonut(userid, id) {
+export function removeDonut(userid, id, boxid) {
   return {
     type: REMOVE_DONUT,
-    payload: axios.delete(`/api/removedonut/${id}`)
+    payload: axios.delete(`/api/removedonut/${id}`, { boxid })
   };
 }
 export function getToppings(id) {

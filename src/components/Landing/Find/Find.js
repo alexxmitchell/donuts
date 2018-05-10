@@ -27,7 +27,7 @@ const Find = () => {
         </div>
       </div>
 
-      <div>
+      <div className="social-box">
         <h3 className="social">Let's get social!</h3>
         <div className="links">
           <i className="fab fa-google-plus-square fa-3x" />

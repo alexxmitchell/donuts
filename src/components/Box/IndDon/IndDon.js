@@ -21,7 +21,11 @@ class IndDon extends Component {
     this.props.getToppings(this.props.do);
   }
   removed() {
-    this.props.removeDonut(this.props.user.id, this.props.do);
+    this.props.removeDonut(
+      this.props.user.id,
+      this.props.do,
+      this.props.currentBox.id
+    );
   }
 
   render() {

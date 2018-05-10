@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getBox } from "../../ducks/donutReducer";
+import { getUser } from "../../ducks/userReducer";
 import bag from "../images/lunchbox.png";
 import profileimg from "../images/profile.png";
 import "./Slide.css";
@@ -16,6 +17,7 @@ class Slide extends Component {
     this.openMenu = this.openMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
+  componentDidMount() {}
 
   openMenu() {
     if (
@@ -80,7 +82,10 @@ class Slide extends Component {
             </Link>
             {this.props.box && this.props.box.length > 0 ? (
               <Link to="/order">
-                <button className="checktime" onClick={() => this.closeMenu()}>
+                <button
+                  className="slide-button"
+                  onClick={() => this.closeMenu()}
+                >
                   <h1 className="slide-items">Checkout</h1>
                 </button>
               </Link>
@@ -112,4 +117,4 @@ function mapStateToProps(state) {
     ...state.userReducer
   };
 }
-export default connect(mapStateToProps, { getBox })(Slide);
+export default connect(mapStateToProps, { getBox, getUser })(Slide);

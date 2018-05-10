@@ -40,7 +40,7 @@ class Form extends Component {
   render() {
     return (
       <div className="form-page">
-        <form onSubmit={this.submitForm}>
+        <form onSubmit={() => this.submitForm()}>
           <div className="inputIcon">
             <p>name</p>
             <i className="fas fa-user" />
@@ -122,7 +122,13 @@ class Form extends Component {
             </div>
           ) : (
             <div>
-              <input className="submit" type="submit" value="Update account" />
+              <Link to="/box">
+                <input
+                  className="submit"
+                  type="submit"
+                  value="Update account"
+                />
+              </Link>
             </div>
           )}
         </form>

@@ -43,18 +43,18 @@ module.exports = {
       })
       .catch(e => console.log(e));
   },
-  changeQuantity: (req, res) => {
-    const dbInstance = req.app.get("db");
+  // changeQuantity: (req, res) => {
+  //   const dbInstance = req.app.get("db");
 
-    const { id } = req.params;
+  //   const { id } = req.params;
 
-    dbInstance.change_quantity([id]).then(() => {});
-  },
+  //   dbInstance.change_quantity([id]).then(() => {});
+  // },
   deleteDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    console.log("delete:", req.user.id, req.params.donut_id);
+    console.log("delete:", req.user.id, req.params.donut_id, req.body.box_id);
     dbInstance
-      .delete_donut([req.user.id, req.params.donut_id])
+      .delete_donut([req.user.id, req.params.donut_id, req.body.box_id])
       .then(response => {
         // getDonuts(req, res);
         res.status(200).json(response);

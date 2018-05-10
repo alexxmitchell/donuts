@@ -60,7 +60,12 @@ img.sma-img {
   width: 20px;
   color: white;
 }
-
+.slide-button,
+.close-menu {
+  outline: none;
+  background: transparent;
+  border: none;
+}
 @media (min-width: 767px) {
   .menu {
     width: 30vw;
