@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import axios from "axios";
 import chocolate from "../images/chocolate.png";
 import cake from "../images/cake.png";
 import scrolldown from "../images/scrolldown.png";
@@ -61,7 +60,7 @@ class Donut extends Component {
               }}
               className="right-arrow "
             >
-              <img src={scrolldown} />
+              <img src={scrolldown} alt="go to toppings" />
             </button>
           </Link>
         ) : (

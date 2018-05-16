@@ -296,7 +296,7 @@ class Droptop extends Component {
     });
 
     return (
-      <div className="parent-droptop hide">
+      <div className="parent-droptop">
         <div id="column">
           {image && image === choc ? (
             <div className="chocStack">

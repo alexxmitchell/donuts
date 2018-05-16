@@ -30,7 +30,7 @@ class IndDon extends Component {
 
   render() {
     const correctToppings = this.props.currentToppings.filter(
-      e => e.donut_id == this.props.do
+      e => e.donut_id === this.props.do
     );
 
     return (

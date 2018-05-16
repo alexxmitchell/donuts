@@ -1,7 +1,5 @@
 import React from "react";
 import "./Landing.css";
-
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import logo from "../images/cropped-DonutIcon.png";

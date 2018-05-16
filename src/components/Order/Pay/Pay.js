@@ -6,9 +6,9 @@ import ShowBox from "../../Box/ShowBox/ShowBox";
 import Checkout from "../../../Checkout";
 
 class Pay extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     let boxTotal = this.props.box.reduce((acc, sum, i) => {
       return acc + Number(this.props.box[i].sum);

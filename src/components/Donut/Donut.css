@@ -1,19 +1,19 @@
 .donut-container h2 {
   font-family: "Dokdo", cursive;
-  font-size: 35px;
+  font-size: 28px;
   padding: 17px 0;
 }
 
 .donut-container {
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
+  /* overflow: hidden; */
 }
 
 .don-container {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  /* flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
   height: 60vh;
   margin-top: 30px;
 }
@@ -81,8 +81,6 @@ p.donut-type {
 }
 
 @media (min-width: 767px) {
-  .donut-container {
-  }
   .donut-container h2 {
     font-size: 40px;
   }

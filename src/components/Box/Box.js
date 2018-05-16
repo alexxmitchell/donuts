@@ -23,14 +23,12 @@ class Box extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.currentBox.id);
     this.props.getBox(this.props.currentBox.id);
   }
 
   edit;
 
   render() {
-    console.log(this.props);
     let dozen = (
       <div className="not-logged">
         {this.props.user.id ? (

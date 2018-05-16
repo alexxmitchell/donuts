@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import "./Header.css";
 import logo from "../images/cropped-DonutIcon.png";
-import bag from "../images/lunchbox.png";
 import Slide from "./Slide";
-import Profile from "../Profile/Profile";
-import profileimg from "../images/profile.png";
 
 const Header = props => {
   return (

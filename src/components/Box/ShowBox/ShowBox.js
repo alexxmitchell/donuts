@@ -1,18 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+
 import "../IndDon/IndDon.css";
 import "./ShowBox.css";
-import ShowTop from "../IndDon/IndTop/IndTop";
 
-import cake from "../../images/cake.png";
-import choc from "../../images/chocolate.png";
-import {
-  getBox,
-  getToppings,
-  getBoxtops,
-  getTotal
-} from "../../../ducks/donutReducer";
+import { getBox, getBoxtops, getTotal } from "../../../ducks/donutReducer";
 
 class ShowBox extends Component {
   constructor(props) {
@@ -33,9 +25,6 @@ class ShowBox extends Component {
     }, 0);
     let length = this.props.box.length;
 
-    const correctBoxToppings = this.props.boxToppings.filter(
-      e => e.donut_id == this.props.do
-    );
     const boxer = this.props.box.map((e, i) => {
       return (
         <div className="showbox" key={i}>

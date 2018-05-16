@@ -28,7 +28,7 @@
 .do-container {
   margin: 20px auto;
   border: 4px double #735b69;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   background: white;
@@ -45,13 +45,14 @@
   margin-top: 30px;
 }
 .how-many {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
-
+  padding: 29px 7px;
   margin: auto;
+  background: #fff;
+  border-top: 1px solid #735b69;
 }
 .box-links {
 }
@@ -61,6 +62,7 @@
   }
 
   .do-container {
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,10 +86,10 @@
     font-size: 36px;
   }
   .how-many {
+    width: 80%;
     font-size: 20px;
     padding: 28px;
-    background: white;
-    border-top: 1px solid #735b69;
+
     margin-bottom: 40px;
   }
 }

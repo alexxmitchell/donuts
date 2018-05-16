@@ -1,6 +1,40 @@
 .hide {
   display: none;
 }
+.size {
+  height: 200px;
+  top: 20%;
+}
+
+.parent-droptop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  width: 60%;
+  height: 90%;
+
+  /* margin: 40px auto; */
+  /* padding-right: 50px; */
+}
+.droptop-cakedon,
+.droptop-chocdon {
+  position: absolute;
+}
+.stacking {
+  position: absolute;
+  animation: 0.8s cir ease;
+}
+
+@keyframes cir {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @media (min-width: 767px) {
   .parent-droptop {
@@ -24,10 +58,10 @@
     display: inline-block;
   }
 
-  .droptop-cakedon,
+  /* .droptop-cakedon,
   .droptop-chocdon {
     position: absolute;
-  }
+  } */
 
   #column {
     margin: auto;
@@ -47,7 +81,7 @@
     justify-content: center;
     align-items: center;
   }
-  .stacking {
+  /* .stacking {
     position: absolute;
     animation: 0.8s cir ease;
   }
@@ -59,5 +93,5 @@
     to {
       opacity: 1;
     }
-  }
+  } */
 }

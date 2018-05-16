@@ -41,12 +41,12 @@
 
 .logo-font {
   font-family: "Dokdo", cursive;
-  font-size: 59px;
+  font-size: 65px;
   color: #735b69;
 }
 .bold {
   font-weight: 500;
-  font-size: 55px;
+  font-size: 42px;
   /* border-bottom: double 4px #735b69; */
   text-decoration: underline;
 }

@@ -7,17 +7,10 @@ import "./Order.css";
 import { getUser } from "../../ducks/userReducer";
 
 class Order extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleInput(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
   render() {
-    let boxTotal = this.props.box.reduce((acc, sum, i) => {
-      return acc + Number(this.props.box[i].sum);
-    }, 0);
     return (
       <div className="order-page">
         <div className="order-holder">

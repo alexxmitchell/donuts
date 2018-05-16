@@ -5,7 +5,7 @@ import "./Check.css";
 const Check = props => {
   return (
     <div>
-      <img className="checks" src={checkmark} />
+      <img className="checks" src={checkmark} alt="selected topping" />
     </div>
   );
 };

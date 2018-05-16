@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Check from "./Check/Check";
 import Droptop from "./Droptop/Droptop";
 import TopButton from "./TopButton";
 
@@ -108,11 +107,12 @@ class Toppings extends Component {
 
         <div className="container-drop-topping">
           <div className="to-contain">{mappedToppings}</div>
-
-          <Droptop
-            currentDoTop={this.state.currDonutTop}
-            atop={this.state.topping}
-          />
+          <div className="drop-con">
+            <Droptop
+              currentDoTop={this.state.currDonutTop}
+              atop={this.state.topping}
+            />
+          </div>
         </div>
         <Link to="/box">
           {this.props.box && this.props.box.length > 0 ? (
@@ -153,7 +153,6 @@ class Toppings extends Component {
 
 function mapStateToProps(state) {
   const {
-    topping,
     kind,
     currentDonut,
     currentToppings,
