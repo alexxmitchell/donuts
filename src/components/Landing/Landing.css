@@ -47,19 +47,13 @@
 .bold {
   font-weight: 500;
   font-size: 42px;
-  /* border-bottom: double 4px #735b69; */
   text-decoration: underline;
 }
 
 @media (min-width: 767px) {
   .landing-top {
-    /* transition: all 2s; */
     width: 100vw;
     margin: auto;
-
-    /* background-size: 192%;
-    background-position: -550px 0px;
-    background-repeat: no-repeat; */
     background-attachment: fixed;
     overflow: hidden;
   }
@@ -72,19 +66,11 @@
     padding-top: 10px;
   }
 
-  /* .make {
-    position: relative;
-    animation: 1s fade linear;
+  .bold {
+    font-size: 55px;
+    font-weight: bold;
   }
 
-  .bold {
-    position: relative;
-    animation: 2s fade linear;
-  }
-  .donuts {
-    position: relative;
-    animation: 3s fade linear;
-  } */
   .logo-font {
     font-size: 128px;
   }
@@ -107,60 +93,4 @@
     color: white;
     font-size: 17px;
   }
-
-  .anime {
-    width: 20vw;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    /* animation: 3s anime infinite linear; */
-  }
-
-  @keyframes anime {
-    0% {
-      transform: rotate(20deg);
-    }
-    20% {
-      transform: rotate(100deg);
-    }
-    35% {
-      transform: rotate(140deg);
-    }
-    50% {
-      transform: rotate(170deg);
-    }
-    65% {
-      transform: rotate(220deg);
-    }
-    80% {
-      transform: rotate(280deg);
-    }
-    100% {
-      transform: rotate(350deg);
-    }
-  }
-
-  /* @keyframes fade {
-    0% {
-      opacity: 0;
-    }
-    20% {
-      opacity: 0.2;
-    }
-    35% {
-      opacity: 0.4;
-    }
-    50% {
-      opacity: 0.6;
-    }
-    65% {
-      opacity: 0.8;
-    }
-    80% {
-      opacity: 0.9;
-    }
-    100% {
-      opacity: 1;
-    }
-  } */
 }
