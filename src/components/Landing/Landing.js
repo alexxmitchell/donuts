@@ -29,7 +29,7 @@ const Landing = () => {
           <button
             className="login"
             onClick={() =>
-              (window.location.href = "http://localhost:3001/login")
+              (window.location.href = `${process.env.REACT_APP_LOGIN}`)
             }
           >
             <h2>Login to start your box</h2>
