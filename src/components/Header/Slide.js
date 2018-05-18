@@ -56,54 +56,55 @@ class Slide extends Component {
                 this.closeMenu();
               }}
             >
-              <i className="fas fa-times" />
+              <i className="fas fa-times fa-2x" />
             </button>
+            <div className="slide-margin">
+              {this.props.user.id ? (
+                <div>
+                  <h1>Welcome {this.props.user.name}</h1>
+                  <Link to="/profile">
+                    <button
+                      className="slide-button"
+                      onClick={() => this.closeMenu()}
+                    >
+                      <h1 className="slide-items">Your Account</h1>
+                    </button>
+                  </Link>
+                </div>
+              ) : (
+                ""
+              )}
 
-            {this.props.user.id ? (
-              <div className="user-box">
-                <h1>Welcome {this.props.user.name}</h1>
-                <Link to="/profile">
-                  <button
-                    className="slide-button"
-                    onClick={() => this.closeMenu()}
-                  >
-                    <h1 className="slide-items">Your Account</h1>
-                  </button>
-                </Link>
-              </div>
-            ) : (
-              ""
-            )}
-
-            <Link to="/box">
-              <button className="slide-button" onClick={() => this.closeMenu()}>
-                <h1 className="slide-items">View Box: {donutCount} items</h1>
-              </button>
-            </Link>
-            {this.props.box && this.props.box.length > 0 ? (
-              <Link to="/order">
+              <Link to="/box">
                 <button
                   className="slide-button"
                   onClick={() => this.closeMenu()}
                 >
-                  <h1 className="slide-items">Checkout</h1>
+                  <h1 className="slide-items">View Box: {donutCount} donuts</h1>
                 </button>
               </Link>
-            ) : (
-              ""
-            )}
-            {!this.props.user.id ? (
-              <button
-                className="log-button"
-                onClick={() =>
-                  (window.location.href = "http://localhost:3001/login")
-                }
-              >
-                Login
-              </button>
-            ) : (
-              <button className="log-button">Logout</button>
-            )}
+              {this.props.box && this.props.box.length > 0 ? (
+                <Link to="/order">
+                  <button
+                    className="slide-button"
+                    onClick={() => this.closeMenu()}
+                  >
+                    <h1 className="slide-items">Checkout</h1>
+                  </button>
+                </Link>
+              ) : (
+                ""
+              )}
+              {!this.props.user.id ? (
+                <a href={process.env.REACT_APP_LOGIN}>
+                  <button className="log-button">Login</button>
+                </a>
+              ) : (
+                <a href={process.env.REACT_APP_LOGOUT}>
+                  <button className="log-button">Logout</button>
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

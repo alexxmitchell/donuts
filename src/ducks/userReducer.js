@@ -12,7 +12,6 @@ const initialState = {
 
 const GET_USER = "GET_USER";
 const UPDATE_USER = "UPDATE_USER";
-const LOGOUT = "LOGOUT";
 
 export function getUser() {
   return {
@@ -22,6 +21,7 @@ export function getUser() {
 }
 
 export function updateUser(id, name, email, address, city, st, zip) {
+  console.log("i hit");
   return {
     type: UPDATE_USER,
     payload: axios.put(`/api/updateprofile`, {
@@ -33,13 +33,6 @@ export function updateUser(id, name, email, address, city, st, zip) {
       st,
       zip
     })
-  };
-}
-
-export function logout() {
-  return {
-    type: LOGOUT,
-    payload: axios.get("/api/logout")
   };
 }
 
@@ -55,17 +48,6 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         user: action.payload.data
-      };
-    case `${LOGOUT}_FULFILLED`:
-      return {
-        ...state,
-        user: [],
-        name: "",
-        email: "",
-        address: "",
-        city: "",
-        st: "",
-        zip: ""
       };
 
     default:

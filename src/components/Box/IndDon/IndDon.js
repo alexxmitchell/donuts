@@ -53,7 +53,7 @@ class IndDon extends Component {
           {this.props.price ? (
             <p>$ {(+this.props.price + this.props.cost).toFixed(2)}</p>
           ) : (
-            <p>$1</p>
+            <p>$1.00</p>
           )}
         </div>
 

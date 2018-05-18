@@ -43,7 +43,7 @@
 
 .links {
   margin: 20px auto;
-  width: 40vw;
+  width: 58vw;
   display: flex;
   justify-content: space-between;
   padding-bottom: 20px;
@@ -70,9 +70,9 @@
   .where h3 {
     font-size: 36px;
   }
-  /* .social {
-    padding-top: 23px;
-  } */
+  .links {
+    width: 40vw;
+  }
   .social-box {
     margin-top: 70px;
   }

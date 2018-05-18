@@ -82,7 +82,7 @@ app.get(
     failureFlash: true
   })
 );
-app.use(express.static(`${__dirname}/../build`));
+// app.use(express.static(`${__dirname}/../build`));
 
 configureServer(app);
 configureRoutes(app);
@@ -111,9 +111,9 @@ app.get("/api/boxtops/:donut_id", bc.boxToppings);
 app.get("/api/total/:box_id", bc.boxTotal);
 app.get("/api/oldboxes", bc.previousBoxes);
 
-app.get("*", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-});
+// app.get("*", (req, res, next) => {
+//   res.sendFile(path.join(__dirname, "../build/index.html"));
+// });
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);

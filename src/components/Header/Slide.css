@@ -19,7 +19,7 @@
 
 .slide-items {
   color: white;
-  font-size: 25px;
+  font-size: 23px;
   line-height: 45px;
   text-align: left;
   border-bottom: 1px solid white;
@@ -44,7 +44,7 @@
 .log-button {
   display: block;
 
-  margin: 20px auto;
+  margin: 40px auto;
   padding: 10px 30px;
   background: white;
   border: solid 1px gray;

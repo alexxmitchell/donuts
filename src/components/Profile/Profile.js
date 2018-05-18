@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Form from "../Form/Form";
 import "./Profile.css";
 import filled from "../images/filled-donut.png";
-import { logout } from "../../ducks/userReducer";
 
 const Profile = props => {
   return (
@@ -13,9 +12,9 @@ const Profile = props => {
         <img src={filled} alt="profile-donut" />
 
         <Form />
-        <button className="submit" onClick={() => props.logout()}>
-          Logout
-        </button>
+        <a href={process.env.REACT_APP_LOGOUT}>
+          <button className="submit">Logout</button>
+        </a>
       </div>
     </div>
   );
@@ -26,4 +25,4 @@ function mapStateToProps(state) {
     ...state.userReducer
   };
 }
-export default connect(mapStateToProps, { logout })(Profile);
+export default connect(mapStateToProps)(Profile);

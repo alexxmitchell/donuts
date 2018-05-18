@@ -19,7 +19,7 @@ const Landing = () => {
           <div className="landing-logo">
             <h2 className="logo-font donuts">
               Good D<span>
-                <img className="donut-logo" src={logo} alt="donut" />
+                <img src={logo} alt="donut" />
               </span>nuts
             </h2>
           </div>

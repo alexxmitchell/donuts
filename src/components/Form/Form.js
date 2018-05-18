@@ -15,29 +15,35 @@ class Form extends Component {
       address: "",
       city: "",
       st: "",
-      zip: ""
+      zip: 0
     };
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInput(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  handleSubmit(event) {
+    console.log("i hit");
+    event.preventDefault();
+    this.props.updateUser(
+      this.props.user.id,
+      this.state.name,
+      this.state.email,
+      this.state.address,
+      this.state.city,
+      this.state.st,
+      this.state.zip
+    );
+  }
   render() {
     return (
       <div className="form-page">
         <form
           onSubmit={() => {
-            this.props.updateUser(
-              this.props.user.id,
-              this.state.name,
-              this.state.email,
-              this.state.address,
-              this.state.city,
-              this.state.st,
-              this.state.zip
-            );
+            this.handleSubmit();
           }}
         >
           <div className="inputIcon">

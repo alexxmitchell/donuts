@@ -41,13 +41,18 @@
 
 .logo-font {
   font-family: "Dokdo", cursive;
-  font-size: 65px;
+  font-size: 60px;
   color: #735b69;
 }
 .bold {
   font-weight: 500;
   font-size: 42px;
   text-decoration: underline;
+}
+
+.land-text img {
+  height: 44px;
+  padding-top: 10px;
 }
 
 @media (min-width: 767px) {
@@ -92,5 +97,8 @@
     border-radius: 4px;
     color: white;
     font-size: 17px;
+  }
+  .land-text img {
+    height: 65px;
   }
 }
