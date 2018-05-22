@@ -5,7 +5,7 @@ import "./Droptop.css";
 import cake from "../../images/cake.png";
 import choc from "../../images/chocolate.png";
 import chocrasp from "../../images/chocwrasp.png";
-import chocwcaramel from "../../images/chocwcaramelicing.png";
+import chocwcaramel from "../../images/chopb.png";
 import chocwchoc from "../../images/chocwchocicing.png";
 import chocbacon from "../../images/chocbacon.png";
 import chocstraw from "../../images/chocstraw.png";

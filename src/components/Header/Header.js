@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import "./Header.css";
 import logo from "../images/cropped-DonutIcon.png";
 import Slide from "./Slide";
@@ -25,7 +25,4 @@ const Header = props => {
   );
 };
 
-function mapStateToProps(state) {
-  return { ...state.userReducer };
-}
-export default connect(mapStateToProps)(Header);
+export default Header;

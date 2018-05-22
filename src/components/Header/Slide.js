@@ -6,6 +6,7 @@ import { getUser } from "../../ducks/userReducer";
 import bag from "../images/lunchbox.png";
 import profileimg from "../images/profile.png";
 import "./Slide.css";
+
 class Slide extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +32,7 @@ class Slide extends Component {
   }
 
   render() {
+    console.log(this.props);
     let donutCount = 0;
     {
       this.props.box && this.props.box.length > 0

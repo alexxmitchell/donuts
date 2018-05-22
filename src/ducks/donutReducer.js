@@ -192,8 +192,10 @@ function donutReducer(state = initialState, action) {
       };
     case `${GET_TOPPINGS}_FULFILLED`:
       return {
+        // Object.assign({}, state, { currentToppings: action.payload.data });
         ...state,
         currentToppings: state.currentToppings.concat(action.payload.data)
+        // currentToppings: action.payload.data
       };
     case `${CHANGE_TOPPING}_FULFILLED`:
       return {
