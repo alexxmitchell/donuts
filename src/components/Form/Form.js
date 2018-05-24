@@ -22,30 +22,34 @@ class Form extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInput(e) {
+    console.log(e.target.name, e.target.value);
     this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit(event) {
     console.log("i hit");
     event.preventDefault();
-    this.props.updateUser(
-      this.props.user.id,
-      this.state.name,
-      this.state.email,
-      this.state.address,
-      this.state.city,
-      this.state.st,
-      this.state.zip
-    );
+    this.props
+      .updateUser(
+        this.props.user.id,
+        this.state.name,
+        this.state.email,
+        this.state.address,
+        this.state.city,
+        this.state.st,
+        this.state.zip
+      )
+      .then(
+        () =>
+          this.props.box.length > 0 && this.props.location.pathname === "/order"
+            ? this.props.history.push("/order/pay")
+            : this.props.history.push("/box")
+      );
   }
   render() {
     return (
       <div className="form-page">
-        <form
-          onSubmit={() => {
-            this.handleSubmit();
-          }}
-        >
+        <form onSubmit={this.handleSubmit}>
           <div className="inputIcon">
             <p>name</p>
             <i className="fas fa-user" />
@@ -122,23 +126,19 @@ class Form extends Component {
           {this.props.box.length > 0 &&
           this.props.location.pathname === "/order" ? (
             <div>
-              <Link to="/order/pay">
-                <input
-                  className="submit"
-                  type="submit"
-                  value="Proceed to Checkout"
-                />
-              </Link>
+              {/* <Link to="/order/pay"> */}
+              <input
+                className="submit"
+                type="submit"
+                value="Proceed to Checkout"
+              />
+              {/* </Link> */}
             </div>
           ) : (
             <div>
-              <Link to="/box">
-                <input
-                  className="submit"
-                  type="submit"
-                  value="Update account"
-                />
-              </Link>
+              {/* <Link to="/box"> */}
+              <input className="submit" type="submit" value="Update account" />
+              {/* </Link> */}
             </div>
           )}
         </form>

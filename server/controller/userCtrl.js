@@ -6,9 +6,9 @@ module.exports = {
 
     dbInstance
       .update_user([req.user.id, name, email, address, city, st, zip])
-      .then(() => {
-        // console.log("updated:", updated);
-        res.status(200).json();
+      .then(user => {
+        console.log("updated:", user);
+        res.status(200).json(user[0]);
       })
       .catch(e => {
         console.log(e);

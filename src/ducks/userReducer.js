@@ -43,7 +43,7 @@ export default function userReducer(state = initialState, action) {
         ...state,
         user: action.payload.data
       };
-    case `${UPDATE_USER}_FULFILLED}`:
+    case `${UPDATE_USER}_FULFILLED`:
       console.log(action);
       return {
         ...state,
