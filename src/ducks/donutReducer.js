@@ -186,6 +186,7 @@ function donutReducer(state = initialState, action) {
       };
 
     case `${REMOVE_DONUT}_FULFILLED`:
+      console.log(action);
       return {
         ...state,
         box: action.payload.data

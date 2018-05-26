@@ -23,7 +23,6 @@ module.exports = {
     dbInstance
       .add_donut([id, kind])
       .then(resp => {
-        console.log(resp);
         res.status(200).json(resp[0]);
       })
       .catch(e => {
@@ -56,7 +55,7 @@ module.exports = {
     dbInstance
       .delete_donut([req.user.id, req.params.donut_id, req.body.box_id])
       .then(response => {
-        // getDonuts(req, res);
+        console.log(response);
         res.status(200).json(response);
       })
       .catch(e => {
@@ -72,7 +71,6 @@ module.exports = {
     dbInstance
       .add_topping([id, topping])
       .then(top => {
-        console.log(top);
         res.status(200).json(top);
       })
       .catch(e => {

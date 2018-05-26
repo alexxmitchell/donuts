@@ -14,14 +14,11 @@ module.exports = {
 
   addToBox: (req, res) => {
     const dbInstance = req.app.get("db");
-
     const { box_id, id } = req.params;
-    console.log("addto box_id and id:", box_id, id);
+
     dbInstance
       .add_to_box([box_id, id])
       .then(boxy => {
-        console.log("addto boxy:", boxy);
-
         res.status(200).json(boxy);
       })
       .catch(e => {
@@ -36,7 +33,6 @@ module.exports = {
     dbInstance
       .get_box([box_id])
       .then(myBox => {
-        console.log("get myBox:", myBox);
         res.status(200).json(myBox);
       })
       .catch(e => {
