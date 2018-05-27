@@ -60,6 +60,7 @@ class Form extends Component {
               placeholder="name"
               onChange={this.handleInput}
               required
+              autoFocus
             />
           </div>
           <div className="inputIcon">
