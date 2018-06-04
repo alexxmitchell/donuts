@@ -1,5 +1,5 @@
 .topping {
-  margin-top: 80px;
+  margin-top: 64px;
 }
 .topping-header {
   width: 80vw;
@@ -17,25 +17,26 @@
 .container-drop-topping {
   height: 60vh;
   overflow: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
 }
 .to-contain {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 80vw;
   padding-top: 10px;
 }
 .topping-container button {
   width: 30vw;
   height: 10vh;
-  /* background: #735b69; */
-  color: #fff;
   font-weight: bold;
-
-  border: 1px solid white;
-
-  font-size: 16px;
+  border: 1px solid #735b69;
+  font-size: 12px;
+  font-weight: normal;
+  color: #131112;
+  background: white !important;
 }
 
 .create-button {
@@ -60,6 +61,9 @@
   width: 100%;
 }
 @media (min-width: 767px) {
+  .topping {
+    margin-top: 80px;
+  }
   .topping h2 {
     font-size: 40px;
     padding: 20px 0;
@@ -67,6 +71,7 @@
   .container-drop-topping {
     display: flex;
     height: 57vh;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     overflow: hidden;
@@ -79,9 +84,10 @@
   }
   .to-contain {
     margin: 0;
-    justify-content: center;
     height: 40vh;
     width: 30vw;
+
+    padding-top: 10px;
   }
 
   .topping-container button {
@@ -90,7 +96,7 @@
     background: white !important;
     width: 10vw;
     height: 12vh;
-    font-size: 15px;
+    font-size: 14px;
     border: 1px solid #735b69;
   }
   .top-plan {
