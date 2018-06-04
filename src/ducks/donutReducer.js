@@ -36,6 +36,7 @@ const GET_TOPPINGS = "GET_TOPPINGS";
 const REMOVE_TOPPING = "REMOVE_TOPPING";
 const CHANGE_TOPPING = "CHANGE_TOPPING";
 const CURRENT_DONUT_TOP = "CURRENT_DONUT_TOP";
+const CLEAR_TOPPINGS = "CLEAR_TOPPINGS";
 
 export function createBox(id) {
   return {
@@ -145,7 +146,12 @@ export function currentDonutTop(id) {
     payload: axios.get(`/api/gettoppings/${id}`)
   };
 }
-
+export function clearToppings() {
+  return {
+    type: CLEAR_TOPPINGS,
+    payload: []
+  };
+}
 function donutReducer(state = initialState, action) {
   switch (action.type) {
     case `${CREATE_BOX}_FULFILLED`:
@@ -197,6 +203,11 @@ function donutReducer(state = initialState, action) {
         ...state,
         currentToppings: state.currentToppings.concat(action.payload.data)
         // currentToppings: action.payload.data
+      };
+    case CLEAR_TOPPINGS:
+      return {
+        ...state,
+        currentToppings: action.payload
       };
     case `${CHANGE_TOPPING}_FULFILLED`:
       return {

@@ -8,7 +8,8 @@ import {
   removeDonut,
   getDonuts,
   getToppings,
-  changeTopping
+  changeTopping,
+  clearToppings
 } from "../../ducks/donutReducer";
 
 import "./Box.css";
@@ -24,6 +25,7 @@ class Box extends Component {
 
   componentDidMount() {
     this.props.getBox(this.props.currentBox.id);
+    this.props.clearToppings();
   }
 
   edit;
@@ -120,10 +122,14 @@ function mapStateToProps(state) {
     ...state.donutReducer
   };
 }
-export default connect(mapStateToProps, {
-  getBox,
-  removeDonut,
-  getDonuts,
-  getToppings,
-  changeTopping
-})(Box);
+export default connect(
+  mapStateToProps,
+  {
+    getBox,
+    removeDonut,
+    getDonuts,
+    getToppings,
+    changeTopping,
+    clearToppings
+  }
+)(Box);
