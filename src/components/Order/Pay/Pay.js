@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import "./Pay.css";
 import ShowBox from "../../Box/ShowBox/ShowBox";
 import Checkout from "../../../Checkout";
+import { clearBox } from "../../../ducks/donutReducer";
 
 class Pay extends Component {
   // constructor(props) {
   //   super(props);
   // }
   render() {
+    console.log(this.props);
     let boxTotal = this.props.box.reduce((acc, sum, i) => {
       return acc + Number(this.props.box[i].sum);
     }, 0);
@@ -37,6 +39,7 @@ class Pay extends Component {
             name={"Donut payment"}
             description={"Buy your delectable donuts"}
             amount={boxTotal + this.props.cost * Number(this.props.box.length)}
+            clearBox={this.props.clearBox}
           />
         </div>
         <Link to="/order">
@@ -54,4 +57,7 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Pay);
+export default connect(
+  mapStateToProps,
+  { clearBox }
+)(Pay);

@@ -11,7 +11,8 @@ class ShowBox extends Component {
     super(props);
 
     this.state = {
-      disabled: true
+      disabled: true,
+      totes: 0
     };
   }
 
@@ -74,6 +75,7 @@ function mapStateToProps(state) {
     ...state.userReducer
   };
 }
-export default connect(mapStateToProps, { getBox, getBoxtops, getTotal })(
-  ShowBox
-);
+export default connect(
+  mapStateToProps,
+  { getBox, getBoxtops, getTotal }
+)(ShowBox);

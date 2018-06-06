@@ -96,7 +96,7 @@ app.put(`/api/updateprofile`, uc.updateUser);
 //donut controller
 app.get(`/api/mydonuts`, dc.getDonuts);
 app.post("/api/adddonut", dc.addDonut);
-app.delete(`/api/removedonut/:donut_id`, dc.deleteDonut);
+app.delete(`/api/removedonut/:donut_id/:boxid`, dc.deleteDonut);
 app.get("/api/alltoppings", dc.getAllToppings);
 app.post("/api/addTopping", dc.addTopping);
 app.get(`/api/gettoppings/:id`, dc.getDoTop);
@@ -109,7 +109,6 @@ app.post("/api/createbox", bc.createBox);
 app.put("/api/addbox/:box_id/:id", bc.addToBox);
 app.get("/api/boxtops/:donut_id", bc.boxToppings);
 app.get("/api/total/:box_id", bc.boxTotal);
-app.get("/api/oldboxes", bc.previousBoxes);
 
 // app.get("*", (req, res, next) => {
 //   res.sendFile(path.join(__dirname, "../build/index.html"));

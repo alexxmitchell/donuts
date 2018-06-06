@@ -28,7 +28,7 @@ const ADD_TO_BOX = "ADD_TO_BOX";
 const GET_BOX = "GET_BOX";
 const GET_BOXTOPS = "GET_BOXTOPS";
 const GET_TOTAL = "GET_TOTAL";
-const PREVIOUS_ORDERS = "PREVIOUS_ORDERS";
+const CLEAR_BOX = "CLEAR_BOX";
 
 const GET_ALL_TOPPINGS = "GET_ALL_TOPPINGS";
 const ADD_TOPPINGS = "ADD_TOPPINGS";
@@ -96,9 +96,10 @@ export function getBox(id) {
 }
 
 export function removeDonut(userid, id, boxid) {
+  console.log(boxid);
   return {
     type: REMOVE_DONUT,
-    payload: axios.delete(`/api/removedonut/${id}`, { boxid })
+    payload: axios.delete(`/api/removedonut/${id}/${boxid}`)
   };
 }
 export function getToppings(id) {
@@ -134,12 +135,7 @@ export function getTotal(id) {
     payload: axios.get(`/api/total/${id}`)
   };
 }
-export function previousOrders(id) {
-  return {
-    type: PREVIOUS_ORDERS,
-    payload: axios.get(`/api/oldboxes`)
-  };
-}
+
 export function currentDonutTop(id) {
   return {
     type: CURRENT_DONUT_TOP,
@@ -152,8 +148,32 @@ export function clearToppings() {
     payload: []
   };
 }
+
+export function clearBox() {
+  return {
+    type: CLEAR_BOX
+  };
+}
 function donutReducer(state = initialState, action) {
   switch (action.type) {
+    case CLEAR_BOX:
+      return {
+        kind: "",
+        topping: 0,
+        currentBox: {},
+        box: [],
+        donuts: [],
+        cost: 1,
+        isLoading: false,
+        currentDonut: {},
+        currentToppings: [],
+        boxToppings: [],
+        total: 0,
+        category: "",
+        toppings: [],
+        previous: [],
+        currDonutTop: []
+      };
     case `${CREATE_BOX}_FULFILLED`:
       return {
         ...state,
@@ -199,10 +219,8 @@ function donutReducer(state = initialState, action) {
       };
     case `${GET_TOPPINGS}_FULFILLED`:
       return {
-        // Object.assign({}, state, { currentToppings: action.payload.data });
         ...state,
         currentToppings: state.currentToppings.concat(action.payload.data)
-        // currentToppings: action.payload.data
       };
     case CLEAR_TOPPINGS:
       return {
@@ -230,11 +248,6 @@ function donutReducer(state = initialState, action) {
       return {
         ...state,
         total: Number(action.payload.data)
-      };
-    case `${PREVIOUS_ORDERS}_FULFILLED`:
-      return {
-        ...state,
-        previous: action.payload.data
       };
     case `${CURRENT_DONUT_TOP}_FULFILLED`:
       return {

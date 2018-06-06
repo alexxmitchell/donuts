@@ -32,7 +32,6 @@ class Slide extends Component {
   }
 
   render() {
-    console.log(this.props);
     let donutCount = 0;
     {
       this.props.box && this.props.box.length > 0
@@ -120,4 +119,7 @@ function mapStateToProps(state) {
     ...state.userReducer
   };
 }
-export default connect(mapStateToProps, { getBox, getUser })(Slide);
+export default connect(
+  mapStateToProps,
+  { getBox, getUser }
+)(Slide);

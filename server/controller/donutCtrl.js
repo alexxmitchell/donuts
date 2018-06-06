@@ -16,7 +16,6 @@ module.exports = {
 
   addDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    // console.log(req.body);
     const { kind } = req.body;
     const { id } = req.user;
 
@@ -27,7 +26,6 @@ module.exports = {
       })
       .catch(e => {
         console.log(e);
-        // res.status(500).json();
       });
   },
 
@@ -42,24 +40,16 @@ module.exports = {
       })
       .catch(e => console.log(e));
   },
-  // changeQuantity: (req, res) => {
-  //   const dbInstance = req.app.get("db");
 
-  //   const { id } = req.params;
-
-  //   dbInstance.change_quantity([id]).then(() => {});
-  // },
   deleteDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    console.log("delete:", req.user.id, req.params.donut_id, req.body.box_id);
+    console.log("delete:", req.user.id, req.params.donut_id, req.params.boxid);
     dbInstance
-      .delete_donut([req.user.id, req.params.donut_id, req.body.box_id])
+      .delete_donut([req.user.id, req.params.donut_id, req.params.boxid])
       .then(response => {
-        console.log(response);
         res.status(200).json(response);
       })
       .catch(e => {
-        // res.status(500).json();
         console.log(e);
       });
   },
@@ -83,7 +73,6 @@ module.exports = {
     dbInstance
       .get_all_toppings()
       .then(toppings => {
-        // console.log(toppings);
         res.status(200).json(toppings);
       })
       .catch(e => {

@@ -26,7 +26,6 @@ class IndDon extends Component {
       this.props.do,
       this.props.currentBox.id
     );
-    // this.props.getBox(this.props.currentBox.id);
   }
 
   render() {
@@ -74,9 +73,12 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {
-  getBox,
-  getToppings,
-  addToBox,
-  getTotal
-})(IndDon);
+export default connect(
+  mapStateToProps,
+  {
+    getBox,
+    getToppings,
+    addToBox,
+    getTotal
+  }
+)(IndDon);
