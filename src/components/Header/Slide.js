@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { getBox } from "../../ducks/donutReducer";
 import { getUser } from "../../ducks/userReducer";
 import bag from "../images/lunchbox.png";
-import profileimg from "../images/profile.png";
 import "./Slide.css";
 
 class Slide extends Component {
@@ -18,7 +17,6 @@ class Slide extends Component {
     this.openMenu = this.openMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
-  componentDidMount() {}
 
   openMenu() {
     if (

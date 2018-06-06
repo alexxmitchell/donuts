@@ -7,9 +7,6 @@ import Checkout from "../../../Checkout";
 import { clearBox } from "../../../ducks/donutReducer";
 
 class Pay extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
   render() {
     console.log(this.props);
     let boxTotal = this.props.box.reduce((acc, sum, i) => {
@@ -35,12 +32,14 @@ class Pay extends Component {
         </div>
 
         <div className="final-pay">
+          {/* <Link to="/order/pay/success"> */}
           <Checkout
             name={"Donut payment"}
             description={"Buy your delectable donuts"}
             amount={boxTotal + this.props.cost * Number(this.props.box.length)}
-            clearBox={this.props.clearBox}
+            // clearBox={this.props.clearBox}
           />
+          {/* </Link> */}
         </div>
         <Link to="/order">
           <button className="return">Return to Billing Info</button>

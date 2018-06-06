@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateUser } from "../../ducks/userReducer";
@@ -22,12 +21,10 @@ class Form extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleInput(e) {
-    console.log(e.target.name, e.target.value);
     this.setState({ [e.target.name]: e.target.value });
   }
 
   handleSubmit(event) {
-    console.log("i hit");
     event.preventDefault();
     this.props
       .updateUser(
@@ -127,19 +124,15 @@ class Form extends Component {
           {this.props.box.length > 0 &&
           this.props.location.pathname === "/order" ? (
             <div>
-              {/* <Link to="/order/pay"> */}
               <input
                 className="submit"
                 type="submit"
                 value="Proceed to Checkout"
               />
-              {/* </Link> */}
             </div>
           ) : (
             <div>
-              {/* <Link to="/box"> */}
               <input className="submit" type="submit" value="Update account" />
-              {/* </Link> */}
             </div>
           )}
         </form>
@@ -150,4 +143,9 @@ class Form extends Component {
 function mapStateToProps(state) {
   return { ...state.userReducer, ...state.donutReducer };
 }
-export default withRouter(connect(mapStateToProps, { updateUser })(Form));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { updateUser }
+  )(Form)
+);

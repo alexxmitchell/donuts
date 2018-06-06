@@ -54,11 +54,10 @@ module.exports = {
   boxTotal: (req, res) => {
     const dbInstance = req.app.get("db");
     const { box_id } = req.params;
-    console.log("total box_id:", box_id);
+
     dbInstance
       .box_total(box_id)
       .then(total => {
-        console.log("TOTAL HERE: ", total[0]);
         res.status(200).json(total[0].sum);
       })
       .catch(e => {

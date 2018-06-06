@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import StripeCheckout from "react-stripe-checkout";
-import { withRouter } from "react-router-dom";
 
 import STRIPE_PUBLISHABLE from "./constants/stripe";
 import PAYMENT_SERVER_URL from "./constants/server";
@@ -10,13 +9,14 @@ const CURRENCY = "USD";
 const fromUSDToCent = amount => amount * 100;
 
 const successPayment = clearBox => {
-  alert("Payment Successful! Your box will be available shortly.");
+  // alert("Payment Successful! Your box will be available shortly.");
+  console.log("");
 };
 
 const errorPayment = clearBox => {
   console.log(clearBox);
   alert("Payment Successful! Your box will be available shortly.");
-  clearBox();
+  // clearBox();
 };
 
 const onToken = (amount, description, clearBox) => token =>
@@ -41,4 +41,4 @@ const Checkout = ({ name, description, amount, clearBox }) => (
   />
 );
 
-export default withRouter(Checkout);
+export default Checkout;

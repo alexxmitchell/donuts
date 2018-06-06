@@ -43,7 +43,6 @@ module.exports = {
 
   deleteDonut: (req, res) => {
     const dbInstance = req.app.get("db");
-    console.log("delete:", req.user.id, req.params.donut_id, req.params.boxid);
     dbInstance
       .delete_donut([req.user.id, req.params.donut_id, req.params.boxid])
       .then(response => {

@@ -1,0 +1,24 @@
+.success-page {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.success-page h2 {
+  font-family: "Dokdo", cursive;
+  font-size: 44px;
+  margin-bottom: 30px;
+}
+.success-container {
+  border: 4px double #735b69;
+  background: white;
+  height: 40vh;
+  width: 60%;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
