@@ -133,12 +133,13 @@ class Toppings extends Component {
               onClick={() => {
                 this.props
                   .createBox(this.props.user.id)
-                  .then(res =>
+                  .then(res => {
+                    console.log(res);
                     this.props.addToBox(
                       res.value.data[0].id,
                       this.props.currentDonut.id
-                    )
-                  )
+                    );
+                  })
                   .catch(console.log);
               }}
             >
@@ -171,11 +172,14 @@ function mapStateToProps(state) {
     box
   };
 }
-export default connect(mapStateToProps, {
-  createBox,
-  addDonut,
-  addToBox,
-  addToppings,
-  getAllToppings,
-  removeTopping
-})(Toppings);
+export default connect(
+  mapStateToProps,
+  {
+    createBox,
+    addDonut,
+    addToBox,
+    addToppings,
+    getAllToppings,
+    removeTopping
+  }
+)(Toppings);

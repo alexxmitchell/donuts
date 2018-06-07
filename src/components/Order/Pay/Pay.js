@@ -32,14 +32,16 @@ class Pay extends Component {
         </div>
 
         <div className="final-pay">
-          {/* <Link to="/order/pay/success"> */}
-          <Checkout
-            name={"Donut payment"}
-            description={"Buy your delectable donuts"}
-            amount={boxTotal + this.props.cost * Number(this.props.box.length)}
-            // clearBox={this.props.clearBox}
-          />
-          {/* </Link> */}
+          <Link to="/order/pay/success">
+            <Checkout
+              name={"Donut payment"}
+              description={"Buy your delectable donuts"}
+              amount={
+                boxTotal + this.props.cost * Number(this.props.box.length)
+              }
+              clearBox={this.props.clearBox}
+            />
+          </Link>
         </div>
         <Link to="/order">
           <button className="return">Return to Billing Info</button>

@@ -11,12 +11,13 @@ const fromUSDToCent = amount => amount * 100;
 const successPayment = clearBox => {
   // alert("Payment Successful! Your box will be available shortly.");
   console.log("");
+  clearBox();
 };
 
 const errorPayment = clearBox => {
   console.log(clearBox);
-  alert("Payment Successful! Your box will be available shortly.");
-  // clearBox();
+  // alert("Payment Successful! Your box will be available shortly.");
+  clearBox();
 };
 
 const onToken = (amount, description, clearBox) => token =>

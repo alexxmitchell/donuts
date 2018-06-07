@@ -21,7 +21,6 @@ export function getUser() {
 }
 
 export function updateUser(id, name, email, address, city, st, zip) {
-  console.log("i hit");
   return {
     type: UPDATE_USER,
     payload: axios.put(`/api/updateprofile`, {
@@ -44,7 +43,6 @@ export default function userReducer(state = initialState, action) {
         user: action.payload.data
       };
     case `${UPDATE_USER}_FULFILLED`:
-      console.log(action);
       return {
         ...state,
         user: action.payload.data
