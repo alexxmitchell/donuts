@@ -31,7 +31,6 @@ class Box extends Component {
   edit;
 
   render() {
-    console.log(this.props);
     let dozen = (
       <div className="not-logged">
         {this.props.user.id ? (

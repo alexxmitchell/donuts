@@ -29,7 +29,6 @@ class IndDon extends Component {
   }
 
   render() {
-    console.log(this.props.currentBox);
     const correctToppings = this.props.currentToppings.filter(
       e => e.donut_id === this.props.do
     );

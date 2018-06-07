@@ -8,7 +8,6 @@ import { clearBox } from "../../../ducks/donutReducer";
 
 class Pay extends Component {
   render() {
-    console.log(this.props);
     let boxTotal = this.props.box.reduce((acc, sum, i) => {
       return acc + Number(this.props.box[i].sum);
     }, 0);

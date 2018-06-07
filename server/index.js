@@ -47,7 +47,6 @@ app.use(passport.session());
 passport.use(ac.strategy);
 
 passport.serializeUser((user, done) => {
-  console.log(user.id);
   app
     .get("db")
     .get_user(user.id)
