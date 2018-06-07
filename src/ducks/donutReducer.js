@@ -96,7 +96,7 @@ export function getBox(id) {
 }
 
 export function removeDonut(userid, id, boxid) {
-  console.log(boxid);
+  // console.log(boxid);
   return {
     type: REMOVE_DONUT,
     payload: axios.delete(`/api/removedonut/${id}/${boxid}`)
@@ -212,7 +212,7 @@ function donutReducer(state = initialState, action) {
       };
 
     case `${REMOVE_DONUT}_FULFILLED`:
-      console.log(action);
+      // console.log(action);
       return {
         ...state,
         box: action.payload.data

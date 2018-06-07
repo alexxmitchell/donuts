@@ -164,7 +164,7 @@ class Droptop extends Component {
             );
 
           default:
-            console.log("default", this.props.atop);
+          // console.log("default", this.props.atop);
         }
       } else if (
         this.props.currentDonut &&
@@ -290,7 +290,7 @@ class Droptop extends Component {
             );
 
           default:
-            console.log("default");
+          // console.log("default");
         }
       }
     });
