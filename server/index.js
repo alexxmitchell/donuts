@@ -77,12 +77,12 @@ passport.deserializeUser((obj, done) => {
 app.get(
   "/login",
   passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/donut",
+    successRedirect: "http://gooddonuts.fun/#/donut",
     failureRedirect: "/login",
     failureFlash: true
   })
 );
-// app.use(express.static(`${__dirname}/../build`));
+app.use(express.static(`${__dirname}/../build`));
 
 configureServer(app);
 configureRoutes(app);
@@ -110,9 +110,9 @@ app.put("/api/addbox/:box_id/:id", bc.addToBox);
 app.get("/api/boxtops/:donut_id", bc.boxToppings);
 app.get("/api/total/:box_id", bc.boxTotal);
 
-// app.get("*", (req, res, next) => {
-//   res.sendFile(path.join(__dirname, "../build/index.html"));
-// });
+app.get("*", (req, res, next) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);

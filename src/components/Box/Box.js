@@ -42,7 +42,7 @@ class Box extends Component {
             <button
               className="more"
               onClick={() =>
-                (window.location.href = "http://localhost:3001/login")
+                (window.location.href = "http://gooddonuts.fun/login")
               }
             >
               Login now
