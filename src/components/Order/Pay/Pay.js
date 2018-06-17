@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import axios from "axios";
 import StripeCheckout from "react-stripe-checkout";
 import "./Pay.css";
@@ -70,7 +70,9 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  { clearBox }
-)(Pay);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { clearBox }
+  )(Pay)
+);
