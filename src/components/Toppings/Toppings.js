@@ -134,7 +134,6 @@ class Toppings extends Component {
                 this.props
                   .createBox(this.props.user.id)
                   .then(res => {
-                    // console.log(res);
                     this.props.addToBox(
                       res.value.data[0].id,
                       this.props.currentDonut.id

@@ -17,13 +17,9 @@ class Pay extends Component {
     const boxNo = this.props.currentBox.id;
     let stripeToken = token;
 
-    console.log("hit buyBox", boxNo, amount);
-
     axios
       .post("/api/buydonuts", { boxNo, amount, stripeToken })
-      .then(resp => {
-        console.log(resp);
-      })
+      .then(() => this.props.clearBox())
       .then(() => this.props.history.push("/order/pay/success"))
       .catch(console.log);
   };

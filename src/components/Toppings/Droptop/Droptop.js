@@ -30,9 +30,6 @@ import cakegold from "../../images/cakegold.png";
 import cakepecan from "../../images/cakewithpecan.png";
 
 class Droptop extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     let image = "";
 
