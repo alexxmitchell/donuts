@@ -31,16 +31,11 @@ class Slide extends Component {
 
   render() {
     let donutCount = 0;
-    {
-      this.props.box && this.props.box.length > 0
-        ? (donutCount = this.props.box.length)
-        : (donutCount = 0);
-    }
 
-    let boxTotal = this.props.box.reduce((acc, sum, i) => {
-      return acc + Number(this.props.box[i].sum);
-    }, 0);
-    let length = this.props.box.length;
+    this.props.box && this.props.box.length > 0
+      ? (donutCount = this.props.box.length)
+      : (donutCount = 0);
+
     return (
       <div className="slide-menu">
         <button className="bag" onClick={() => this.openMenu()}>

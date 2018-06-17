@@ -1,12 +1,32 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import StripeCheckout from "react-stripe-checkout";
 import "./Pay.css";
 import ShowBox from "../../Box/ShowBox/ShowBox";
-import Checkout from "../../../Checkout";
+
 import { clearBox } from "../../../ducks/donutReducer";
 
 class Pay extends Component {
+  buyBox = token => {
+    let boxTotal = this.props.box.reduce((acc, sum, i) => {
+      return acc + Number(this.props.box[i].sum);
+    }, 0);
+    let amount = boxTotal + this.props.cost * Number(this.props.box.length);
+    const boxNo = this.props.currentBox.id;
+    let stripeToken = token;
+
+    console.log("hit buyBox", boxNo, amount);
+
+    axios
+      .post("/api/buydonuts", { boxNo, amount, stripeToken })
+      .then(resp => {
+        console.log(resp);
+      })
+      .then(() => this.props.history.push("/order/pay/success"))
+      .catch(console.log);
+  };
   render() {
     let boxTotal = this.props.box.reduce((acc, sum, i) => {
       return acc + Number(this.props.box[i].sum);
@@ -31,16 +51,13 @@ class Pay extends Component {
         </div>
 
         <div className="final-pay">
-          <Link to="/order/pay/success">
-            <Checkout
-              name={"Donut payment"}
-              description={"Buy your delectable donuts"}
-              amount={
-                boxTotal + this.props.cost * Number(this.props.box.length)
-              }
-              clearBox={this.props.clearBox}
-            />
-          </Link>
+          <StripeCheckout
+            token={this.buyBox}
+            amount={
+              (boxTotal + this.props.cost * Number(this.props.box.length)) * 100
+            }
+            stripeKey="pk_test_NM89KQCfF0UVkkDU278wn9rf"
+          />
         </div>
         <Link to="/order">
           <button className="return">Return to Billing Info</button>
